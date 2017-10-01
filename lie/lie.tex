@@ -1,0 +1,257 @@
+\section{Derivada de Lie y otras herramientas}\label{1}
+
+Antes de comenzar con el estudio de la geometría simpléctica, conviene recordar el concepto de la derivada de Lie de campos, extenderlo a formas, y obtener una serie de resultados que nos serán útiles más adelante.
+
+Empecemos recordando la definición del corchete de Lie de campos, su estudio detallado puede encontrarse en \cite{variedades}.
+
+\begin{defn}[Corchete de Lie]
+  Sea $M$ una variedad diferenciable y $\mathfrak{X}(M)$ el conjunto de los campos diferenciables en $M$, se define el \emph{corchete de Lie} como la aplicación
+  \begin{equation*}
+    \begin{array}{rcl}
+    \lie{\ }{\ }: \mathfrak{X}(M) \times \mathfrak{X}(M) & \longrightarrow & \mathfrak{X}(M) \\
+    (X,Y) & \longmapsto & \lie{X}{Y} = X \circ Y - Y \circ X,
+  \end{array}
+  \end{equation*}
+  donde la composición se entiende si vemos los campos como aplicaciones $\mathcal{C}^{\infty}(M) \rightarrow \mathcal{C}^{\infty}(M)$.
+\end{defn}
+Recordamos también que podemos ver el corchete de Lie de otra forma equivalente. Sea $M$ una variedad diferenciable, $a \in M$, $Y \in \mathfrak{X}(M)$, $\varphi$ un flujo en $M$ y $X$ su generador infinitesimal. Entonces
+\begin{equation*}
+  \lie{X}{Y}_a= \lim_{t\rightarrow 0}\frac{\varphi_{-t,*}(Y_{\varphi_t(a)})-Y_a}{t}.
+\end{equation*}
+En vista de esta fórmula, se define la \emph{derivada de Lie de Y respecto de X} como $L_XY=\lie{X}{Y}$. 
+\begin{figure}[h]
+  \centering
+  \includegraphics{pics/lie}
+  \caption{Visión geométrica de la derivada de Lie}
+  \label{fig:lie}
+\end{figure}
+Por último, recordamos otro resultado muy importante que usaremos posteriormente:
+\begin{prop}
+  Sea $M$ una variedad diferenciable, sean $\varphi$, $\psi$ flujos en $M$ y sean $X$, $Y$ sus generadores infinitesimales, respectivamente. Entonces los flujos conmutan si y sólo si lo hacen sus generadores infinitesimales (es decir, $\varphi_t \circ \psi_s = \psi_s \circ \varphi_t$ si y sólo si $\lie{X}{Y}=0$).
+\end{prop} 
+
+Ya estamos en disposición de dar una definición más general de la derivada de Lie:
+\begin{defn}[Derivada de Lie]
+  Sean $M$ una variedad diferenciable, $X$ un campo en $M$, y $\varphi$ su flujo. Se define la \emph{derivada de Lie respecto de X} como la aplicación  \begin{equation*}
+    \begin{array}{rcl}
+    L_X: \Gamma^r(M)& \longrightarrow & \Gamma^r (M) \\
+    \omega & \longmapsto & L_X \omega = \lim_{t\rightarrow 0}\frac{\varphi^*_t \omega - \omega}{t}.
+  \end{array}
+  \end{equation*}
+\end{defn}
+
+Vamos a obtener ahora un par de propiedades de la derivada de Lie.
+
+\begin{prop}
+  Sean $M$ una variedad diferenciable, $\omega \in \Gamma^r(M)$, $X,X_1,\dots,X_r\in \mathfrak{X} (M)$, se cumple
+  \begin{equation*}
+    L_{X}\omega(X_1,\dots,X_r)=X\omega(X_1,\dots,X_r)-\sum_{i=1}^r \omega(X_1,\dots,\lie{X}{X_i},\dots,X_r)
+  \end{equation*}
+\end{prop}
+\begin{proof}
+  Vamos a probarlo sólo para el caso en el que $\omega$ es una 2-forma para simplificar su lectura. El cálculo general es completamente análogo.
+  En primer lugar,
+  \begin{align*}
+    \lim_{t\rightarrow 0}\frac{1}{t}[(\varphi_t^* \omega)(X_1,X_2) - \omega (X_1,X_2)] =\lim_{t\rightarrow 0}\left[\frac{1}{t}[(\varphi_t^* \omega)(X_1,X_2) - \varphi_t^*(\omega(X_1,X_2))]\right] \\
+    + \lim_{t\rightarrow 0}\left[\frac{1}{t}[\varphi_t^*(\omega(X_1,X_2))-\omega(X_1,X_2)]\right].
+  \end{align*}
+
+  El segundo término de esta expresión es exactamente
+  \begin{equation*}
+    \lim_{t\rightarrow 0}\left[\frac{1}{t}[\varphi_t^*(\omega(X_1,X_2))-\omega(X_1,X_2)]\right]=\left( \left. \frac{d}{dt}\right|_{t=0} \varphi_t \right)(\omega(X_1,X_2))=X\omega(X_1,X_2),
+  \end{equation*}
+  mientras que el primer término, en $x\in M$ es
+  \begin{align*}
+     & \left.\lim_{t\rightarrow 0}\left[\frac{1}{t}[(\varphi_t^* \omega)(X_1,X_2) - \varphi_t^*(\omega(X_1,X_2))]\right]\right|_{x}  \\
+     & = \lim_{t \rightarrow 0}\frac{1}{t}[\omega_{\varphi_t(x)}(d_x \varphi_t(X_{1,x}),d_x \varphi_t(X_{2,x})) -\omega_{\varphi_t(x)}(X_{1,\varphi_t(x)},X_{2,\varphi_t(x)})] \\
+     & = \lim_{t\rightarrow 0} \omega_{\varphi_t(x)}\left[\frac{1}{t}(d_x \varphi_t(X_{1,x})-X_{1,\varphi_t(x)}),d_x\varphi_t(X_{2,x})\right] + \lim_{t\rightarrow 0} \omega_{\varphi_t(x)}\left[ X_{1,\varphi_t (x)}, \frac{1}{t}(d_x \varphi_t (X_{2,x})-X_{2,\varphi_t(x)}) \right] \\
+     & = -\omega_x(\lie{X}{X_1}_x,X_{2,x})-\omega_x(X_{1,x},\lie{X}{X_2}_x).
+  \end{align*}
+
+  Volviendo a agrupar, tenemos lo que se quería demostrar.
+\end{proof}
+\begin{prop}
+  Sea $M$ una variedad diferenciable y $\alpha \in \Gamma^r(M)$, se cumple
+  \begin{align*}
+    (\dd \alpha)(X_1,\dots,X_{r+1})=\sum_{i=1}^{r+1}(-1)^{i-1}X_i \alpha (X_1,\dots,\hat{X_i},\dots,X_{r+1}) \\
+    + \sum_{i<j}(-1)^{i+j}\alpha(\lie{X_i}{X_j},X_1,\dots,\hat{X_i},\dots,\hat{X_j},\dots,X_{r+1}),
+  \end{align*}
+  donde el circunflejo en un campo quiere decir que este campo se omite.
+\end{prop}
+\begin{proof}
+En este caso probaremos solo la identidad más sencilla 
+\begin{equation*}
+  \dd \alpha (X,Y) = X\alpha(Y) - Y \alpha(X) - \alpha(\lie{X}{Y}),
+\end{equation*}
+válida para el caso en el que $\alpha$ es de grado 1. El caso general es completamente análogo.
+
+En primer lugar, escribimos todo en coordenadas locales:
+\begin{align*}
+  \alpha &= \sum_i \alpha_i \dd \xx _i, \ \dd \alpha = \sum_{i,j} \dd \alpha_i \wedge \dd \xx _j = \sum_{i,j}\parcial{\alpha_i}{\xx_j} \dd \xx_i \wedge \xx_j, \\
+  X &= \sum_i X_i \deriv{\xx_i}, \ 
+  \lie{X}{Y} = \sum_{i,j} \left( X_i \parcial{Y_j}{\xx_i} - Y_i \parcial{X_j}{\xx_i} \right) \deriv{\xx_j}.
+\end{align*}
+
+Ahora, operando en estas coordenadas:
+\begin{align*}
+  \alpha(X) &= \sum_i \alpha_i X_i, \ 
+  \dd \alpha (X,Y) = \sum_{i,j} \parcial{\alpha_i}{\xx_j} (X_jY_i-X_iY_j) \\
+  \alpha(\lie{X}{Y}) &= \sum_{i,j} \left( X_i \parcial{Y_j}{\xx_i} - Y_i \parcial{X_j}{\xx_i} \right) \alpha_j = \sum_{i,j} \alpha_i X_j \parcial{Y_i}{\xx_j} - \sum_{i,j}\alpha_i Y_j \parcial{X_i}{\xx_j} \\
+  X(\alpha Y) &= \sum_{i,j}\alpha_i X_j \parcial{Y_i}{\xx_j} + Y_i X_j \parcial{\alpha_i}{\xx_j}, \ 
+Y(\alpha X) = \sum_{i,j}\alpha_i Y_j \parcial{X_i}{\xx_j} + X_i Y_j \parcial{\alpha_i}{\xx_j}.
+\end{align*}
+
+Obtenemos entonces
+\begin{equation*}
+  X(\alpha(Y))-Y\alpha(X)-\alpha(\lie{X}{Y}) = \sum_{i,j} Y_iX_j \parcial{\alpha_i}{\xx_j} - X_iY_j \parcial{\alpha_i}{\xx_j} = \dd \alpha (X,Y).
+\end{equation*}
+\end{proof}
+
+Antes de seguir, vamos a introducir una nueva operación para formas:
+\begin{defn}[Producto interior]
+  Sea $M$ una variedad diferenciable y $X$ un campo en $M$, se define el \emph{producto interior} $i_X:\Gamma^{r+1}(M)\rightarrow \Gamma^r(M)$ por 
+  \begin{equation*}
+    i_X \omega(X_1,\dots,X_r)=\omega(X,X_1,\dots,X_r),
+  \end{equation*}
+  para $X_1,\dots,X_r \in \mathfrak{X}(M)$.
+\end{defn}
+
+Podemos probar ya una serie de fórmulas, debidas a Élie Cartan\footnote{En la literatura, la segunda de estas fórmulas suele llamarse «fórmula mágica de Cartan».}, que nos serán de gran utilidad posteriormente.
+\begin{thm}[Fórmulas de Cartan]
+  Sea $X$ un campo en una variedad $M$, y consideramos la derivada de Lie $L_X$, el producto interior $i_X$, y la diferencial exterior $\dd$. Entonces se cumplen las siguientes fórmulas:
+  \begin{enumerate}
+    \item $i_{\lie{X}{Y}}=L_X i_Y - i_Y L_X$, para todo $Y \in \mathfrak{X}(M)$,
+    \item $L_X= \dd \circ i_X + i_X \circ \dd $ y
+    \item $L_X\circ \dd = \dd \circ L_X$.
+  \end{enumerate}
+\end{thm}
+\begin{proof}\leavevmode
+  \begin{enumerate}
+    \item Sean $X_1,\dots,X_r \in \mathfrak{X}(M)$, entonces
+      \begin{align*}
+	L_X[(i_Y \omega) (X_1,\dots,X_r)] =& X \omega(Y,X_1,\dots,X_r)-\sum_{i=1}^r \omega(Y,X_1,\dots,\lie{X}{X_i},\dots,X_r), \\
+	i_Y[(L_X \omega) (X_1,\dots,X_r)] =&  X \omega(Y,X_1,\dots,X_r) -\sum_{i=1}^r \omega(Y,X_1,\dots,\lie{X}{X_i},\dots,X_r) \\
+	&- \omega(\lie{X}{Y},X_1,\dots,X_r).
+      \end{align*}
+      Por tanto
+      \begin{align*}
+	i_{\lie{X}{Y}}\omega (X_1,\dots,X_r) &=\omega(\lie{X}{Y},X_1,\dots,X_r) \\
+	&= L_X[(i_Y \omega) (X_1,\dots,X_r)]-i_Y[(L_X \omega) (X_1,\dots,X_r)].
+      \end{align*}
+    \item Usando la relación entre el corchete de Lie y la diferencial exterior que obtuvimos antes, tenemos
+      \begin{align*}
+	(\dd (i_X \alpha)) (X_1,\dots,X_r) =& \sum_{i}(-1)^{i-1}X_i \alpha(X,X_1,\dots,\hat{X_i},\dots,X_r) \\
+	& + \sum_{i<j} (-1)^{i+j} \alpha (X,\lie{X_i}{X_j},X_1,\dots,\hat{X_i},\dots,\hat{X_j},\dots,X_r),
+      \end{align*}
+      y
+      \begin{align*}
+	(i_X (\dd \alpha)) (X_1,\dots,X_r) =& \sum_{i}(-1)^{i}X_i \alpha(X,X_1,\dots,\hat{X_i},\dots,X_r) \\
+	& + \sum_{i<j} (-1)^{i+j+1} \alpha (X,\lie{X_i}{X_j},X_1,\dots,\hat{X_i},\dots,\hat{X_j},\dots,X_r) \\
+	& + X\alpha(X_1,\dots,X_r) + \sum_j (-1)^{j} \alpha (\lie{X}{X_j},X_1,\dots,\hat{X_j},\dots,X_r).
+      \end{align*}
+      Sumando ambas expresiones obtenemos
+      \begin{align*}
+	(\dd i_X \alpha +i_X \dd \alpha) (X_1,\dots,X_r) = & X\alpha(X_1,\dots,X_r) \\
+	& + \sum_j (-1)^{j} (-1)^{j-1} \alpha (X_1,\dots,\lie{X}{X_j},\dots,X_r) \\
+	= & X\alpha(X_1,\dots,X_r) - \sum_j \alpha (X_1,\dots,\lie{X}{X_j},\dots,X_r). 
+      \end{align*}
+    \item Utilizando (2) y que $\dd \circ \dd=0$, obtenemos
+      \begin{align*}
+	L_X \circ \dd &= (i_X \circ \dd) \circ \dd + (\dd \circ i_X) \circ \dd = \dd \circ i_X \circ \dd, \\
+	\dd \circ L_X &= \dd \circ (i_X \circ \dd) + \dd \circ (\dd \circ i_X) = \dd \circ i_X \circ \dd,
+      \end{align*}
+      luego $L_X \circ \dd= \dd \circ L_X$.
+  \end{enumerate}
+\end{proof}
+
+\section{Campos y formas dependientes de un parámetro}
+
+  \begin{defn}[Campos y formas dependientes del tiempo] \leavevmode
+    \begin{enumerate}
+      \item Un \emph{campo tangente (diferenciable) dependiente del tiempo} de una variedad diferenciable $M$ es una aplicación \[\begin{array}{rcl}X:M\times[0,1] & \longrightarrow & TM \\ (x,t) & \longmapsto & (x,X^t_x) \end{array} \] que es diferenciable como aplicación entre variedades. 
+      \item Una \emph{forma diferencial (diferenciable) de grado $r$ dependiente del tiempo} de una variedad diferenciable $M$ es una aplicación \[\begin{array}{rcl} \alpha: M \times [0,1] & \longrightarrow & \Lambda^r(M) \\ (x,t) &  \longmapsto & (x,\alpha_{t,x}) \end{array}\] tal que la función \[\begin{array}{rcl} \alpha(X_1,\dots,X_r):M\times [0,1] & \longrightarrow & \RR \\ (x,t) & \longmapsto & \alpha_{t,x}(X_{1,x}^t,\dots,X_{r,x}^t)\end{array}\] es diferenciable para cualesquiera $r$ campos $X_1,\dots,X_r \in \mathfrak{X}(M)$.
+    \end{enumerate}
+  \end{defn}
+
+  \begin{obs}
+    Un campo y una forma dependientes del tiempo se expresan en una carta $(U,\xx)$ en la forma
+    \begin{align*}
+      X^t_x &= \sum X_i(x,t) \left.\deriv{\xx_i}\right|_x \\
+      \alpha_{t,x} &= \sum \alpha_i(x,t) \dd \xx_i |_x.
+    \end{align*}
+    La diferenciabilidad de $X$ y $\alpha$ es equivalente a la de sus componentes $X_i$, $\alpha_i$ como funciones $U\times[0,1] \rightarrow \RR$.
+  \end{obs}
+  \begin{defn}
+    Sea $U\subset M$ abierto, una \emph{isotopía} de $M$ es una aplicación diferenciable
+	$G: [0,1] \times U\subset M \rightarrow M$
+	tal que $G(0,\bullet)=\varphi_0$ es la identidad y $G(t,\bullet)=\varphi_t$ es un difeomorfismo local. 
+  \end{defn}
+  \begin{defn}
+    Sea $G$ una isotopía de una variedad $M$, se define el \emph{generador infinitesimal de G} como el campo tangente dependiente del tiempo que, para $x\in M$ satisface
+    \begin{equation*}
+      X^t_x=\left.\frac{d}{ds}\right|_{s=t}\varphi_s(\varphi_t^{-1}(x)),
+    \end{equation*}
+    es decir
+    \begin{equation*}
+      X^t\circ \varphi_t = \frac{d}{dt} \varphi_t. 
+    \end{equation*}
+  \end{defn}
+
+  \begin{obs}
+    Podemos entender las isotopías como «flujos dependientes del tiempo», que se diferencian de los flujos en que pierden la propiedad de semigrupo.
+  \end{obs}
+
+  Podemos ver un campo dependiente del tiempo $X_t$ en $M$ como un campo independiente del tiempo
+  \begin{equation*}
+    \begin{array}{rcl}
+    \tilde{X}: M \times [0,1] & \longrightarrow & T(M \times [0,1]) \\
+    (x,t) &\longmapsto& \left( (x,t),X^t_x+\left.\deriv{\mathtt{t}}\right|_t \right).
+  \end{array}
+  \end{equation*}
+  Si $X_t$ tiene soporte compacto y existe $x_0 \in M$ tal que $X^t_x=0$ para cada $t\in[0,1]$, entonces $\tilde{X}$ tiene soporte compacto y genera un flujo completo $\Phi_s(x,t)$ en $(U \subset M) \times [0,1]$, donde $U$ es un entorno de $x_0$. Podemos definir entonces una isotopía $G:[0,1]\times U \rightarrow M$, donde $G(s,x)=\varphi_s(x)$ es la primera componente de $\Phi_s(x,0)$. Claramente es una isotopía porque la primera componente de $\Phi_0(\bullet,0)$ es la identidad en $M$ y la de $\Phi_s(\bullet,0)$ es un difeomorfismo local. Además, 
+  \begin{equation*}
+    \Phi_s(x,t)=\Phi_{s+t}\circ(\Phi_t)^{-1}(x,t)=\Phi_{s+t}\left( \varphi_t^{-1}(x),0 \right)=(\varphi_{s+t}\circ\varphi_t^{-1}(x),t+s)
+  \end{equation*}
+  Ahora,
+  \begin{equation*}
+    X_x^t+\left.\deriv{\mathtt{t}}\right|_t=\tilde{X}_{(x,t)}=\left.\frac{d}{ds}\right|_{s=0}\Phi_s(x,t)=\left.\frac{d}{ds}\right|_{s=0}\varphi_{t+s}(\varphi_t^{-1}(x))+\left.\deriv{\mathtt{t}}\right|_t,
+  \end{equation*}
+  luego $X^t_x =\left.\frac{d}{ds}\right|_{s=t}\varphi_s(\varphi_t^{-1}(x))$, es decir, $X$ es el generador infinitesimal de la isotopía $G$.
+
+  Esto nos permite generalizar la derivada de Lie de formas para un campo dependiente del tiempo:
+  \begin{equation*}
+    L_{X^t}\alpha=\lim_{t\rightarrow 0}\frac{\varphi^*_t \alpha - \alpha}{t}.
+  \end{equation*}
+  
+  Ahora también podemos definir qué queremos decir por «la derivada temporal» de una forma dependiente del tiempo.
+
+  \begin{defn}
+    Sea $\alpha_t$ una $r$-forma dependiente del tiempo, se define la derivada temporal de $\alpha_t$ como
+    \begin{equation*}
+      \frac{d}{dt} \alpha_t = \lim_{h\rightarrow 0}\frac{\alpha_{t+h}-\alpha_t}{h}.
+    \end{equation*}
+  \end{defn}
+
+  Finalmente, tenemos una fórmula que nos relaciona la derivada temporal con la derivada de Lie de formas.
+  \begin{prop}
+    Sea $\alpha_t$ una $r$-forma dependiente del tiempo, $G$ una isotopía (y $\varphi_t=G(t,\bullet)$) y $X^t$ su generador infinitesimal, entonces
+    \begin{equation*}
+      \frac{d}{dt}\varphi^*_t \alpha_t = \varphi^*_t \left( L_{X^t}\alpha_t + \frac{d}{dt}\alpha_t \right).
+    \end{equation*}
+  \end{prop}
+
+  \begin{proof}
+    En primer lugar
+    \begin{equation*}
+      \frac{\varphi^*_{t+h}\alpha_{t+h}-\varphi^*_t\alpha_t}{h}= \frac{\varphi^*_{t+h}\alpha_{t+h}-\varphi^*_t\alpha_{t+h}+\varphi^*_t\alpha_{t+h}-\varphi^*_t\alpha_t}{h},
+    \end{equation*}
+    reagrupando, tenemos
+    \begin{equation*}
+      \frac{d}{dt}\varphi^*_t \alpha_t=\lim_{h\rightarrow 0}\frac{\varphi^*_{t+h}\alpha_{t+h}-\varphi^*_t\alpha_{t}}{h}=\lim_{h\rightarrow 0}\frac{\varphi^*_{t+h}\alpha_{t+h}-\varphi^*_t\alpha_{t+h}}{h}+\lim_{h\rightarrow 0}\frac{\varphi^*_t\alpha_{t+h}-\varphi^*_t\alpha_t}{h}.
+    \end{equation*}
+    Finalmente, «sacando factor común» $\varphi^*_t$ y aplicando las definiciones de derivada de Lie y derivada temporal de formas llegamos a
+    \begin{equation*}
+      \frac{d}{dt}\varphi^*_t \alpha_t=\varphi^*_t \left( \lim_{h\rightarrow 0}\frac{\varphi^*_{h}\alpha_{t}-\alpha_{t}}{h}+\lim_{h\rightarrow 0}\frac{\alpha_{t+h}-\alpha_t}{h}\right)=\varphi^*_t\left(L_{X^t}\alpha_t + \frac{d}{dt}\alpha_t\right).
+    \end{equation*}
+  \end{proof}
+

@@ -1,0 +1,61 @@
+\begin{thebibliography}{10}
+
+\bibitem{arnold}
+V.I. Arnold.
+\newblock {\em Mathematical Methods of Classical Mechanics}.
+\newblock Springer-Verlag, 1989.
+
+\bibitem{euler}
+Wikimedia Commons.
+\newblock Euler angles.
+\newblock \url{https://commons.wikimedia.org/wiki/File:Euler.png}, 2007.
+\newblock Online; visto el 18 de julio de 2017.
+
+\bibitem{eulertop}
+Wikimedia Commons.
+\newblock Heavy symmetric top in terms of {E}uler angles.
+\newblock
+  \url{https://commons.wikimedia.org/wiki/File:Heavy_symmetric_top_euler_angles.svg},
+  2015.
+\newblock Online; visto el 18 de julio de 2017.
+
+\bibitem{algebra}
+J.F. Fernando, J.M. Gamboa, and J.M. Ruiz.
+\newblock {\em {\'A}lgebra lineal (vol. 2)}.
+\newblock Editorial Sanz y Torres, 2010.
+
+\bibitem{variedades}
+J.M. Gamboa and J.M. Ruiz.
+\newblock {\em Introducci{\'o}n al estudio de las Variedades Diferenciales}.
+\newblock Editorial Sanz y Torres, 2016.
+
+\bibitem{goldstein}
+H.~Goldstein, C.P. Poole, and J.L. Safko.
+\newblock {\em Classical Mechanics}.
+\newblock Pearson Education India, 2011.
+
+\bibitem{guillemin}
+Victor Guillemin.
+\newblock Lecture notes on {T}heory of {D}ifferential {F}orms. {C}hapter 5:
+  {C}ohomology via forms.
+\newblock \url{http://math.mit.edu/classes/18.952/spring2012/chapter5.pdf},
+  2012.
+\newblock Online; visto el 22 de julio de 2017.
+
+\bibitem{landau}
+L.D. Landau and E.M. Lifshitz.
+\newblock {\em Curso de física teórica (vol. 1): Mecánica}.
+\newblock Editorial Reverté, 1985.
+
+\bibitem{pasquotto}
+Federica Pasquotto.
+\newblock Reminder on basic differential geometry.
+\newblock \url{http://www.few.vu.nl/~pasquott/reminder.pdf}, 2013.
+\newblock Online; visto el 22 de julio de 2017.
+
+\bibitem{spivak}
+Michael Spivak.
+\newblock {\em Physics for Mathematicians: Mechanics I}.
+\newblock Publish or Perish, 2010.
+
+\end{thebibliography}

@@ -1,0 +1,124 @@
+\documentclass[12pt,a4paper]{amsart}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{cite}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing,babel}
+
+\usepackage{url}
+%\usepackage[tocflat]{tocstyle}
+
+%Descomentar para usar Times New Roman:
+%\usepackage{times}
+
+%%%%Cosas de Ruiz:%%%%
+\usepackage[colorlinks=true, linktocpage=true,pagebackref=true, citecolor=red,linkcolor=blue]{hyperref}
+%\usepackage[colorlinks=true,linktocpage=true,pagebackref=true, citecolor=red,linkcolor=blue]{hyperref}
+\usepackage[shortlabels]{enumitem}
+%\setlist[1]{itemsep=-1.2pt,topsep=-2pt,parsep=2pt,leftmargin=5.9mm,labelsep=0.9mm}
+%
+%\usepackage{caption}
+%\usepackage{subfigure}
+%\usepackage{hyperref}
+%\usepackage{float}
+\setlist{topsep=-1pt}
+%
+%opening
+
+\voffset=-1.5cm
+\hoffset=-1.5cm
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{23cm}
+\setlength{\headsep}{25pt}
+\footskip=30pt
+
+\parskip=1.2ex
+
+%newlabel
+\makeatletter
+\newcommand{\hlabel}[1]{%
+   \protected@write \@auxout {}%
+        {\string \newlabel {#1}{{\theteorema}{\thepage}{}{#1}{}} }%
+   \hypertarget{#1}{}
+}
+\makeatother
+%%%%-%%%
+
+\newtheorem{thm}{Teorema}[section]
+\newtheorem{prop}[thm]{Proposición}
+\newtheorem{lema}[thm]{Lema}
+\newtheorem{corol}[thm]{Corolario}
+\newtheorem{defn}[thm]{Definición}
+\newtheorem{ejemplo}[thm]{Ejemplo}
+\newtheorem{obs}[thm]{Observación}
+
+%%% Más cosas de Ruiz %%%
+\newcommand{\add}{\vspace{2mm}\noindent\addtocounter{teorema}{1}} 
+
+\renewenvironment{proof}%
+{\noindent{\em Demostración. }\nopagebreak}%
+{\hfill\linebreak[2]\hspace*{\fill}$\Box$\\[6pt]}
+%%%-%%%
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\SF}{\mathbb{S}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\xx}{\mathtt{x}}
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\pois}[2]{\left\lbrace#1,#2\right\rbrace}
+\newcommand{\esc}[2]{\left\langle#1,#2\right\rangle}
+\newcommand{\lie}[2]{\left[#1,#2\right]}
+\newcommand{\parcial}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\deriv}[1]{\frac{\partial}{\partial #1}}
+\newcommand{\nota}[1]{$\clubsuit$ \textbf{#1}}
+
+\begin{document}
+\thispagestyle{plain}
+
+\title[INTRODUCCIÓN A LA GEOMETRÍA SIMPLÉCTICA Y LOS SISTEMAS INTEGRABLES]{
+{\rm\tiny Trabajo  \hspace{-1mm}de  \hspace{-1mm}Fin  \hspace{-1mm}de  \hspace{-1mm}Grado,  
+\hspace{-1mm}Junio  \hspace{-1mm}2018}\\[8pt] 
+INTRODUCCIÓN A LA GEOMETRÍA SIMPLÉCTICA Y LOS SISTEMAS INTEGRABLES\\[8pt]
+{\rm\tiny Departamento \hspace{-1mm}de  \hspace{-1mm}Geometría  \hspace{-1mm}y  \hspace{-1mm}Topología\\
+Facultad  \hspace{-1mm}de  \hspace{-1mm}Ciencias \hspace{-1mm}Matem\'aticas,  \hspace{-1mm}UCM\\
+{\rm\tiny Dirigido por Jes\'us M. Ruiz}
+}}
+
+\author{Guillermo Gallego}
+\date{\textbf{Última versión: \today }}
+
+\subjclass[2010]{Primary  37J05, 37J35, 53D05, 58A05, 70H05}
+
+\input{abstract/abstract.tex}
+
+\maketitle
+\setcounter{tocdepth}{1}
+\newpage
+\tableofcontents
+
+\input{intro/intro.tex}
+\input{lie/lie.tex}
+\input{simplectica/simplectica.tex}
+\input{ArnoldLiouville/arnoldliouville.tex}
+\input{promedios/promedios.tex}
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{biblio}
+\end{document}
+
+
+
+

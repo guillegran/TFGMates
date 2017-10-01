@@ -1,0 +1,210 @@
+\section*{Introducción}
+En construcción.
+\section{Motivación física. De Newton a Hamilton}
+La forma más sencilla de describir el movimiento de un sistema de partículas es mediante el formalismo newtoniano, tomando como postulado fundamental de la mecánica clásica el \emph{principio de determinación}: conocidas en cierto instante las posiciones y las velocidades iniciales de todas las partículas que conforman el sistema, es posible determinar sus posiciones y velocidades en cualquier otro instante.
+
+Matemáticamente, este principio se traduce en la existencia de una función\footnote{A lo largo del texto sólo consideraremos funciones diferenciables ($\mathcal{C}^{\infty}$ si es necesario), no lo especificaremos en lo que sigue.}, conocida como \emph{fuerza}, $F: \RR^{3n} \times \RR^{3n} \times \RR \rightarrow \RR$, que cumple la llamada \emph{ecuación de Newton}\footnote{Esta ecuación es una forma peculiar de la conocida \emph{segunda ley de Newton}: $F=ma$.}:
+\begin{equation*}
+  \ddot{x} = F(x,\dot{x},t;\alpha),
+\end{equation*}
+donde $n$ es el número de partículas, $x:\RR \rightarrow \RR^{3n}$ es la trayectoria del sistema\footnote{A lo largo del texto utilizaremos la notación usual en Física por la que un punto encima de una función dependiente del tiempo indica la derivada temporal: $\dot{a}=\frac{da}{dt}$. En particular el punto indica que debe existir esa dependencia respecto del tiempo.} y $\alpha$ son unos ciertos parámetros de los que puede depender $F$, como por ejemplo las masas o las cargas eléctricas de las diferentes partículas. Para cada sistema concreto, la fuerza se determina experimentalmente. Desde un punto de vista matemático, decimos la fuerza define un \emph{sistema mecánico newtoniano}. En general, cuando hablemos de los distintos tipos de sistema mecánico, llamaremos a sus ecuaciones diferenciales asociadas (Newton, Euler-Lagrange, Hamilton) \emph{ecuaciones del movimiento} o \emph{dinámica del sistema}.
+
+El formalismo newtoniano ofrece una forma muy simple de entender los sistemas mecánicos pero tiene la complicación de que es necesario medir y calcular las tres componentes de la posición y de la velocidad de cada partícula que conforma el sistema. Por verlo con un ejemplo, si queremos describir el movimiento de un barco en un viaje transatlántico deberíamos tomar una referencia cartesiana (tal vez el centro de la Tierra y tres ejes perpendiculares) y describir su posición y velocidad en $\RR^3$ en términos de esta referencia, cuando lo que parece más sencillo es simplemente entender el barco como una partícula moviéndose en la superficie de $\SF^2$ y dar su posición y velocidad en términos de su latitud y longitud.
+Otro ejemplo lo podemos ver si consideramos el movimiento de una peonza. En este caso, aunque la peonza esté compuesta de cuatrillones de partículas, es posible describir su posición sólo con tres ángulos (el de giro respecto a su eje y los dos de orientación de su eje), o equivalentemente, con la rotación de sus ejes propios respecto a los de una referencia inmóvil exterior (un \emph{sistema de laboratorio}), es decir, con un elemento de $\mathrm{SO}(3)$. 
+
+De forma más general, podemos considerar sistemas newtonianos sometidos a \emph{ligaduras} entre las partículas que lo conforman. Las posibilidades de movimiento quedan entonces restringidas a un subconjunto de $\RR^{3n}$. En el caso de que estas ligaduras sean «lo suficientemente buenas» (\emph{holónomas} es el término clásicamente usado en mecánica), es posible entenderlas como unas funciones $f_1,\dots,f_r: \RR^{3n} \rightarrow \RR$, independientes en todo $x \in \RR^{3n}$ ($d_xf_1 \wedge \cdots \wedge d_xf_r \neq 0$), tales que
+\begin{equation*}
+  \left\lbrace
+  \begin{array}{rl}
+    f_1(x)&=0 \\
+    &\vdots \\
+    f_r(x)&=0.
+  \end{array}
+  \right.
+\end{equation*}
+Por el teorema de la función implícita, las ligaduras definen una subvariedad regular $M \subset \RR^{3n}$ de dimensión $m=3n-r$. En Física, a esta $M$ se le suele llamar \emph{espacio de configuración} del sistema y a $m$ su número de \emph{grados de libertad}.
+
+Así, llegamos al formalismo lagrangiano. Un \emph{sistema lagrangiano} viene dado por una variedad diferenciable $M$ de dimensión $m$. Si $(U,q)$ es una carta en $M$, las coordenadas $q=(q_1,\dots,q_m): U \rightarrow \RR^m$ suelen llamarse en Física \emph{coordenadas generalizadas} del sistema. Dados $x \in M$ y $v \in T_x M$, las coordenadas de $v$ suelen denotarse $\dot{q}=(\dot{q}_1,\dots,\dot{q}_m)$ y suelen llamarse \emph{velocidades generalizadas} del sistema. Esto significa en realidad que, en la carta $(U,q)$, $v=\sum_{i=1}^{m}\dot{q_i}\deriv{q_i}$. Como no hay $t$ respecto de la que derivar, es sólo una notación, pero es consistente. Si $v=\dot{x}(t)$ tenemos
+\begin{equation*}
+  \dot{q_i} = dq_{i,x(t)}(v)=\frac{d}{dt}(q_i \circ x) (t).
+\end{equation*}
+
+Un \emph{estado} del sistema lagrangiano vendrá dado por un punto $(x,v) \in TM$, donde $x$ es la posición y $v$ la velocidad del sistema en dicho estado, y una \emph{trayectoria} vendrá dada por una aplicación
+\begin{equation*}
+  \begin{array}{rcl}
+    \gamma: \RR & \longrightarrow & TM \\
+    t & \longmapsto & (x(t), \dot{x}(t)).
+  \end{array}
+\end{equation*}
+
+La dinámica del sistema lagrangiano viene dada por lo que se conoce como el \emph{principio de mínima acción}. Este principio puede deducirse a partir del formalismo newtoniano, imponiendo ciertas condiciones a las fuerzas y a partir del \emph{principio de D'Alembert} (o \emph{de los trabajos virtuales}), como puede leerse en \cite{goldstein}. Sin embargo, aquí le daremos un enfoque distinto, postulando directamente el principio de mínima acción, al estilo de Landau y Lifshitz \cite{landau}:
+  \begin{quote}
+    «La formulación más general de la ley del movimiento de los sistemas mecánicos es el \emph{principio de mínima acción} (o \emph{principio de Hamilton}).»
+  \end{quote}
+
+  En primer lugar, el principio de mínima acción afirma que todo sistema mecánico viene caracterizado por una función $L: TM \rightarrow \RR$, llamada \emph{lagrangiano} del sistema. Ahora, suponiendo que en los tiempos $t_1$ y $t_2$ el sistema ocupa los estados $(x_1,v_1)$ y $(x_2,v_2)$, la trayectoria que describirá el sistema entre los dos estados será aquella que minimice (o más precisamente, que haga extremal) la integral
+  \begin{equation*}
+    S(\gamma) = \int_{t_1}^{t_2} L(\gamma(t)).
+  \end{equation*}
+  Este funcional $S$ se conoce como la \emph{acción} del sistema.
+
+  Utilizando técnicas de cálculo variacional \cite{arnold}, es posible obtener unas ecuaciones diferenciales para las trayectorias que hacen extremales funcionales de la forma de $S$. Las soluciones de estas ecuaciones son las trayectorias «reales» del sistema lagrangiano. Tenemos así las \emph{ecuaciones de Euler-Lagrange}, que en coordenadas locales se expresan:
+  \begin{equation*}
+    \left[\frac{d}{dt}\left( \parcial{L}{\dot{q_i}} \right)- \parcial{L}{q_i}\right](t) = 0,    
+  \end{equation*}
+  para $i=1,\dots,m$.
+
+  Dado un sistema newtoniano $F:\RR^{3n}\times\RR^{3n}\times\RR \rightarrow \RR^{3n}$, se define la \emph{energía cinética} como una aplicación
+  \begin{align*}
+    T: \RR^{3n} & \longrightarrow \RR \\
+    v & \longmapsto \frac{1}{2}\esc{v}{v}.
+  \end{align*}
+  Decimos que el sistema es \emph{conservativo} o, equivalentemente que $F$ es una \emph{fuerza conservativa} si ésta sólo depende de la posición y además es un campo gradiente, es decir, si existe una función $V:\RR^{3n}\rightarrow \RR$ que cumpla $F(x)=-\nabla V(x)$. Esta $V$ toma el nombre de \emph{energía potencial}.
+  En un sistema newtoniano conservativo podemos ver la ecuación de Newton en la forma
+  \begin{equation*}
+    \frac{d}{dt} \left( \left. \parcial{T}{v_i} \right|_{\dot{x}(t)} \right) = \left.-\parcial{V}{x_i}\right|_{x(t)}, \ \ i=1,\dots,3n.
+  \end{equation*}
+  Ahora, escribiendo la función $L(x,v)=T(v)-V(x)$, tenemos
+  \begin{equation*}
+    \left[\frac{d}{dt}\left( \parcial{L}{v_i} \right) - \parcial{L}{x_i}\right]_{(x(t),\dot{x}(t))} = 0, \ \  i=1,\dots,3n.
+  \end{equation*}
+  Así, podemos ver cualquier sistema newtoniano conservativo como un sistema lagrangiano con $M=\RR^{3n}$ y $L=T-V$.
+
+  En el caso de una variedad diferenciable cualquiera, debemos tener en cuenta que el producto escalar $\esc{u}{v}$ deberá ser sustituido por una métrica riemmaniana $g$. Recordamos que una \emph{métrica riemanniana} en una variedad diferenciable $M$ se define como una colección de productos escalares
+  \begin{equation*}
+    g_x: T_xM \times T_xM \rightarrow \RR, \ \ x\in M,  
+  \end{equation*}
+  que satisface la siguiente condición de \emph{diferenciabilidad}: para cada par $X,Y$ de campos tangentes diferenciables de $M$ la función
+  \begin{align*}
+    \esc{X}{Y}: M & \longrightarrow \RR \\
+    x & \longmapsto g_x(X_x,Y_x)
+  \end{align*}
+  es diferenciable. Se llama \emph{variedad riemanniana} a un par $(M,g)$, donde $M$ es una variedad diferenciable y $g$ una métrica riemanniana en $M$.
+  
+  Definimos entonces un sistema lagrangiano \emph{natural}, como un par $\left( (M,g), L \right)$, donde $(M,g)$ es una variedad riemmaniana y $L:TM \rightarrow \RR$ es de la forma $L=T-V$, con $T:TM \rightarrow \RR$, $T(x,v)=\frac{1}{2}g_x(v,v)$ y $V: M \rightarrow \RR$ una función\footnote{Aunque $V(x)$ está definida en $M$, la expresión $L=T-V$ tiene sentido si entendemos $V$ como una función definida en $TM$ con $V(x,v)=V(x)$.}.
+
+  \begin{center}  $\ast\ast\ast$ \end{center}
+
+  Es una técnica común a la hora de estudiar ecuaciones diferenciales de orden 2 \[f''(x)=F(x,f,f'),\] realizar un cambio de la forma
+  \begin{equation*}
+    \left\lbrace
+    \begin{array}{l}
+      f'(x)=g(x) \\
+      g'(x)=F(x,f,g),
+    \end{array}
+    \right.
+  \end{equation*}
+  lo que convierte la ecuación original de orden 2 en un sistema de dos ecuaciones de orden 1. Esto ofrece una serie de ventajas prácticas y fundamentales, ya que nos permite ver la ecuación diferencial como un campo y su solución como el flujo correspondiente. La misma idea se puede aplicar para estudiar sistemas lagrangianos.
+
+  Sea $\left( (M,g), L \right)$ un sistema natural. En $TM$ tenemos las coordenadas $(q,\dot{q})$, pero podemos definir otras usando la dualidad asociada a la métrica riemanniana $g$, es decir, el isomorfismo de Riesz:
+  \begin{align*}
+    T_xM & \longrightarrow T_xM^* \\
+    v & \longmapsto g_x(v,\bullet).
+  \end{align*}
+  En efecto, las formas 
+  \begin{equation*}
+    p_i = g_x\left(\deriv{q_i},\bullet\right), \ \ i=1,\dots,m,
+  \end{equation*}
+  que se llaman \emph{momentos canónicos conjugados} o simplemente \emph{momentos}, son independientes y forman una base de $T_xM^*$, de modo que $p=(p_1,\dots,p_m)$ son coordenadas en $T_xM$. Explícitamente
+  \begin{equation*}
+    p_i= \sum_{i=1}^{m}p_i\left( \deriv{q_j} \right)\dd q_j = \sum_{i=1}^m g_{ij}\dd q_j,
+  \end{equation*}
+  es decir, $p_i(q,\dot{q})=\sum_{i=1}^m g_{ij}(q) \dot{q_j}$, donde $g_{ij}(q)$ son las componentes de la matriz asociada a $g_x$ en la base $\left\lbrace \deriv{q_i} \right\rbrace$. Por tanto
+  \begin{equation*}
+    \parcial{}{\dot{q}_i}p(q,\dot{q})=g_{ji}(q).
+  \end{equation*}
+  Así, $(q,p)$ son unas nuevas coordenadas en $TM$. Ahora, si recordamos que 
+  \begin{equation*}
+    L(q,\dot{q})=\frac{1}{2}\sum_{i,j=1}^m \dot{q}_i g_{ij} \dot{q}_j - V(q),
+  \end{equation*}
+  resulta que
+  \begin{equation*}
+    \parcial{L}{\dot{q}_i}=\sum_{j=1}^m g_{ij}\dot{q}_j.
+  \end{equation*}
+
+  Consideramos ahora una función $H:TM\rightarrow \RR$, que en las coordenadas $(q,\dot{q})$ es 
+  \begin{equation*}
+    H(q,\dot{q})=\sum_{i=1}^m p_i \dot{q_i} - L(q,\dot{q}),
+  \end{equation*}
+  con las $p$ dadas en función de las $\dot{q}$ mediante la relación $p_i(q,\dot{q})=\sum_{i=1}^m g_{ij}(q) \dot{q_j}$. Derivando a ambos lados de la expresión respecto de $\dot{q}_j$ obtenemos
+  \begin{equation*}
+    \sum_{i=1}^m \parcial{H}{p_i}\parcial{p_i}{\dot{q}_j}=\sum_{i=1}^m \parcial{p_i}{\dot{q}_j}\dot{q}_i + p_j - \parcial{L}{\dot{q}_j}
+  \end{equation*}
+  que nos lleva a
+  \begin{equation*}
+    \sum_{i=1}^m \left( \parcial{H}{p_i}-\dot{q}_i \right)g_{ij}=0.
+  \end{equation*}
+  Como la matriz $(g_{ij})_{i,j}$ es regular,
+  \begin{equation*}
+    \parcial{H}{p_i}=\dot{q}_i.
+  \end{equation*}
+  Si derivamos respecto de $q_j$ tenemos
+  \begin{equation*}
+    \parcial{H}{q_j}+\sum_{i=1}^m \parcial{H}{p_i}\parcial{p_i}{q_j}= \sum_{i=1}^m \parcial{p_i}{q_j} \dot{q_i} - \parcial{L}{\dot{q}_j}.
+  \end{equation*}
+  Finalmente, usando la relación recién obtenida,
+  \begin{equation*}
+    \parcial{H}{q_j}=-\parcial{L}{q_j}.
+  \end{equation*}
+
+  Para ver cómo será la dinámica del sistema en estas coordenadas, consideramos una trayectoria $(x(t),\dot{x}(t))$, que en las nuevas coordenadas se expresa $(q(t),p(t))$, con $p(t)=(p_1(t),\dots,p_m(t))$ y $p_i(t)=\sum_{j=1}^m g_{ij}(q(t)) \dot{q_j}(t)$. Nótese que aquí el punto sí expresa derivación respecto del tiempo, es decir, que las $p$ dependen de las $q$. En este caso, por la ecuación de Euler-Lagrange, la segunda de las relaciones anteriores queda:
+  \begin{equation*}
+    \parcial{H}{q_j}(t)=-\parcial{L}{q_j}(t)=-\left(\frac{d}{dt} \parcial{L}{\dot{q}_j} \right)(t)= - \frac{d}{dt}p_j(t) = -\dot{p}_j(t).
+  \end{equation*}
+  
+  Obtenemos entonces un sistema de EDOs de orden 1 equivalentes a la ecuación de Euler-Lagrange
+  \begin{align*}
+    \dot{q_i}(t)&=\parcial{H}{p_i}(t) \\
+      \dot{p_i}(t)&=-\parcial{H}{q_i}(t),
+  \end{align*}
+  para $i=1,\dots,n$. Éstas son las \emph{ecuaciones de Hamilton}.
+  
+  Si queremos dotar de sentido físico a esta función $H$, conocida como \emph{hamiltoniano} del sistema, consideremos un sistema natural con lagrangiano $L=T-V$. Entonces $p_i=\sum_{j=1}^m g_{ij}(q)\dot{q}_j$ y $T(q,\dot{q})=\sum_{i,j=1}^m\frac{1}{2}\dot{q}_ig_{ij}(q)\dot{q}_j$, por tanto
+\begin{equation*}
+  H(q,\dot{q})=\sum_{i=1}^m p_i(q,\dot{q})\dot{q}_i - L(q,\dot{q})=\sum_{i,j=1}^m (g_{ij} \dot{q_j})\dot{q}_i - \frac{1}{2}\sum_{i,j=1}^m \dot{q}_i g_{ij} \dot{q}_j + V(q)=T(q,\dot{q})+V(q),
+\end{equation*}
+Es decir, el hamiltoniano es exactamente $T+V$, la \emph{energía total} del sistema.
+  
+ De esta forma, podemos entender la dinámica de un sistema lagrangiano como la definición de un campo tangente al fibrado tangente del espacio de configuración, cuyas curvas integrales contendrán toda la información sobre la evolución temporal del sistema. En coordenadas locales este campo tangente se expresa
+ \begin{equation*}
+   X=\sum_{i=1}^m \left( \parcial{H}{p_i}\deriv{q_i}-\parcial{H}{q_i}\deriv{p_i} \right).
+ \end{equation*}
+  
+ La siguiente pregunta que cabe hacerse es si será posible construir este campo de forma independiente de las coordenadas a partir de la especificación de un hamiltoniano $H:TM \rightarrow \RR$. La construcción es sencilla, basta considerar un punto $\zeta \in TM$, con coordenadas $(q,p)$ y la 1-forma $\alpha$ que localmente se expresa
+ \begin{equation*}
+   \alpha = \sum_{i=1}^m p_i \dd q_i.
+ \end{equation*}
+ Entonces, la 2-forma
+ \begin{equation*}
+   \omega=\dd \alpha = \sum_{i=1}^m \dd p_i \wedge \dd q_i,
+ \end{equation*}
+ es cerrada (porque es exacta) y no degenerada. 
+
+Usando esta forma se puede construir un isomorfismo lineal, dado $\zeta \in TM$,
+\begin{equation*}
+  \begin{array}{rcl}
+    J=I^{-1}: T_{\zeta}(TM) & \longrightarrow & (T_{\zeta}(TM))^* \\
+    \xi & \longmapsto & \omega(\xi, \bullet).
+  \end{array}
+\end{equation*}
+Ahora, sea el campo $X^H=I \dd H$, es decir, tal que $\dd H=\omega(X^H,\bullet)$, es fácil comprobar que en coordenadas locales se expresará tal y como queríamos:
+\begin{equation*}
+  X^H = \sum_{i=1}^m \left( \parcial{H}{p_i} \deriv{q_i} - \parcial{H}{q_i} \deriv{p_i} \right).
+\end{equation*}
+En efecto, si $X^H=\sum_{i=1}^m \left( a_i \deriv{q_i} + b_i \deriv{p_i} \right)$,
+\begin{align*}
+  a_i&=\omega\left(X^H,\deriv{p_i}\right)=\dd H\left( \deriv{p_i} \right)=\parcial{H}{p_i} \\
+  -b_i&=\omega\left(X^H,\deriv{q_i}\right)=\dd H\left( \deriv{q_i} \right)=\parcial{H}{q_i},
+\end{align*}
+ya que $\dd H = \sum_{i=1}^m\parcial{H}{q_i}\dd q_i + \parcial{H}{p_i}\dd p_i$.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics{pics/cotang}
+  \caption{La 1-forma $\alpha$ en el fibrado cotangente}
+  \label{fig:cotang}
+\end{figure}
+
+Obsérvese que el único elemento realmente crucial en la construcción de este campo ha sido la 2-forma $\omega$. Una forma de esas características induce sobre $TM$ la estructura de \emph{variedad simpléctica}. El estudio de las variedades simplécticas y sus propiedades es la \emph{geometría simpléctica}. A partir de la sección \ref{2}, introduciremos el formalismo de la geometría simpléctica, lo que nos permitirá enunciar la \emph{formulación canónica} de la mecánica clásica y resolver alguno de sus problemas.
+
+
