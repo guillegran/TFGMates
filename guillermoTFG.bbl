@@ -1,7 +1,7 @@
 \begin{thebibliography}{10}
 
 \bibitem{arnold}
-V.I. Arnold.
+V.~I. Arnold.
 \newblock {\em Mathematical Methods of Classical Mechanics}.
 \newblock Springer-Verlag, 1989.
 
@@ -26,7 +26,8 @@ J.F. Fernando, J.M. Gamboa, and J.M. Ruiz.
 
 \bibitem{variedades}
 J.M. Gamboa and J.M. Ruiz.
-\newblock {\em Introducci{\'o}n al estudio de las Variedades Diferenciales}.
+\newblock {\em Introducci{\'o}n al estudio de las {V}ariedades
+  {D}iferenciables}.
 \newblock Editorial Sanz y Torres, 2016.
 
 \bibitem{goldstein}
@@ -41,6 +42,11 @@ Victor Guillemin.
 \newblock \url{http://math.mit.edu/classes/18.952/spring2012/chapter5.pdf},
   2012.
 \newblock Online; visto el 22 de julio de 2017.
+
+\bibitem{hirsch}
+Morris~W. Hirsch.
+\newblock {\em Differential {T}opology}.
+\newblock Springer Science \& Business Media, 2012.
 
 \bibitem{landau}
 L.D. Landau and E.M. Lifshitz.

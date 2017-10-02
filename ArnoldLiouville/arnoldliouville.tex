@@ -1,18 +1,22 @@
 \section{Teoría de Arnold-Liouville}\label{6}
 A la hora de estudiar sistemas dinámicos, una cuestión interesante a plantearse, con consecuencias prácticas y también de carácter fundamental, es si las ecuaciones del sistema podrán ser «integradas», es decir, si podrán ser resueltas mediante integrales definidas («cuadraturas») de funciones conocidas. Definimos entonces:
 \begin{defn}[Ecuación integrable por cuadraturas]
+  \em
   Una ecuación diferencial es \emph{integrable por cuadraturas} si es posible escribir su solución general en términos de sumas, productos, composiciones e integrales de funciones conocidas. 
 \end{defn}
 \begin{defn}[Sistema integrable por cuadraturas]
+  \em
   Un sistema hamiltoniano $(M,H)$, es \emph{integrable por cuadraturas} si para todo punto $x\in M$ existe una carta simpléctica en torno a $x$ en la que el flujo hamiltoniano es integrable por cuadraturas.
 \end{defn}
 Es decir, un sistema hamiltoniano integrable por cuadraturas es aquel en el que, conocidas sus condiciones iniciales, podemos integrar las ecuaciones de Hamilton mediante manipulaciones algebraicas, cálculos de integrales definidas e inversiones de difeomorfismos.
 
 Para estudiar la integrabilidad por cuadraturas de los sistemas hamiltonianos, serán cruciales las siguientes nociones:
 \begin{defn}[Funciones en involución]
+  \em
   Sea $M$ una variedad simpléctica y $F_1,\dots,F_n:M \rightarrow \RR$, decimos que $F_1,\dots,F_n$ \emph{están en involución} si, para cada $i,j=1,\dots,n$, $\pois{F_i}{F_j}=0$.
 \end{defn}
 \begin{defn}[Integrabilidad en el sentido de Liouville]
+  \em
   Sea $(M,H)$ un sistema hamiltoniano y sea $2n=\dim(M)$, decimos que $(M,H)$ \emph{es integrable en el sentido de Liouville} si existen $F_1(=H),\dots,F_n:M \rightarrow \RR$ en involución, independientes para todo $x \in M$ (es decir, $\dd F_{1,x}\wedge \cdots \wedge \dd F_{n,x} \neq 0$) y, sea $F=(F_1,\dots,F_n)$, para todo $a \in F(M)\subset \RR^n$
   \[
     M_a=F^{-1}(a)=\{x \in M \mid F(x)=a\}

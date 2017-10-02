@@ -1,6 +1,7 @@
 
 \section{Espacios vectoriales simplécticos}\label{2}
 \begin{defn}[Espacio vectorial simpléctico]
+  \em
 Un \emph{espacio vectorial simpléctico} es un par ordenado $(V,\omega)$, donde $V$ es un espacio vectorial sobre $\RR$ y 
 	\[
 	  \omega: V \times V \rightarrow \RR
@@ -37,6 +38,7 @@ Un \emph{espacio vectorial simpléctico} es un par ordenado $(V,\omega)$, donde 
  \end{enumerate}
 \end{proof}
 \begin{defn}[Base simpléctica]
+  \em
   Sea $(V,\omega)$ un espacio vectorial simpléctico, se dice que $\mathcal{B}\subset V$ es una \emph{base simpléctica} de $V$ si la matriz asociada a $\omega$ en $\mathcal{B}$ es
 \[
   J_n :=
@@ -60,6 +62,7 @@ Un \emph{espacio vectorial simpléctico} es un par ordenado $(V,\omega)$, donde 
   \]
 \end{obs}
 \begin{defn}[Aplicación simpléctica]
+  \em
   Sea $(V,\omega)$ un espacio vectorial simpléctico, decimos que una aplicación lineal $A:V \rightarrow V$ es \emph{simpléctica} si
   \[
     \omega(Av,Aw) = \omega(v,w)
@@ -151,9 +154,11 @@ Podemos probar un resultado aún más fuerte sobre el grupo simpléctico:
 \end{proof}
 \section{Variedades simplécticas y simplectomorfismos}\label{3}
 \begin{defn}[Variedad simpléctica]
+  \em
   Una \emph{variedad simpléctica} es un par ordenado $(M,\omega)$ donde $M$ es una variedad diferenciable de dimensión $2n$ y $\omega \in \Gamma^2(M)$ es cerrada y no degenerada (para todo $x \in M$ y para todo $\xi \in T_xM$ existe $\eta \in T_xM$ tal que $\omega(\xi,\eta)\neq0)$. 
 \end{defn}
 \begin{defn}[Carta simpléctica]
+  \em
   Sea $(M,\omega)$ una variedad simpléctica, una \emph{carta simpléctica en torno a un punto $x \in M$} es un par $(U,(q,p))$, donde $U\subset M$ es un entorno de $x$ y $(q,p)=(q_1,\dots,q_n,p_1,\dots,p_n)$ es un sistema de coordenadas en $x$ tal que:
 \begin{equation}
   \omega= \sum_{i=1}^n \dd p_i \wedge \dd q_i.
@@ -252,6 +257,7 @@ Vamos a dar ahora dos propiedades fuertes de las variedades simplécticas:
 
 Para terminar la sección, vamos a estudiar los isomorfismos en la categoría de las variedades simplécticas:
 \begin{defn}[Simplectomorfismo]
+  \em
   Sea $(M,\omega)$ una variedad simpléctica y $f:M \rightarrow M$ un difeomorfismo. Decimos que $f$ es un \emph{simplectomorfismo} o una \emph{transformación canónica} \footnote{Esta nomenclatura es más común en Física} si
   \begin{equation*}
     f^* \omega = \omega
@@ -311,6 +317,7 @@ Enunciamos también una propiedad inmediata de los simplectomorfismos:
 da un isomorfismo lineal entre campos y 1-formas, a cada campo $X$ le podemos asignar la forma $i_X \omega$.
 \end{obs}
 \begin{defn}[Campo hamiltoniano y flujo hamiltoniano]
+  \em
   Sea una función $H:M \rightarrow \RR$, se llama \emph{campo hamiltoniano generado por H} a 
   \begin{equation*}
     X^H=I \dd H.
@@ -328,6 +335,7 @@ da un isomorfismo lineal entre campos y 1-formas, a cada campo $X$ le podemos as
 \end{obs}
 Podemos dar ahora una formulación canónica de la mecánica clásica:
 \begin{defn}[Sistema hamiltoniano]
+  \em
   Un \emph{sistema mecánico hamiltoniano} es un par $(M,H)$, donde $M$ es una variedad simpléctica (comúnmente llamada \emph{espacio de fases}) y $H:M \rightarrow \RR$ es una función (normalmente llamada \emph{hamiltoniano} del sistema).
 
   Se llama \emph{flujo hamiltoniano del sistema} o \emph{evolución temporal del sistema} al flujo hamiltoniano generado por $H$.
@@ -395,6 +403,7 @@ A la vista de este resultado, vamos a probar un teorema muy importante sobre tra
 
 Para terminar la sección, haremos un breve comentario sobre cantidades conservadas.
 \begin{defn}[Integral primera]
+  \em
   Sea $(M,H)$ un sistema hamiltoniano, una función $F:M \rightarrow \RR$ se dice que es una \emph{integral primera} del sistema o una \emph{constante del movimiento} si es constante a lo largo del flujo hamiltoniano. Esto es, si
   \begin{equation*}
     F(\varphi^H_t(x))=F(x)
@@ -414,6 +423,7 @@ Para terminar la sección, haremos un breve comentario sobre cantidades conserva
 
 \section{Corchete de Poisson}\label{5}
 \begin{defn}[Corchete de Poisson]
+  \em
   Sea $(M,\omega)$ una variedad simpléctica y $F,G: M \rightarrow \RR$. Se define el \emph{corchete de Poisson de $F$ y $G$} como la función
 \begin{equation*}
   \pois{F}{G}(x) = \left.\frac{d}{dt}\right|_{t=0}G(\varphi^F_t(x)),

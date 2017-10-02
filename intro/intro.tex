@@ -22,9 +22,9 @@ De forma más general, podemos considerar sistemas newtonianos sometidos a \emph
   \end{array}
   \right.
 \end{equation*}
-Por el teorema de la función implícita, las ligaduras definen una subvariedad regular $M \subset \RR^{3n}$ de dimensión $m=3n-r$. En Física, a esta $M$ se le suele llamar \emph{espacio de configuración} del sistema y a $m$ su número de \emph{grados de libertad}.
+Por el teorema de la función implícita, las ligaduras definen una subvariedad regular $M \subset \RR^{3n}$ de dimensión $m=3n-r$. En Física, a esta $M$ se le suele llamar \emph{espacio de configuración} del sistema y a $m$ su número de \emph{grados de libertad}. Así, llegamos al formalismo lagrangiano. 
 
-Así, llegamos al formalismo lagrangiano. Un \emph{sistema lagrangiano} viene dado por una variedad diferenciable $M$ de dimensión $m$. Si $(U,q)$ es una carta en $M$, las coordenadas $q=(q_1,\dots,q_m): U \rightarrow \RR^m$ suelen llamarse en Física \emph{coordenadas generalizadas} del sistema. Dados $x \in M$ y $v \in T_x M$, las coordenadas de $v$ suelen denotarse $\dot{q}=(\dot{q}_1,\dots,\dot{q}_m)$ y suelen llamarse \emph{velocidades generalizadas} del sistema. Esto significa en realidad que, en la carta $(U,q)$, $v=\sum_{i=1}^{m}\dot{q_i}\deriv{q_i}$. Como no hay $t$ respecto de la que derivar, es sólo una notación, pero es consistente. Si $v=\dot{x}(t)$ tenemos
+Un \emph{sistema lagrangiano} viene dado por una variedad diferenciable $M$ de dimensión $m$. Si $(U,q)$ es una carta en $M$, las coordenadas $q=(q_1,\dots,q_m): U \rightarrow \RR^m$ suelen llamarse en Física \emph{coordenadas generalizadas} del sistema. Dados $x \in M$ y $v \in T_x M$, las coordenadas de $v$ suelen denotarse $\dot{q}=(\dot{q}_1,\dots,\dot{q}_m)$ y suelen llamarse \emph{velocidades generalizadas} del sistema. Esto significa en realidad que, en la carta $(U,q)$, $v=\sum_{i=1}^{m}\dot{q_i}\deriv{q_i}$. Como no hay $t$ respecto de la que derivar, es sólo una notación, pero es consistente. Si $v=\dot{x}(t)$ tenemos
 \begin{equation*}
   \dot{q_i} = dq_{i,x(t)}(v)=\frac{d}{dt}(q_i \circ x) (t).
 \end{equation*}
@@ -54,10 +54,11 @@ La dinámica del sistema lagrangiano viene dada por lo que se conoce como el \em
   \end{equation*}
   para $i=1,\dots,m$.
 
+  \begin{center}  $\ast\ast\ast$ \end{center}
   Dado un sistema newtoniano $F:\RR^{3n}\times\RR^{3n}\times\RR \rightarrow \RR^{3n}$, se define la \emph{energía cinética} como una aplicación
   \begin{align*}
     T: \RR^{3n} & \longrightarrow \RR \\
-    v & \longmapsto \frac{1}{2}\esc{v}{v}.
+    v & \longmapsto \thalf \esc{v}{v}.
   \end{align*}
   Decimos que el sistema es \emph{conservativo} o, equivalentemente que $F$ es una \emph{fuerza conservativa} si ésta sólo depende de la posición y además es un campo gradiente, es decir, si existe una función $V:\RR^{3n}\rightarrow \RR$ que cumpla $F(x)=-\nabla V(x)$. Esta $V$ toma el nombre de \emph{energía potencial}.
   En un sistema newtoniano conservativo podemos ver la ecuación de Newton en la forma
@@ -81,7 +82,7 @@ La dinámica del sistema lagrangiano viene dada por lo que se conoce como el \em
   \end{align*}
   es diferenciable. Se llama \emph{variedad riemanniana} a un par $(M,g)$, donde $M$ es una variedad diferenciable y $g$ una métrica riemanniana en $M$.
   
-  Definimos entonces un sistema lagrangiano \emph{natural}, como un par $\left( (M,g), L \right)$, donde $(M,g)$ es una variedad riemmaniana y $L:TM \rightarrow \RR$ es de la forma $L=T-V$, con $T:TM \rightarrow \RR$, $T(x,v)=\frac{1}{2}g_x(v,v)$ y $V: M \rightarrow \RR$ una función\footnote{Aunque $V(x)$ está definida en $M$, la expresión $L=T-V$ tiene sentido si entendemos $V$ como una función definida en $TM$ con $V(x,v)=V(x)$.}.
+  Definimos entonces un sistema lagrangiano \emph{natural}, como un par $\left( (M,g), L \right)$, donde $(M,g)$ es una variedad riemmaniana y $L:TM \rightarrow \RR$ es de la forma $L=T-V$, con $T:TM \rightarrow \RR$, $T(x,v)=\thalf g_x(v,v)$ y $V: M \rightarrow \RR$ una función\footnote{Aunque $V(x)$ está definida en $M$, la expresión $L=T-V$ tiene sentido si entendemos $V$ como una función definida en $TM$ con $V(x,v)=V(x)$.}.
 
   \begin{center}  $\ast\ast\ast$ \end{center}
 
@@ -115,7 +116,7 @@ La dinámica del sistema lagrangiano viene dada por lo que se conoce como el \em
   \end{equation*}
   Así, $(q,p)$ son unas nuevas coordenadas en $TM$. Ahora, si recordamos que 
   \begin{equation*}
-    L(q,\dot{q})=\frac{1}{2}\sum_{i,j=1}^m \dot{q}_i g_{ij} \dot{q}_j - V(q),
+    L(q,\dot{q})=\thalf\sum_{i,j=1}^m \dot{q}_i g_{ij} \dot{q}_j - V(q),
   \end{equation*}
   resulta que
   \begin{equation*}
@@ -159,9 +160,9 @@ La dinámica del sistema lagrangiano viene dada por lo que se conoce como el \em
   \end{align*}
   para $i=1,\dots,n$. Éstas son las \emph{ecuaciones de Hamilton}.
   
-  Si queremos dotar de sentido físico a esta función $H$, conocida como \emph{hamiltoniano} del sistema, consideremos un sistema natural con lagrangiano $L=T-V$. Entonces $p_i=\sum_{j=1}^m g_{ij}(q)\dot{q}_j$ y $T(q,\dot{q})=\sum_{i,j=1}^m\frac{1}{2}\dot{q}_ig_{ij}(q)\dot{q}_j$, por tanto
+  Si queremos dotar de sentido físico a esta función $H$, conocida como \emph{hamiltoniano} del sistema, consideremos un sistema natural con lagrangiano $L=T-V$. Entonces $p_i=\sum_{j=1}^m g_{ij}(q)\dot{q}_j$ y $T(q,\dot{q})=\sum_{i,j=1}^m\thalf\dot{q}_ig_{ij}(q)\dot{q}_j$, por tanto
 \begin{equation*}
-  H(q,\dot{q})=\sum_{i=1}^m p_i(q,\dot{q})\dot{q}_i - L(q,\dot{q})=\sum_{i,j=1}^m (g_{ij} \dot{q_j})\dot{q}_i - \frac{1}{2}\sum_{i,j=1}^m \dot{q}_i g_{ij} \dot{q}_j + V(q)=T(q,\dot{q})+V(q),
+  H(q,\dot{q})=\sum_{i=1}^m p_i(q,\dot{q})\dot{q}_i - L(q,\dot{q})=\sum_{i,j=1}^m (g_{ij} \dot{q_j})\dot{q}_i - \thalf\sum_{i,j=1}^m \dot{q}_i g_{ij} \dot{q}_j + V(q)=T(q,\dot{q})+V(q),
 \end{equation*}
 Es decir, el hamiltoniano es exactamente $T+V$, la \emph{energía total} del sistema.
   
@@ -170,6 +171,7 @@ Es decir, el hamiltoniano es exactamente $T+V$, la \emph{energía total} del sis
    X=\sum_{i=1}^m \left( \parcial{H}{p_i}\deriv{q_i}-\parcial{H}{q_i}\deriv{p_i} \right).
  \end{equation*}
   
+  \begin{center}  $\ast\ast\ast$ \end{center}
  La siguiente pregunta que cabe hacerse es si será posible construir este campo de forma independiente de las coordenadas a partir de la especificación de un hamiltoniano $H:TM \rightarrow \RR$. La construcción es sencilla, basta considerar un punto $\zeta \in TM$, con coordenadas $(q,p)$ y la 1-forma $\alpha$ que localmente se expresa
  \begin{equation*}
    \alpha = \sum_{i=1}^m p_i \dd q_i.
@@ -197,13 +199,6 @@ En efecto, si $X^H=\sum_{i=1}^m \left( a_i \deriv{q_i} + b_i \deriv{p_i} \right)
   -b_i&=\omega\left(X^H,\deriv{q_i}\right)=\dd H\left( \deriv{q_i} \right)=\parcial{H}{q_i},
 \end{align*}
 ya que $\dd H = \sum_{i=1}^m\parcial{H}{q_i}\dd q_i + \parcial{H}{p_i}\dd p_i$.
-
-\begin{figure}[h]
-  \centering
-  \includegraphics{pics/cotang}
-  \caption{La 1-forma $\alpha$ en el fibrado cotangente}
-  \label{fig:cotang}
-\end{figure}
 
 Obsérvese que el único elemento realmente crucial en la construcción de este campo ha sido la 2-forma $\omega$. Una forma de esas características induce sobre $TM$ la estructura de \emph{variedad simpléctica}. El estudio de las variedades simplécticas y sus propiedades es la \emph{geometría simpléctica}. A partir de la sección \ref{2}, introduciremos el formalismo de la geometría simpléctica, lo que nos permitirá enunciar la \emph{formulación canónica} de la mecánica clásica y resolver alguno de sus problemas.
 
