@@ -1,5 +1,5 @@
 
-\section{Espacios vectoriales simplécticos}\label{2}
+\section{Espacios vectoriales simplécticos}\label{sec:vectoriales}
 \begin{defn}[Espacio vectorial simpléctico]
   \em
 Un \emph{espacio vectorial simpléctico} es un par ordenado $(V,\omega)$, donde $V$ es un espacio vectorial sobre $\RR$ y 
@@ -152,7 +152,7 @@ Podemos probar un resultado aún más fuerte sobre el grupo simpléctico:
   \end{equation*}
   Por tanto, $\det(f)=1$.
 \end{proof}
-\section{Variedades simplécticas y simplectomorfismos}\label{3}
+\section{Variedades simplécticas y simplectomorfismos}\label{sec:variedades}
 \begin{defn}[Variedad simpléctica]
   \em
   Una \emph{variedad simpléctica} es un par ordenado $(M,\omega)$ donde $M$ es una variedad diferenciable de dimensión $2n$ y $\omega \in \Gamma^2(M)$ es cerrada y no degenerada (para todo $x \in M$ y para todo $\xi \in T_xM$ existe $\eta \in T_xM$ tal que $\omega(\xi,\eta)\neq0)$. 
@@ -305,7 +305,7 @@ Enunciamos también una propiedad inmediata de los simplectomorfismos:
   Los simplectomorfismos preservan el elemento de volumen $\Omega=\frac{1}{n!}\omega^n$.
 \end{prop}
 
-\section{Campos y flujos hamiltonianos}\label{4}
+\section{Campos y flujos hamiltonianos}\label{sec:hamilton}
 \begin{obs}
   Sea $M$ una variedad simpléctica, la aplicación 
   \begin{equation*}
@@ -342,6 +342,7 @@ Podemos dar ahora una formulación canónica de la mecánica clásica:
 \end{defn}
 
 \begin{ejemplo}
+  \em
   Consideremos el espacio simpléctico canónico $(\RR^{2n},\omega_n)$, con un hamiltoniano $H:\RR^{2n}\rightarrow \RR$. Podemos escribir un punto $x\in \RR^{2n}$ en coordenadas simplécticas $x = (q_1,\dots,q_n,p_1,\dots,p_n)$ y el hamiltoniano $H(q_1,\dots,q_n,p_1,\dots,p_n)$. Podemos escribir entonces
   \begin{equation*}
     \dd H = \sum_{i=1}^n \parcial{H}{q_i} \dd{q_i} + \parcial{H}{p_i} \dd{p_i}
@@ -396,6 +397,7 @@ A la vista de este resultado, vamos a probar un teorema muy importante sobre tra
   Por tanto, $A=g^{k-l}U \cap U \neq \varnothing$. Entonces, sea $y\in A$, existen $x \in U$ y $n=k-l$ tal que $y=g^n(x)\in U$.
 \end{proof}
 \begin{ejemplo}
+  \em
   Sea $D$ una circunferencia y $g$ la rotación de ángulo $\alpha$. Si $\alpha=2\pi(m/n)$, entonces $g^n$ es la identidad y el resultado es obvio. Pero, si $\alpha$ es un múltiplo irracional de $2\pi$, entonces, por el teorema de recurrencia de Poincaré, para todo $x\in D$ y para todo $\delta>0$ existe un $n\in \NN$ tal que $g^n(x) \in B_{\delta}(x)$.
   De aquí se sigue que, dado $x \in D$, el conjunto $\{g^k(x)|k\in \NN\}$ es denso en $D$. Más adelante veremos una aplicación de este ejemplo a mecánica hamiltoniana.
 
@@ -421,7 +423,7 @@ Para terminar la sección, haremos un breve comentario sobre cantidades conserva
   \end{proof}
 \end{defn}
 
-\section{Corchete de Poisson}\label{5}
+\section{Corchete de Poisson}\label{sec:poisson}
 \begin{defn}[Corchete de Poisson]
   \em
   Sea $(M,\omega)$ una variedad simpléctica y $F,G: M \rightarrow \RR$. Se define el \emph{corchete de Poisson de $F$ y $G$} como la función
@@ -464,6 +466,7 @@ para cada $x \in M$.
 \end{proof}
 
 \begin{ejemplo}
+  \em
   Consideremos el espacio simpléctico canónico $(\RR^{2n},\omega_n)$ y dos funciones $F,G:\RR^{2n} \rightarrow \RR$. Obtenemos entonces la definición clásica del corchete de Poisson:
   \begin{align*}
     \pois{F}{G} & = \dd G (X^F) = \left( \sum_{i=1}^n \parcial{G}{q_i} \dd q_i + \parcial{G}{p_i} \dd p_i \right) \left( \sum_{i=1}^n \parcial{F}{p_i} \deriv{q_i} - \parcial{F}{q_i} \deriv{p_i}\right) \\ 

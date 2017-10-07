@@ -1,4 +1,4 @@
-\section{Teoría de Arnold-Liouville}\label{6}
+\section{Teoría de Arnold-Liouville}\label{sec:arnoldliouville}
 A la hora de estudiar sistemas dinámicos, una cuestión interesante a plantearse, con consecuencias prácticas y también de carácter fundamental, es si las ecuaciones del sistema podrán ser «integradas», es decir, si podrán ser resueltas mediante integrales definidas («cuadraturas») de funciones conocidas. Definimos entonces:
 \begin{defn}[Ecuación integrable por cuadraturas]
   \em
@@ -30,6 +30,7 @@ En la bibliografía habitual de geometría simpléctica, la serie de teoremas y 
 
 En primer lugar, vamos a considerar un ejemplo característico que aclara alguna de las ideas detrás de esta teoría.
 \begin{ejemplo}
+  \em
   Consideramos el oscilador armónico unidimensional, con hamiltoniano
   \begin{equation*}
     H(q,p)=\frac{p^2}{2m}+\frac{1}{2}kq^2.
@@ -124,6 +125,7 @@ No hemos demostrado que el cambio de coordenadas sea un simplectomorfismo, lo qu
 Vamos a estudiar también algunos ejemplos de sistemas con funciones en involución, que en ciertos supuestos serán integrables en el sentido de Liouville.
   
 \begin{ejemplo}[Péndulo simple]
+  \em
   Consideramos un péndulo cuya «cuerda» es una barra rígida de masa despreciable y longitud 1. El espacio de fases del péndulo es el fibrado cotangente de $\SF^1$, que no es otra cosa que un cilindro. Tomando como coordenada generalizada el ángulo $\phi$ de desviación del péndulo respecto de la vertical, el hamiltoniano viene dado por 
   \begin{equation*}
     H(\phi,p)=\frac{1}{2}p^2 - g\cos\phi,
@@ -142,6 +144,7 @@ Vamos a estudiar también algunos ejemplos de sistemas con funciones en involuci
   corresponde al punto de equilibrio y a dos trayectorias que tienden asintóticamente al punto de equilibrio inestable. Estas trayectorias son matemáticamente factibles aunque su realización práctica parezca una tarea imposible y en ellas no aplica la teoría de Arnold-Liouville, puesto que la curva punteada no es una variedad, al contener un punto con $\dd H=0$. Estas trayectorias se conocen como \emph{singularidades} del sistema. Las curvas que quedan dentro de la curva punteada corresponden a movimientos de oscilación en torno al punto de equilibrio estable, mientras que las que quedan fuera corresponden a movimientos de rotación del péndulo alrededor de su centro. 
 \end{ejemplo}
 \begin{ejemplo}[Potencial central]
+  \em
   Consideramos una partícula que se mueve en $\RR^3$ sometida a un potencial central, esto es, una función $V$ que sólo depende de $r=||x||$. El espacio de fases es $\RR^6$ y el hamiltoniano (tomando $m=1$) viene dado por
   \begin{equation*}
     H(x,p)=\frac{p^2}{2}+V(r).   
@@ -158,6 +161,7 @@ Vamos a estudiar también algunos ejemplos de sistemas con funciones en involuci
   Sin embargo, la integrabilidad en sentido de Liouville no está garantizada por los resultados que hemos probado, ya que en general las órbitas pueden ser no acotadas y las funciones no ser independientes. 
 \end{ejemplo}
 \begin{ejemplo}[Trompo simétrico]
+  \em
   Consideremos un trompo simétrico (la clásica peonza de juguete) que gira con su punta fija en un punto. Su espacio de configuración viene dado por las posibles rotaciones de sus ejes principales de inercia ($X',Y',Z'$) respecto a los tres ejes del sistema de laboratorio (la vertical y dos ejes arbitrarios en el suelo, $X,Y,Z$). De modo que el espacio de fases del trompo simétrico es $T^*\mathrm{SO}(3)$. Sean $I_1,I_2,I_3$ los momentos de inercia del trompo, que el trompo sea \emph{simétrico} quiere decir que $I_1=I_2$ y que el centro de masas cae sobre el eje $Z'$. En este caso, tras unos cálculos se obtiene que el hamiltoniano del sistema es
   \begin{equation*}
     H(\theta,\phi,\psi,p_{\theta},p_{\phi},p_{\psi})=\frac{p_{\theta}^2}{2I_1}+\frac{(p_{\phi}-p_{\psi}\cos\theta)^2}{2I_1\sin^2\theta}+\frac{p_{\psi}^2}{2I_3}+Mgl\cos \theta,
@@ -193,6 +197,7 @@ Vamos a estudiar también algunos ejemplos de sistemas con funciones en involuci
 \end{ejemplo}
 
 \begin{ejemplo}
+  \em
   Por citar un ejemplo no trivial, aunque no lo demostremos, el problema de hallar las geodésicas en un elipsoide puede verse como un sistema hamiltoniano integrable en el sentido de Liouville. La demostración se basa en la teoría de cuádricas confocales y coordenadas elípticas, demostrando unos teoremas de Jacobi y Chasles. Puede leerse en el apéndice 15 de \cite{arnold}.
 \end{ejemplo}
 

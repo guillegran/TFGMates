@@ -1,4 +1,4 @@
-\section{Derivada de Lie y otras herramientas}\label{1}
+\section{Derivada de Lie}\label{sec:lie}
 
 Antes de comenzar con el estudio de la geometría simpléctica, conviene recordar el concepto de la derivada de Lie de campos, extenderlo a formas, y obtener una serie de resultados que nos serán útiles más adelante.
 
@@ -87,7 +87,7 @@ Vamos a obtener ahora un par de propiedades de la derivada de Lie.
   Volviendo a agrupar, tenemos lo que se quería demostrar.
 \end{proof}
 \begin{prop}
-  Sea $M$ una variedad diferenciable y $\alpha \in \Gamma^r(M)$, se cumple
+  Sea $M$ una variedad diferenciable y $\alpha \in \Gamma^r(M)$. Se cumple
   \begin{align*}
     (\dd \alpha)(X_1,\dots,X_{r+1})=\sum_{i=1}^{r+1}(-1)^{i-1}X_i \alpha (X_1,\dots,\hat{X_i},\dots,X_{r+1}) \\
     + \sum_{i<j}(-1)^{i+j}\alpha(\lie{X_i}{X_j},X_1,\dots,\hat{X_i},\dots,\hat{X_j},\dots,X_{r+1}),
@@ -181,7 +181,7 @@ Podemos probar ya una serie de fórmulas, debidas a Élie Cartan\footnote{En la 
   \end{enumerate}
 \end{proof}
 
-\section{Campos y formas dependientes de un parámetro}
+\section{Campos y formas dependientes del tiempo} \label{sec:tiempo}
 
   \begin{defn}[Campos y formas dependientes del tiempo] \leavevmode
     \em
@@ -238,20 +238,16 @@ Podemos probar ya una serie de fórmulas, debidas a Élie Cartan\footnote{En la 
   \end{equation*}
   luego $X^t_x =\left.\frac{d}{ds}\right|_{s=t}\varphi_s(\varphi_t^{-1}(x))$, es decir, $X$ es el generador infinitesimal de la isotopía $G$.
 
-  Esto nos permite generalizar la derivada de Lie de formas para un campo dependiente del tiempo:
+  Esto nos permite generalizar la derivada de Lie de formas respecto de un campo dependiente del tiempo:
   \begin{equation*}
-    L_{X^t}\alpha=\lim_{t\rightarrow 0}\frac{\varphi^*_t \alpha - \alpha}{t}.
+    (L_{X^t}\omega)_x=\lim_{t\rightarrow 0}\frac{\varphi^*_t \omega_{\varphi_t(x)} - \omega_x}{t},
   \end{equation*}
+  para $x\in M$.
   
-  Ahora también podemos definir qué queremos decir por «la derivada temporal» de una forma dependiente del tiempo.
-
-  \begin{defn}
-    \em
-    Sea $\alpha_t$ una $r$-forma dependiente del tiempo, se define la derivada temporal de $\alpha_t$ como
+  Ahora también podemos definir qué entendemos por derivar una forma respecto al tiempo. Sea $\alpha_t$ una $r$-forma dependiente del tiempo, la \emph{derivada temporal} de $\alpha_t$ es
     \begin{equation*}
       \frac{d}{dt} \alpha_t = \lim_{h\rightarrow 0}\frac{\alpha_{t+h}-\alpha_t}{h}.
     \end{equation*}
-  \end{defn}
 
   Finalmente, tenemos una fórmula que nos relaciona la derivada temporal con la derivada de Lie de formas.
   \begin{prop}
@@ -266,7 +262,7 @@ Podemos probar ya una serie de fórmulas, debidas a Élie Cartan\footnote{En la 
     \begin{equation*}
       \frac{\varphi^*_{t+h}\alpha_{t+h}-\varphi^*_t\alpha_t}{h}= \frac{\varphi^*_{t+h}\alpha_{t+h}-\varphi^*_t\alpha_{t+h}+\varphi^*_t\alpha_{t+h}-\varphi^*_t\alpha_t}{h},
     \end{equation*}
-    reagrupando, tenemos
+    y reagrupando, tenemos
     \begin{equation*}
       \frac{d}{dt}\varphi^*_t \alpha_t=\lim_{h\rightarrow 0}\frac{\varphi^*_{t+h}\alpha_{t+h}-\varphi^*_t\alpha_{t}}{h}=\lim_{h\rightarrow 0}\frac{\varphi^*_{t+h}\alpha_{t+h}-\varphi^*_t\alpha_{t+h}}{h}+\lim_{h\rightarrow 0}\frac{\varphi^*_t\alpha_{t+h}-\varphi^*_t\alpha_t}{h}.
     \end{equation*}

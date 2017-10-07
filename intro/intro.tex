@@ -1,6 +1,12 @@
 \section*{Introducción}
-En construcción.
-\section{Motivación física. De Newton a Hamilton}
+Una \em variedad simpléctica \em es una variedad diferenciable de dimensión par en la que se define una forma diferencial $\omega$ cerrada y no degenerada. La \em geometría simpléctica \em es el estudio de las variedades simplécticas y es interesante tanto por sus problemas fundamentales como por su aplicación a la Mecánica Clásica (y por extensión al resto de la Física). La forma $\omega$ induce un isomorfismo entre los campos y las 1-formas de la variedad, que nos permite obtener campos tangentes a partir de funciones definidas sobre la variedad. Las variedades simplécticas constituyen entonces una forma natural de visualizar los sistemas mecánicos ya que las \em ecuaciones de Hamilton \em nos permiten ver las leyes del movimiento como campos tangentes (luego intrínsecos) a la variedad. 
+
+Un \em sistema mecánico integrable por cuadraturas \em  es aquel en el que las ecuaciones del movimiento pueden ser resueltas salvo el cálculo de integrales definidas (cuadraturas), de forma que el problema de estudiar el comportamiento del sistema queda (al menos numéricamente) resuelto. La \em teoría de Arnold-Liouville \em nos ofrece una forma de saber si un sistema mecánico es integrable por cuadraturas mediante el estudio de la variedad simpléctica que lleva asociado.
+Tras un desarrollo previo sobre algunos prerrequisitos de geometría diferencial como son la \em derivada de Lie \em y los \em campos dependientes de un parámetro\em, y tras afianzar algunos conceptos de álgebra lineal en \em espacios vectoriales simplécticos \em (espacios vectoriales en los que se define una forma cuadrática antisimétrica y no degenerada), nos sumergimos de lleno en el estudio de la geometría simpléctica, para acabar probando los teoremas fundamentales que componen la teoría de Arnold-Liouville.
+
+
+
+\section{Motivación física. De Newton a Hamilton} \label{sec:fisica}
 La forma más sencilla de describir el movimiento de un sistema de partículas es mediante el formalismo newtoniano, tomando como postulado fundamental de la mecánica clásica el \emph{principio de determinación}: conocidas en cierto instante las posiciones y las velocidades iniciales de todas las partículas que conforman el sistema, es posible determinar sus posiciones y velocidades en cualquier otro instante.
 
 Matemáticamente, este principio se traduce en la existencia de una función\footnote{A lo largo del texto sólo consideraremos funciones diferenciables ($\mathcal{C}^{\infty}$ si es necesario), no lo especificaremos en lo que sigue.}, conocida como \emph{fuerza}, $F: \RR^{3n} \times \RR^{3n} \times \RR \rightarrow \RR$, que cumple la llamada \emph{ecuación de Newton}\footnote{Esta ecuación es una forma peculiar de la conocida \emph{segunda ley de Newton}: $F=ma$.}:
@@ -200,6 +206,6 @@ En efecto, si $X^H=\sum_{i=1}^m \left( a_i \deriv{q_i} + b_i \deriv{p_i} \right)
 \end{align*}
 ya que $\dd H = \sum_{i=1}^m\parcial{H}{q_i}\dd q_i + \parcial{H}{p_i}\dd p_i$.
 
-Obsérvese que el único elemento realmente crucial en la construcción de este campo ha sido la 2-forma $\omega$. Una forma de esas características induce sobre $TM$ la estructura de \emph{variedad simpléctica}. El estudio de las variedades simplécticas y sus propiedades es la \emph{geometría simpléctica}. A partir de la sección \ref{2}, introduciremos el formalismo de la geometría simpléctica, lo que nos permitirá enunciar la \emph{formulación canónica} de la mecánica clásica y resolver alguno de sus problemas.
+Obsérvese que el único elemento realmente crucial en la construcción de este campo ha sido la 2-forma $\omega$. Una forma de esas características induce sobre $TM$ la estructura de \emph{variedad simpléctica}. El estudio de las variedades simplécticas y sus propiedades es la \emph{geometría simpléctica}. A partir de la sección \ref{sec:vectoriales}, introduciremos el formalismo de la geometría simpléctica, lo que nos permitirá enunciar la \emph{formulación canónica} de la mecánica clásica y resolver alguno de sus problemas.
 
 
