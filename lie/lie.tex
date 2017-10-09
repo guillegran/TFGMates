@@ -275,17 +275,14 @@ Podemos probar ya una serie de fórmulas, debidas a Élie Cartan\footnote{En la 
    \end{equation*}
    donde $\varphi_{t,s}=\varphi(t,s,\bullet)$. 
 \end{prop}
-\begin{obs}
-  \em
    Podemos ver esta fórmula en una notación más compacta:
 
     \begin{equation*}
       \frac{d}{dt}\varphi^*_t \alpha_t = \varphi^*_t \left( L_{X_t}\alpha_t + \frac{d}{dt}\alpha_t \right).
     \end{equation*}
-  \end{obs}
 
   \begin{proof}
-    En primer lugar, probaremos la forma más sencilla, en la que $\alpha$ no depende del tiempo,
+    En primer lugar, probaremos una forma más sencilla, en la que $\alpha$ no depende del tiempo,
     \begin{equation*}
       \left.\frac{d}{dt}\right|_{t=t_1}(\varphi^*_{t,t_0}\alpha)=\varphi^*_{t_1,t_0}(L_{X_{t_1}}\alpha).
     \end{equation*}
@@ -294,10 +291,13 @@ Podemos probar ya una serie de fórmulas, debidas a Élie Cartan\footnote{En la 
       \left.\frac{d}{dt}\right|_{t=t_1}(\varphi_{t,t_0}\alpha)=\lim_{h\rightarrow 0}\frac{\varphi^*_{t_1+h,t_0}\alpha-\varphi^*_{t_1,t_0}\alpha}{h}=\varphi^*_{t_1,t_0}\left( \lim_{h\rightarrow 0 }\frac{\varphi_{t_1+h,t_1}\alpha-\alpha}{h} \right)=\varphi^*_{t_1,t_0}(L_{X_t}\alpha).
     \end{equation*}
 
-
-
-
-
-
-
+    Probemos ahora la fórmula general. Tomando un $\varepsilon > 0$ lo suficientemente pequeño, consideremos la aplicación $F:(t_1-\varepsilon,t_1+\varepsilon)\times(t_1-\varepsilon,t_1+\varepsilon)\rightarrow\Gamma^k(T_xM)$ definida por
+    \begin{equation*}
+      F(u,v)=(\varphi^*_{u,t_0}\alpha_v)_x.
+    \end{equation*}
+    Ahora, por la regla de la cadena
+    \begin{equation*}
+      \left. \frac{d}{dt}\right|_{t=t_1}F(t,t)=\parcial{F}{u}(t_1,t_1)+\parcial{F}{v}(t_1,t_1)=\left(\varphi^*_{t_1,t_0}(L_{X_{t_1}}\alpha_{t_1})\right)_x+\left. \frac{d}{dt}\right|_{t=t_1}(\varphi^*_{t_1,t_0}\alpha_t)_x.
+    \end{equation*}
+    «Sacando factor común» a $\varphi^*_{t_1,t_0}$, obtenemos lo que queríamos probar.
   \end{proof}
