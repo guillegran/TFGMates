@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.28)  8 OCT 2017 19:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.1)  9 OCT 2017 10:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -6,7 +6,7 @@ entering extended mode
 **guillermoTFG.tex
 (./guillermoTFG.tex
 LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 34 language(s) loaded.
+Babel <3.9q> and hyphenation patterns for 8 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/amscls/amsart.cls
 Document Class: amsart 2015/03/04 v2.20.2
 \linespacing=\dimen102
@@ -1296,10 +1296,10 @@ LaTeX Font Info:    Try loading font information for U+euf on input line 9.
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
 Package epstopdf Info: Source file: <pics/lie.eps>
-(epstopdf)                    date: 2017-07-18 11:52:58
+(epstopdf)                    date: 2017-10-01 21:21:46
 (epstopdf)                    size: 118699 bytes
 (epstopdf)             Output file: <pics/lie-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-07-18 11:53:03
+(epstopdf)                    date: 2017-10-01 21:21:46
 (epstopdf)                    size: 14348 bytes
 (epstopdf)             Command: <repstopdf --outfile=pics/lie-eps-converted-to.
 pdf pics/lie.eps>
@@ -1476,34 +1476,34 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 207.
 [13]
-LaTeX Info: Redefining \. on input line 295.
-LaTeX Info: Redefining \% on input line 295.
+LaTeX Info: Redefining \. on input line 291.
+LaTeX Info: Redefining \% on input line 291.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 295.
+(babel)             in language  on input line 291.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 295.
+(babel)             in language  on input line 291.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 295.
+(babel)             in language  on input line 291.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 295.
+(babel)             in language  on input line 291.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 295.
+(babel)             in language  on input line 291.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 295.
+(babel)             in language  on input line 291.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 295.
+(babel)             in language  on input line 291.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 295.
+(babel)             in language  on input line 291.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 295.
+(babel)             in language  on input line 291.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 295.
+(babel)             in language  on input line 291.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 295.
+(babel)             in language  on input line 291.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 295.
+(babel)             in language  on input line 291.
  [14]) (./simplectica/simplectica.tex
-Underfull \hbox (badness 10000) in paragraph at lines 299--1
+Underfull \hbox (badness 10000) in paragraph at lines 303--1
 
  []
 
@@ -2044,10 +2044,10 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 52.
  [28 <./pics/oscilador.pdf>]
 Package epstopdf Info: Source file: <pics/polar.eps>
-(epstopdf)                    date: 2017-07-17 20:25:29
+(epstopdf)                    date: 2017-10-01 21:21:46
 (epstopdf)                    size: 61868 bytes
 (epstopdf)             Output file: <pics/polar-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-07-17 20:25:39
+(epstopdf)                    date: 2017-10-01 21:21:46
 (epstopdf)                    size: 7353 bytes
 (epstopdf)             Command: <repstopdf --outfile=pics/polar-eps-converted-t
 o.pdf pics/polar.eps>
@@ -2209,10 +2209,10 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 193.
 [32 <./pics/euler.png> <./pics/eulertop.png>]
 Package epstopdf Info: Source file: <pics/entornos.eps>
-(epstopdf)                    date: 2017-07-18 12:18:35
+(epstopdf)                    date: 2017-10-01 21:21:46
 (epstopdf)                    size: 60786 bytes
 (epstopdf)             Output file: <pics/entornos-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-07-18 12:20:13
+(epstopdf)                    date: 2017-10-01 21:21:46
 (epstopdf)                    size: 40199 bytes
 (epstopdf)             Command: <repstopdf --outfile=pics/entornos-eps-converte
 d-to.pdf pics/entornos.eps>
@@ -2258,10 +2258,10 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 239.
 [33]
 Package epstopdf Info: Source file: <pics/discreto.eps>
-(epstopdf)                    date: 2017-07-18 12:29:21
+(epstopdf)                    date: 2017-10-01 21:21:46
 (epstopdf)                    size: 33831 bytes
 (epstopdf)             Output file: <pics/discreto-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-07-18 12:30:56
+(epstopdf)                    date: 2017-10-01 21:21:46
 (epstopdf)                    size: 5166 bytes
 (epstopdf)             Command: <repstopdf --outfile=pics/discreto-eps-converte
 d-to.pdf pics/discreto.eps>
@@ -2303,10 +2303,10 @@ Package babel Info: Redefining spanish shorthand "?
  [34 <./pics/entornos-eps-converted-to.pdf> <./pics/discreto-eps-converted-to.p
 df>]
 Package epstopdf Info: Source file: <pics/grupo.eps>
-(epstopdf)                    date: 2017-07-18 15:42:35
+(epstopdf)                    date: 2017-10-01 21:21:46
 (epstopdf)                    size: 87559 bytes
 (epstopdf)             Output file: <pics/grupo-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-07-18 15:42:42
+(epstopdf)                    date: 2017-10-01 21:21:46
 (epstopdf)                    size: 10625 bytes
 (epstopdf)             Command: <repstopdf --outfile=pics/grupo-eps-converted-t
 o.pdf pics/grupo.eps>
@@ -2686,12 +2686,12 @@ Package rerunfilecheck Info: File `guillermoTFG.brf' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 121.
  ) 
 Here is how much of TeX's memory you used:
- 20245 strings out of 494277
- 387261 string characters out of 6162222
- 442432 words of memory out of 5000000
- 22797 multiletter control sequences out of 15000+600000
+ 20245 strings out of 494850
+ 387261 string characters out of 6178024
+ 441077 words of memory out of 5000000
+ 22763 multiletter control sequences out of 15000+600000
  16479 words of font info for 68 fonts, out of 8000000 for 9000
- 559 hyphenation exceptions out of 8191
+ 223 hyphenation exceptions out of 8191
  56i,15n,82p,988b,920s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
@@ -2720,7 +2720,7 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy10.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 >
-Output written on guillermoTFG.pdf (44 pages, 2094117 bytes).
+Output written on guillermoTFG.pdf (44 pages, 2093785 bytes).
 PDF statistics:
  746 PDF objects out of 1000 (max. 8388607)
  606 compressed objects within 7 object streams

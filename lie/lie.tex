@@ -203,7 +203,7 @@ Podemos probar ya una serie de fórmulas, debidas a Élie Cartan\footnote{En la 
   \end{obs}
   Tiene sentido decir ahora qué entendemos por derivar una forma respecto al tiempo. Sea $\alpha_t$ una $r$-forma dependiente del tiempo, la \emph{derivada temporal} de $\alpha_t$ es
     \begin{equation*}
-      \frac{d}{dt} \alpha_t = \lim_{h\rightarrow 0}\frac{\alpha_{t+h}-\alpha_t}{h}.
+      \left. \frac{d}{dt}\right|_{t=t_0} \alpha_t = \lim_{h\rightarrow 0}\frac{\alpha_{t_0+h}-\alpha_{t_0}}{h}.
     \end{equation*}
 
 %  \begin{defn}
@@ -257,13 +257,13 @@ Podemos probar ya una serie de fórmulas, debidas a Élie Cartan\footnote{En la 
     Equivalentemente, podemos ver el problema de valor inicial en la siguiente forma:
     \begin{align*}
       \parcial{\varphi}{t}(t,s,x)&=X_{t,\varphi(t,s,x)}, \\
-      \varphi(t,s,x)&=x.
+      \varphi(s,s,x)&=x.
     \end{align*}
-    Esta $\varphi$ recibe el nombre de \emph{flujo dependiente del tiempo}. Nótese que en general cada $\varphi(t,s,\bullet)$ no tiene por qué ser un difeomorfismo, es decir, en general el flujo no es completo.
+    Esta $\varphi$ recibe el nombre de \emph{flujo dependiente del tiempo}. Nótese que cada $\varphi(t,s,\bullet)$ es una aplicación diferenciable de un abierto de $M$ en $M$, pero no tiene por qué ser un difeomorfismo, es decir, en general el flujo no es completo.
 
   Ahora podemos generalizar la derivada de Lie de formas para campos dependientes del tiempo:
   \begin{equation*}
-    (L_{X^t}\omega)_x=\lim_{t\rightarrow 0}\frac{\varphi^*_t \omega_{\varphi_t(x)} - \omega_x}{t},
+    L_{X_{t}}\alpha=\lim_{h\rightarrow 0}\frac{\varphi^*_{t+h,t} \alpha - \alpha}{h},
   \end{equation*}
   para $x\in M$.
   
@@ -285,16 +285,19 @@ Podemos probar ya una serie de fórmulas, debidas a Élie Cartan\footnote{En la 
   \end{obs}
 
   \begin{proof}
-    En primer lugar
+    En primer lugar, probaremos la forma más sencilla, en la que $\alpha$ no depende del tiempo,
     \begin{equation*}
-      \frac{\varphi^*_{t+h}\alpha_{t+h}-\varphi^*_t\alpha_t}{h}= \frac{\varphi^*_{t+h}\alpha_{t+h}-\varphi^*_t\alpha_{t+h}+\varphi^*_t\alpha_{t+h}-\varphi^*_t\alpha_t}{h},
+      \left.\frac{d}{dt}\right|_{t=t_1}(\varphi^*_{t,t_0}\alpha)=\varphi^*_{t_1,t_0}(L_{X_{t_1}}\alpha).
     \end{equation*}
-    y reagrupando, tenemos
+    En efecto
     \begin{equation*}
-      \frac{d}{dt}\varphi^*_t \alpha_t=\lim_{h\rightarrow 0}\frac{\varphi^*_{t+h}\alpha_{t+h}-\varphi^*_t\alpha_{t}}{h}=\lim_{h\rightarrow 0}\frac{\varphi^*_{t+h}\alpha_{t+h}-\varphi^*_t\alpha_{t+h}}{h}+\lim_{h\rightarrow 0}\frac{\varphi^*_t\alpha_{t+h}-\varphi^*_t\alpha_t}{h}.
+      \left.\frac{d}{dt}\right|_{t=t_1}(\varphi_{t,t_0}\alpha)=\lim_{h\rightarrow 0}\frac{\varphi^*_{t_1+h,t_0}\alpha-\varphi^*_{t_1,t_0}\alpha}{h}=\varphi^*_{t_1,t_0}\left( \lim_{h\rightarrow 0 }\frac{\varphi_{t_1+h,t_1}\alpha-\alpha}{h} \right)=\varphi^*_{t_1,t_0}(L_{X_t}\alpha).
     \end{equation*}
-    Finalmente, «sacando factor común» $\varphi^*_t$ y aplicando las definiciones de derivada de Lie y derivada temporal de formas llegamos a
-    \begin{equation*}
-      \frac{d}{dt}\varphi^*_t \alpha_t=\varphi^*_t \left( \lim_{h\rightarrow 0}\frac{\varphi^*_{h}\alpha_{t}-\alpha_{t}}{h}+\lim_{h\rightarrow 0}\frac{\alpha_{t+h}-\alpha_t}{h}\right)=\varphi^*_t\left(L_{X^t}\alpha_t + \frac{d}{dt}\alpha_t\right).
-    \end{equation*}
+
+
+
+
+
+
+
   \end{proof}
