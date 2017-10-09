@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.1)  9 OCT 2017 18:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.1)  9 OCT 2017 19:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2686,10 +2686,10 @@ Package rerunfilecheck Info: File `guillermoTFG.brf' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 121.
  ) 
 Here is how much of TeX's memory you used:
- 20244 strings out of 494850
- 387254 string characters out of 6178024
- 441077 words of memory out of 5000000
- 22763 multiletter control sequences out of 15000+600000
+ 20239 strings out of 494850
+ 387175 string characters out of 6178024
+ 441042 words of memory out of 5000000
+ 22759 multiletter control sequences out of 15000+600000
  16479 words of font info for 68 fonts, out of 8000000 for 9000
  223 hyphenation exceptions out of 8191
  56i,15n,82p,988b,920s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2720,10 +2720,10 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy10.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 >
-Output written on guillermoTFG.pdf (44 pages, 2095081 bytes).
+Output written on guillermoTFG.pdf (44 pages, 2093095 bytes).
 PDF statistics:
- 745 PDF objects out of 1000 (max. 8388607)
- 605 compressed objects within 7 object streams
- 211 named destinations out of 1000 (max. 500000)
+ 741 PDF objects out of 1000 (max. 8388607)
+ 601 compressed objects within 7 object streams
+ 210 named destinations out of 1000 (max. 500000)
  151 words of extra memory for PDF output out of 10000 (max. 10000000)
 
