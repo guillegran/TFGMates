@@ -50,12 +50,15 @@ Un \emph{espacio vectorial simpléctico} es un par ordenado $(V,\omega)$, donde 
       \]
 \end{defn}
 \begin{obs}
+  \em
   Claramente, por la proposición anterior todo espacio vectorial simpléctico de dimensión finita tiene una base simpléctica.
 \end{obs}
 \begin{obs}
+  \em
   Llamaremos \emph{$n$-ésima forma simpléctica canónica} a la forma $\omega_n:\RR^{2n} \rightarrow \RR^{2n}$ de matriz asociada $J_n$ en la base canónica de $\RR^{2n}$. Llamaremos \emph{espacio simpléctico canónico $n$-dimensional} a $(\RR^{2n},\omega_n)$. Deducimos también de la proposición anterior que todo espacio vectorial simpléctico de dimensión $2n$ es isomorfo a $(\RR^{2n},\omega_n)$.
 \end{obs}
 \begin{obs}
+  \em
   Podemos ver la forma bilineal $\omega$ de matriz asociada $J_n$ como una $2$-forma alternada en $V$. Si $\{u_1,\dots,u_n,v_1,\dots,v_n\}$ es una base simpléctica y $\{\varphi_1,\dots, \varphi_n, \psi_1,\dots, \psi_n \}$ es su base dual, entonces
   \[
     \omega = \sum_{i=1}^n \left(\sum_{\sigma \in \mathfrak{S}_2} (-1)^{\sigma} (\psi_i \otimes \varphi_i)^{\sigma}\right)= \sum_{i=1}^n \psi_i \wedge \varphi_i.
@@ -192,7 +195,7 @@ Vamos a probar ahora uno de los resultados fundamentales de la geometría simpl�
 (A) edge node[left]{$(q,p)$} (C)
 (B) edge node[right]{$\psi$} (C);
 \path[<-|,font=\scriptsize, >=angle 90]
-(D) edge node[left] {$\left( (q,p) \right)^*$} (F)
+(D) edge node[left] {$ (q,p) ^*$} (F)
 (D) edge node[above] {$\varphi^*$} (E)
 (E) edge node[right] {$\psi^*$} (F);
 \end{tikzpicture}
@@ -202,17 +205,18 @@ Vamos a probar ahora uno de los resultados fundamentales de la geometría simpl�
   \begin{equation*}
     \omega_t=t\omega_1 + (1-t) \omega = \omega + t(\omega_1-\omega),
   \end{equation*}
-  para cada $t\in[0,1]$. Como $\omega_{t,x}=\omega_x$, para todo $t \in [0,1]$, $\omega_t$ es no degenerada en $x$. Por tanto, existe un entorno $U \subset M$ de $x$ en el que $\omega_t$ es no degenerada para cada $t\in [0,1]$.
+  para cada $t\in \RR$. Como $\omega_{t,x}=\omega_x$, para todo $t \in \RR$, $\omega_t$ es no degenerada en $x$. Por tanto, sea $J$ intervalo abierto acotado tal que $[0,1]\in J$, existe un entorno $U \subset M$ de $x$ en el que $\omega_t$ es no degenerada para cada $t\in \bar{J}$.
 
-  Ahora, como $\omega_1-\omega$ es cerrada, podemos tomar $U$ tal que sea difeomorfo a $\RR^{2n}$, luego existirá una 1-forma $\alpha$ en $U$ tal que $\omega_1-\omega=\alpha$. Además, como $\alpha$ está definida salvo una constante, podemos asumir $\alpha_x=0$.
+  Ahora, como $\omega_1-\omega$ es cerrada, podemos tomar $U$ tal que sea difeomorfo a $\RR^{2n}$, luego existirá una 1-forma $\alpha$ en $U$ tal que $\omega_1-\omega=\dd \alpha$. Además, como $\alpha$ está definida salvo una constante, podemos asumir $\alpha_x=0$.
 
-  \nota{Esto se entiende con la parte última de la sección de derivada de Lie}. Para $t \in [0,1]$, sea $X^t$ el campo dependiente del tiempo tal que $i_{X^t}\omega_t= - \alpha$ y con $X^t_x=0$. Tomando un entorno suficientemente pequeño, para cada $t \in [0,1]$ la isotopía $G$ generada por $X^t$ está bien definida. Tenemos entonces, si $\varphi_t=G(t,\bullet)$,
+  Para $t \in J$, sea $X_t$ el campo dependiente del tiempo tal que $i_{X^t}\omega_t= - \alpha$ y con $X_{t,x}=0$. Ahora, si $\varphi:V\rightarrow U$ es el flujo dependiente del tiempo asociado a $X$, entonces $\varphi(t,0,x)=x$ para todo $t\in J$, luego $J\times \left\{ 0 \right\}\times \left\{ x \right\} \subset V$. Como $V$ es abierto en $J\times J\times M$ y $[0,1]$ es compacto, existe un entorno $U_0$ de $x$  tal que $[0,1]\times \left\{ 0 \right\}\times U_0 \subset V$. 
+  
+  Por tanto, si $\varphi_t = \varphi(t,0,\bullet)$ para cada $t\in [0,1]$ se sigue
   \begin{align*}
-    \frac{d}{dt}(\varphi_t^*\omega_t) & = \varphi_t^* (L_{X^t}\omega_t) + \varphi_t^* \left( \frac{d}{dt}\omega_t \right) = \varphi_t^* (i_{X^t}(\dd \omega)+\dd (i_{X^t}\omega))+\varphi_t^*(\omega_1-\omega) \\
+    \frac{d}{dt}(\varphi_t^*\omega_t) & = \varphi_t^* (L_{X_t}\omega_t) + \varphi_t^* \left( \frac{d}{dt}\omega_t \right) = \varphi_t^* (i_{X_t}(\dd \omega)+\dd (i_{X_t}\omega))+\varphi_t^*(\omega_1-\omega) \\
     & = \varphi_t^*(0-\dd \alpha + \omega_1 - \omega) = 0,
   \end{align*}
-  donde hemos usado la fórmula de Cartan. Por tanto, $\varphi_1^*\omega_1=\varphi_0^*\omega_0=\omega$, luego $\varphi=\varphi_1$ es el difeomorfismo que transforma $\omega$ en $\omega_1$.
-  
+  donde hemos usado la fórmula de Cartan. De modo que $\varphi_1^*\omega_1=\varphi_0^*\omega_0=\omega$. Además, como $\varphi_1^*$ es simpléctica, es un isomorfismo, lo que implica que $\varphi_1$ es un difeomorfismo local. Así, reduciendo el entorno si es necesario, encontramos la carta que estábamos buscando.
 \end{proof}
 
 Vamos a dar ahora dos propiedades fuertes de las variedades simplécticas:
@@ -307,6 +311,7 @@ Enunciamos también una propiedad inmediata de los simplectomorfismos:
 
 \section{Campos y flujos hamiltonianos}\label{sec:hamilton}
 \begin{obs}
+  \em
   Sea $M$ una variedad simpléctica, la aplicación 
   \begin{equation*}
     \begin{array}{rcl}
@@ -325,9 +330,11 @@ da un isomorfismo lineal entre campos y 1-formas, a cada campo $X$ le podemos as
   Se llama \emph{flujo hamiltoniano generado por H} y se denota por $\varphi^H$ al flujo cuyo generador infinitesimal es $X^H$.
 \end{defn}
 \begin{obs}
+  \em
   $\dd H = i_{X^H}\omega$
 \end{obs}
 \begin{obs}
+  \em
   Obtenemos ahora una versión geométrica e independiente de las coordenadas de las clásicas ecuaciones de Hamilton:
   \begin{equation*}
     X^H_x= \left.\frac{d}{dt}\right| _{t=0}\varphi^H_t(x).
