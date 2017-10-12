@@ -1,5 +1,6 @@
 
 \section{Espacios vectoriales simplécticos}\label{sec:vectoriales}
+En esta sección repasamos algunos conceptos de álgebra lineal necesarios para estudiar geometría simpléctica. Introduciremos la noción de \emph{espacio vectorial simpléctico} y veremos algunas de sus propiedades. Muchos de los resultados aquí expuestos pueden leerse más desarrollados en \cite{algebra}.
 \begin{defn}[Espacio vectorial simpléctico]
   \em
 Un \emph{espacio vectorial simpléctico} es un par ordenado $(V,\omega)$, donde $V$ es un espacio vectorial sobre $\RR$ y 
@@ -8,9 +9,10 @@ Un \emph{espacio vectorial simpléctico} es un par ordenado $(V,\omega)$, donde 
 	\]
 	es una forma bilineal antisimétrica no degenerada.
 \end{defn}
-\begin{prop}\leavevmode
+
+\paragraph{\bf Clasificación de formas bilineales antisimétricas}
   \begin{enumerate}
-    \item Sea $\omega$ una forma bilineal antisimétrica sobre un espacio vectorial $V$ de dimensión finita y sea $M$ su matriz asociada. Entonces existe $n \leq \frac{1}{2}\dim(V)$ tal que $M$ es congruente con
+    \item Sean $\omega$ una forma bilineal antisimétrica sobre un espacio vectorial $V$ de dimensión finita y $M$ su matriz asociada. Entonces existe $n \leq \frac{1}{2}\dim(V)$ tal que $M$ es congruente con
       \[
 	\left(
 	\begin{array}{ccc}
@@ -21,25 +23,7 @@ Un \emph{espacio vectorial simpléctico} es un par ordenado $(V,\omega)$, donde 
       \]
       donde $I_n$ es la matriz identidad $n \times n$.
     \item Si $(V,\omega)$ es un espacio vectorial simpléctico de dimensión finita, entonces $\dim(V)=2n$ para cierto $n \in \NN$.
-  \end{enumerate}
-\end{prop}
-\begin{proof}\leavevmode
-  \begin{enumerate}
-    \item Es un resultado conocido de álgebra lineal \cite{algebra}.
-    \item Por (1), $\det(\omega) \neq 0$ si y sólo si la matriz con la que es congruente es exactamente 
-      \[
-\left(
-	\begin{array}{cc}
-	  0 & I_n  \\
-	  -I_n & 0 
-	\end{array}\right).
-      \]
-      Luego $\dim(V)=2n$.
- \end{enumerate}
-\end{proof}
-\begin{defn}[Base simpléctica]
-  \em
-  Sea $(V,\omega)$ un espacio vectorial simpléctico, se dice que $\mathcal{B}\subset V$ es una \emph{base simpléctica} de $V$ si la matriz asociada a $\omega$ en $\mathcal{B}$ es
+    \item Sea $(V,\omega)$ un espacio vectorial simpléctico. Se dice que $\mathcal{B}\subset V$ es una \emph{base simpléctica} de $V$ si la matriz asociada a $\omega$ en $\mathcal{B}$ es
 \[
   J_n :=
 \left(
@@ -48,105 +32,36 @@ Un \emph{espacio vectorial simpléctico} es un par ordenado $(V,\omega)$, donde 
 	  -I_n & 0 
 	\end{array}\right).
       \]
-\end{defn}
-\begin{obs}
-  \em
-  Claramente, por la proposición anterior todo espacio vectorial simpléctico de dimensión finita tiene una base simpléctica.
-\end{obs}
-\begin{obs}
-  \em
-  Llamaremos \emph{$n$-ésima forma simpléctica canónica} a la forma $\omega_n:\RR^{2n} \rightarrow \RR^{2n}$ de matriz asociada $J_n$ en la base canónica de $\RR^{2n}$. Llamaremos \emph{espacio simpléctico canónico $n$-dimensional} a $(\RR^{2n},\omega_n)$. Deducimos también de la proposición anterior que todo espacio vectorial simpléctico de dimensión $2n$ es isomorfo a $(\RR^{2n},\omega_n)$.
-\end{obs}
-\begin{obs}
-  \em
-  Podemos ver la forma bilineal $\omega$ de matriz asociada $J_n$ como una $2$-forma alternada en $V$. Si $\{u_1,\dots,u_n,v_1,\dots,v_n\}$ es una base simpléctica y $\{\varphi_1,\dots, \varphi_n, \psi_1,\dots, \psi_n \}$ es su base dual, entonces
+    \item Podemos ver la forma bilineal $\omega$ de matriz asociada $J_n$ como una $2$-forma alternada en $V$. Si $\{u_1,\dots,u_n,v_1,\dots,v_n\}$ es una base simpléctica y $\{\varphi_1,\dots, \varphi_n, \psi_1,\dots, \psi_n \}$ es su base dual, entonces
   \[
     \omega = \sum_{i=1}^n \left(\sum_{\sigma \in \mathfrak{S}_2} (-1)^{\sigma} (\psi_i \otimes \varphi_i)^{\sigma}\right)= \sum_{i=1}^n \psi_i \wedge \varphi_i.
   \]
-\end{obs}
-\begin{defn}[Aplicación simpléctica]
-  \em
-  Sea $(V,\omega)$ un espacio vectorial simpléctico, decimos que una aplicación lineal $A:V \rightarrow V$ es \emph{simpléctica} si
+  \item Llamaremos \emph{$n$-ésima forma simpléctica estándar} a la forma $\omega_n:\RR^{2n} \rightarrow \RR^{2n}$ de matriz asociada $J_n$ en la base canónica de $\RR^{2n}$. Llamaremos \emph{espacio simpléctico estándar $n$-dimensional} a $(\RR^{2n},\omega_n)$. Deducimos también de lo anterior que todo espacio vectorial simpléctico de dimensión $2n$ es isomorfo a $(\RR^{2n},\omega_n)$.
+\end{enumerate}
+\paragraph{\bf Aplicaciones simplécticas}\mbox{}
+
+  Sean $(V,\omega)$ y $(V',\omega')$ espacios vectoriales simplécticos, decimos que una aplicación lineal $f:V \rightarrow V'$ es \emph{simpléctica} si
   \[
-    \omega(Av,Aw) = \omega(v,w)
+    \omega'(f(v),f(w)) = \omega(v,w)
   \]
   para cualesquiera $v,w \in V$.
-\end{defn}
+
+Ahora, si $w\neq 0$ y $f(v)=0$, entonces $\omega(v,w)=0$ y, como $\omega$ es no degenerada, $v=0$, de modo que $\ker f=\{0\}$. Es decir, toda aplicación simpléctica es inyectiva.
+
+En el caso en que $V$ y $V'$ tienen la misma dimensión, entonces $f$ es un isomorfismo que lleva una base simpléctica de $(V,\omega)$ a una base simpléctica de $(V',\omega')$. 
+
+\paragraph{\bf El grupo simpléctico}\mbox{}
+
+  Sea $(V,\omega)$ un espacio vectorial simpléctico de dimensión $2n$. El conjunto de las aplicaciones lineales simplécticas de $V$ en $V$ es un subgrupo de $\mathrm{GL}(2n)$. Este grupo se conoce como \emph{$n$-ésimo grupo simpléctico} y se denota por $\mathrm{Sp}(n)$.
+
+  Asignando a cada $f\in \mathrm{Sp}(n)$ su matriz asociada $A$ en cierta base, el grupo simpléctico se puede representar por medio de las matrices $2n\times 2n$ que cumplen
+  \begin{equation*}
+    J_n=A^tJ_n A.
+  \end{equation*}
+  Estas matrices se dicen \emph{matrices simplécticas}.
+  De aquí deducimos inmediatamente, por un razonamiento análogo al que haríamos para matrices ortogonales, que todas las matrices simplécticas tienen determinante $1$ o $-1$. Sin embargo, podemos probar un resultado aún más fuerte sobre el grupo simpléctico: su \emph{subgrupo especial} (es decir, el subgrupo de las aplicaciones de determinante $1$) coincide con él mismo.
 \begin{prop}
-  Sea $(V,\omega)$ un espacio vectorial simpléctico de dimensión $2n$ y $A: V \rightarrow V$ lineal. Son equivalentes:
-  \begin{enumerate}
-    \item $A$ es simpléctica.
-    \item $J_n=A^T J_n A.$
-    
-    \item Si $\mathcal{B}$ es una base simpléctica, entonces $\mathcal{B}'=A(\mathcal{B})$ es una base simpléctica.
-  \end{enumerate}
-\end{prop}
-\begin{proof}\leavevmode
-
-  (1) $\implies$ (2):
-
-  Basta evaluar $\omega$ en una base simpléctica. 
-  \begin{align*}
-    \omega(Av,Aw) & =v^TA^T J_n A w \\
-    \omega(v,w) & =v^TJ_nw.
-  \end{align*}
-  Como $\omega(Av,Aw)=\omega(v,w)$ para cualesquiera $v,w \in V$, entonces
-  \[
-    A^T J_n A = J_n.
-  \]
-
-  (2) $\implies$ (3):
-
-  Si $\mathcal{B}=\{e_1,\dots,e_{2n}\}$ y $\mathcal{B'}=\{e_1',\dots,e_{2n}'\}$ la componente $(i,j)$ de la matriz asociada a $\omega$ en la base $\mathcal{B'}$ es
-  \[
-    \omega(e_i',e_j')=e_i'^T J_n e_j'= e_i^T A^T J_n A e_j = e_i ^T J_n e_j = \omega(e_i,e_j).
-  \]
-  Como $\mathcal{B}$ es simpléctica, la matriz asociada a $\omega$ en $\mathcal{B'}$ es $J_n$, es decir, $\mathcal{B'}$ es simpléctica.
-
-  (3) $\implies$ (1):
-
-  Tomamos $\mathcal{B}$ y $\mathcal{B'}$ como antes y sabemos que ambas son simplécticas. Entonces
-\begin{align*}
-  v & =\sum_{i=1}^{2n} v_i e_i \\
-  w & =\sum_{i=1}^{2n} w_i e_i
-  \end{align*}
-  y
-\begin{align*}
-  Av & =\sum_{i=1}^{2n} v_i Ae_i =\sum_{i=1}^{2n} v_i e'_i \\
-  Aw & =\sum_{i=1}^{2n} w_i Ae_i = \sum_{i=1}^{2n} w_i e'_i.
-  \end{align*}
-  Por tanto, 
-  \[
-    \omega(Av,Aw)=\omega\left(\sum_{i=1}^{2n}v_i e'_i, \sum_{j=1}^{2n} w_j e'_j\right)= \sum_{i,j=1}^{2n} v_i w_j \omega(e_i',e_j')=\sum_{i,j=1}^{2n} v_i w_j \omega(e_i,e_j)= \omega(v,w).
-  \]
-  Luego $A$ es simpléctica.
-\end{proof}
-\begin{prop}
-  Sea $(V,\omega)$ un espacio vectorial simpléctico de dimensión $2n$, el conjunto de las aplicaciones lineales simplécticas de $V$ es un subgrupo de $\mathrm{GL}(2n)$. Este grupo se conoce como \emph{$n$-ésimo grupo simpléctico} y se denota por $\mathrm{Sp}(n)$.
-\end{prop}
-\begin{proof}\leavevmode
-  \begin{enumerate}
-    \item Sea $A$ una aplicación simpléctica,
-      \[
-	1= \det(J_n) = \det(A^T J_n A) = \det(A^T)\det(A) = \det(A)^2.
-      \]
-      Luego $\det(A) \neq 0$, es decir, $A \in \mathrm{GL}(2n)$.
-    \item Sea $A$ una aplicación simpléctica y $A^{-1}$ su inversa. Multiplicando por la derecha por $A^{-1}$ y por la izquierda por $(A^T)^{-1}=(A^{-1})^T$ en $J_n=A^T J_n A$ tenemos 
-      \[
-	J_n = (A^{-1})^T J_n A^{-1}.
-      \]
-      Por tanto, $A^{-1}$ es simpléctica.
-    \item Sean $A, B$ simplécticas.
-      \[
-	(AB)^T J_n AB = B^T A^T J_n A B = B^T J_n B = J_n,
-      \]
-      luego $AB$ también es simpléctica.
-  \end{enumerate}
-\end{proof}
-
-Podemos probar un resultado aún más fuerte sobre el grupo simpléctico:
-\begin{prop}
-  Toda aplicación lineal simpléctica tiene determinante 1.
+  Toda aplicación lineal simpléctica tiene determinante $1$.
 \end{prop}
 \begin{proof}
   Sea $\omega_n$ la forma simpléctica canónica, $\Omega=\omega_n \wedge \overset{(n)}{\cdots} \wedge \omega_n$ es una forma de grado máximo, luego, por el teorema del determinante, $f^*(\Omega)=\det(f) \Omega$. Ahora, como $f$ es simpléctica, 

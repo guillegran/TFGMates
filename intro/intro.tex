@@ -1,8 +1,8 @@
 \section*{Introducción}
-Una \em variedad simpléctica \em es una variedad diferenciable de dimensión par en la que se define una forma diferencial $\omega$ cerrada y no degenerada. La \em geometría simpléctica \em es el estudio de las variedades simplécticas y es interesante tanto por sus problemas fundamentales como por su aplicación a la Mecánica Clásica (y por extensión al resto de la Física). La forma $\omega$ induce un isomorfismo entre los campos y las 1-formas de la variedad, que nos permite obtener campos tangentes a partir de funciones definidas sobre la variedad. Las variedades simplécticas constituyen entonces una forma natural de visualizar los sistemas mecánicos ya que las \em ecuaciones de Hamilton \em nos permiten ver las leyes del movimiento como campos tangentes (luego intrínsecos) a la variedad. 
+Una \em variedad simpléctica \em es una variedad diferenciable de dimensión par en la que se define una forma diferencial $\omega$ cerrada y no degenerada. La \em geometría simpléctica \em es el estudio de las variedades simplécticas y es interesante tanto por sus problemas fundamentales como por su aplicación a la Mecánica Clásica (y por extensión al resto de la Física). La forma $\omega$ induce un isomorfismo entre campos y 1-formas, que nos permite obtener campos tangentes a partir de funciones definidas sobre la variedad. Las variedades simplécticas constituyen entonces una forma natural de visualizar los sistemas mecánicos ya que las \em ecuaciones de Hamilton \em nos permiten ver las leyes del movimiento como campos tangentes de manera intrínseca a la variedad. 
 
 Un \em sistema mecánico integrable por cuadraturas \em  es aquel en el que las ecuaciones del movimiento pueden ser resueltas salvo el cálculo de integrales definidas (cuadraturas), de forma que el problema de estudiar el comportamiento del sistema queda (al menos numéricamente) resuelto. La \em teoría de Arnold-Liouville \em nos ofrece una forma de saber si un sistema mecánico es integrable por cuadraturas mediante el estudio de la variedad simpléctica que lleva asociado.
-Tras un desarrollo previo sobre algunos prerrequisitos de geometría diferencial como son la \em derivada de Lie \em y los \em campos dependientes de un parámetro\em, y tras afianzar algunos conceptos de álgebra lineal en \em espacios vectoriales simplécticos \em (espacios vectoriales en los que se define una forma cuadrática antisimétrica y no degenerada), nos sumergimos de lleno en el estudio de la geometría simpléctica, para acabar probando los teoremas fundamentales que componen la teoría de Arnold-Liouville.
+Tras un desarrollo previo de algunos prerrequisitos de geometría diferencial como son la \em derivada de Lie \em y los \em campos dependientes del tiempo\em, y tras afianzar algunos conceptos del álgebra lineal de los \em espacios vectoriales simplécticos \em (espacios vectoriales en los que se define una forma cuadrática antisimétrica y no degenerada), nos concentramos en el estudio de la geometría simpléctica, para acabar probando los teoremas fundamentales que componen la teoría de Arnold-Liouville.
 
 
 
@@ -13,7 +13,7 @@ Matemáticamente, este principio se traduce en la existencia de una función\foo
 \begin{equation*}
   \ddot{x} = F(x,\dot{x},t;\alpha),
 \end{equation*}
-donde $n$ es el número de partículas, $x:\RR \rightarrow \RR^{3n}$ es la trayectoria del sistema\footnote{A lo largo del texto utilizaremos la notación usual en Física por la que un punto encima de una función dependiente del tiempo indica la derivada temporal: $\dot{a}=\frac{da}{dt}$. En particular el punto indica que debe existir esa dependencia respecto del tiempo.} y $\alpha$ son unos ciertos parámetros de los que puede depender $F$, como por ejemplo las masas o las cargas eléctricas de las diferentes partículas. Para cada sistema concreto, la fuerza se determina experimentalmente. Desde un punto de vista matemático, decimos la fuerza define un \emph{sistema mecánico newtoniano}. En general, cuando hablemos de los distintos tipos de sistema mecánico, llamaremos a sus ecuaciones diferenciales asociadas (Newton, Euler-Lagrange, Hamilton) \emph{ecuaciones del movimiento} o \emph{dinámica del sistema}.
+donde $n$ es el número de partículas, $x:\RR \rightarrow \RR^{3n}$ es la trayectoria del sistema\footnote{A lo largo del texto utilizaremos la notación usual en Física por la que un punto encima de una función dependiente del tiempo indica la derivada temporal: $\dot{a}=\frac{da}{dt}$. En particular el punto indica que debe existir esa dependencia respecto del tiempo.} y $\alpha$ son unos ciertos parámetros de los que puede depender $F$, como por ejemplo las masas o las cargas eléctricas de las diferentes partículas. Para cada sistema concreto, la fuerza se determina experimentalmente. Desde un punto de vista matemático, decimos que la fuerza define un \emph{sistema mecánico newtoniano}. En general, cuando hablemos de los distintos tipos de sistema mecánico, llamaremos a sus ecuaciones diferenciales asociadas (Newton, Euler-Lagrange, Hamilton) \emph{ecuaciones del movimiento} o \emph{dinámica del sistema}.
 
 El formalismo newtoniano ofrece una forma muy simple de entender los sistemas mecánicos pero tiene la complicación de que es necesario medir y calcular las tres componentes de la posición y de la velocidad de cada partícula que conforma el sistema. Por verlo con un ejemplo, si queremos describir el movimiento de un barco en un viaje transatlántico deberíamos tomar una referencia cartesiana (tal vez el centro de la Tierra y tres ejes perpendiculares) y describir su posición y velocidad en $\RR^3$ en términos de esta referencia, cuando lo que parece más sencillo es simplemente entender el barco como una partícula moviéndose en la superficie de $\SF^2$ y dar su posición y velocidad en términos de su latitud y longitud.
 Otro ejemplo lo podemos ver si consideramos el movimiento de una peonza. En este caso, aunque la peonza esté compuesta de cuatrillones de partículas, es posible describir su posición sólo con tres ángulos (el de giro respecto a su eje y los dos de orientación de su eje), o equivalentemente, con la rotación de sus ejes propios respecto a los de una referencia inmóvil exterior (un \emph{sistema de laboratorio}), es decir, con un elemento de $\mathrm{SO}(3)$. 
@@ -35,13 +35,14 @@ Un \emph{sistema lagrangiano} viene dado por una variedad diferenciable $M$ de d
   \dot{q_i} = dq_{i,x(t)}(v)=\frac{d}{dt}(q_i \circ x) (t).
 \end{equation*}
 
-Un \emph{estado} del sistema lagrangiano vendrá dado por un punto $(x,v) \in TM$, donde $x$ es la posición y $v$ la velocidad del sistema en dicho estado, y una \emph{trayectoria} vendrá dada por una aplicación
+Un \emph{estado} del sistema lagrangiano vendrá dado por un punto $(x,v) \in TM$, donde $x$ es la posición y $v$ la velocidad del sistema en dicho estado, y una \emph{trayectoria} del sistema vendrá dada por una aplicación
 \begin{equation*}
   \begin{array}{rcl}
     \gamma: \RR & \longrightarrow & TM \\
     t & \longmapsto & (x(t), \dot{x}(t)).
   \end{array}
 \end{equation*}
+Vemos que esta trayectoria está asociada a una curva $x:\RR \rightarrow M$ en el espacio de configuración, que podemos entender como la descripción de las posiciones de las partículas a lo largo del tiempo, mientras que $\dot{x}(t)=\frac{d}{dt}x(t)$ describe sus velocidades.
 
 La dinámica del sistema lagrangiano viene dada por lo que se conoce como el \emph{principio de mínima acción}. Este principio puede deducirse a partir del formalismo newtoniano, imponiendo ciertas condiciones a las fuerzas y a partir del \emph{principio de D'Alembert} (o \emph{de los trabajos virtuales}), como puede leerse en \cite{goldstein}. Sin embargo, aquí le daremos un enfoque distinto, postulando directamente el principio de mínima acción, al estilo de Landau y Lifshitz \cite{landau}:
   \begin{quote}
@@ -122,11 +123,11 @@ La dinámica del sistema lagrangiano viene dada por lo que se conoce como el \em
   \end{equation*}
   Así, $(q,p)$ son unas nuevas coordenadas en $TM$. Ahora, si recordamos que 
   \begin{equation*}
-    L(q,\dot{q})=\thalf\sum_{i,j=1}^m \dot{q}_i g_{ij} \dot{q}_j - V(q),
+    L(q,\dot{q})=\thalf\sum_{i,j=1}^m \dot{q}_i g_{ij}(q) \dot{q}_j - V(q),
   \end{equation*}
   resulta que
   \begin{equation*}
-    \parcial{L}{\dot{q}_i}=\sum_{j=1}^m g_{ij}\dot{q}_j.
+    \parcial{L}{\dot{q}_i}=\sum_{j=1}^m g_{ij}(q)\dot{q}_j=p_i(q,\dot{q}).
   \end{equation*}
 
   Consideramos ahora una función $H:TM\rightarrow \RR$, que en las coordenadas $(q,\dot{q})$ es 
@@ -161,8 +162,10 @@ La dinámica del sistema lagrangiano viene dada por lo que se conoce como el \em
   
   Obtenemos entonces un sistema de EDOs de orden 1 equivalentes a la ecuación de Euler-Lagrange
   \begin{align*}
+    \begin{cases}
     \dot{q_i}(t)&=\parcial{H}{p_i}(t) \\
       \dot{p_i}(t)&=-\parcial{H}{q_i}(t),
+    \end{cases}
   \end{align*}
   para $i=1,\dots,n$. Éstas son las \emph{ecuaciones de Hamilton}.
   
@@ -195,7 +198,7 @@ Usando esta forma se puede construir un isomorfismo lineal, dado $\zeta \in TM$,
     \xi & \longmapsto & \omega(\xi, \bullet).
   \end{array}
 \end{equation*}
-Ahora, sea el campo $X^H=I \dd H$, es decir, tal que $\dd H=\omega(X^H,\bullet)$, es fácil comprobar que en coordenadas locales se expresará tal y como queríamos:
+Ahora, sea el campo $X^H=I \dd H$, es decir, tal que $\dd H=\omega(X^H,\bullet)$. Es fácil comprobar que en coordenadas locales se expresará tal y como queríamos:
 \begin{equation*}
   X^H = \sum_{i=1}^m \left( \parcial{H}{p_i} \deriv{q_i} - \parcial{H}{q_i} \deriv{p_i} \right).
 \end{equation*}

@@ -188,7 +188,7 @@ Podemos probar ya una serie de fórmulas, debidas a Élie Cartan\footnote{En la 
     Sea $ J\subset \RR $ un intervalo abierto y $ M $ una variedad diferenciable:
     \begin{enumerate}
       \item Un \emph{campo tangente (diferenciable) dependiente del tiempo} de $M$ es una aplicación \[\begin{array}{rcl}X:M\times J & \longrightarrow & TM \\ (x,t) & \longmapsto & (x,X_{t,x}) \end{array} \] que es diferenciable como aplicación entre variedades. 
-      \item Una \emph{forma diferencial (diferenciable) de grado $r$ dependiente del tiempo} de $M$ es una aplicación \[\begin{array}{rcl} \alpha: M \times J & \longrightarrow & \Lambda^r(M) \\ (x,t) &  \longmapsto & (x,\alpha_{t,x}) \end{array}\] tal que la función \[\begin{array}{rcl} \alpha(X_1,\dots,X_r):M\times J & \longrightarrow & \RR \\ (x,t) & \longmapsto & \alpha_{t,x}(X_{1,x}^t,\dots,X_{r,x}^t)\end{array}\] es diferenciable para cualesquiera $r$ campos $X_1,\dots,X_r \in \mathfrak{X}(M)$.
+      \item Una \emph{forma diferencial (diferenciable) de grado $r$ dependiente del tiempo} de $M$ es una aplicación \[\begin{array}{rcl} \alpha: M \times J & \longrightarrow & \varLambda^r(M) \\ (x,t) &  \longmapsto & (x,\alpha_{t,x}) \end{array}\] tal que la función \[\begin{array}{rcl} \alpha(X_1,\dots,X_r):M\times J & \longrightarrow & \RR \\ (x,t) & \longmapsto & \alpha_{t,x}(X_{1,x}^t,\dots,X_{r,x}^t)\end{array}\] es diferenciable para cualesquiera $r$ campos $X_1,\dots,X_r \in \mathfrak{X}(M)$.
     \end{enumerate}
   \end{defn}
 
@@ -206,58 +206,22 @@ Podemos probar ya una serie de fórmulas, debidas a Élie Cartan\footnote{En la 
       \left. \frac{d}{dt}\right|_{t=t_0} \alpha_t = \lim_{h\rightarrow 0}\frac{\alpha_{t_0+h}-\alpha_{t_0}}{h}.
     \end{equation*}
 
-%  \begin{defn}
-%    \em
-%    Sea $U\subset M$ abierto, una \emph{isotopía} de $M$ es una aplicación diferenciable
-%	$G: [0,1] \times U\subset M \rightarrow M$
-%	tal que $G(0,\bullet)=\varphi_0$ es la identidad y $G(t,\bullet)=\varphi_t$ es un difeomorfismo local. 
-%  \end{defn}
-%  \begin{defn}
-%    \em
-%    Sea $G$ una isotopía de una variedad $M$, se define el \emph{generador infinitesimal de G} como el campo tangente dependiente del tiempo que, para $x\in M$ satisface
-%    \begin{equation*}
-%      X^t_x=\left.\frac{d}{ds}\right|_{s=t}\varphi_s(\varphi_t^{-1}(x)),
-%    \end{equation*}
-%    es decir
-%    \begin{equation*}
-%      X^t\circ \varphi_t = \frac{d}{dt} \varphi_t. 
-%    \end{equation*}
-%  \end{defn}
-%
-%  \begin{obs}
-%    \em
-%    Podemos entender las isotopías como «flujos dependientes del tiempo», que se diferencian de los flujos en que pierden la propiedad de semigrupo.
-%  \end{obs}
-%
-%  Podemos ver un campo dependiente del tiempo $X_t$ en $M$ como un campo independiente del tiempo
-%  \begin{equation*}
-%    \begin{array}{rcl}
-%    \tilde{X}: M \times [0,1] & \longrightarrow & T(M \times [0,1]) \\
-%    (x,t) &\longmapsto& \left( (x,t),X^t_x+\left.\deriv{\mathtt{t}}\right|_t \right).
-%  \end{array}
-%  \end{equation*}
-%  Si $X_t$ tiene soporte compacto y existe $x_0 \in M$ tal que $X^t_x=0$ para cada $t\in[0,1]$, entonces $\tilde{X}$ tiene soporte compacto y genera un flujo completo $\Phi_s(x,t)$ en $(U \subset M) \times [0,1]$, donde $U$ es un entorno de $x_0$. Podemos definir entonces una isotopía $G:[0,1]\times U \rightarrow M$, donde $G(s,x)=\varphi_s(x)$ es la primera componente de $\Phi_s(x,0)$. Claramente es una isotopía porque la primera componente de $\Phi_0(\bullet,0)$ es la identidad en $M$ y la de $\Phi_s(\bullet,0)$ es un difeomorfismo local. Además, 
-%  \begin{equation*}
-%    \Phi_s(x,t)=\Phi_{s+t}\circ(\Phi_t)^{-1}(x,t)=\Phi_{s+t}\left( \varphi_t^{-1}(x),0 \right)=(\varphi_{s+t}\circ\varphi_t^{-1}(x),t+s)
-%  \end{equation*}
-%  Ahora,
-%  \begin{equation*}
-%    X_x^t+\left.\deriv{\mathtt{t}}\right|_t=\tilde{X}_{(x,t)}=\left.\frac{d}{ds}\right|_{s=0}\Phi_s(x,t)=\left.\frac{d}{ds}\right|_{s=0}\varphi_{t+s}(\varphi_t^{-1}(x))+\left.\deriv{\mathtt{t}}\right|_t,
-%  \end{equation*}
-%  luego $X^t_x =\left.\frac{d}{ds}\right|_{s=t}\varphi_s(\varphi_t^{-1}(x))$, es decir, $X$ es el generador infinitesimal de la isotopía $G$.
-
   El siguiente teorema nos permite integrar campos dependientes del tiempo:
   \begin{thm}
     Sea $X:J\times M \rightarrow TM$ un campo dependiente del tiempo. Existen un abierto $V\subset J\times J\times M$ y una función $\varphi:V\rightarrow M$ tal que para cada $s\in J$ y para cada $x\in M$, el conjunto $V^{(s,x)}=\left\{ t\in J | (t,s,x) \in V \right\}$ es un intervalo abierto que contiene a $s$ y la curva $\gamma:V^{(s,x)}\rightarrow M$ definida por $\gamma(t)=\varphi(t,s,x)$ es la única solución maximal al problema de valor inicial
     \begin{align*}
+      \begin{cases}
       \gamma'(t)&=X_{t,\gamma(t)}, \\
       \gamma(s)&=x.
+    \end{cases}
     \end{align*}
   \end{thm}
     Equivalentemente, podemos ver el problema de valor inicial en la siguiente forma:
     \begin{align*}
+      \begin{cases}
       \parcial{\varphi}{t}(t,s,x)&=X_{t,\varphi(t,s,x)}, \\
       \varphi(s,s,x)&=x.
+    \end{cases}
     \end{align*}
     Esta $\varphi$ recibe el nombre de \emph{flujo dependiente del tiempo}. Nótese que cada $\varphi(t,s,\bullet)$ es una aplicación diferenciable de un abierto de $M$ en $M$, pero no tiene por qué ser un difeomorfismo, es decir, en general el flujo no es completo.
 
