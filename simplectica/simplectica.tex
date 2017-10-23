@@ -71,30 +71,30 @@ En el caso en que $V$ y $V'$ tienen la misma dimensión, entonces $f$ es un isom
   Por tanto, $\det(f)=1$.
 \end{proof}
 \section{Variedades simplécticas y simplectomorfismos}\label{sec:variedades}
-\begin{defn}[Variedad simpléctica]
+Una vez repasados los conceptos básicos de la geometría lineal simpléctica, estamos preparados para entender lo que son las \emph{variedades simplécticas} y estudiar las propiedades que comparten.
+\begin{defn}
   \em
-  Una \emph{variedad simpléctica} es un par ordenado $(M,\omega)$ donde $M$ es una variedad diferenciable de dimensión $2n$ y $\omega \in \Gamma^2(M)$ es cerrada y no degenerada (para todo $x \in M$ y para todo $\xi \in T_xM$ existe $\eta \in T_xM$ tal que $\omega(\xi,\eta)\neq0)$. 
+  Una \emph{variedad simpléctica} es un par ordenado $(M,\omega)$ donde $M$ es una variedad diferenciable de dimensión $2n$ y $\omega \in \Gamma^2(M)$ es cerrada y no degenerada (para todo $x \in M$, $\omega_x$ es no degenerada). 
 \end{defn}
-\begin{defn}[Carta simpléctica]
+\begin{defn}
   \em
-  Sea $(M,\omega)$ una variedad simpléctica, una \emph{carta simpléctica en torno a un punto $x \in M$} es un par $(U,(q,p))$, donde $U\subset M$ es un entorno de $x$ y $(q,p)=(q_1,\dots,q_n,p_1,\dots,p_n)$ es un sistema de coordenadas en $x$ tal que:
-\begin{equation}
+  Sea $(M,\omega)$ una variedad simpléctica. Una \emph{carta simpléctica en un punto $x \in M$} es un par $(U,(q,p))$, donde $U\subset M$ es un entorno de $x$ y $(q,p)=(q_1,\dots,q_n,p_1,\dots,p_n)$ es un sistema de coordenadas en $x$ tal que:
+\begin{equation*}
   \omega= \sum_{i=1}^n \dd p_i \wedge \dd q_i.
-  \label{forma}
-\end{equation}
+\end{equation*}
 \end{defn}
 
 Vamos a probar ahora uno de los resultados fundamentales de la geometría simpléctica, que confirma una de las intuiciones que podríamos tener: toda variedad simpléctica es localmente como un espacio vectorial simpléctico.
 
 \begin{thm}[Darboux]
-  Sea $\omega$ una $2$-forma no degenerada en una variedad $M$ de dimensión $2n$. Entonces $\omega$ es cerrada si y sólo si para cada $x\in M$ hay una carta $(U,(q,p))$ en torno a $x$, donde $(q,p)=(q_1,\dots,q_n,p_1,\dots,p_n)$ es un sistema de coordenadas que cumple \eqref{forma}. 
+  Sea $(M,\omega)$ una variedad simpléctica. Entonces para cada $x\in M$ hay una carta simpléctica en $x$.
 \end{thm}
 \begin{proof}
-  En primer lugar, inmediatamente si $\omega$ tiene esa forma entonces es cerrada. El procedimiento a seguir para demostrar la otra implicación del teorema es el siguiente:
+  El procedimiento a seguir para demostrar el teorema es el siguiente:
   \begin{enumerate}
     \item Vamos a encontrar un entorno $U \subset M$ y un difeomorfismo $\varphi : U \rightarrow \RR^{2n}$ tal que $\omega_1= (\varphi^*)^{-1}\omega$ es una forma bilineal antisimétrica con coeficientes constantes en $\RR^{2n}$.
     \item Tomamos $\psi: \RR^{2n} \rightarrow \RR^{2n}$ un cambio de base tal que la matriz asociada a $\omega_1$ en la nueva base es $J_n$. 
-    \item Tomamos como sistema de coordenadas $(q,p)=\psi \circ \varphi$, entonces $(U,(q,p))$ es una carta simpléctica en torno a $x$.
+    \item Tomamos como sistema de coordenadas $(q,p)=\psi \circ \varphi$, entonces $(U,(q,p))$ es una carta simpléctica en $x$.
   \end{enumerate}
 
 \begin{center}
@@ -141,23 +141,35 @@ Vamos a dar ahora dos propiedades fuertes de las variedades simplécticas:
 \begin{proof}
   Como $\omega$ es no degenerada, $\omega^n=\omega \wedge \overset{(n)}{\cdots} \wedge \omega$ es una forma de grado máximo nunca nula, luego la variedad es orientable.
 \end{proof}
+
+A esta $\omega^n$ se le suele llamar \emph{forma de volumen} de $M$ ya que, aunque aquí no lo desarrollemos, está relacionada con el elemento de volumen en $M$ si definieramos en ésta una estructura riemanniana.
+
 \begin{prop}
-  Si $(M,\omega)$ es una variedad simpléctica compacta y sin borde, entonces su segundo grupo de cohomología de de Rham es no trivial.
+  Si $(M,\omega)$ es una variedad simpléctica compacta y sin borde, entonces su segundo grupo de cohomología de de Rham es no trivial: $\omega$ no es exacta.
 \end{prop}
 \begin{proof}
-  Consideramos en $M$ la forma de volumen $\Omega=\frac{1}{n!}\omega^n$. Ahora, si $\omega=\dd \alpha$, entonces $\omega^n=\dd (\alpha \wedge \omega^{n-1})$. Por el teorema de Stokes
+  Consideramos en $M$ la forma de volumen $\omega^n$. Ahora, si $\omega=\dd \alpha$, entonces $\omega^n=\dd (\alpha \wedge \omega^{n-1})$. Por el teorema de Stokes
   \begin{equation*}
-    \text{Vol}(M)=\int_M \Omega=\int_M \dd (\alpha \wedge \omega^{n-1}) = \int_{\partial M=\varnothing} \alpha \wedge \omega^{n-1}=0,
+    \int_M \omega^n=\int_M \dd (\alpha \wedge \omega^{n-1}) = \int_{\partial M=\varnothing} \alpha \wedge \omega^{n-1}=0.
   \end{equation*}
-  que es absurdo porque el volumen de $M$ no puede ser 0. Por tanto, $\omega$ es cerrada y no es exacta, luego $[\omega]\neq 0$ y $H^2(M) \neq \{0\}$.
+  Pero $M$ es compacta y $\omega^n$ es una formadiferencial de grado máximo, luego $\int_M \omega^n$ no puede ser igual a $0$. Por tanto, $\omega$ es cerrada y no es exacta, luego $[\omega]\neq 0$ y $H^2(M) \neq \{0\}$.
 \end{proof}
-\begin{corol}
-  $\SF^{2n}$ admite una estructura simpléctica si y sólo si $n=1$.
-\end{corol}
+
+\begin{ejemplo}
+  \em
+  Podemos dar un ejemplo de variedad simpléctica si consideramos la esfera $\SF^2$ y su 2-forma diferencial $\omega$ nunca nula que sabemos que tiene por ser orientable. 
+\end{ejemplo}
+
+Como consecuencia del resultado anterior, las esferas de dimensión superior a $2$ no admiten una estructura simpléctica. En efecto, tenemos el siguiente teorema:
+
+\begin{thm}
+  Si $n>1$, entonces $H^2(\SF^n)={0}$.
+\end{thm}
+
 \begin{proof}
-  Sean $\omega$ una 2-forma en $\SF^n$, $n>2$, $x\in \SF^n$ y $U$ un disco entorno de $x$ ($U \simeq \RR^n$). Entonces existe una 1-forma $\alpha$ definida en $U$ tal que $\omega=\dd \alpha$ en $U$. Sea $\theta$ una función meseta que valga 1 en $U$ y $0$ fuera de un entorno $V$ de $U$, la forma 
+  Sean $\omega$ una 2-forma en $\SF^n$, $n>2$, $x\in \SF^n$ y $U$ un disco entorno de $x$. Entonces existe una 1-forma $\alpha$ definida en $U$ tal que $\omega=\dd \alpha$ en $U$. Sea $\theta$ una función meseta que valga 1 en un entorno $V\subset U$ de $x$ relativamente compacto de $U$ y $0$ fuera de $U$, la forma 
   \begin{equation*}
-    \omega_1=\omega - \theta \dd \alpha
+    \omega_1=\omega - \dd(\theta \alpha)
   \end{equation*}
   es cerrada con soporte compacto en $\SF^n \backslash \{x\}$, que es difeomorfa, por proyección estereográfica $\varphi$, a $\RR^n$. Por tanto, existe una 1-forma $\beta$ de $\RR^n$ tal que $\dd \beta = \varphi^* \omega_1$. Con todo esto, tenemos
   \begin{equation*}
@@ -167,51 +179,22 @@ Vamos a dar ahora dos propiedades fuertes de las variedades simplécticas:
   \begin{equation*}
     H^2(\SF^n)= \{0\}.
   \end{equation*}
-  Si $n=2$, como $\SF^2$ es conexa, compacta y sin borde,
-  \begin{equation*}
-    H^2(\SF^2)=H^0(\SF^2)=\RR.   
-  \end{equation*}
-  Por la proposición anterior, si $\SF^{2n}$ admitiera una estructura simpléctica tendría que ser $H^2(\SF^{2n}) \neq \{0\}$, que solamente se da en el caso $n=1$.
 \end{proof}
 
-Para terminar la sección, vamos a estudiar los isomorfismos en la categoría de las variedades simplécticas:
-\begin{defn}[Simplectomorfismo]
+Para terminar la sección, vamos a estudiar los morfismos en la categoría de las variedades simplécticas:
+\begin{defn}
   \em
-  Sea $(M,\omega)$ una variedad simpléctica y $f:M \rightarrow M$ un difeomorfismo. Decimos que $f$ es un \emph{simplectomorfismo} o una \emph{transformación canónica} \footnote{Esta nomenclatura es más común en Física} si
+  Sean $(M,\omega)$ y $(M',\omega')$ variedades simplécticas y $f:M \rightarrow M'$ una aplicación diferenciable. Decimos que $f$ es un \emph{simplectomorfismo} o una \emph{transformación canónica} \footnote{Esta nomenclatura es más común en Física} si
   \begin{equation*}
-    f^* \omega = \omega
+    f^* \omega' = \omega,
   \end{equation*}
+  es decir, si para cada $x\in M$, $(d_xf)^*\omega'_{f(x)}=\omega_x$. Equivalentemente, $f$ es simpléctica si la aplicación lineal $d_xf:T_xM \rightarrow T_{f(x)}M'$ es simpléctica.
 \end{defn}
 \begin{prop}
-  Sea $(M,\omega)$ una variedad simpléctica y $f:M \rightarrow M$ un difeomorfismo. Son equivalentes:
-  \begin{enumerate}
-    \item $f$ es un simplectomorfismo.
-    \item Para cada $x\in M$, la aplicación lineal $d_xf: \RR^{2n} \rightarrow \RR^{2n}$ es simpléctica.
-    \item Para cada $x \in M$, si $(U,(q,p))$ es una carta simpléctica en torno a $x$, $(f(U),(q\circ f, p \circ f))$ es una carta simpléctica en torno a $f(x)$.
-  \end{enumerate}
+  Sean $(M,\omega)$ y $(M',\omega')$ variedades simplécticas y $f:M \rightarrow M'$ una aplicación diferenciable. Entonces $f$ es un simplectomorfismo si y sólo si, para cada $x \in M$, si $(U,(q,p))$ es una carta simpléctica en $x$, entonces $(f(U),(q\circ f, p \circ f))$ es una carta simpléctica en $f(x)$.
 \end{prop}
 \begin{proof}\leavevmode
-  
-  (1) $\implies$ (2):
-  \begin{equation*}
-    \omega_x=(f^*\omega)_x=\omega_{f(x)} \circ d_x f,
-  \end{equation*}
-  donde $\omega_x$ es una forma bilineal antisimétrica no degenerada en $T_xM$ y $\omega_{f(x)}$ lo mismo en $T_{f(x)}M$. Tomando bases simplécticas $\mathcal{B}$ y $\mathcal{B'}$ en $T_xM$ y $T_{f(x)}M$, respectivamente, las formas $\omega_x$, $\omega_{f(x)}$ quedan en la forma canónica $\omega_n$. Por tanto
-  \begin{equation*}
-   \omega_n = \omega_n \circ d_x f, 
-  \end{equation*}
-  luego $d_x f$ es una aplicación lineal simpléctica.
-
-  (2) $\implies$ (1):
-
-  Si $d_x f$ es simpléctica, para cada $x \in M$ en las bases adecuadas tenemos
-  \begin{equation*}
-    \omega_x=\omega_{f(x)} \circ d_x f=(f^*\omega)_x. 
-  \end{equation*}
-Como esto es válido para todo $x \in M$, $\omega=f^* \omega$.
-
-(1) $\Longleftrightarrow$ (3):
-
+Basta ver que
 \begin{equation*}
   \sum_{i=1}^n \dd (p_i \circ f) \wedge \dd (q_i \circ f) = \sum_{i=1}^n f^* (\dd p_i \wedge \dd q_i) = f^* \left( \sum_{i=1}^n \dd p_i \wedge \dd q_i \right) = f^* \omega
 \end{equation*}
@@ -219,44 +202,35 @@ es igual a $\omega$ si y sólo si $f$ es un simplectomorfismo.
 
 \end{proof}
 
-Enunciamos también una propiedad inmediata de los simplectomorfismos:
+Enunciamos también una consecuencia inmediata de la definición de simplectomorfismo:
 \begin{prop}\label{volumen}
-  Los simplectomorfismos preservan el elemento de volumen $\Omega=\frac{1}{n!}\omega^n$.
+  Los simplectomorfismos preservan la forma de volumen $\omega^n$.
 \end{prop}
 
 \section{Campos y flujos hamiltonianos}\label{sec:hamilton}
-\begin{obs}
-  \em
-  Sea $M$ una variedad simpléctica, la aplicación 
+  Sea $M$ una variedad simpléctica. La aplicación 
   \begin{equation*}
     \begin{array}{rcl}
       J=I^{-1}: T_xM & \longrightarrow & (T_xM)^* \\
       \xi & \longmapsto & \omega(\xi,\bullet),
       \end{array} 
   \end{equation*}
-da un isomorfismo lineal entre campos y 1-formas, a cada campo $X$ le podemos asignar la forma $i_X \omega$.
-\end{obs}
-\begin{defn}[Campo hamiltoniano y flujo hamiltoniano]
+es un isomorfismo lineal entre campos y 1-formas. Resulta que a cada campo $X$ le podemos asignar la forma $i_X \omega$. Veremos ahora como esto nos permite asociar campos a las funciones de la variedad.
+\begin{defn}
   \em
-  Sea una función $H:M \rightarrow \RR$, se llama \emph{campo hamiltoniano generado por H} a 
+  Dada una función $H:M \rightarrow \RR$, se llama \emph{campo hamiltoniano generado por H} a 
   \begin{equation*}
-    X^H=I \dd H.
+    X^H=I \dd H,
   \end{equation*}
-  Se llama \emph{flujo hamiltoniano generado por H} y se denota por $\varphi^H$ al flujo cuyo generador infinitesimal es $X^H$.
+  es decir, $dH=i_{X^H}\omega=\omega(X^H,\bullet)$.
+  Se llama \emph{flujo hamiltoniano generado por H} y se denota por $\varphi^H$ al flujo de $X^H$.
 \end{defn}
-\begin{obs}
-  \em
-  $\dd H = i_{X^H}\omega$
-\end{obs}
-\begin{obs}
-  \em
-  Obtenemos ahora una versión geométrica e independiente de las coordenadas de las clásicas ecuaciones de Hamilton:
+  Obtenemos ahora una versión geométrica e independiente de coordenadas de las clásicas ecuaciones de Hamilton:
   \begin{equation*}
     X^H_x= \left.\frac{d}{dt}\right| _{t=0}\varphi^H_t(x).
   \end{equation*}
-\end{obs}
 Podemos dar ahora una formulación canónica de la mecánica clásica:
-\begin{defn}[Sistema hamiltoniano]
+\begin{defn}
   \em
   Un \emph{sistema mecánico hamiltoniano} es un par $(M,H)$, donde $M$ es una variedad simpléctica (comúnmente llamada \emph{espacio de fases}) y $H:M \rightarrow \RR$ es una función (normalmente llamada \emph{hamiltoniano} del sistema).
 
