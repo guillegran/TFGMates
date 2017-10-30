@@ -9,7 +9,7 @@
 \contentsline {paragraph}{\tocparagraph {}{}{\bf El grupo simpl\IeC {\'e}ctico}}{16}{section*.5}
 \contentsline {section}{\tocsection {}{5}{Variedades simpl\IeC {\'e}cticas y simplectomorfismos}}{17}{section.5}
 \contentsline {section}{\tocsection {}{6}{Campos y flujos hamiltonianos}}{20}{section.6}
-\contentsline {section}{\tocsection {}{7}{Corchete de Poisson}}{22}{section.7}
-\contentsline {section}{\tocsection {}{8}{Teor\IeC {\'\i }a de Arnold-Liouville}}{25}{section.8}
+\contentsline {section}{\tocsection {}{7}{Corchete de Poisson}}{23}{section.7}
+\contentsline {section}{\tocsection {}{8}{Teor\IeC {\'\i }a de Arnold-Liouville}}{26}{section.8}
 \contentsline {section}{\tocsection {}{9}{Un poco m\IeC {\'a}s de movimiento condicionalmente peri\IeC {\'o}dico}}{40}{section.9}
 \contentsline {section}{\tocsection {}{}{Referencias}}{42}{section*.6}

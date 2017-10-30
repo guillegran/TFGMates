@@ -161,12 +161,13 @@ La dinámica del sistema lagrangiano viene dada por lo que se conoce como el \em
   \end{equation*}
   
   Obtenemos entonces un sistema de EDOs de orden 1 equivalentes a la ecuación de Euler-Lagrange
-  \begin{align*}
+  \begin{align}
     \begin{cases}
     \dot{q_i}(t)&=\parcial{H}{p_i}(t) \\
       \dot{p_i}(t)&=-\parcial{H}{q_i}(t),
     \end{cases}
-  \end{align*}
+    \label{hamilton}
+  \end{align}
   para $i=1,\dots,n$. Éstas son las \emph{ecuaciones de Hamilton}.
   
   Si queremos dotar de sentido físico a esta función $H$, conocida como \emph{hamiltoniano} del sistema, consideremos un sistema natural con lagrangiano $L=T-V$. Entonces $p_i=\sum_{j=1}^m g_{ij}(q)\dot{q}_j$ y $T(q,\dot{q})=\sum_{i,j=1}^m\thalf\dot{q}_ig_{ij}(q)\dot{q}_j$, por tanto
@@ -192,13 +193,14 @@ Es decir, el hamiltoniano es exactamente $T+V$, la \emph{energía total} del sis
  es cerrada (porque es exacta) y no degenerada. 
 
 Usando esta forma se puede construir un isomorfismo lineal, dado $\zeta \in TM$,
-\begin{equation*}
+\begin{equation}
+  \label{isomorfismo}
   \begin{array}{rcl}
-    J=I^{-1}: T_{\zeta}(TM) & \longrightarrow & (T_{\zeta}(TM))^* \\
+     T_{\zeta}(TM) & \longrightarrow & (T_{\zeta}(TM))^* \\
     \xi & \longmapsto & \omega(\xi, \bullet).
   \end{array}
-\end{equation*}
-Ahora, sea el campo $X^H=I \dd H$, es decir, tal que $\dd H=\omega(X^H,\bullet)$. Es fácil comprobar que en coordenadas locales se expresará tal y como queríamos:
+\end{equation}
+Ahora, si $X^H$ es el campo asociado a $\dd H$ por este isomorfismo, es decir, tal que $\dd H=\omega(X^H,\bullet)$, es fácil comprobar que en coordenadas locales se expresará tal y como queríamos:
 \begin{equation*}
   X^H = \sum_{i=1}^m \left( \parcial{H}{p_i} \deriv{q_i} - \parcial{H}{q_i} \deriv{p_i} \right).
 \end{equation*}

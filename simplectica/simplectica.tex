@@ -142,17 +142,17 @@ Vamos a dar ahora dos propiedades fuertes de las variedades simplécticas:
   Como $\omega$ es no degenerada, $\omega^n=\omega \wedge \overset{(n)}{\cdots} \wedge \omega$ es una forma de grado máximo nunca nula, luego la variedad es orientable.
 \end{proof}
 
-A esta $\omega^n$ se le suele llamar \emph{forma de volumen} de $M$ ya que, aunque aquí no lo desarrollemos, está relacionada con el elemento de volumen en $M$ si definieramos en ésta una estructura riemanniana.
+A esta $\omega^n$ se le suele llamar \emph{volumen de Liouville} de $M$ ya que, aunque aquí no lo desarrollemos, está relacionada con el elemento de volumen en $M$ si definieramos en ésta una estructura riemanniana.
 
 \begin{prop}
   Si $(M,\omega)$ es una variedad simpléctica compacta y sin borde, entonces su segundo grupo de cohomología de de Rham es no trivial: $\omega$ no es exacta.
 \end{prop}
 \begin{proof}
-  Consideramos en $M$ la forma de volumen $\omega^n$. Ahora, si $\omega=\dd \alpha$, entonces $\omega^n=\dd (\alpha \wedge \omega^{n-1})$. Por el teorema de Stokes
+  Consideramos en $M$ el volumen de Liouville $\omega^n$. Ahora, si $\omega=\dd \alpha$, entonces $\omega^n=\dd (\alpha \wedge \omega^{n-1})$. Por el teorema de Stokes
   \begin{equation*}
     \int_M \omega^n=\int_M \dd (\alpha \wedge \omega^{n-1}) = \int_{\partial M=\varnothing} \alpha \wedge \omega^{n-1}=0.
   \end{equation*}
-  Pero $M$ es compacta y $\omega^n$ es una formadiferencial de grado máximo, luego $\int_M \omega^n$ no puede ser igual a $0$. Por tanto, $\omega$ es cerrada y no es exacta, luego $[\omega]\neq 0$ y $H^2(M) \neq \{0\}$.
+  Pero $M$ es compacta y $\omega^n$ es una forma diferencial de grado máximo, luego $\int_M \omega^n$ no puede ser igual a $0$. Por tanto, $\omega$ es cerrada y no es exacta, luego $[\omega]\neq 0$ y $H^2(M) \neq \{0\}$.
 \end{proof}
 
 \begin{ejemplo}
@@ -208,28 +208,24 @@ Enunciamos también una consecuencia inmediata de la definición de simplectomor
 \end{prop}
 
 \section{Campos y flujos hamiltonianos}\label{sec:hamilton}
-  Sea $M$ una variedad simpléctica. La aplicación 
+Sea $M$ una variedad simpléctica\footnote{A partir de este momento denotaremos las variedades simplécticas $(M,\omega)$ simplemente por $M$}. Análogamente a lo visto en la fórmula \eqref{isomorfismo}, la aplicación 
   \begin{equation*}
     \begin{array}{rcl}
-      J=I^{-1}: T_xM & \longrightarrow & (T_xM)^* \\
+      T_xM & \longrightarrow & (T_xM)^* \\
       \xi & \longmapsto & \omega(\xi,\bullet),
       \end{array} 
   \end{equation*}
 es un isomorfismo lineal entre campos y 1-formas. Resulta que a cada campo $X$ le podemos asignar la forma $i_X \omega$. Veremos ahora como esto nos permite asociar campos a las funciones de la variedad.
 \begin{defn}
   \em
-  Dada una función $H:M \rightarrow \RR$, se llama \emph{campo hamiltoniano generado por H} a 
-  \begin{equation*}
-    X^H=I \dd H,
-  \end{equation*}
-  es decir, $dH=i_{X^H}\omega=\omega(X^H,\bullet)$.
+  Dada una función $H:M \rightarrow \RR$, se llama \emph{campo hamiltoniano generado por H} al campo $X^H$ tal que $dH=i_{X^H}\omega=\omega(X^H,\bullet)$.
   Se llama \emph{flujo hamiltoniano generado por H} y se denota por $\varphi^H$ al flujo de $X^H$.
 \end{defn}
-  Obtenemos ahora una versión geométrica e independiente de coordenadas de las clásicas ecuaciones de Hamilton:
+  Obtenemos ahora una versión geométrica e independiente de coordenadas de las clásicas ecuaciones de Hamilton
   \begin{equation*}
     X^H_x= \left.\frac{d}{dt}\right| _{t=0}\varphi^H_t(x).
   \end{equation*}
-Podemos dar ahora una formulación canónica de la mecánica clásica:
+Usando este formalismo podemos dar una formulación canónica de la mecánica clásica.
 \begin{defn}
   \em
   Un \emph{sistema mecánico hamiltoniano} es un par $(M,H)$, donde $M$ es una variedad simpléctica (comúnmente llamada \emph{espacio de fases}) y $H:M \rightarrow \RR$ es una función (normalmente llamada \emph{hamiltoniano} del sistema).
@@ -249,37 +245,96 @@ Podemos dar ahora una formulación canónica de la mecánica clásica:
   \end{equation*}
   Ahora, 
   \begin{equation*}
-    \dd H = i_{X^H}\omega_n = \sum_{i=1}^n \dd p_i \wedge \dd q_i \left(X_{q_i}^H \deriv{q_i} + X^H_{p_i} \deriv{p_i}\right)  = \sum_{i=1}^n X_{q_i}^H \dd p_i -X_{p_i}^H \dd q_i.
+    \dd H = i_{X^H}\omega_n = \sum_{i=1}^n \dd p_i \wedge \dd q_i \left(X_{q_i}^H \deriv{q_i} + X^H_{p_i} \deriv{p_i},\bullet\right)  = \sum_{i=1}^n X_{q_i}^H \dd p_i -X_{p_i}^H \dd q_i.
   \end{equation*}
   Por tanto, las componentes del campo hamiltoniano son $X^H_{q_i}=\parcial{H}{p_i}$ y $X^H_{p_i}=-\parcial{H}{q_i}$.
 
-  El flujo hamiltoniano tendrá la forma $\varphi^H_t(x) = (q_1(t),\dots,q_n(t),p_1(t),\dots,p_n(t))$. Luego su generador infinitesimal será de la forma $X^H_x=(\dot{q_1}(t),\dots,\dot{q_n}(t),\dot{p_1}(t),\dots,\dot{p_n}(t))$. Obtenemos entonces las ecuaciones de Hamilton en su forma clásica:
-  \begin{align*}
+  El flujo hamiltoniano tendrá la forma $\varphi^H_t(x) = (q_1(t),\dots,q_n(t),p_1(t),\dots,p_n(t))$. Luego su generador infinitesimal será de la forma $X^H_x=(\dot{q_1}(t),\dots,\dot{q_n}(t),\dot{p_1}(t),\dots,\dot{p_n}(t))$. Obtenemos entonces las ecuaciones de Hamilton en su forma clásica \eqref{hamilton}:
+  \begin{equation*}
+  \begin{cases}
      \dot{q_i}(t) & = \parcial{H}{p_i}(t) \\
      \dot{p_i}(t) & = -\parcial{H}{q_i} (t),
-  \end{align*}
+  \end{cases}
+\end{equation*}
   para $i=1,\dots,n$.
 \end{ejemplo}
 
+Vamos a ver ahora como se comportan los campos hamiltonianos bajo la acción de funciones diferenciables.
+
 \begin{prop}
-  Los flujos hamiltonianos son familias uniparamétricas de simplectomorfismos, es decir, el flujo hamiltoniano preserva $\omega$.
+ Sean $M,M'$ variedades simplécticas y $H:M\rightarrow \RR$. Si $f:M\rightarrow M'$ es una aplicación diferenciable, entonces 
+ \begin{equation*}
+   f^*i_{X^H}\omega=i_{X^{H\circ f}}\omega'.
+ \end{equation*}
 \end{prop}
 \begin{proof}
-  Sea $X^H$ un campo hamiltoniano, por la fórmula de Cartan,
+  Basta hacer los cálculos,
+  \begin{equation*}
+    f^*i_{X^H}\omega=f^*\dd H=\dd H \circ f_* = \dd (H\circ f)=i_{X^{H\circ f}}\omega.
+  \end{equation*}
+\end{proof}
+
+Como consecuencia tenemos que los simplectomorfismos preservan las ecuaciones de Hamilton.
+
+\begin{prop}
+  Sean $M$ una variedad simpléctica y $f:M\rightarrow M$. La función $f$ es un simplectomorfismo si y sólo si para todo $H:M\rightarrow \RR$
+  \begin{equation*}
+    f_*X^H=X^{H\circ f^{-1}}.
+  \end{equation*}
+\end{prop}
+\begin{proof}
+  En primer lugar, por una comprobación inmediata se tiene, para cualquier difeomorfismo $f$, para cualquier forma $\lambda$, y para cualquier campo $X$, 
+  \begin{equation*}
+    (f^{-1})^*i_X \lambda = i_{f_*X}(f^{-1})^* \lambda.
+  \end{equation*}
+  Ahora,
+  \begin{equation*}
+    (f^{-1})^*i_{X^H}\omega=i_{X^{H \circ f^{-1}}}\omega,
+  \end{equation*}
+  mientras que, por lo anterior,
+  \begin{equation*}
+    (f^{-1})^*(i_{X^H}\omega)=i_{f_*X^H} (f^{-1})^*\omega.
+  \end{equation*}
+  Como $f$ es un simplectomorfismo, $f^{-1}$ también lo será, luego $(f^{-1})^* \omega = \omega$.
+  Tenemos entonces,
+  \begin{equation*}
+    i_{X^{H \circ f^{-1}}} \omega = i_{f_*X^H}\omega,
+  \end{equation*}
+  es decir 
+  \begin{equation*}
+    \omega(X^{H\circ f^{-1}},\bullet)=\omega(f_*X^H,\bullet)
+  \end{equation*}
+  y, como $\omega$ es no degenerada,
+  \begin{equation*}
+    X^{H \circ f^{-1}}=f_*X^H.
+  \end{equation*}
+
+  Recíprocamente, si $f_*(X^H)=X^{H \circ f^{-1}}$ para todo $H:M \rightarrow \RR$, entonces
+  \begin{equation*}
+    i_{X^{H\circ f^{-1}}}(f^{-1})^* \omega=i_{f_*(X^H)}(f^{-1})^* \omega = (f^{-1})^*i_{X^H}\omega=i_{X^{H \circ f^{-1}}}\omega.
+  \end{equation*}
+  Luego $(f^{-1})^* \omega = \omega$. Es decir, $f^{-1}$ (y por tanto $f$) es un simplectomorfismo.
+\end{proof}
+
+\begin{prop}[Teorema de Liouville]
+  Los flujos hamiltonianos son familias uniparamétricas de simplectomorfismos, es decir, el flujo hamiltoniano preserva $\omega$. 
+\end{prop}
+\begin{proof}
+  Si $X^H$ es un campo hamiltoniano, por la fórmula de Cartan,
   \begin{equation*}
     L_{X^H}\omega= \dd (i_{X^H}\omega) + i_{X^H}(\dd \omega) = \dd (\dd H) + 0 = 0.
   \end{equation*}
+  Ahora, si $\varphi$ es el flujo de $X^H$,
+  \begin{align*}
+    \frac{d}{dt}(\varphi^*_t\omega_{\varphi_t(x)})&=\lim_{h\rightarrow 0}\frac{\varphi^*_{t+h}\omega_{\varphi_{t+h}(x)}-\varphi^*_t\omega_{\varphi_t(x)}}{h}\\ &=\varphi^*_t\left( \lim_{h\rightarrow 0}\frac{\varphi^*_h\omega_{\varphi_h(\varphi_t(x))}-\omega_{\varphi_t(x)}}{h}\right)\\ &=\varphi_t^*((L_X\omega)_{\varphi_t(x)})=\varphi^*_t(0)=0. 
+  \end{align*}
+  Por tanto, $\varphi^*_t\omega_{\varphi_t(x)}=\omega_x$.
 \end{proof}
-Una consecuencia inmediata de este teorema es el conocido resultado de Liouville:
-\begin{corol}[Teorema de Liouville]
-  El flujo hamiltoniano preserva el volumen del espacio de fases.
-\end{corol}
-\begin{proof}
-  Claramente, como el flujo hamiltoniano consiste en simplectomorfismos y estos preservan el elemento de volumen (proposición \ref{volumen}), entonces el volumen total se preserva con el flujo hamiltoniano.
-\end{proof}
+Una consecuencia inmediata del teorema de Liouville, es que los simplectomorfismos preservan el volumen de Liouville $\omega^n$.
+
 A la vista de este resultado, vamos a probar un teorema muy importante sobre transformaciones que preservan el volumen:
 \begin{prop}[Teorema de recurrencia de Poincaré \footnote{En inglés \textit{Poincaré recurrence theorem}. Nótese que aquí la palabra «recurrencia» no toma el significado habitual en matemáticas (por ejemplo en «construcción de sucesiones por recurrencia»), que se traduce del inglés \textit{recursion}. El diccionario Oxford define \textit{recursion} como \textit{``the repeated application of a recursive procedure or definition''}. Por otro lado, define \textit{recurrence} como \textit{``the fact of ocurring again''}, que podría traducirse también como «repetición» o «reaparición».}]
- Sea $D\in \RR^n$ acotado y sea $g:D\rightarrow D$ que preserva el volumen. Entonces, para cualquier $U\subset D$ abierto, hay un punto $x\in D$ y un $n\in \NN$, $n>0$, tal que $g^n(x) \in U$.
+ Sea $D\subset \RR^n$ acotado y sea $g:D\rightarrow D$ que preserva el volumen. Entonces, para cualquier $U\subset D$ abierto, hay un punto $x\in D$ y un $n\in \NN$, $n>0$, tal que $g^n(x) \in U$.
 \end{prop}
 \begin{proof}
   Consideramos la familia
@@ -288,9 +343,9 @@ A la vista de este resultado, vamos a probar un teorema muy importante sobre tra
   \end{equation*}
   Todos estos conjuntos tienen el mismo volumen y, si no se cortaran en ningún punto, $D$ tendría volumen infinito. Por tanto, existen $k,l\in \NN$, $k>l$ tal que
   \begin{equation*}
-    g^kU\cap g^lU \neq \varnothing.
+    g^kU\cap g^lU \neq \varnothing,
   \end{equation*}
-  Por tanto, $A=g^{k-l}U \cap U \neq \varnothing$. Entonces, sea $y\in A$, existen $x \in U$ y $n=k-l$ tal que $y=g^n(x)\in U$.
+  luego $A=g^{k-l}U \cap U \neq \varnothing$. Entonces, dado $y\in A$, existen $x \in U$ y $n=k-l$ tal que $y=g^n(x)\in U$.
 \end{proof}
 \begin{ejemplo}
   \em
@@ -300,7 +355,7 @@ A la vista de este resultado, vamos a probar un teorema muy importante sobre tra
 \end{ejemplo}
 
 Para terminar la sección, haremos un breve comentario sobre cantidades conservadas.
-\begin{defn}[Integral primera]
+\begin{defn}
   \em
   Sea $(M,H)$ un sistema hamiltoniano, una función $F:M \rightarrow \RR$ se dice que es una \emph{integral primera} del sistema o una \emph{constante del movimiento} si es constante a lo largo del flujo hamiltoniano. Esto es, si
   \begin{equation*}
@@ -311,11 +366,11 @@ Para terminar la sección, haremos un breve comentario sobre cantidades conserva
     $H$ es una integral primera del sistema hamiltoniano $(M,H)$.
   \end{prop}
   \begin{proof}
-    Basta hallar la derivada de $H$ en la dirección de $X^H$ y ver que es 0. En efecto, sea $x \in M$,
+    Basta hallar la derivada de $H$ en la dirección de $X^H$ y ver que es 0. En efecto, dado $x \in M$,
     \begin{equation*}
-      d_xH(X_x^H) = \omega(X_x^H,X_x^H)=0.
+      \frac{d}{dt}\left( \varphi_t^H(x) \right)=d_xH(X_x^H) = \omega(X_x^H,X_x^H)=0,
     \end{equation*}
-    Ya que $d_xH=\omega(X_x^H,\bullet)$.
+    ya que $d_xH=\omega(X_x^H,\bullet)$ y $\omega$ es antisimétrica.
   \end{proof}
 \end{defn}
 
@@ -402,7 +457,7 @@ Otra forma de ver este mismo teorema es la siguiente:
 \begin{proof}
   Sea $\pois{F}{G}=a \in \RR$, entonces
   \begin{equation*}
-    \lie{X^F}{X^G}= X^{\pois{F}{G}} = X^a = I \dd a =0.
+    \lie{X^F}{X^G}= X^{\pois{F}{G}} = X^a=0.
   \end{equation*}
 \end{proof}
 
@@ -445,54 +500,11 @@ De la bilinealidad, la antisimetría y la identidad de Jacobi obtenemos inmediat
   $(\mathcal{C}^{\infty}(M),\pois{ }{ })$ es un álgebra de Lie.  
 \end{corol}
 
-Por último, vamos a dar una caracterización clásica de las transformaciones canónicas: que preservan las ecuaciones de Hamilton y el corchete de Poisson.
+Por último, vamos a dar otra caracterización clásica de los simplectomorfismos, que preservan el corchete de Poisson.
 \begin{prop}
-  Son equivalentes:
-  \begin{enumerate}
-    \item $f:M\rightarrow M$ es un simplectomorfismo.
-    \item Para todo $H: M \rightarrow \RR$, $f_*(X^H)=X^{H\circ f^{-1}}$.
-    \item Para cualesquiera $F,G: M \rightarrow \RR$, $\pois{F}{G} \circ f^{-1}=\pois{F\circ f^{-1}}{G \circ f^{-1}}$.
-  \end{enumerate}
+  Sea $M$ una variedad simpléctica y $f:M\rightarrow M$. La función $f$ es un simplectomorfismo si y sólo si para cualesquiera $F,G: M \rightarrow \RR$, $\pois{F}{G} \circ f^{-1}=\pois{F\circ f^{-1}}{G \circ f^{-1}}$.
 \end{prop}
 \begin{proof}\leavevmode
-  
-  (1) $\implies$ (2):
-
-  En primer lugar, por una comprobación inmediata \nota{seguro?} se tiene, para cualquier difeomorfismo $f$, para cualquier forma $\lambda$, y para cualquier campo $X$, 
-  \begin{equation*}
-    (f^{-1})^*(i_X \lambda) = i_{f_*X}((f^{-1})^* \lambda).
-  \end{equation*}
-
-  Ahora,
-  \begin{equation*}
-    (f^{-1})^*(i_{X^H}\omega)=(f^{-1})^*(\dd H)=\dd(H\circ f^{-1})=i_{X^{H \circ f^{-1}}}\omega,
-  \end{equation*}
-  mientras que, por lo anterior,
-  \begin{equation*}
-    (f^{-1})^*(i_{X^H}\omega)=i_{f_*(X^H)}( (f^{-1})^*\omega).
-  \end{equation*}
-
-  Como $f$ es un simplectomorfismo, $f^{-1}$ también lo será, luego $(f^{-1})^* \omega = \omega$.
-
-  Tenemos entonces,
-  \begin{equation*}
-    i_{X^{H \circ f^{-1}}} \omega = i_{f_*(X^H)}(\omega),
-  \end{equation*}
-  luego 
-  \begin{equation*}
-    f_*(X^H)=X^{H \circ f^{-1}}.
-  \end{equation*}
-
-  (2) $\implies$ (1):
-
-  Si $f_*(X^H)=X^{H \circ f^{-1}}$ para todo $H:M \rightarrow \RR$, entonces
-  \begin{equation*}
-    i_{X^{H\circ f^{-1}}}(f^{-1})^* \omega=i_{f_*(X^H)}(f^{-1})^* \omega = (f^{-1})^*(i_{X^H}\omega)=i_{X^{H \circ f^{-1}}}\omega.
-  \end{equation*}
-  Luego $(f^{-1})^* \omega = \omega$. Es decir, $f^{-1}$ (y por tanto $f$) es un simplectomorfismo.
-
-  (2) $\Longleftrightarrow$ (3):
-
   Tenemos,
   \begin{equation*}
     \pois{F}{G} \circ f^{-1} = X^{F}(G) \circ f^{-1} = f_* X^F (G \circ f^{-1})
