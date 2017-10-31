@@ -381,44 +381,31 @@ Para terminar la sección, haremos un breve comentario sobre cantidades conserva
 \begin{equation*}
   \pois{F}{G}(x) = \left.\frac{d}{dt}\right|_{t=0}G(\varphi^F_t(x)),
 \end{equation*}
-para cada $x \in M$.
+para cada $x \in M$. Obsérvese que $\varphi_t^F$ es el flujo hamiltoniano generado por $F$.
 \end{defn}
 \begin{prop}\leavevmode
+  Sean $F,G:M\rightarrow \RR$. Entonces,
   \begin{enumerate}
-    \item Una función $F:M \rightarrow \RR$ es una primera integral de $(M,H)$ si y sólo si $\pois{H}{F}$ es idénticamente nula.
-    \item $\pois{F}{G} = \dd G (X^F)$.
-    \item $\pois{F}{G} = \omega(X^ G, X^F)$.
-    \item $\pois{ }{ }: \mathcal{C}^{\infty}(M) \times \mathcal{C}^{\infty}(M) \rightarrow \mathcal{C}^{\infty}(M)$ es una aplicación bilineal y antisimétrica. Es decir, 
-      \begin{equation*}
-	\pois{F}{G}  =  -\pois{G}{F} \\
-      \end{equation*}
-      y
-      \begin{equation*}
-	\pois{F}{\lambda_1 G_1 + \lambda_2 G_2}  =  \lambda_1 \pois{F}{G_1} + \lambda_2 \pois{F}{G_2},
-      \end{equation*}
-      para cualesquiera $\lambda_1, \lambda_2 \in \RR$.
-    \item $\lie{X^F}{X^G} = X^{\pois{F}{G}}$.
+    \item[$1$.] $\pois{F}{G} = \dd G (X^F)=X^F(G)= \omega(X^ G, X^F)$; en particular, la aplicación entre espacios vectoriales reales $$\pois{ }{ }: \mathcal{C}^{\infty}(M) \times \mathcal{C}^{\infty}(M) \rightarrow \mathcal{C}^{\infty}(M)$$ es bilineal y antisimétrica, y 
+    \item[$2$.] $\lie{X^F}{X^G} = X^{\pois{F}{G}}$.
   \end{enumerate}
 \end{prop}
 \begin{proof}\leavevmode
   \begin{enumerate}
-    \item Inmediata de la definición de integral primera.
-    \item Por la regla de la cadena y por el hecho de que $X^ F$ es el generador infinitesimal de $\varphi^F$.
-    \item $\omega(X^G,X^F)=\dd G (X^F) = \pois{F}{G}$.
-    \item Por (3) y porque $\omega$ es bilineal y antisimétrica.
+    \item Por la regla de la cadena, por ser $X^ F$ el generador infinitesimal de $\varphi^F$ y por la definición de $X^G$.
     \item Por las fórmulas de Cartan:
       \begin{align*}
 	i_{\lie{X^F}{X^G}} \omega & =  L_{X^F}(i_{X^G}\omega) - i_{X^G}(L_{X^F} \omega) \\ 
-	& = \dd (i_{X^F}(i_{X^G}\omega)) + i_{X^F}(\dd (i_{X^G}\omega)) - i_{X^G}(\dd(i_{X^F}\omega) - i_{X^G}(i_{X^F}(\dd \omega)) \\
-	& = \dd (\omega(X^G,X^F)) + i_{X^F}(\dd(\dd G)) - i_{X^G}(\dd (\dd F)) - 0 \\
-	& = \dd (\pois{F}{G}) = i_{X^{\pois{F}{G}}}\omega.
+	& = \dd i_{X^F}i_{X^G}\omega + i_{X^F}\dd i_{X^G}\omega - i_{X^G}(\dd i_{X^F}\omega - i_{X^G}i_{X^F}(\dd \omega)) \\
+	& = \dd (\omega(X^G,X^F)) + i_{X^F}(\dd(\dd G)) - i_{X^G}(\dd (\dd F)) - i_{X^G}i_{X^F}(0) \\
+	& = \dd \pois{F}{G} = i_{X^{\pois{F}{G}}}\omega.
       \end{align*}
   \end{enumerate}
 \end{proof}
 
 \begin{ejemplo}
   \em
-  Consideremos el espacio simpléctico canónico $(\RR^{2n},\omega_n)$ y dos funciones $F,G:\RR^{2n} \rightarrow \RR$. Obtenemos entonces la definición clásica del corchete de Poisson:
+  Consideremos el espacio simpléctico canónico $\RR^{2n}$ y dos funciones $F,G:\RR^{2n} \rightarrow \RR$. Obtenemos entonces la definición clásica del corchete de Poisson:
   \begin{align*}
     \pois{F}{G} & = \dd G (X^F) = \left( \sum_{i=1}^n \parcial{G}{q_i} \dd q_i + \parcial{G}{p_i} \dd p_i \right) \left( \sum_{i=1}^n \parcial{F}{p_i} \deriv{q_i} - \parcial{F}{q_i} \deriv{p_i}\right) \\ 
     & =\sum_{i=1}^n \parcial{F}{p_i} \parcial{G}{q_i} - \parcial{F}{q_i} \parcial{G}{p_i}.
@@ -428,7 +415,7 @@ para cada $x \in M$.
     \pois{F}{q_i} &= \parcial{F}{p_i} \\
     \pois{F}{p_i} &= -\parcial{F}{q_i},
   \end{align*}
-  lo que deja las ecuaciones de Hamilton en una forma más simple:
+  lo que deja las ecuaciones de Hamilton en una forma más simple, si $H$ da un sistema hamiltoniano en $\RR^{2n}$,
   \begin{equation*}
     \left\lbrace
     \begin{array}{l}
@@ -443,6 +430,11 @@ para cada $x \in M$.
   \end{equation*}
 \end{ejemplo}
 
+De la definición de integral primera obtenemos inmediatamente lo siguiente:
+\begin{prop}
+    Una función $F:M \rightarrow \RR$ es una primera integral de $(M,H)$ si y sólo si $\pois{H}{F}$ es idénticamente nula.
+\end{prop}
+
   El corchete de Poisson permite probar la versión hamiltoniana de uno de los resultados más importantes de toda la Física, debido a Emmy Noether, que relaciona las simetrías de un sistema con sus cantidades conservadas.
   \begin{prop}[Teorema de Noether]
     Sea $(M,H)$ un sistema hamiltoniano y $F:M \rightarrow \RR$. Si $H$ es constante a lo largo de $X^F$, entonces $F$ es una integral primera de $(M,H)$. 
@@ -452,16 +444,20 @@ para cada $x \in M$.
   \end{proof}
 Otra forma de ver este mismo teorema es la siguiente:
 \begin{prop}[Otra forma del teorema de Noether]
-  Sea $(M,\omega)$ una variedad simpléctica y sean $X^F$ y $X^G$ campos hamiltonianos en $M$. Los dos campos conmutan (y, por tanto, lo hacen los flujos que generan) si y sólo si $\pois{F}{G}$ es constante. 
+  Sea $(M,\omega)$ una variedad simpléctica conexa y sean $X^F$ y $X^G$ campos hamiltonianos en $M$. Los dos campos conmutan (y, por tanto, lo hacen los flujos que generan) si y sólo si $\pois{F}{G}$ es constante. 
 \end{prop}
 \begin{proof}
-  Sea $\pois{F}{G}=a \in \RR$, entonces
+  Si $\pois{F}{G}=a \in \RR$, entonces
   \begin{equation*}
-    \lie{X^F}{X^G}= X^{\pois{F}{G}} = X^a=0.
+    \lie{X^F}{X^G}= X^{\pois{F}{G}} = X^a=0,
+  \end{equation*}
+  y recíprocamente
+  \begin{equation*}
+    \dd\pois{F}{G}=\omega(X^{\pois{F}{G}},\bullet)=\omega(\lie{X^F}{X^G},\bullet).
   \end{equation*}
 \end{proof}
 
-Podemos ver también que el corchete de Poisson es un corchete de Lie sobre $\mathcal{C}^{\infty}(M)$, ya que cumple la identidad de Jacobi:
+Podemos ver también que el corchete de Poisson es un \em corchete de Lie sobre \em $\mathcal{C}^{\infty}(M)$, ya que cumple la identidad de Jacobi:
 \begin{prop}[Identidad de Jacobi]
  Sea $(M,\omega)$ una variedad simpléctica y sean  $A,B,C:M \rightarrow \RR$, entonces
  \begin{equation*}
