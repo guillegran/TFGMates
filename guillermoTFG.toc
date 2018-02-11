@@ -8,8 +8,13 @@
 \contentsline {paragraph}{\tocparagraph {}{}{\bf Aplicaciones simpl\IeC {\'e}cticas}}{16}{section*.4}
 \contentsline {paragraph}{\tocparagraph {}{}{\bf El grupo simpl\IeC {\'e}ctico}}{16}{section*.5}
 \contentsline {section}{\tocsection {}{5}{Variedades simpl\IeC {\'e}cticas y simplectomorfismos}}{17}{section.5}
-\contentsline {section}{\tocsection {}{6}{Campos y flujos hamiltonianos}}{20}{section.6}
-\contentsline {section}{\tocsection {}{7}{Corchete de Poisson}}{23}{section.7}
-\contentsline {section}{\tocsection {}{8}{Teor\IeC {\'\i }a de Arnold-Liouville}}{26}{section.8}
-\contentsline {section}{\tocsection {}{9}{Un poco m\IeC {\'a}s de movimiento condicionalmente peri\IeC {\'o}dico}}{40}{section.9}
-\contentsline {section}{\tocsection {}{}{Referencias}}{42}{section*.6}
+\contentsline {section}{\tocsection {}{6}{Campos simpl\IeC {\'e}cticos y campos hamiltonianos}}{20}{section.6}
+\contentsline {section}{\tocsection {}{7}{Corchete de Poisson}}{21}{section.7}
+\contentsline {section}{\tocsection {}{8}{Mec\IeC {\'a}nica en variedades simpl\IeC {\'e}cticas}}{23}{section.8}
+\contentsline {paragraph}{\tocparagraph {}{}{\textbf {Estados}}}{23}{section*.6}
+\contentsline {paragraph}{\tocparagraph {}{}{\textbf {Observables}}}{23}{section*.7}
+\contentsline {paragraph}{\tocparagraph {}{}{\textbf {Evoluci\IeC {\'o}n temporal}}}{23}{section*.8}
+\contentsline {section}{\tocsection {}{9}{Simetr\IeC {\'\i }as y leyes de conservaci\IeC {\'o}n}}{26}{section.9}
+\contentsline {section}{\tocsection {}{10}{Teor\IeC {\'\i }a de Arnold-Liouville}}{27}{section.10}
+\contentsline {section}{\tocsection {}{11}{Un poco m\IeC {\'a}s de movimiento condicionalmente peri\IeC {\'o}dico}}{41}{section.11}
+\contentsline {section}{\tocsection {}{}{Referencias}}{44}{section*.9}
