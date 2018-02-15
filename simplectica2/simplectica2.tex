@@ -527,9 +527,9 @@ Además, si conocemos ya alguna integral primera, la identidad de Jacobi nos per
   ya que $F_1,F_2$ son integrales primeras.
 \end{proof}
 
-Finalmente, como ya hemos mencionado, veamos el resultado principal de esta sección, que nos relaciona las integrales primeras con las simetrías del sistema.
+Veamos ahora el ya mencionado resultado principal de esta sección, que nos relaciona las integrales primeras con las simetrías del sistema.
   \begin{prop}[Teorema de Noether]
-    Sea $(M,H)$ un sistema hamiltoniano y $F:M \rightarrow \RR$. Si $H$ es constante a lo largo de $X^F$, entonces $F$ es una integral primera de $(M,H)$. 
+    Sea $(M,H)$ un sistema hamiltoniano y $F:M \rightarrow \RR$. Si $H$ es constante a lo largo del flujo de $X^F$, entonces $F$ es una integral primera de $(M,H)$. 
   \end{prop}
   \begin{proof}
     Como $H$ es constante a lo largo de $X^F$, es una integral primera de $(M,F)$, luego $\pois{F}{H}=0$. Ahora, $\pois{H}{F}=-\pois{F}{H}=0$, luego $F$ es una integral primera de $(M,H)$. 
@@ -548,3 +548,87 @@ Otra forma de ver este mismo teorema es la siguiente:
     \dd\pois{F}{G}=\omega(X^{\pois{F}{G}},\bullet)=\omega(\lie{X^F}{X^G},\bullet).
   \end{equation*}
 \end{proof}
+
+Para entender bien qué queremos decir por las «simetrías» del sistema consideremos la siguiente definición:
+\begin{defn}
+  Sea $(M,H)$ un sistema hamiltoniano y $G$ un grupo. Una $G$-simetría del sistema $(M,H)$ es una acción
+  \begin{align*}
+    \varphi :G&\longrightarrow \mathrm{Diff}(M)\\ 
+      g &\longmapsto \varphi_g, 
+    \end{align*}
+    con $\varphi_g$ un difeomorfismo de $M$, tal que $H\circ \varphi_g = H$.
+\end{defn}
+
+Ahora, consideremos el caso en que $G$ sea un grupo de Lie y $\varphi$ una $G$-simetría diferenciable de un sistema hamiltoniano $(M,H)$. Si $g_t$ es un subgrupo uniparamétrico de $G$ entonces $g_t$ lleva asociado por la acción un flujo completo $\varphi_t=\varphi_{g_t}$. En el caso en que $\varphi_t$ sea un flujo generado por un hamiltoniano $F:M\rightarrow \RR$, entonces, por el teorema de Noether, $F$ es una cantidad conservada del sistema $(M,H)$. La mejor forma de ilustrar estas ideas es con ejemplos:
+
+\begin{ejemplo}[Conservación del momento lineal]
+  \em
+  Consideremos un sistema hamiltoniano cuyo espacio de fases es el espacio simpléctico estándar $(\RR^{2n},\Omega_n)$. Decimos que el sistema es \emph{invariante por traslaciones} si la acción
+  \begin{align*}
+    \RR^n\times \RR^{2n}&\longrightarrow \RR^{2n}\\ 
+      (y,(q,p)) &\longmapsto (q+y,p) 
+    \end{align*}
+del grupo $G=(\RR^n,+)$ sobre $\RR^{2n}$ es una $G$-simetría del sistema. Fijo ahora $y\in \RR^n$, si consideramos el flujo
+\begin{equation*}
+  \varphi_t(q,p)=(q+yt,p),
+\end{equation*}
+el hamiltoniano del sistema es invariante bajo este flujo. Busquemos ahora un posible hamiltoniano para $\varphi_t$. Para ello, hallemos su generador infinitesimal
+\begin{equation*}
+  X_y=\left.\frac{d}{dt}\right|_{t=0}\varphi_t(q,p)=(y,0)=\sum_{i=1}^n y_i \deriv{q_i}.
+\end{equation*}
+Ahora, si $F$ es el hamiltoniano asociado (suponiendo que exista) tenemos que
+\begin{equation*}
+  \dd F=i_{X_y}\Omega_n=\sum_{i=1}^n(\dd p_i \wedge \dd q_i)\left(\sum_{i=1}^n y_i\deriv{q_i} \right)=\sum_{i=1}^n y_i \dd p_i.
+\end{equation*}
+De modo que la cantidad conservada es $F=\sum_{i=1}^n y_i p_i=\esc{y}{p}$. Como esto es cierto para cualquier $y\in \RR^n$, en particular lo es para los vectores $e_i$ de la base canónica, de modo que, para cada $i=1,\dots,n$, $p_i$ es una cantidad conservada y, en general, el \emph{momento lineal} $p=(p_1,\dots,p_n)$ se conserva. De esta forma, hemos visto como la simetría bajo traslaciones lleva asociada la conservación del momento lineal.
+\end{ejemplo}
+
+\begin{ejemplo}[Conservación del momento angular]
+  \em
+  De nuevo, consideremos un sistema hamiltoniano cuyo espacio de fases es el espacio simpléctico estándar, en este caso 6 dimensional $(\RR^{3}\times \RR^3,\Omega_3)$. Decimos que el sistema es \emph{invariante por rotaciones} si la acción
+  \begin{align*}
+    \mathrm{SO}(3) \times \RR^{6}&\longrightarrow \RR^{6}\\ 
+      (R,(q,p)) &\longmapsto (R(q),R(p)) 
+    \end{align*}
+    del grupo de rotaciones $G=\mathrm{SO}(3)$ con la operación de composición, es una $G$-simetría del sistema. Consideremos ahora el grupo uniparamétrico de rotaciones en torno al eje $OZ$, que matricialmente se representa como
+    \begin{equation*}
+      A(\phi)=\left(
+      \begin{array}{ccc}
+	\cos\phi & -\sin\phi & 0 \\
+	\sin\phi & \cos\phi & 0 \\
+	0 & 0 & 1 \\
+      \end{array}\right).
+    \end{equation*}
+    Así, a este grupo uniparamétrico le podemos asociar el flujo
+    \begin{equation*}
+      \varphi_{\phi}(q,p)=(A(\phi)q,A(\phi)p),
+    \end{equation*}
+    cuyo generador infinitesimal será, por la regla de la cadena
+    \begin{equation*}
+      X=\left.\frac{d}{dt}\right|_{\phi=0}\varphi_{\phi}(q,p)=(\hat{A}q,\hat{A}p),
+    \end{equation*}
+    con 
+    \begin{equation*}
+      \hat{A}=\left.\frac{d}{dt}\right|_{\phi=0}A(\phi)=\left(
+      \begin{array}{ccc}
+	0 & -1 & 0 \\
+	1 & 0 & 0 \\
+	0 & 0 & 0 \\
+      \end{array}\right).
+    \end{equation*}
+    De modo que 
+    \begin{equation*}
+      X=-q_2\deriv{q_1}+q_1\deriv{q_2}-p_2\deriv{p_1}+p_1\deriv{p_2}.
+    \end{equation*}
+    Luego,
+    \begin{equation*}
+      i_X\Omega_3=-q_2\dd p_1+q_1\dd p_2 +p_2 \dd q_1 - p_1 \dd q_2.
+    \end{equation*}
+
+    Definimos ahora el \emph{momento angular} como la función $L:\RR^6 \rightarrow \RR^3$ dada por el producto vectorial $L(q,p)=q\times p$, de modo que su componente $k$-ésima es $L_k(q,p)=\sum_{i,j=1}^3 \epsilon_{ijk}q_ip_j$, donde $\epsilon_{ijk}$ es la paridad de $(i,j,k)$ como permutación de $(1,2,3)$. Ahora, 
+    \begin{equation*}
+      \dd L_3 = \dd (q_1p_2 - q_2p_1)=-q_2 \dd p_1 + q_1 \dd p_2 + p_2 \dd q_1 - p_1 \dd q_2 = i_X\Omega_3.
+    \end{equation*}
+
+    De modo que, aplicando el teorema de Noether, la simetría del sistema bajo las rotaciones en torno al eje $OZ$ lleva asociada una conservación de la tercera componente del momento angular $L_3$. Podemos hacer un cálculo análogo para los casos de las rotaciones en torno a los ejes $OX$ y $OY$, de forma que obtendríamos la conservación de las componentes $L_1$ y $L_2$, o, de otra manera, como sabemos ya que el sistema es invariante bajo rotaciones, podemos tomar directamente el eje $OZ$ como la dirección del momento angular. Finalmente, llegaríamos a que la simetría bajo rotaciones lleva asociada la conservación del momento angular.
+\end{ejemplo}
