@@ -1,51 +1,241 @@
 \section{Teoría de Arnold-Liouville}\label{sec:arnoldliouville}
-A la hora de estudiar sistemas dinámicos, una cuestión interesante a plantearse, con consecuencias prácticas y también de carácter fundamental, es si las ecuaciones del sistema podrán ser «integradas», es decir, si podrán ser resueltas mediante integrales definidas («cuadraturas») de funciones conocidas. Definimos entonces:
-\begin{defn}[Ecuación integrable por cuadraturas]
-  \em
-  Una ecuación diferencial es \emph{integrable por cuadraturas} si es posible escribir su solución general en términos de sumas, productos, composiciones e integrales de funciones conocidas. 
-\end{defn}
+A la hora de estudiar sistemas dinámicos, una cuestión interesante a plantearse, con consecuencias prácticas y también de carácter fundamental, es si las ecuaciones del sistema podrán ser «integradas», es decir, si podrán ser resueltas mediante integrales definidas («cuadraturas») de funciones conocidas. Decimos entonces que una ecuación diferencial es \emph{integrable por cuadraturas} si es posible escribir su solución general en términos de sumas, productos, composiciones e integrales de funciones conocidas. 
 
-En 1885, Joseph Liouville encontró una condición necesaria para que las ecuaciones de Hamilton de ciertos sistemas hamiltonianos fueran (localmente) integrables por cuadraturas. Décadas más tarde, con la introducción del formalismo geométrico y topológico al estudio de los sistemas dinámicos se descubrirían muchas más cosas interesantes sobre los sistemas que cumplían la condición que Liouville propuso. Destaca especialmente en todo este estudio la teoría de los toros invariantes desarrollada por Vladimir Arnold en 1963. Nace así la teoría de los \emph{sistemas integrables}, cuyos resultados más básicos constituyen lo que aquí llamamos \emph{teoría de Arnold-Liouville}. Esta teoría se compone de una serie de teoremas y proposiciones, que pasamos a enunciar todos juntos, para tener una idea general, y que luego demostraremos.
+En 1885, Joseph Liouville encontró una condición necesaria para que las ecuaciones de Hamilton de ciertos sistemas hamiltonianos fueran (localmente) integrables por cuadraturas. Décadas más tarde, con la introducción del formalismo geométrico y topológico al estudio de los sistemas dinámicos se descubrirían muchas más cosas interesantes sobre los sistemas que cumplían la condición que Liouville propuso. Destaca especialmente en todo este estudio la teoría de los toros invariantes desarrollada por Vladimir Arnold en 1963. Nace así la teoría de los \emph{sistemas integrables}, cuyos resultados más básicos constituyen el \emph{teorema de Arnold-Liouville}.
 
-Empezamos por la definición más fundamental:
 \begin{defn}
   \em
   Sea $(M,H)$ un sistema hamiltoniano con $\dim(M)=2n$. Decimos que $(M,H)$ es \emph{integrable (en el sentido de Liouville)} si existen $F_1(=H),\dots,F_n\in \mathcal{C}^{\infty}(M)$ tales que
 \begin{enumerate}
-  \item son \emph{funcionalmente independientes}, es decir, $\dd F_{1,x}\wedge \dots \wedge \dd F_{n,x}\neq 0$ para casi todo punto\footnote{Aquí con \emph{para casi todo punto} que estos puntos forman un conjunto denso.}, y
-  \item están \emph{en involución}, esto es, $\pois{F_i}{F_j}=0$ para cada $i,j=1,\dots,n$.
+  \item son \emph{funcionalmente independientes}, es decir, $\dd F_{1,x}\wedge \dots \wedge \dd F_{n,x}\neq 0$ para casi todo punto\footnote{Aquí con \emph{para casi todo punto} queremos decir que estos puntos forman un conjunto denso.}, 
+  \item están \emph{en involución}, esto es, $\pois{F_i}{F_j}=0$ para cada $i,j=1,\dots,n$, y
+  \item  los campos $X^{F_i}$ son completos para cada $i=1,\dots,n$. 
 \end{enumerate}
 Nótese que, como $F_1=H$, en particular, todas las funciones $F_1,\dots,F_n$ son integrales primeras del sistema.
 
-Sea $F:M\rightarrow \RR^n$ con $F(x)=(F_1(x),\dots,F_n(x))$. Los puntos $x\in M$ en los que $\mathrm{rango} (\dd F_x) =n$ se dicen \emph{puntos regulares} del sistema. Los puntos que no son regulares se dicen \emph{puntos críticos}. Si $x\in M$ es un punto crítico, $F(x)$ se dice un \emph{valor crítico}. Si $\Sigma$ es el conjunto de los puntos críticos, $F(\Sigma)\in \RR^n$ se llama \emph{diagrama de bifurcación} del sistema.
+Si escribimos $F:M\rightarrow \RR^n$ con $F(x)=(F_1(x),\dots,F_n(x))$. Los puntos $x\in M$ en los que $\mathrm{rango} (\dd F_x) =n$ se dicen \emph{puntos regulares} del sistema. Los puntos que no son regulares se dicen \emph{puntos críticos}. Si $x\in M$ es un punto crítico, $F(x)$ se dice un \emph{valor crítico}. Si $\Sigma$ es el conjunto de los puntos críticos, $F(\Sigma)\in \RR^n$ se llama \emph{diagrama de bifurcación} del sistema.
  Nótese que, por el teorema de Sard, el diagrama de bifurcación tiene medida nula.
 \end{defn}
 
-
-
-Para los siguientes resultados, partiremos de las mismas hipótesis:
-
+\begin{thm}[Arnold-Liouville]\label{arnold}
 Sea $(M,H)$ un sistema integrable en el sentido de Liouville con $F_1,\dots,F_n$ las funciones en involución.
 
-\begin{thm}[Liouville]
-  Sea $x\in M$ un punto regular del sistema. Entonces existe un entorno $U\subset M$ de $x$ y existen $Q_1,\dots,Q_n: U\rightarrow M$ tales que $(Q_1,\dots,Q_n,F_1,\dots,F_n)$ es una carta de Darboux y la evolución temporal de las $Q_i$ puede obtenerse por cuadraturas. Es decir, en el entorno $U$ las ecuaciones de Hamilton son integrables por cuadraturas.
+   Sea $x\in M$ un punto regular del sistema y sea $a=F(x)$. Entonces la componente conexa $M_a$ del conjunto de nivel $F^{-1}(a)$ que contiene a $x$ es una variedad diferenciable invariante bajo el flujo del sistema y $\left. \omega \right|_{M_a}=0$.
+  
+ Además $M_a$ es difeomorfa a $\TT^k\times \RR^{n-k}$, para cierto $0 \leq k \leq n$. En particular, si $M_a$ es compacta, $M_a$ es difeomorfa al toro $n$-dimensional $\TT^n$. En este caso, se dice que $M_a$ es un \emph{toro invariante}. 
+ 
+ Podemos tomar unas coordenadas $\lambda=(\lambda_1,\dots\lambda_n)$ en $M_a$ de manera que existen unas velocidades constantes $\nu(a)=(\nu_1(a),\dots,\nu_n(a))$ tales que $\dot \lambda (t)=\nu$.
+
+  Existe un entorno $U\subset M$ de cada $M_a$ difeomorfo a $\RR^n \times M_a$ (se dice \emph{entorno tubular}) y un sistema de coordenadas de Darboux $(J,w)=(J_1,\dots,J_n,w_1,\dots,w_n)$ (llamadas \emph{variables de acción-ángulo}\footnote{Las $w_i$ suelen llamarse variables de ángulo ya que, en el caso en que $M_a$ es compacta, son precisamente coordenadas angulares en el toro $M_a$. Las $J_i$ se llaman variables de acción debido a sus dimensiones físicas, en efecto, como las $w_i$ son adimensionales, las $J_i$ tienen que tener dimensiones de Posición$\times$Momento Lineal, que son precisamente las dimensiones de la integral de acción (citar caso lagrangiano).}) en $U$ tales que las $w_i$ son coordenadas en $M_a$ y las $J_i$ son constantes en cada $M_a$. Como consecuencia, las ecuaciones de Hamilton del sistema son integrables por cuadraturas.
 \end{thm}
 
-\begin{prop}
-  Sea $x\in M$ un punto regular del sistema y sea $a=F(x)$. Entonces el conjunto de nivel $M_a=F^{-1}(a)$ es una variedad diferenciable invariante bajo el flujo del sistema y $\left. \omega \right|_{M_a}=0$.
-\end{prop}
+Cabe hacer un breve comentario sobre la historia de este resultado.
+Como ya se ha comentado, la formulación original, en términos de mecánica hamiltoniana clásica, se debe a Liouville en 1855, mientras que la teoría moderna la desarrolló Arnold en 1963. Por otra parte, las variables de acción-ángulo fueron introducidas originalmente por Delaunay en 1860 para estudiar el movimiento de la Luna y más tarde, a principios del siglo XX, usadas por los físicos para estudiar el átomo de Bohr, siendo Schwarzschild el que acuñara esa terminología en 1916. La obtención formal de las variables de acción-ángulo se atribuye a Mineur en 1936. 
+ Una discusión más extensa sobre la historia del teorema de Arnold-Liouville puede encontrarse en las páginas 640 y 641 del texto de Spivak \cite{spivak}.
 
-\begin{thm}[Arnold]
-  Supongamos además que los campos $X^{F_i}$ son completos para cada $i=1,\dots,n$. Entonces, cada componente conexa $C_a$ de $M_a$ es difeomorfa a $\TT^k\times \RR^{n-k}$, para cierto $0 \leq k \leq n$. En particular, si $C_a$ es compacta, $C_a$ es difeomorfa al toro $n$-dimensional $\TT^n$. En este caso, se dice que $C_a$ es un \emph{toro invariante}. Si tomamos unas coordenadas angulares $\theta=(\theta_1,\dots\theta_n)$ en este toro invariante, entonces existen unas frecuencias constantes $\omega(a)=(\omega_1(a),\dots,\omega_n(a))$ tales que $\dot \theta (t)=\omega$.
-\end{thm}
+ Podemos dar entonces la demostración, que haremos en varios pasos.
 
-\begin{thm}[de las variables de acción-ángulo]
-  Sea $C_a$ un toro invariante. Existe un entorno $U\subset M$ de $C_a$ difeomorfo a $\RR^n \times \TT^n$ (se dice \emph{entorno tubular}) y un sistema de coordenadas de Darboux $(\phi,J)=(\phi_1,\dots,\phi_n,J_1,\dots,J_n)$ en $U$ tales que las $\phi_i$ son coordenadas angulares en cada toro invariante y las $J_i$ (llamadas \emph{variables de acción}) son constantes en cada toro.
-\end{thm}
+ \begin{proof}
+  En primer lugar, como $x$ es regular, $F$ tiene rango máximo en cada punto de $M_a$ y, por el teorema de la función implícita, $M_a$ es una subvariedad regular de $M$ de dimensión $2n-n=n$. 
+  Como $M$ es una variedad simpléctica, para cada $i=1,\dots,n$, podemos definir el campo $X_i=X^{F_i}$. Al ser las $\dd F_i$ linealmente independientes los campos $X_i$ son linealmente independientes. Además, por el teorema de Noether, como para cada $i,j= 1,\dots,n$ $\pois{F_i}{F_j}=0$ (luego es constante), entonces $\lie{X_i}{X_j}=0$. Por esto mismo, la derivada de la función $F_i$ en la dirección de $X_j$ es 0, luego los campos $X_j$ son tangentes a $M_a$.
 
-En la bibliografía habitual, estos resultados se agrupan como un «teorema de Arnold-Liouville». Sin embargo aquí nos decantamos por «teoría de Arnold-Liouville», debido sobre todo a la historia de estos resultados.
-Como ya se ha comentado, la formulación original, en términos de mecánica hamiltoniana clásica, se debe a Liouville en 1855, mientras que la teoría moderna la desarrolló Arnold en 1963. Por otra parte, las variables de acción-ángulo fueron introducidas originalmente por Delaunay en 1860 para estudiar el movimiento de la luna y más tarde, a principios del siglo XX, usadas por los físicos para estudiar el átomo de Bohr, siendo Schwarzschild el que acuñara esa terminología en 1916. La demostración original del teorema de las variables de acción-ángulo se atribuye a Mineur en 1936. 
- Una discusión más extensa sobre la historia y el nombre de esta teoría puede encontrarse en las páginas 640 y 641 del texto de Spivak \cite{spivak}.
+  De aquí sacamos varias conclusiones:
+  \begin{enumerate}
+    \item $M_a$ es invariante con respecto a cada uno de los $n$ flujos hamiltonianos generados por cada función $F_i$ (luego, en particular lo será respecto del generado por $F_1$).
+    \item Como, para cada $x \in M_a$, los campos $X_1|_x,\dots, X_n|_x$ forman una base de $T_x M_a$, sean $X_x, Y_x \in T_x M_a$, entonces $X_x = \sum_{i=1}^n b_i X_i|_x$, $Y_x=\sum_{i=1}^n c_i X_i|_x$. Ahora,
+      \[
+	\omega(X_x,Y_x)= \sum_{i,j=1}^n b_i c_j \omega(X_i|_x,X_j|_x) = \sum_{i,j=1}^n b_i c_j \{F_j,F_i\} = 0.
+      \]
+      Por tanto, $\omega$ se anula en $T_x M_a$. 
+    \item $M_a$ es una variedad diferenciable de dimensión $n$ con $n$ campos conmutativos dos a dos y linealmente independientes en todo punto de $M_a$. 
+  \end{enumerate}
+
+  Esto prueba la primera parte del teorema. Para continuar, necesitamos probar un lema previo.
+
+  \begin{lema}\label{lemtoro}
+    Sea $M$ una variedad diferenciable de dimensión $n$ conexa y compacta tal que existen campos $X_1,\dots,X_n$ en $M$ completos y linealmente independientes y tales que, para todo $i,j=1,\dots,n$, $i\neq j$, $[X_i,X_j]=0$. Entonces $M$ es difeomorfa al $\TT^k\times \RR^{n-k}$. 
+\end{lema}
+\begin{proof}(del Lema \ref{lemtoro}).
+  Para cada $i=1,\dots,n$, sea $g_i$ el flujo completo generado por $X_i$. Como para todo $i\neq j$ $[X_i,X_j]=0 $ entonces $g_i$ conmuta con $g_j$, es decir, $g_ig_j (x)=g_jg_i (x)$, para todo $x \in M$. 
+
+  Así, podemos definir una acción de $\RR^n$ en $M$ que a cada $t=(t_1,\dots,t_n)\in \RR^n$ le asigna $g_t:M\rightarrow M,$ con $g_t=g_{1,t_1}\cdots g_{n,t_n}$.
+Por conmutar los flujos, $g_{t+s}=g_t g_s$. Ahora, fijo $x_0 \in M$, definimos 
+\[
+  \begin{array}{rcl}
+g:\RR^n & \longrightarrow & M \\
+t & \longmapsto & g_t (x_0).
+\end{array}
+\]
+
+Como los campos son linealmente independientes, $d_t g$ es un isomorfismo lineal para todo $t$ y, por el teorema de la función implícita, $g$ es un difeomorfismo local. Además, sea $x\in M$, tomamos una curva $\gamma$ que una $x$ y $x_0$ y una sucesión finita de entornos $V_1,\dots,V_n$ que recubran $\gamma$, en los que $g$ sea difeomorfismo y tales que $x_0 \in V_1$, $x \in V_n$. Para cada $i=1,\dots,n-1$, sea $x_i \in V_i \cap V_{i+1}$ y sea $x_n=x$. Para cada $i=0,\dots,n-1$, centramos $g$ en $x_i$ (de tal forma que $g(0)=x_i$) en el entorno $V_{i+1}$ y lo llamamos $g_i$. Definimos $t_i$ tal que $g_{i-1,t_i}(x_{i-1})=x_i$, entonces,
+\[
+  x=g_{n-1,t_n}(x_{n-1})=g_{n-1,t_n}g_{n-2,t_{n-1}}(x_{n-2})=\cdots=g_{n-1,t_{n}}\cdots g_{0,t_1} (x_0),
+\]
+luego, sea $t=t_1+\cdots+t_n$, $x=g_t (x_0)$. Por tanto, $g$ es sobreyectiva.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{pics/entornos.eps}
+  \caption{Idea de la demostración de que $g$ es sobreyectiva.}
+  \label{fig:entornos}
+\end{figure}
+
+  Si $g$ fuese inyectiva, entonces sería un difeomorfismo entre $\RR^n$ y $M$, pero no puede serlo porque $M$ es compacta y $\RR^n$ no lo es.
+
+  Por tanto, si llamamos 
+\[  
+  H:=\{t \in \RR^n \mid g_t(x_0)=x_0\},
+\]
+entonces $H \neq {0}$. Ahora, sean $t, s \in H$, entonces 
+\[
+  g_{s+t}(x_0)=g_sg_t(x_0)=g_s(x_0)=x_0
+\]
+y 
+\[
+  g_{-t}(x_0)=g_{-t}g_t(x_0)=x_0.
+\] 
+Es decir, $H$ es un subgrupo cerrado de $(\RR^n,+)$. Además, $H$ no depende de la elección de $x_0$, en efecto, si $x=g_r (x_0)$ y $t\in H$, entonces 
+\[
+  g_t (x) = g_{t+r}(x_0)=g_rg_t(x_0)=g_r(x_0)=x. 
+ \] 
+
+ Como $g$ es un difeomorfismo local, existe un entorno $V\subset \RR^n$ de 0 tal que $H\cap V= \{0\}$. Es más, sean $t\in H$, $s\in V\backslash \{0\}$ y $x\in M$, 
+  \[
+    g_{t+s}(x)=g_sg_t(x)=g_s(x)\neq x.
+  \]
+  Luego $H$ es un conjunto discreto. 
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.2\textwidth]{pics/discreto}
+    \caption{Idea de que $H$ es discreto.}
+    \label{fig:discreto}
+  \end{figure}
+
+  Antes de continuar, es necesario probar el siguiente lema:
+
+  \begin{lema}\label{discreto}
+    Todo subgrupo no trivial, cerrado y discreto $H$ de $\RR^n$ es isomorfo a $\ZZ^k$ para algún $k\in\{1,\dots,n\}$. Es decir, existen $e_1,\dots,e_k \in H$ linealmente independientes tales que 
+    \[
+      H=\{n_1e_1+\cdots+n_ke_k \mid (n_1,\dots,n_k) \in \ZZ^k \}.
+    \]
+  \end{lema}
+  \begin{proof}(del Lema \ref{discreto}). 
+  Sea $e_0 \in H$, $e_0 \neq 0$. Como $H$ es discreto, $H \cap B(0,\norm{e_0})$ es finito. De estos puntos, consideramos aquellos que están en $L(e_0)$ \footnote{Aquí $L(x)$ denota la envoltura lineal de $x$.} y de estos escogemos el más cercano, que llamaremos $e_1$. 
+  
+  Si existieran algún $e \in H$ y algún $m \in \ZZ$ tal que $e \in (me_1,(m+1)e_1)$, entonces $e-me_1 \in H \cap L(e_0)$ estaría más cerca de 0 que $e_1$. Por tanto, 
+  \[
+    H\cap L(e_0) = e_1\ZZ.
+  \]
+
+  Si no hay puntos de $H$ fuera de $L(e_1)$ hemos terminado, $H$ es isomorfo a $\ZZ$. En caso contrario, sea $e \in H \backslash L(e_1)$, proyectamos ortogonalmente $e$ sobre $L(e_1)$. Esta proyección cae exactamente sobre un intervalo $\Delta=[me_1,(m+1)e_1)$ para cierto $m \in \ZZ$. Sea $C$ el cilindro de eje $\Delta$ y de radio igual a la distancia entre $\Delta$ y $e$. $C\cap H$ es finito. De estos puntos, sea $e_2$ el más cercano a $\Delta$ que no esté en $\Delta$. Entonces, para cualquier otro $f \in H$, la distancia entre $f$ y $L(e_1)$ es mayor que la distancia entre $e_2$ y $L(e_1)$. 
+    
+    En efecto, en tal caso, sea $l \in \ZZ$ tal que la proyección ortogonal de $f$ cae sobre $[le_1,(l+1)e_1)$, entonces $f'=f-le_1+me_1 \in C$ y la distancia entre $f'$ y $L(e_1)$ es menor que la distancia entre $e_2$ y $L(e_1)$, lo que nos lleva a una contradicción.
+
+  \begin{figure}[h]
+    \centering
+    \includegraphics{pics/grupo}
+    \caption{Idea de la demostración del lema.}
+    \label{fig:grupo}
+  \end{figure}
+
+      Ahora, $\{n_1e_1+n_2e_2 \mid (n_1,n_2) \in \ZZ^2 \}$ forma una red discreta en $L(e_1,e_2)$. Además, si existiera un $e\in H$ que no perteneciese a la red, sean $m_1=[\esc{e}{e_1}]$, $m_2=[\esc{e}{e_2}]$. Entonces, $e-m_1e_1-m_2e_2$ estaría más cerca de $L(e_1)$ que $e_2$. Por tanto, esta red es exactamente $L(e_1,e_2) \cap H$.
+
+      Procedemos ahora por inducción, supongamos que existen $e_1,\dots,e_k$ linealmente independientes tales que $\{n_1e_1+\cdots+n_ke_k \mid (n_1,\dots,n_k) \in \ZZ^k \} = L(e_1,\dots,e_k) \cap H$ y que existe $e\in H$ tal que $e \not\in L(e_1,\dots,e_k)$. Análogamente, la proyección ortogonal de $e$ sobre $L(e_1,\dots,e_k)$ cae sobre un hipercubo $\Delta=[m_1e_1,(m_1+1)e_1) \times \cdots \times [m_ke_k,(m_k+1)e_k)$. Sea $C$ el conjunto de los puntos cuyas proyecciones ortogonales caen en $\Delta$ y más cercanos a $\Delta$ que $e$, entonces $C \cap H$ es finito. Sea $e_{k+1}$ el más cercano a $\Delta$ de estos puntos, que no esté en $\Delta$. Para cualquier otro $f \in H$, la distancia entre $f$ y $L(e_1,\dots,e_k)$ es mayor que entre $e_2$ y $L(e_1,\dots,e_k)$, por un razonamiento completamente análogo al caso bidimensional. 
+
+	Por tanto, $\{n_1e_1+\dots+n_{k+1}e_{k+1} \mid \in \ZZ^{k+1}\}$ forma una red discreta en $L(e_1,\dots,e_{k+1})$ y, de forma análoga al caso anterior, esta red agota los puntos de $H\cap L(e_1,\dots,e_{k+1})$.
+
+	Finalmente, sea $k$ el mínimo número natural tal que no existe $e \in H \backslash L(e_1,\dots,e_k)$. Entonces $H$ es isomorfo a $\ZZ^k$.
+\end{proof}
+
+Terminamos ahora la demostración del Lema \ref{lemtoro}.
+ 
+  Sea $k$ el número de generadores de $H$ y sea la proyección natural
+  \[
+    \begin{array}{rcl}
+      \varpi: \RR^n = \RR^k \times \RR^{n-k} & \longrightarrow & \TT^k \times \RR^{n-k} \\
+      (x,y) & \longmapsto & (\bar{x}, y),
+    \end{array}
+  \]
+  con $\bar{x}=x$ módulo $2\pi$.
+  Los puntos $u_1,\dots,u_k \in \RR^n$ de la forma 
+  \[
+    u_i = (x_1=0,\dots,x_i=2\pi,\dots,x_k=0,y=0)
+  \]
+  van a 0 por $\varpi$.
+
+  Sean $e_1,\dots,e_k$ los generadores de $H$ y sea $A:\RR^n \rightarrow \RR^n$ un isomorfismo lineal tal que cada $u_i$ va a parar a $e_i$. Entonces, la aplicación $\tilde{A}$ que hace el siguiente diagrama conmutativo es un difeomorfismo,
+  
+\begin{center}
+\begin{tikzpicture}[scale=2]
+\node (A) at (0,1) {$\RR^n$};
+\node (B) at (1,1) {$\RR^n$};
+\node (C) at (0,0) {$\TT^k \times \RR^{n-k}$};
+\node (D) at (1,0) {$M$.};
+\path[->,font=\scriptsize,>=angle 90]
+(A) edge node[above]{$A$} (B)
+(A) edge node[left]{$\varpi$} (C)
+(B) edge node[right]{$g$} (D)
+(C) edge node[above]{$\tilde{A}$} (D);
+\end{tikzpicture}
+\end{center}
+\end{proof}
+
+Podemos aplicar ahora el Lema \ref{lemtoro} a $M_a$ para obtener un difeomorfismo, que hace el siguiente diagrama conmutativo:
+
+\begin{center}
+\begin{tikzpicture}
+\node (A) at (-2.5,2) {$\RR^n$};
+\node (B) at (-1,2) {$\RR^n$};
+\node (C) at (-1,0) {$C_a=\TT^n$};
+\node (D) at (1,2) {$\theta$};
+\node (E) at (3,2) {$t$};
+\node (F) at (3,0) {$\theta \mod 2\pi$};
+\path[->,font=\scriptsize, >=angle 90]
+(A) edge node[above]{$A$} (B)
+(A) edge node[left]{$p$} (C)
+(B) edge node[right]{$g$} (C);
+\path[|->,font=\scriptsize, >=angle 90]
+(D) edge node[auto] {$$} (F)
+(D) edge node[auto] {$$} (E)
+(E) edge node[auto] {$$} (F);
+\end{tikzpicture}
+\end{center}
+
+
+En este caso, el flujo hamiltoniano asociado a $F_1$ es $g_1$, luego 
+\[
+\theta(t) = g_{1,t} (\theta(0)).
+\]
+Ahora, fijo $\theta(0)$, $g_{1,t}=g(t,0,\dots,0)$, por tanto
+\[
+\left(
+\begin{array}{c}
+\theta_1 (t)\\
+\vdots \\
+\theta_n (t)
+\end{array}
+\right)
+=
+A
+\left(
+\begin{array}{c}
+t\\
+0 \\
+\vdots \\
+0
+\end{array}
+\right).
+\]
+De modo que, si $a_{ij}$ es la entrada de índices $(i,j)$ de la matriz $A$, entonces, para cada $i=1,\dots,n$,
+\[
+\theta_i (t) = a_{i1} t.
+\] 
+Por tanto, sea $\omega_i=a_{i1}$,
+\[
+\dot{\theta_i}(t)=\omega_i.
+\]
+
+   
+ \end{proof}<++>
 
 
 En primer lugar, vamos a considerar un ejemplo característico que aclara alguna de las ideas detrás de esta teoría.
@@ -220,141 +410,6 @@ Vamos a estudiar también algunos ejemplos de sistemas con funciones en involuci
   \em
   Por citar un ejemplo no trivial, aunque no lo demostremos, el problema de hallar las geodésicas en un elipsoide puede verse como un sistema hamiltoniano integrable en el sentido de Liouville. La demostración se basa en la teoría de cuádricas confocales y coordenadas elípticas, demostrando unos teoremas de Jacobi y Chasles. Puede leerse en el apéndice 15 de \cite{arnold}.
 \end{ejemplo}
-
-Comenzaremos ahora a probar los resultados fundamentales de esta teoría. En primer lugar, vamos a obtener una caracterización general de los toros, que necesitaremos más adelante:
-
-\begin{prop}
-  Sea $M$ una variedad diferenciable de dimensión $n$ conexa y compacta tal que existen campos $X_1,\dots,X_n$ en $M$ linealmente independientes y tales que, para todo $i,j=1,\dots,n$, $i\neq j$, $[X_i,X_j]=0$. Entonces $M$ es difeomorfa al toro $n$-dimensional 
-  \[
-  \mathbb{T}^n=\mathbb{S}^1\times \dots \times \mathbb{S}^1.
-  \]
-  \label{Toros}
-\end{prop}
-\begin{proof}
-  Para cada $i=1,\dots,n$, sea $g_i$ el flujo cuyo generador infinitesimal es $X_i$. Como para todo $i\neq j$, $[X_i,X_j]=0 $ entonces $g_i$ conmuta con $g_j$, es decir, $g_ig_j (x)=g_jg_i (x)$, para todo $x \in M$. 
-
-  Así, podemos definir una acción de $\RR^n$ en $M$ que a cada $t=(t_1,\dots,t_n)\in \RR^n$ le asigna $g_t:M\rightarrow M,$ con $g_t=g_{1,t_1}\cdots g_{n,t_n}$.
-Claramente, dados $t,s \in \RR^n$, $g_{t+s}=g_t g_s$. Ahora, fijo $x_0 \in M$, definimos 
-\[
-  \begin{array}{rcl}
-g:\RR^n & \longrightarrow & M \\
-t & \longmapsto & g_t (x_0).
-\end{array}
-\]
-
-\nota{Esto hay que verlo bien (Problemas 1 y 2 de la 274 del Arnold).} Como los campos son linealmente independientes, $d_0 g$ es un isomorfismo lineal y, por el teorema de la función implícita, $g$ es un difeomorfismo local. Además, sea $x\in M$, tomamos una curva $\gamma$ que una $x$ y $x_0$ y una sucesión finita de entornos $V_1,\dots,V_n$ que recubran $\gamma$, en los que $g$ sea difeomorfismo y tales que $x_0 \in V_1$, $x \in V_n$. Para cada $i=1,\dots,n-1$, sea $x_i \in V_i \cap V_{i+1}$ y sea $x_n=x$. Para cada $i=0,\dots,n-1$, centramos $g$ en $x_i$ (de tal forma que $g(0)=x_i$) en el entorno $V_{i+1}$ y lo llamamos $g_i$. Definimos $t_i$ tal que $g_{i-1,t_i}(x_{i-1})=x_i$, entonces,
-\[
-  x=g_{n-1,t_n}(x_{n-1})=g_{n-1,t_n}g_{n-2,t_{n-1}}(x_{n-2})=\cdots=g_{n-1,t_{n}}\cdots g_{0,t_1} (x_0),
-\]
-luego, sea $t=t_1+\cdots+t_n$, $x=g_t (x_0)$. Por tanto, $g$ es sobreyectiva.
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.5\textwidth]{pics/entornos.eps}
-  \caption{Idea de la demostración de que $g$ es sobreyectiva.}
-  \label{fig:entornos}
-\end{figure}
-
-  Si $g$ fuese inyectiva, entonces sería un difeomorfismo entre $\RR^n$ y $M$, pero no puede serlo porque $M$ es compacta y $\RR^n$ no lo es.
-
-  Por tanto, sea 
-\[  
-  H:=\{t \in \RR^n \mid g_t(x_0)=x_0\},
-\]
-entonces $H \neq {0}$. Ahora, sean $t, s \in H$, entonces 
-\[
-  g_{s+t}(x_0)=g_sg_t(x_0)=g_s(x_0)=x_0
-\]
-y 
-\[
-  g_{-t}(x_0)=g_{-t}g_t(x_0)=(x_0).
-\] 
-Es decir, $H$ es un subgrupo de $(\RR^n,+)$. Además, $H$ no depende de la elección de $x_0$, en efecto, si $x=g_r (x_0)$ y $t\in H$, entonces 
-\[
-  g_t (x) = g_{t+r}(x_0)=g_rg_t(x_0)=g_r(x_0)=x. 
- \] 
-
- Como $g$ es un difeomorfismo local, existe un entorno $V\subset \RR^n$ de 0 tal que $H\cap V= \{0\}$. Es más, sean $t\in H$, $s\in V\backslash \{0\}$ y $x\in M$, 
-  \[
-    g_{t+s}(x)=g_sg_t(x)=g_s(x)\neq x.
-  \]
-  Luego $H$ es un conjunto discreto.
-  \begin{figure}[h]
-    \centering
-    \includegraphics[width=0.2\textwidth]{pics/discreto}
-    \caption{Idea de que $H$ es discreto.}
-    \label{fig:discreto}
-  \end{figure}
-
-  Antes de continuar, es necesario probar el siguiente lema:
-
-  \begin{lema}
-    Todo subgrupo discreto no trivial $H$ de $\RR^n$ es isomorfo a $\ZZ^k$ para algún $k\in\{1,\dots,n\}$. Es decir, existen $e_1,\dots,e_k \in H$ linealmente independientes tales que 
-    \[
-      H=\{n_1e_1+\cdots+n_ke_k \mid (n_1,\dots,n_k) \in \ZZ^k \}.
-    \]
-  \end{lema}
-  \begin{proof} 
-  Sea $e_0 \in H$, $e_0 \neq 0$. Como $H$ es discreto, $H \cap B(0,\norm{e_0})$ es finito. De estos puntos, consideramos aquellos que están en $L(e_0)$ \footnote{Aquí $L(x)$ denota la envoltura lineal de $x$.} y de estos escogemos el más cercano, que llamaremos $e_1$. 
-  
-  Si existieran algún $e \in H$ y algún $m \in \ZZ$ tal que $e \in (me_1,(m+1)e_1)$, entonces $e-me_1 \in H \cap L(e_0)$ estaría más cerca de 0 que $e_1$. Por tanto, 
-  \[
-    H\cap L(e_0) = e_1\ZZ.
-  \]
-
-  Si no hay puntos de $H$ fuera de $L(e_1)$ hemos terminado, $H$ es isomorfo a $\ZZ$. En caso contrario, sea $e \in H \backslash L(e_1)$, proyectamos ortogonalmente $e$ sobre $L(e_1)$. Esta proyección cae exactamente sobre un intervalo $\Delta=[me_1,(m+1)e_1)$ para cierto $m \in \ZZ$. Sea $C$ el cilindro de eje $\Delta$ y de radio igual a la distancia entre $\Delta$ y $e$. $C\cap H$ es finito. De estos puntos, sea $e_2$ el más cercano a $\Delta$ que no esté en $\Delta$. Entonces, para cualquier otro $f \in H$, la distancia entre $f$ y $L(e_1)$ es mayor que la distancia entre $e_2$ y $L(e_1)$. 
-    
-    En efecto, en tal caso, sea $l \in \ZZ$ tal que la proyección ortogonal de $f$ cae sobre $[le_1,(l+1)e_1)$, entonces $f'=f-le_1+me_1 \in C$ y la distancia entre $f'$ y $L(e_1)$ es menor que la distancia entre $e_2$ y $L(e_1)$, lo que nos lleva a una contradicción.
-
-  \begin{figure}[h]
-    \centering
-    \includegraphics{pics/grupo}
-    \caption{Idea de la demostración del lema.}
-    \label{fig:grupo}
-  \end{figure}
-
-      Ahora, $\{n_1e_1+n_2e_2 \mid (n_1,n_2) \in \ZZ^2 \}$ forma una red discreta en $L(e_1,e_2)$. Además, si existiera un $e\in H$ que no perteneciese a la red, sean $m_1=[\esc{e}{e_1}]$, $m_2=[\esc{e}{e_2}]$. Entonces, $e-m_1e_1-m_2e_2$ estaría más cerca de $L(e_1)$ que $e_2$. Por tanto, esta red es exactamente $L(e_1,e_2) \cap H$.
-
-      Procedemos ahora por inducción, supongamos que existen $e_1,\dots,e_k$ linealmente independientes tales que $\{n_1e_1+\cdots+n_ke_k \mid (n_1,\dots,n_k) \in \ZZ^k \} = L(e_1,\dots,e_k) \cap H$ y que existe $e\in H$ tal que $e \not\in L(e_1,\dots,e_k)$. Análogamente, la proyección ortogonal de $e$ sobre $L(e_1,\dots,e_k)$ cae sobre un hipercubo $\Delta=[m_1e_1,(m_1+1)e_1) \times \cdots \times [m_ke_k,(m_k+1)e_k)$. Sea $C$ el conjunto de los puntos cuyas proyecciones ortogonales caen en $\Delta$ y más cercanos a $\Delta$ que $e$, entonces $C \cap H$ es finito. Sea $e_{k+1}$ el más cercano a $\Delta$ de estos puntos, que no esté en $\Delta$. Para cualquier otro $f \in H$, la distancia entre $f$ y $L(e_1,\dots,e_k)$ es mayor que entre $e_2$ y $L(e_1,\dots,e_k)$, por un razonamiento completamente análogo al caso bidimensional. 
-
-	Por tanto, $\{n_1e_1+\dots+n_{k+1}e_{k+1} \mid \in \ZZ^{k+1}\}$ forma una red discreta en $L(e_1,\dots,e_{k+1})$ y, de forma análoga al caso anterior, esta red agota los puntos de $H\cap L(e_1,\dots,e_{k+1})$.
-
-	Finalmente, sea $k$ el mínimo número natural tal que no existe $e \in H \backslash L(e_1,\dots,e_k)$. Entonces $H$ es isomorfo a $\ZZ^k$.
-\end{proof}
-
-Terminamos ahora la demostración de la proposición.
- 
-  Sea $k$ el número de generadores de $H$ y sea la proyección natural
-  \[
-    \begin{array}{rcl}
-      p: \RR^n = \RR^k \times \RR^{n-k} & \longrightarrow & \TT^k \times \RR^{n-k} \\
-      (x,y) & \longmapsto & (x\mod  2\pi, y),
-    \end{array}
-  \]
-  los puntos $u_1,\dots,u_k \in \RR^n$ de la forma 
-  \[
-    u_i = (x_1=0,\dots,x_i=2\pi,\dots,x_k=0,y=0)
-  \]
-  van a 0 por esta aplicación.
-
-  Sean $e_1,\dots,e_k$ los generadores de $H$ y sea $A:\RR^n \rightarrow \RR^n$ un isomorfismo tal que cada $u_i$ va a parar a $e_i$. Entonces, la aplicación $\tilde{A}$ dada por el siguiente diagrama es un difeomorfismo.
-  
-\begin{center}
-\begin{tikzpicture}[scale=2]
-\node (A) at (0,1) {$\RR^n$};
-\node (B) at (1,1) {$\RR^n$};
-\node (C) at (0,0) {$\TT^k \times \RR^{n-k}$};
-\node (D) at (1,0) {$M$};
-\path[->,font=\scriptsize,>=angle 90]
-(A) edge node[above]{$A$} (B)
-(A) edge node[left]{$p$} (C)
-(B) edge node[right]{$g$} (D)
-(C) edge node[above]{$\tilde{A}$} (D);
-\end{tikzpicture}
-\end{center}
-\nota{Probar que es un difeomorfismo}
-
-Como por hipótesis $M$ es compacta, necesariamente $k=n$ y $M$ es difeomorfa a $\TT^n$.
-\end{proof}
 
 Podemos probar ahora el resultado fundamental de esta teoría:
 \begin{thm}[Arnold]
