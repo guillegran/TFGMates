@@ -79,13 +79,19 @@ luego, sea $t=t_1+\cdots+t_n$, $x=g_t (x_0)$. Por tanto, $g$ es sobreyectiva.
   \label{fig:entornos}
 \end{figure}
 
-  Si $g$ fuese inyectiva, entonces sería un difeomorfismo entre $\RR^n$ y $M$, pero no puede serlo porque $M$ es compacta y $\RR^n$ no lo es.
-
-  Por tanto, si llamamos 
+Tenemos entonces que $g:\RR^n\rightarrow M$ es un difeomorfismo local sobreyectivo, luego es una identificación diferenciable, de modo que si llamamos 
 \[  
   H:=\{t \in \RR^n \mid g_t(x_0)=x_0\},
 \]
-entonces $H \neq {0}$. Ahora, sean $t, s \in H$, entonces 
+entonces, por la propiedad universal del cociente, el siguiente diagrama
+\begin{center}
+  \begin{tikzcd}
+    \RR^n \arrow{r}{g}\arrow{d}{} & M    \\ 
+    \RR^n/H, \arrow{ru}{}
+  \end{tikzcd}
+\end{center}
+da un difeomorfismo entre $M$ y $\RR^n/H$. Si $H$ es vacío, $M\cong \RR^n$ y habríamos terminado. Supongamos que $H$ es no vacío.
+ Entonces, dados $t, s \in H$, 
 \[
   g_{s+t}(x_0)=g_sg_t(x_0)=g_s(x_0)=x_0
 \]
@@ -93,7 +99,7 @@ y
 \[
   g_{-t}(x_0)=g_{-t}g_t(x_0)=x_0.
 \] 
-Es decir, $H$ es un subgrupo cerrado de $(\RR^n,+)$. Además, $H$ no depende de la elección de $x_0$, en efecto, si $x=g_r (x_0)$ y $t\in H$, entonces 
+Es decir, $H$ es un subgrupo de $(\RR^n,+)$. Además, $H$ no depende de la elección de $x_0$, en efecto, si $x=g_r (x_0)$ y $t\in H$, entonces 
 \[
   g_t (x) = g_{t+r}(x_0)=g_rg_t(x_0)=g_r(x_0)=x. 
  \] 
@@ -152,91 +158,54 @@ Terminamos ahora la demostración del Lema \ref{lemtoro}.
   \[
     \begin{array}{rcl}
       \varpi: \RR^n = \RR^k \times \RR^{n-k} & \longrightarrow & \TT^k \times \RR^{n-k} \\
-      (x,y) & \longmapsto & (\bar{x}, y),
+      (x,y) & \longmapsto & (\exp(x), y).
     \end{array}
   \]
-  con $\bar{x}=x$ módulo $2\pi$.
-  Los puntos $u_1,\dots,u_k \in \RR^n$ de la forma 
-  \[
-    u_i = (x_1=0,\dots,x_i=2\pi,\dots,x_k=0,y=0)
-  \]
-  van a 0 por $\varpi$.
-
-  Sean $e_1,\dots,e_k$ los generadores de $H$ y sea $A:\RR^n \rightarrow \RR^n$ un isomorfismo lineal tal que cada $u_i$ va a parar a $e_i$. Entonces, la aplicación $\tilde{A}$ que hace el siguiente diagrama conmutativo es un difeomorfismo,
+  En particular, $\varpi$ da un homomorfismo de grupos cuyo núcleo es un subgrupo discreto de $\RR^n$ generado por $u_1,\dots,u_k \in \RR^n$. 
+  Sean $e_1,\dots,e_k$ los generadores de $H$ y sea $B:\RR^n \rightarrow \RR^n$ un isomorfismo lineal tal que cada $u_i$ va a parar a $e_i$. Entonces, la aplicación $\tilde{B}$ que hace el siguiente diagrama conmutativo es un difeomorfismo,
+  \begin{center}
+    \begin{tikzcd}
+  \RR^n    \arrow{r}{B}\arrow{dd}[anchor=east]{\varpi} & \RR^n\arrow{dd}[anchor=west]{g} \\ 
+  & \\
+  \TT^k \times \RR^{n-k}\arrow{r}[anchor=south]{\tilde{B}} & \RR^n/H \cong M.
+     \end{tikzcd}
+   \end{center}
   
-\begin{center}
-\begin{tikzpicture}[scale=2]
-\node (A) at (0,1) {$\RR^n$};
-\node (B) at (1,1) {$\RR^n$};
-\node (C) at (0,0) {$\TT^k \times \RR^{n-k}$};
-\node (D) at (1,0) {$M$.};
-\path[->,font=\scriptsize,>=angle 90]
-(A) edge node[above]{$A$} (B)
-(A) edge node[left]{$\varpi$} (C)
-(B) edge node[right]{$g$} (D)
-(C) edge node[above]{$\tilde{A}$} (D);
-\end{tikzpicture}
-\end{center}
 \end{proof}
 
-Podemos aplicar ahora el Lema \ref{lemtoro} a $M_a$ para obtener un difeomorfismo, que hace el siguiente diagrama conmutativo:
+Aplicando directamente el Lema \ref{lemtoro} a $M_a$ tenemos que es difeomorfa a $\TT^k\times \RR^{n-k}$ para cierto $k=0,\dots,n$. En particular, si $M_a$ es compacta, entonces $k=n$ y $M_a\cong \TT^n$. Hemos probado entonces la segunda parte del teorema.
 
+Si consideramos ahora el isomorfismo lineal $B$ (que depende del punto $a$) dado por el diagrama anterior y llamamos $\nu(a)$ a la primera columna de la matriz asociada a $B$, entonces $B(t,0,\dots,0)=\nu(a)t$. Podemos dar entonces unas coordenadas $\lambda:M\rightarrow \RR^n$, donde $\lambda$ es una sección de $\varpi$, es decir, hace el siguiente diagrama conmutativo
 \begin{center}
-\begin{tikzpicture}
-\node (A) at (-2.5,2) {$\RR^n$};
-\node (B) at (-1,2) {$\RR^n$};
-\node (C) at (-1,0) {$C_a=\TT^n$};
-\node (D) at (1,2) {$\theta$};
-\node (E) at (3,2) {$t$};
-\node (F) at (3,0) {$\theta \mod 2\pi$};
-\path[->,font=\scriptsize, >=angle 90]
-(A) edge node[above]{$A$} (B)
-(A) edge node[left]{$p$} (C)
-(B) edge node[right]{$g$} (C);
-\path[|->,font=\scriptsize, >=angle 90]
-(D) edge node[auto] {$$} (F)
-(D) edge node[auto] {$$} (E)
-(E) edge node[auto] {$$} (F);
-\end{tikzpicture}
+  \begin{tikzcd}
+    \RR^k\times \RR^{n-k} \arrow{rd}[anchor=north,rotate=-30]{\varpi} \arrow{r}{\mathrm{id}} & \RR^n    \\ 
+    & M. \arrow{u}{\lambda}
+  \end{tikzcd}
 \end{center}
 
+Ahora, como el flujo del sistema $\varphi^H$ es igual a $g_1$, el siguiente diagrama conmuta
+\begin{center}
+  \begin{tikzcd}
+    \RR^n    & \RR \arrow{l}[anchor=south]{\nu(a) \bullet} \arrow{d}[anchor=west]{\varphi_{\bullet}^H(x)} \\ 
+    &M. \arrow{ul}[rotate=-30]{\lambda} 
+   \end{tikzcd}
+ \end{center}
+ Por tanto, $\lambda(t)=\lambda(\varphi_t(x))=\nu(a) t$, luego $\dot \lambda(t)=\nu(a)$. Esto prueba la tercera parte del teorema.
 
-En este caso, el flujo hamiltoniano asociado a $F_1$ es $g_1$, luego 
-\[
-\theta(t) = g_{1,t} (\theta(0)).
-\]
-Ahora, fijo $\theta(0)$, $g_{1,t}=g(t,0,\dots,0)$, por tanto
-\[
-\left(
-\begin{array}{c}
-\theta_1 (t)\\
-\vdots \\
-\theta_n (t)
-\end{array}
-\right)
-=
-A
-\left(
-\begin{array}{c}
-t\\
-0 \\
-\vdots \\
-0
-\end{array}
-\right).
-\]
-De modo que, si $a_{ij}$ es la entrada de índices $(i,j)$ de la matriz $A$, entonces, para cada $i=1,\dots,n$,
-\[
-\theta_i (t) = a_{i1} t.
-\] 
-Por tanto, sea $\omega_i=a_{i1}$,
-\[
-\dot{\theta_i}(t)=\omega_i.
-\]
-
-   
- \end{proof}<++>
-
+ Para probar la última parte del teorema veamos primero que existe un $U \subset M$ entorno de $M_a$ difeomorfo a $\RR^n \times M_a$. 
+ Como $F$ tiene rango máximo, si tomamos $D\cong\RR^{2n}$ entorno simplemente conexo de $x$, existe $V\subset D$ y existe $B\subset \RR^n$ abierto tal que $F|_V:V \rightarrow B$ es un difeomorfismo. Ahora, reduciendo el entorno $V$ si es preciso, sea
+  \[
+    \begin{array}{rcl}
+      \Phi:V & \longrightarrow & \RR^n \times M_a \\
+           x & \longmapsto & (F(x), \lambda),
+    \end{array}
+  \]
+  con $\lambda$ las coordenadas antes obtenidas en la componente $M_{F(x)}$ que contiene a $x$. Entonces claramente $\Phi$ da un difeomorfismo entre $U=\bigcup_{x\in V}M_{F(x)}$ (que es un entorno de $M_a$) y $\RR^n \times M_a$.
+\begin{obs}
+  \em
+  Aquí estamos suponiendo que $x$ no está en el borde de $M$, en tal caso procederíamos análogamente para obtener un entorno difeomorfo a $\HH^n \times \TT^n$.
+\end{obs}
+ \end{proof}
 
 En primer lugar, vamos a considerar un ejemplo característico que aclara alguna de las ideas detrás de esta teoría.
 \begin{ejemplo}
@@ -540,25 +509,6 @@ ver figura \ref{fig:lissajous}.
 
 Si $(M,H)$ es integrable en el sentido de Liouville, entonces para todo $x \in M$, $M_{F(x)}$ es compacta, luego la componente conexa a la que pertenezca $x$, $C_{F(x)}$, es un toro invariante, en el que podemos dar coordenadas angulares con una dinámica como la del teorema. A la vista de esto, tenemos el siguiente corolario:
 
-\begin{corol}
-  Sea (M,H) un sistema integrable en el sentido de Liouville, $a \in \RR^n$ y $C_a$ un toro invariante. Existe un $U \subset M$ entorno de $C_a$ difeomorfo a $\RR^n \times \TT^n$. 
-\end{corol}
-
-\begin{proof}
-  \nota{Cuidado con ésta que la he escrito yo.}
-  Por hipótesis, las $F_i$ son independientes para todo $x \in M$, luego $F_*$ tiene rango máximo. Por tanto, sea $x$ tal que $F(x)=a$, existe $D\simeq \RR^{2n}$ entorno simplemente conexo de $x$, existe $V\subset D$ y existe $B\subset \RR^n$ abierto tal que $F|V:V \rightarrow B$ es un difeomorfismo. Ahora, sea
-  \[
-    \begin{array}{rcl}
-      \Phi:M & \longrightarrow & \RR^n \times \TT^n \\
-           x & \longmapsto & (F(x), \theta),
-    \end{array}
-  \]
-  con $\theta$ coordenadas angulares en $C_{F(x)}$ el toro invariante al que pertenece $x$. Entonces claramente $\Phi$ da un difeomorfismo entre $U=\bigcup_{x\in V}C_{F(x)}$ (que es un entorno de $C_a$) y $\bigcup_{b \in B} C_b$. Como $B$ es un abierto de $\RR^n$ y $C_b$ es un toro invariante, $U$ es difeomorfo a $\RR^n \times \TT^n$.
-\end{proof}
-\begin{obs}
-  \em
-  Aquí estamos suponiendo que $x$ no está en el borde de $M$, en tal caso procederíamos análogamente para obtener un entorno difeomorfo a $\HH^n \times \TT^n$.
-\end{obs}
 
 Finalmente, vamos a demostrar el teorema clave que nos permite construir la carta en la cual las ecuaciones de Hamilton pueden ser integradas por cuadraturas.
 \begin{thm}[de las variables de acción-ángulo]
