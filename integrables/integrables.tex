@@ -24,9 +24,9 @@ Sea $(M,H)$ un sistema integrable en el sentido de Liouville con $F_1,\dots,F_n$
   
  Además $M_a$ es difeomorfa a $\TT^k\times \RR^{n-k}$, para cierto $0 \leq k \leq n$. En particular, si $M_a$ es compacta, $M_a$ es difeomorfa al toro $n$-dimensional $\TT^n$. En este caso, se dice que $M_a$ es un \emph{toro invariante}. 
  
- Podemos tomar unas coordenadas $\lambda=(\lambda_1,\dots\lambda_n)$ en $M_a$ de manera que existen unas velocidades constantes $\nu(a)=(\nu_1(a),\dots,\nu_n(a))$ tales que $\dot \lambda (t)=\nu$.
+ Podemos tomar unas coordenadas $w=(w_1,\dots w_n)$ en $M_a$ de manera que existen unas velocidades constantes $v(a)=(v_1(a),\dots,v_n(a))$ tales que $\dot w (t)=v$. Como consecuencia, las ecuaciones de Hamilton del sistema con $x$ como condición inicial son integrables por cuadraturas.
 
-  Existe un entorno $U\subset M$ de cada $M_a$ difeomorfo a $\RR^n \times M_a$ (se dice \emph{entorno tubular}) y un sistema de coordenadas de Darboux $(J,w)=(J_1,\dots,J_n,w_1,\dots,w_n)$ (llamadas \emph{variables de acción-ángulo}\footnote{Las $w_i$ suelen llamarse variables de ángulo ya que, en el caso en que $M_a$ es compacta, son precisamente coordenadas angulares en el toro $M_a$. Las $J_i$ se llaman variables de acción debido a sus dimensiones físicas, en efecto, como las $w_i$ son adimensionales, las $J_i$ tienen que tener dimensiones de Posición$\times$Momento Lineal, que son precisamente las dimensiones de la integral de acción (citar caso lagrangiano).}) en $U$ tales que las $w_i$ son coordenadas en $M_a$ y las $J_i$ son constantes en cada $M_a$. Como consecuencia, las ecuaciones de Hamilton del sistema son integrables por cuadraturas.
+ En el caso en que $M_a$ sea compacta, existe un entorno $U\subset M$ de cada $M_a$ difeomorfo a $\RR^n \times \TT^n$ (se dice \emph{entorno tubular}) y un sistema de coordenadas de Darboux $(J,\phi)=(J_1,\dots,J_n,\phi_1,\dots,\phi_n)$ (llamadas \emph{variables de acción-ángulo}\footnote{Las $\phi_i$ suelen llamarse variables de ángulo ya que son precisamente coordenadas angulares en el toro $M_a$. Las $J_i$ se llaman variables de acción debido a sus dimensiones físicas, en efecto, como las $\phi_i$ son adimensionales, las $J_i$ tienen que tener dimensiones de Posición$\times$Momento Lineal, que son precisamente las dimensiones de la integral de acción (citar caso lagrangiano).}) en $U$ tales que las $\phi_i$ son coordenadas en $M_a$ y las $J_i$ son constantes en cada $M_a$. 
 \end{thm}
 
 Cabe hacer un breve comentario sobre la historia de este resultado.
@@ -175,22 +175,29 @@ Terminamos ahora la demostración del Lema \ref{lemtoro}.
 
 Aplicando directamente el Lema \ref{lemtoro} a $M_a$ tenemos que es difeomorfa a $\TT^k\times \RR^{n-k}$ para cierto $k=0,\dots,n$. En particular, si $M_a$ es compacta, entonces $k=n$ y $M_a\cong \TT^n$. Hemos probado entonces la segunda parte del teorema.
 
-Si consideramos ahora el isomorfismo lineal $B$ (que depende del punto $a$) dado por el diagrama anterior y llamamos $\nu(a)$ a la primera columna de la matriz asociada a $B$, entonces $B(t,0,\dots,0)=\nu(a)t$. Podemos dar entonces unas coordenadas $\lambda:M\rightarrow \RR^n$, donde $\lambda$ es una sección de $\varpi$, es decir, hace el siguiente diagrama conmutativo
+Si consideramos ahora el isomorfismo lineal $B$ (que depende del punto $a$) dado por el diagrama anterior y llamamos $v(a)$ a la primera columna de la matriz asociada a $B$, entonces $B(t,0,\dots,0)=v(a)t$. Podemos dar entonces unas coordenadas $w:M\rightarrow \RR^n$, donde $w$ es una sección de $\varpi$, es decir, hace el siguiente diagrama conmutativo
 \begin{center}
   \begin{tikzcd}
     \RR^k\times \RR^{n-k} \arrow{rd}[anchor=north,rotate=-30]{\varpi} \arrow{r}{\mathrm{id}} & \RR^n    \\ 
-    & M. \arrow{u}{\lambda}
+    & M. \arrow{u}{w}
   \end{tikzcd}
 \end{center}
 
 Ahora, como el flujo del sistema $\varphi^H$ es igual a $g_1$, el siguiente diagrama conmuta
 \begin{center}
   \begin{tikzcd}
-    \RR^n    & \RR \arrow{l}[anchor=south]{\nu(a) \bullet} \arrow{d}[anchor=west]{\varphi_{\bullet}^H(x)} \\ 
-    &M. \arrow{ul}[rotate=-30]{\lambda} 
+    \RR^n    & \RR \arrow{l}[anchor=south]{v(a) \bullet} \arrow{d}[anchor=west]{\varphi_{\bullet}^H(x)} \\ 
+    &M. \arrow{ul}[rotate=-30]{w} 
    \end{tikzcd}
  \end{center}
- Por tanto, $\lambda(t)=\lambda(\varphi_t(x))=\nu(a) t$, luego $\dot \lambda(t)=\nu(a)$. Esto prueba la tercera parte del teorema.
+ Por tanto, $w(t)=w(\varphi_t(x))=v(a) t$, luego $\dot w(t)=v(a)$. Como el flujo hamiltoniano deja $M_a$ invariante, queda descrito por las ecuaciones
+ \begin{equation*}
+   \begin{cases}
+     F(t)=a \\
+     w(t)=v(a)t.
+   \end{cases}
+ \end{equation*}
+ Esto prueba la tercera parte del teorema.
 
  Para probar la última parte del teorema veamos primero que existe un $U \subset M$ entorno de $M_a$ difeomorfo a $\RR^n \times M_a$. 
  Como $F$ tiene rango máximo, si tomamos $D\cong\RR^{2n}$ entorno simplemente conexo de $x$, existe $V\subset D$ y existe $B\subset \RR^n$ abierto tal que $F|_V:V \rightarrow B$ es un difeomorfismo. Ahora, reduciendo el entorno $V$ si es preciso, sea
