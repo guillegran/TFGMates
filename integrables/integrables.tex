@@ -1,5 +1,5 @@
-\section{Teoría de Arnold-Liouville}\label{sec:arnoldliouville}
-A la hora de estudiar sistemas dinámicos, una cuestión interesante a plantearse, con consecuencias prácticas y también de carácter fundamental, es si las ecuaciones del sistema podrán ser «integradas», es decir, si podrán ser resueltas mediante integrales definidas («cuadraturas») de funciones conocidas. Decimos entonces que una ecuación diferencial es \emph{integrable por cuadraturas} si es posible escribir su solución general en términos de sumas, productos, composiciones e integrales de funciones conocidas. 
+\section{Teorema de Arnold-Liouville}\label{sec:arnoldliouville}
+A la hora de estudiar sistemas dinámicos, una cuestión interesante a plantearse, con consecuencias prácticas y también de carácter fundamental, es si las ecuaciones del sistema podrán ser «integradas», es decir, si podrán ser resueltas mediante integrales («cuadraturas») de funciones conocidas. Decimos entonces que una ecuación diferencial es \emph{integrable por cuadraturas} si es posible escribir su solución general en términos de sumas, productos, composiciones e integrales de funciones conocidas. 
 
 En 1885, Joseph Liouville encontró una condición necesaria para que las ecuaciones de Hamilton de ciertos sistemas hamiltonianos fueran (localmente) integrables por cuadraturas. Décadas más tarde, con la introducción del formalismo geométrico y topológico al estudio de los sistemas dinámicos se descubrirían muchas más cosas interesantes sobre los sistemas que cumplían la condición que Liouville propuso. Destaca especialmente en todo este estudio la teoría de los toros invariantes desarrollada por Vladimir Arnold en 1963. Nace así la teoría de los \emph{sistemas integrables}, cuyos resultados más básicos constituyen el \emph{teorema de Arnold-Liouville}.
 
@@ -22,11 +22,10 @@ Sea $(M,H)$ un sistema integrable en el sentido de Liouville con $F_1,\dots,F_n$
 
    Sea $x\in M$ un punto regular del sistema y sea $a=F(x)$. Entonces la componente conexa $M_a$ del conjunto de nivel $F^{-1}(a)$ que contiene a $x$ es una variedad diferenciable invariante bajo el flujo del sistema y $\left. \omega \right|_{M_a}=0$.
   
- Además $M_a$ es difeomorfa a $\TT^k\times \RR^{n-k}$, para cierto $0 \leq k \leq n$. En particular, si $M_a$ es compacta, $M_a$ es difeomorfa al toro $n$-dimensional $\TT^n$. En este caso, se dice que $M_a$ es un \emph{toro invariante}. 
+ Además $M_a$ es difeomorfa a $\TT^k\times \RR^{n-k}$, para cierto $0 \leq k \leq n$. En particular, si $M_a$ es compacta, $M_a$ es difeomorfa al toro $n$-dimensional $\TT^n$. En este caso, se dice que $M_a$ es un \emph{toro de Liouville}. 
  
- Podemos tomar unas coordenadas $w=(w_1,\dots w_n)$ en $M_a$ de manera que existen unas velocidades constantes $v(a)=(v_1(a),\dots,v_n(a))$ tales que $\dot w (t)=v$. Como consecuencia, las ecuaciones de Hamilton del sistema con $x$ como condición inicial son integrables por cuadraturas.
+ Podemos tomar unas coordenadas $w=(w_1,\dots w_n)$ en $M_a$ de manera que existen unas velocidades constantes $v(a)=(v_1(a),\dots,v_n(a))$ tales que $\dot w (t)=v$. Como consecuencia, las ecuaciones de Hamilton del sistema son localmente integrables por cuadraturas en un entorno de $x$.
 
- En el caso en que $M_a$ sea compacta, existe un entorno $U\subset M$ de cada $M_a$ difeomorfo a $\RR^n \times \TT^n$ (se dice \emph{entorno tubular}) y un sistema de coordenadas de Darboux $(J,\phi)=(J_1,\dots,J_n,\phi_1,\dots,\phi_n)$ (llamadas \emph{variables de acción-ángulo}\footnote{Las $\phi_i$ suelen llamarse variables de ángulo ya que son precisamente coordenadas angulares en el toro $M_a$. Las $J_i$ se llaman variables de acción debido a sus dimensiones físicas, en efecto, como las $\phi_i$ son adimensionales, las $J_i$ tienen que tener dimensiones de Posición$\times$Momento Lineal, que son precisamente las dimensiones de la integral de acción (citar caso lagrangiano).}) en $U$ tales que las $\phi_i$ son coordenadas en $M_a$ y las $J_i$ son constantes en cada $M_a$. 
 \end{thm}
 
 Cabe hacer un breve comentario sobre la historia de este resultado.
@@ -53,7 +52,7 @@ Como ya se ha comentado, la formulación original, en términos de mecánica ham
   Esto prueba la primera parte del teorema. Para continuar, necesitamos probar un lema previo.
 
   \begin{lema}\label{lemtoro}
-    Sea $M$ una variedad diferenciable de dimensión $n$ conexa y compacta tal que existen campos $X_1,\dots,X_n$ en $M$ completos y linealmente independientes y tales que, para todo $i,j=1,\dots,n$, $i\neq j$, $[X_i,X_j]=0$. Entonces $M$ es difeomorfa al $\TT^k\times \RR^{n-k}$. 
+    Sea $M$ una variedad diferenciable de dimensión $n$ conexa y compacta tal que existen campos $X_1,\dots,X_n$ en $M$ completos y linealmente independientes y tales que, para todo $i,j=1,\dots,n$, $i\neq j$, $[X_i,X_j]=0$. Entonces $M$ es difeomorfa a $\TT^k\times \RR^{n-k}$. 
 \end{lema}
 \begin{proof}(del Lema \ref{lemtoro}).
   Para cada $i=1,\dots,n$, sea $g_i$ el flujo completo generado por $X_i$. Como para todo $i\neq j$ $[X_i,X_j]=0 $ entonces $g_i$ conmuta con $g_j$, es decir, $g_ig_j (x)=g_jg_i (x)$, para todo $x \in M$. 
@@ -197,7 +196,16 @@ Ahora, como el flujo del sistema $\varphi^H$ es igual a $g_1$, el siguiente diag
      w(t)=v(a)t.
    \end{cases}
  \end{equation*}
- Esto prueba la tercera parte del teorema.
+ Si tomamos ahora un entorno $U$ de $x$ simplemente conexo podemos ver que localmente las coordenadas $(F,w)$ forman una carta de Darboux, ya que cumplen las relaciones de conmutación canónicas,
+ \begin{equation*}
+   \pois{F_j,w_k}=\sum_{i=1}^n \parcial{F_j}{F_i} \parcial{w_k}{w_i} - \parcial{F_j}{w_i} \parcial{w_k}{F_i} = \sum_{i=1}^n \delta_{ji}\delta_{ki}-0 = \delta_{jk}.
+ \end{equation*}
+Esto concluye la demostración del teorema.
+ \end{proof}
+
+ \section{Variables de acción-ángulo}
+
+ En el caso en que $M_a$ sea compacta, existe un entorno $U\subset M$ de cada $M_a$ difeomorfo a $\RR^n \times \TT^n$ (se dice \emph{entorno tubular}) y un sistema de coordenadas de Darboux $(J,\phi)=(J_1,\dots,J_n,\phi_1,\dots,\phi_n)$ (llamadas \emph{variables de acción-ángulo}\footnote{Las $\phi_i$ suelen llamarse variables de ángulo ya que son precisamente coordenadas angulares en el toro $M_a$. Las $J_i$ se llaman variables de acción debido a sus dimensiones físicas, en efecto, como las $\phi_i$ son adimensionales, las $J_i$ tienen que tener dimensiones de Posición$\times$Momento Lineal, que son precisamente las dimensiones de la integral de acción (citar caso lagrangiano).}) en $U$ tales que las $\phi_i$ son coordenadas en $M_a$ y las $J_i$ son constantes en cada $M_a$. 
 
  Para probar la última parte del teorema veamos primero que existe un $U \subset M$ entorno de $M_a$ difeomorfo a $\RR^n \times M_a$. 
  Como $F$ tiene rango máximo, si tomamos $D\cong\RR^{2n}$ entorno simplemente conexo de $x$, existe $V\subset D$ y existe $B\subset \RR^n$ abierto tal que $F|_V:V \rightarrow B$ es un difeomorfismo. Ahora, reduciendo el entorno $V$ si es preciso, sea
@@ -212,7 +220,13 @@ Ahora, como el flujo del sistema $\varphi^H$ es igual a $g_1$, el siguiente diag
   \em
   Aquí estamos suponiendo que $x$ no está en el borde de $M$, en tal caso procederíamos análogamente para obtener un entorno difeomorfo a $\HH^n \times \TT^n$.
 \end{obs}
- \end{proof}
+
+
+
+
+
+
+
 
 En primer lugar, vamos a considerar un ejemplo característico que aclara alguna de las ideas detrás de esta teoría.
 \begin{ejemplo}
