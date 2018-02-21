@@ -3,6 +3,8 @@ A la hora de estudiar sistemas dinámicos, una cuestión interesante a plantears
 
 En 1885, Joseph Liouville encontró una condición necesaria para que las ecuaciones de Hamilton de ciertos sistemas hamiltonianos fueran (localmente) integrables por cuadraturas. Décadas más tarde, con la introducción del formalismo geométrico y topológico al estudio de los sistemas dinámicos se descubrirían muchas más cosas interesantes sobre los sistemas que cumplían la condición que Liouville propuso. Destaca especialmente en todo este estudio la teoría de los toros invariantes desarrollada por Vladimir Arnold en 1963. Nace así la teoría de los \emph{sistemas integrables}, cuyos resultados más básicos constituyen el \emph{teorema de Arnold-Liouville}.
 
+
+
 \begin{defn}
   \em
   Sea $(M,H)$ un sistema hamiltoniano con $\dim(M)=2n$. Decimos que $(M,H)$ es \emph{integrable (en el sentido de Liouville)} si existen $F_1(=H),\dots,F_n\in \mathcal{C}^{\infty}(M)$ tales que
@@ -27,12 +29,6 @@ Sea $(M,H)$ un sistema integrable en el sentido de Liouville con $F_1,\dots,F_n$
  Podemos tomar unas coordenadas $w=(w_1,\dots w_n)$ en $M_a$ de manera que existen unas velocidades constantes $v(a)=(v_1(a),\dots,v_n(a))$ tales que $\dot w (t)=v$. Como consecuencia, las ecuaciones de Hamilton del sistema son localmente integrables por cuadraturas en un entorno de $x$.
 
 \end{thm}
-
-Cabe hacer un breve comentario sobre la historia de este resultado.
-Como ya se ha comentado, la formulación original, en términos de mecánica hamiltoniana clásica, se debe a Liouville en 1855, mientras que la teoría moderna la desarrolló Arnold en 1963. Por otra parte, las variables de acción-ángulo fueron introducidas originalmente por Delaunay en 1860 para estudiar el movimiento de la Luna y más tarde, a principios del siglo XX, usadas por los físicos para estudiar el átomo de Bohr, siendo Schwarzschild el que acuñara esa terminología en 1916. La obtención formal de las variables de acción-ángulo se atribuye a Mineur en 1936. 
- Una discusión más extensa sobre la historia del teorema de Arnold-Liouville puede encontrarse en las páginas 640 y 641 del texto de Spivak \cite{spivak}.
-
- Podemos dar entonces la demostración, que haremos en varios pasos.
 
  \begin{proof}
   En primer lugar, como $x$ es regular, $F$ tiene rango máximo en cada punto de $M_a$ y, por el teorema de la función implícita, $M_a$ es una subvariedad regular de $M$ de dimensión $2n-n=n$. 
@@ -196,38 +192,100 @@ Ahora, como el flujo del sistema $\varphi^H$ es igual a $g_1$, el siguiente diag
      w(t)=v(a)t.
    \end{cases}
  \end{equation*}
- Si tomamos ahora un entorno $U$ de $x$ simplemente conexo podemos ver que localmente las coordenadas $(F,w)$ forman una carta de Darboux, ya que cumplen las relaciones de conmutación canónicas,
+ Si tomamos ahora un entorno $U$ de $x$ simplemente conexo podemos ver que localmente las funciones $(F,w)$ cumplen las relaciones de conmutación canónicas,
  \begin{equation*}
-   \pois{F_j,w_k}=\sum_{i=1}^n \parcial{F_j}{F_i} \parcial{w_k}{w_i} - \parcial{F_j}{w_i} \parcial{w_k}{F_i} = \sum_{i=1}^n \delta_{ji}\delta_{ki}-0 = \delta_{jk}.
+   \pois{F_j}{w_k}=\sum_{i=1}^n \parcial{F_j}{F_i} \parcial{w_k}{w_i} - \parcial{F_j}{w_i} \parcial{w_k}{F_i} = \sum_{i=1}^n \delta_{ji}\delta_{ki}-0 = \delta_{jk}.
  \end{equation*}
+ Además, por hipótesis $\pois{F_i}{F_j}=0$ y $\pois{w_i}{w_j}=0$. Por tanto, localmente $\omega(X^{F_j},X^{w_k})=\delta_{jk}$ y $\omega(X^{F_i},X^{F_j})=\omega(X^{w_i},X^{w_j})=0$. Esto nos permite hallar una carta de Darboux en $x$ siguiendo estos campos, en la que las ecuaciones de Hamilton quedan integradas por cuadraturas.
 Esto concluye la demostración del teorema.
  \end{proof}
 
  \section{Variables de acción-ángulo}
+ Cabe preguntarse ahora si será posible obtener unas coordenadas que integren el sistema por cuadraturas \emph{globalmente}. En el caso en que $M_a$ sea compacta y, por tanto, un toro de Liouville, vamos a ver que es posible encontrar un entorno de este toro y unas coordenadas (variables de acción-ángulo) en este entorno que nos permitan integrar el sistema por cuadraturas.
+ 
+ Las variables de acción-ángulo fueron introducidas originalmente por Delaunay en 1860 para estudiar el movimiento de la Luna y más tarde, a principios del siglo XX, usadas por los físicos para estudiar el átomo de Bohr, siendo Schwarzschild el que acuñara esa terminología en 1916. La demostración del teorema de las variables de acción-ángulo se atribuye a Mineur en 1936. 
 
- En el caso en que $M_a$ sea compacta, existe un entorno $U\subset M$ de cada $M_a$ difeomorfo a $\RR^n \times \TT^n$ (se dice \emph{entorno tubular}) y un sistema de coordenadas de Darboux $(J,\phi)=(J_1,\dots,J_n,\phi_1,\dots,\phi_n)$ (llamadas \emph{variables de acción-ángulo}\footnote{Las $\phi_i$ suelen llamarse variables de ángulo ya que son precisamente coordenadas angulares en el toro $M_a$. Las $J_i$ se llaman variables de acción debido a sus dimensiones físicas, en efecto, como las $\phi_i$ son adimensionales, las $J_i$ tienen que tener dimensiones de Posición$\times$Momento Lineal, que son precisamente las dimensiones de la integral de acción (citar caso lagrangiano).}) en $U$ tales que las $\phi_i$ son coordenadas en $M_a$ y las $J_i$ son constantes en cada $M_a$. 
+ \begin{thm}
+   En el caso en que $M_a$ sea compacta, existe un entorno $U\subset M$ de cada $M_a$ difeomorfo a $\RR^n \times \TT^n$ (se dice \emph{entorno tubular}) y un sistema de coordenadas de Darboux $(J,\phi)=(J_1,\dots,J_n,\phi_1,\dots,\phi_n)$ (llamadas \emph{variables de acción-ángulo}\footnote{Las $\phi_i$ suelen llamarse variables de ángulo ya que son precisamente coordenadas angulares en el toro $M_a$. Las $J_i$ se llaman variables de acción debido a sus dimensiones físicas, en efecto, como las $\phi_i$ son adimensionales, las $J_i$ tienen que tener dimensiones de posición por momento, que son precisamente las dimensiones de la integral de acción \eqref{accion}.}) en $U$ tales que las $\phi_i$ son coordenadas en $M_a$ y las $J_i$ son constantes en cada $M_a$. 
+\end{thm}
 
- Para probar la última parte del teorema veamos primero que existe un $U \subset M$ entorno de $M_a$ difeomorfo a $\RR^n \times M_a$. 
- Como $F$ tiene rango máximo, si tomamos $D\cong\RR^{2n}$ entorno simplemente conexo de $x$, existe $V\subset D$ y existe $B\subset \RR^n$ abierto tal que $F|_V:V \rightarrow B$ es un difeomorfismo. Ahora, reduciendo el entorno $V$ si es preciso, sea
-  \[
-    \begin{array}{rcl}
-      \Phi:V & \longrightarrow & \RR^n \times M_a \\
-           x & \longmapsto & (F(x), \lambda),
-    \end{array}
-  \]
-  con $\lambda$ las coordenadas antes obtenidas en la componente $M_{F(x)}$ que contiene a $x$. Entonces claramente $\Phi$ da un difeomorfismo entre $U=\bigcup_{x\in V}M_{F(x)}$ (que es un entorno de $M_a$) y $\RR^n \times M_a$.
-\begin{obs}
-  \em
-  Aquí estamos suponiendo que $x$ no está en el borde de $M$, en tal caso procederíamos análogamente para obtener un entorno difeomorfo a $\HH^n \times \TT^n$.
-\end{obs}
+%\begin{obs}
+%  \em
+%  Aquí estamos suponiendo que $x$ no está en el borde de $M$, en tal caso procederíamos análogamente para obtener un entorno difeomorfo a $\HH^n \times \TT^n$.
+%\end{obs}
 
 
+\begin{proof}
+  Sea $\pi:U\simeq \RR^n \times \TT^n \rightarrow \RR^n$ la proyección canónica, entonces $\pi^{-1}(x)$ es un toro invariante para cada $x \in D=\pi(U)$. En cada uno de estos toros, sean $X_i=X^{F_i}$ y $(F,\theta)$ las coordenadas obtenidas en el lema anterior,
+\[
+  \deriv{\theta_i} = \sum_{k=1}^n a_{ik}X_k,
+\]
+donde las $a_{ik}$ son funciones constantes en cada toro.
 
+Como $\omega$ se anula en el toro, no tiene términos en $\dd \theta_i \wedge \dd \theta_j$. Los términos en $\dd \theta_i \wedge \dd F_j$ serán
+\[
+  \omega\left(\deriv{\theta_i},\deriv{F_j}\right)=\sum_{k=1}^n a_{ik}\cdot \omega\left(X_k,\deriv{F_j}\right)=\sum_{k=1}^n a_{ik} \cdot \dd F_k \left(\deriv{F_j}\right) = \sum_{k=1}^n a_{ik} \delta_{ij}= a_{ij}. 
+\]
+Por tanto, $\omega$ es de la forma
+\[
+  \omega = \sum_{i,j=1}^n a_{ij} \dd \theta_i \wedge \dd F_j + \sum_{i,j=1}^n b_{ij} \dd F_i \wedge \dd F_j,
+\]
+con $b_{ij}$ unas ciertas funciones. Además, como $\omega$ es cerrada, el término correspondiente a $\dd \theta_k \wedge \dd F_i \wedge \dd F_j$ debe anularse. Este término es exactamente
+\[
+  \parcial{a_{ki}}{F_j}-\parcial{a_{kj}}{F_i}+\parcial{b_{ij}}{\theta_k}.
+\]
+El término $\parcial{a_{ki}}{F_j}-\parcial{a_{kj}}{F_i}$ no depende de las variables angulares, luego las $\parcial{b_{ij}}{\theta_k}$ son constantes al variar los ángulos $\theta_k$. Como las variables $\theta_k$ son angulares, las $b_{ij}$ deben ser periódicas, luego
+\[
+  \parcial{b_{ij}}{\theta_k}=0
+\]
+y las $b_{ij}$ son constantes en cada toro invariante.
 
+Si ahora definimos $A_i=\sum_{j=1}^n a_{ij}\dd F_j$, $B=\sum_{i,j=1}^n b_{ij}\dd F_i \wedge \dd F_j$,
+\[
+  \omega=\sum_{i=1}^n \dd \theta_i \wedge A_i + B.
+\]
+Como las $a_{ij}$ y las $b_{ij}$ son constantes en cada toro invariante podemos ver las $A_i$ y $B$ como formas en $\RR^n$, es decir, existen 1-formas $\alpha_i$ y una 2-forma $\beta$ en $\RR^n$ tales que
+\[
+  A_i= \pi^* \alpha_i \hspace{1cm} B=\pi^* \beta.
+\]
+De aquí tenemos
+\[
+  0=\dd \omega= \sum_{i=1}^n \dd \theta_i \wedge \pi^* \dd \alpha_i + \pi^* \dd \beta,
+\]
+de donde concluimos que $\dd \alpha_i = 0$ y $\dd \beta =0$. En $\RR^n$ todas las formas cerradas son exactas. Por tanto, existen $I_i$ y $\gamma$ en $\RR^n$ tales que $\alpha_i = \dd I_i$, $\beta= \dd \gamma$.
 
+Finalmente, sean $J_i=(I_i \circ \pi)=\pi^* I_i$, tenemos que $\dd J_i = A_i$, luego
+\[
+  \omega = \sum_{i=1}^n \dd \theta_i \wedge \dd J_i + B.
+\]
+En el sistema de coordenadas $(\theta,F)$, la matriz asociada a $\omega$ es de la forma
+\[
+\left(
+\begin{array}{c|c}
+  0 & \parcial{J_i}{F_j} \\
+  \hline 
+  -\parcial{J_i}{F_j} & b_{ij}
+\end{array}\right).
+\]
+Como $\omega$ es regular, el determinante de esta matriz es distinto de cero, luego $\det\left(\parcial{J_i}{F_j}\right)\neq 0$. Por tanto, $(\theta,J)$ es un sistema de coordenadas.
 
+Ahora, si escribimos $\gamma= \sum_{i=1}^n g_i \dd I_i$, para algunas funciones $g_i:\RR^n \rightarrow \RR$, entonces podemos tomar unas nuevas coordenadas 
+\[
+  \phi_i= \theta_i + (g_i \circ \pi).
+\]
+En estas nuevas coordenadas
+\[
+\begin{split}
+  \sum_{i=1}^n \dd \phi_i \wedge \dd J_i & = \sum_{i=1}^n \dd \theta_i \wedge \dd J_i + \sum_{i=1}^n \dd(g_i \circ \pi) \wedge J_i \\
+   & =\sum_{i=1}^n \dd \theta_i \wedge \dd J_i + \sum_{i=1}^n \dd(g_i \circ \pi) \wedge \dd (I_i \circ \pi) \\
+   & =\sum_{i=1}^n \dd \theta_i \wedge \dd J_i + \pi^* \dd \gamma = \sum_{i=1}^n \dd \theta_i \wedge A_i + B = \omega.
+\end{split}
+\]
 
+Por tanto, hemos encontrado unas coordenadas simplécticas $(J,\phi)$, con las $J_i$ constantes en cada toro invariante y con las $\phi_i$ coordenadas angulares en estos toros.
+\end{proof}
 
+\section{lo demás}
 En primer lugar, vamos a considerar un ejemplo característico que aclara alguna de las ideas detrás de esta teoría.
 \begin{ejemplo}
   \em
@@ -368,19 +426,19 @@ Vamos a estudiar también algunos ejemplos de sistemas con funciones en involuci
   \end{equation*}
   donde $g$ es la aceleración de la gravedad, $M$ es la masa de la peonza, $l$ es la distancia de la punta al centro de masas, $(\theta,\phi,\psi)$ son los ángulos de Euler de la rotación de los ejes principales de inercia respecto a los del laboratorio y $(p_{\theta},p_{\phi},p_{\psi})$ son sus momentos canónicos conjugados. 
   Las frecuencias de giro de cada uno de los ángulos de Euler $\theta$, $\phi$ y $\psi$ se llaman frecuencias de \emph{nutación}, \emph{precesión} y \emph{rotación}, respectivamente.
-  \begin{figure}[h]
-    \label{fig:euler}
-    \centering
-    \begin{minipage}[b]{0.4\textwidth}
-    \includegraphics[width=\textwidth]{pics/euler}
-    \caption{Construcción de los ángulos de Euler. Fuente: \cite{euler}.}
-  \end{minipage}
-  \hfill
-  \begin{minipage}[b]{0.4\textwidth}
-    \includegraphics[width=\textwidth]{pics/eulertop}
-    \caption{Trompo simétrico. Fuente: \cite{eulertop}.}
-  \end{minipage}
-  \end{figure}
+%  \begin{figure}[h]
+%    \label{fig:euler}
+%    \centering
+%    \begin{minipage}[b]{0.4\textwidth}
+%    \includegraphics[width=\textwidth]{pics/euler}
+%    \caption{Construcción de los ángulos de Euler. Fuente: \cite{euler}.}
+%  \end{minipage}
+%  \hfill
+%  \begin{minipage}[b]{0.4\textwidth}
+%    \includegraphics[width=\textwidth]{pics/eulertop}
+%    \caption{Trompo simétrico. Fuente: \cite{eulertop}.}
+%  \end{minipage}
+%  \end{figure}
 
   Inmediatamente tenemos
   \begin{align*}
@@ -400,228 +458,4 @@ Vamos a estudiar también algunos ejemplos de sistemas con funciones en involuci
   \em
   Por citar un ejemplo no trivial, aunque no lo demostremos, el problema de hallar las geodésicas en un elipsoide puede verse como un sistema hamiltoniano integrable en el sentido de Liouville. La demostración se basa en la teoría de cuádricas confocales y coordenadas elípticas, demostrando unos teoremas de Jacobi y Chasles. Puede leerse en el apéndice 15 de \cite{arnold}.
 \end{ejemplo}
-
-Podemos probar ahora el resultado fundamental de esta teoría:
-\begin{thm}[Arnold]
-Sea $(M,H)$ un sistema integrable en el sentido de Liouville. Entonces:
-\begin{enumerate}
-  \item $M_a$ es una variedad diferenciable invariante bajo el flujo de hamiltoniano $H=F_1$ y $\omega|M_a=0$.
-  \item Cada componente conexa $C_a$ de $M_a$ es difeomorfa al toro n-dimensional 
-    \[
-      \TT^n=\SF^1 \times \cdots \times \SF^1
-    \]
-    y, sean $\theta=(\theta_1,\dots,\theta_n)$ coordenadas angulares en $C_a$, entonces existen unas frecuencias constantes $\omega(a)=(\omega_1(a),\dots,\omega_n(a))$ tales que
-    \[
-    \dot{\theta}(t)=\omega.
-    \]
-    
-\end{enumerate}
-
-\end{thm}
-
-\begin{proof}
-  En primer lugar, como las $n$ funciones $F_i$ son independientes en cada punto de $M_a$, por el teorema de la función implícita $M_a$ es una subvariedad regular de $M$ de dimensión $2n-n=n$. 
-  Como $M$ es una variedad simpléctica, para cada $i=1,\dots,n$, podemos definir el campo $X_i=X^{F_i}$. Al ser las $\dd F_i$ linealmente independientes los campos $X_i$ son linealmente independientes. Además, por el teorema de Noether, como para cada $i,j= 1,\dots,n$ $\pois{F_i}{F_j}=0$ (luego es constante), entonces $\lie{X_i}{X_j}=0$. Por esto mismo, la derivada de la función $F_i$ en la dirección de $X_j$ es 0, luego los campos $X_j$ son tangentes a $M_a$.
-
-  De aquí sacamos varias conclusiones:
-  \begin{enumerate}
-    \item $M_a$ es invariante con respecto a cada uno de los $n$ flujos hamiltonianos generados por cada función $F_i$ (luego, en particular lo será respecto del generado por $F_1$).
-    \item Como, para cada $x \in M_a$, los campos $X_1|_x,\dots, X_n|_x$ forman una base de $T_x M_a$, sean $X_x, Y_x \in T_x M_a$, entonces $X_x = \sum_{i=1}^n b_i X_i|_x$, $Y_x=\sum_{i=1}^n c_i X_i|_x$. Ahora,
-      \[
-	\omega(X_x,Y_x)= \sum_{i,j=1}^n b_i c_j \omega(X_i|_x,X_j|_x) = \sum_{i,j=1}^n b_i c_j \{F_j,F_i\} = 0.
-      \]
-      Por tanto, $\omega$ se anula en $T_x M_a$. 
-    \item $M_a$ es una variedad diferenciable de dimensión $n$ con $n$ campos conmutativos dos a dos y linealmente independientes en todo punto de $M_a$. 
-  \end{enumerate}
-
-Por esto último, por la proposición anterior y porque $M_a$ es compacta tenemos que cada componente conexa $C_a$ de $M_a$ es difeomorfa a $\TT^n$. De la demostración de la proposición anterior obtenemos un diagrama de la forma:
-
-\begin{center}
-\begin{tikzpicture}
-\node (A) at (-2.5,2) {$\RR^n$};
-\node (B) at (-1,2) {$\RR^n$};
-\node (C) at (-1,0) {$C_a=\TT^n$};
-\node (D) at (1,2) {$\theta$};
-\node (E) at (3,2) {$t$};
-\node (F) at (3,0) {$\theta \mod 2\pi$};
-\path[->,font=\scriptsize, >=angle 90]
-(A) edge node[above]{$A$} (B)
-(A) edge node[left]{$p$} (C)
-(B) edge node[right]{$g$} (C);
-\path[|->,font=\scriptsize, >=angle 90]
-(D) edge node[auto] {$$} (F)
-(D) edge node[auto] {$$} (E)
-(E) edge node[auto] {$$} (F);
-\end{tikzpicture}
-\end{center}
-
-
-En este caso, el flujo hamiltoniano asociado a $F_1$ es $g_1$, luego 
-\[
-\theta(t) = g_{1,t} (\theta(0)).
-\]
-Ahora, fijo $\theta(0)$, $g_{1,t}=g(t,0,\dots,0)$, por tanto
-\[
-\left(
-\begin{array}{c}
-\theta_1 (t)\\
-\vdots \\
-\theta_n (t)
-\end{array}
-\right)
-=
-A
-\left(
-\begin{array}{c}
-t\\
-0 \\
-\vdots \\
-0
-\end{array}
-\right).
-\]
-De modo que, si $a_{ij}$ es la entrada de índices $(i,j)$ de la matriz $A$, entonces, para cada $i=1,\dots,n$,
-\[
-\theta_i (t) = a_{i1} t.
-\] 
-Por tanto, sea $\omega_i=a_{i1}$,
-\[
-\dot{\theta_i}(t)=\omega_i.
-\]
-\end{proof}
-
-\begin{obs}
-  \em
-  Estas subvariedades $C_a$ de $M$ se suelen llamar \textit{toros invariantes} del sistema $(M,H)$. 
-  Esta dinámica en el toro recibe el nombre de \emph{movimiento condicionalmente periódico}.
-\end{obs}
-
-\begin{obs}
-  \em
-  Consideremos un 2-toro invariante con la dinámica del teorema (por ejemplo, el asociado a los niveles de energía de un oscilador armónico bidimensional). Sea $(\theta_1,\theta_2)$ un punto en el toro y su trayectoria bajo el flujo hamiltoniano $\gamma(t)=\varphi_t(\theta_1,\theta_2)=(\theta_1+\omega_1t,\theta_2+\omega_2t)$. Si $\omega_1/\omega_2=m/n$ es racional, entonces 
-  \begin{equation*}
-    \gamma\left(\frac{2n\pi}{\omega_2}\right) = (\theta_1+2m\pi,\theta_2+2n\pi)=(\theta_1,\theta_2).
-  \end{equation*}
-  Es decir, a cierto tiempo la trayectoria «se cierra». Estas órbitas se dicen \emph{periódicas}. 
- 
-  Sin embargo, si $\omega_2/\omega_1$ es irracional, dado un ángulo $\alpha$ y sea $T$ tal que $\alpha=\theta_1+\omega T$, entonces, sea $T_n=T+2n\pi/\omega_1$, $\alpha=\theta_1+\omega_1(T_n)$ para cada $n\in \NN$. Sea ahora la aplicación
-  \begin{equation*}
-    \begin{array}{rcl}
-    g:\SF^1 & \longrightarrow &\SF^1 \\
-  \phi & \longmapsto & \phi + 2\pi\frac{\omega_2}{\omega_1},
-  \end{array}
-\end{equation*}
-es una rotación de ángulo un múltiplo irracional de $2\pi$ en la circunferencia del toro de ángulo $\alpha$. Entonces, como ya vimos por el teorema de recurrencia de Poincaré, $\{g^n(\phi)|n\in \NN\}$ es denso en $\SF^1$. Como esto es válido para todo $\alpha$ y se cumple 
-\begin{equation*}
-  \gamma(T_n)=(\alpha,g^n(\theta_2)+\omega_2 T),
-\end{equation*}
-tenemos que $\{\gamma(t)|t \in \RR \}$ es denso en el toro. Este tipo de órbitas se llaman \emph{cuasiperiódicas}. Una forma sencilla de visualizar esto es mediante las \emph{figuras de Lissajous} 
-\begin{equation*}
-  L_{\omega}=\{(\cos t, \cos \omega t) | t \in \RR\},
-\end{equation*}
-ver figura \ref{fig:lissajous}.
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.6\textwidth]{pics/lissajous}
-  \caption{Figuras de Lissajous para $\omega=3;3.1;3.14;3.1416$, $t \in (0,128\pi)$ con pasos de $0.01$.}
-  \label{fig:lissajous}
-\end{figure}
-\end{obs}
-
-Si $(M,H)$ es integrable en el sentido de Liouville, entonces para todo $x \in M$, $M_{F(x)}$ es compacta, luego la componente conexa a la que pertenezca $x$, $C_{F(x)}$, es un toro invariante, en el que podemos dar coordenadas angulares con una dinámica como la del teorema. A la vista de esto, tenemos el siguiente corolario:
-
-
-Finalmente, vamos a demostrar el teorema clave que nos permite construir la carta en la cual las ecuaciones de Hamilton pueden ser integradas por cuadraturas.
-\begin{thm}[de las variables de acción-ángulo]
-  Sea $(M,H)$ un sistema integrable en el sentido de Liouville, $D \in \RR^n$ un disco, $a \in \RR^n$, $C_a$ un toro invariante y $U$ un entorno de $C_a$ difeomorfo a $\RR^n \times \TT^n$. Entonces existe un sistema de coordenadas simplécticas $(\phi,J)=(\phi_1,\dots,\phi_n,J_1,\dots,J_n)$ en $U$ tales que las $\phi_i$ son coordenadas angulares en cada toro invariante y las $J_i$ (comúnmente llamadas \emph{variables de acción}) son constantes en estos toros.
-\end{thm}
-\begin{proof}
-  Sea $\pi:U\simeq \RR^n \times \TT^n \rightarrow \RR^n$ la proyección canónica, entonces $\pi^{-1}(x)$ es un toro invariante para cada $x \in D=\pi(U)$. En cada uno de estos toros, sean $X_i=X^{F_i}$ y $(F,\theta)$ las coordenadas obtenidas en el lema anterior,
-\[
-  \deriv{\theta_i} = \sum_{k=1}^n a_{ik}X_k,
-\]
-donde las $a_{ik}$ son funciones constantes en cada toro.
-
-Como $\omega$ se anula en el toro, no tiene términos en $\dd \theta_i \wedge \dd \theta_j$. Los términos en $\dd \theta_i \wedge \dd F_j$ serán
-\[
-  \omega\left(\deriv{\theta_i},\deriv{F_j}\right)=\sum_{k=1}^n a_{ik}\cdot \omega\left(X_k,\deriv{F_j}\right)=\sum_{k=1}^n a_{ik} \cdot \dd F_k \left(\deriv{F_j}\right) = \sum_{k=1}^n a_{ik} \delta_{ij}= a_{ij}. 
-\]
-Por tanto, $\omega$ es de la forma
-\[
-  \omega = \sum_{i,j=1}^n a_{ij} \dd \theta_i \wedge \dd F_j + \sum_{i,j=1}^n b_{ij} \dd F_i \wedge \dd F_j,
-\]
-con $b_{ij}$ unas ciertas funciones. Además, como $\omega$ es cerrada, el término correspondiente a $\dd \theta_k \wedge \dd F_i \wedge \dd F_j$ debe anularse. Este término es exactamente
-\[
-  \parcial{a_{ki}}{F_j}-\parcial{a_{kj}}{F_i}+\parcial{b_{ij}}{\theta_k}.
-\]
-El término $\parcial{a_{ki}}{F_j}-\parcial{a_{kj}}{F_i}$ no depende de las variables angulares, luego las $\parcial{b_{ij}}{\theta_k}$ son constantes al variar los ángulos $\theta_k$. Como las variables $\theta_k$ son angulares, las $b_{ij}$ deben ser periódicas, luego
-\[
-  \parcial{b_{ij}}{\theta_k}=0
-\]
-y las $b_{ij}$ son constantes en cada toro invariante.
-
-Si ahora definimos $A_i=\sum_{j=1}^n a_{ij}\dd F_j$, $B=\sum_{i,j=1}^n b_{ij}\dd F_i \wedge \dd F_j$,
-\[
-  \omega=\sum_{i=1}^n \dd \theta_i \wedge A_i + B.
-\]
-Como las $a_{ij}$ y las $b_{ij}$ son constantes en cada toro invariante podemos ver las $A_i$ y $B$ como formas en $\RR^n$, es decir, existen 1-formas $\alpha_i$ y una 2-forma $\beta$ en $\RR^n$ tales que
-\[
-  A_i= \pi^* \alpha_i \hspace{1cm} B=\pi^* \beta.
-\]
-De aquí tenemos
-\[
-  0=\dd \omega= \sum_{i=1}^n \dd \theta_i \wedge \pi^* \dd \alpha_i + \pi^* \dd \beta,
-\]
-de donde concluimos que $\dd \alpha_i = 0$ y $\dd \beta =0$. En $\RR^n$ todas las formas cerradas son exactas. Por tanto, existen $I_i$ y $\gamma$ en $\RR^n$ tales que $\alpha_i = \dd I_i$, $\beta= \dd \gamma$.
-
-Finalmente, sean $J_i=(I_i \circ \pi)=\pi^* I_i$, tenemos que $\dd J_i = A_i$, luego
-\[
-  \omega = \sum_{i=1}^n \dd \theta_i \wedge \dd J_i + B.
-\]
-En el sistema de coordenadas $(\theta,F)$, la matriz asociada a $\omega$ es de la forma
-\[
-\left(
-\begin{array}{c|c}
-  0 & \parcial{J_i}{F_j} \\
-  \hline 
-  -\parcial{J_i}{F_j} & b_{ij}
-\end{array}\right).
-\]
-Como $\omega$ es regular, el determinante de esta matriz es distinto de cero, luego $\det\left(\parcial{J_i}{F_j}\right)\neq 0$. Por tanto, $(\theta,J)$ es un sistema de coordenadas.
-
-Ahora, si escribimos $\gamma= \sum_{i=1}^n g_i \dd I_i$, para algunas funciones $g_i:\RR^n \rightarrow \RR$, entonces podemos tomar unas nuevas coordenadas 
-\[
-  \phi_i= \theta_i + (g_i \circ \pi).
-\]
-En estas nuevas coordenadas
-\[
-\begin{split}
-  \sum_{i=1}^n \dd \phi_i \wedge \dd J_i & = \sum_{i=1}^n \dd \theta_i \wedge \dd J_i + \sum_{i=1}^n \dd(g_i \circ \pi) \wedge J_i \\
-   & =\sum_{i=1}^n \dd \theta_i \wedge \dd J_i + \sum_{i=1}^n \dd(g_i \circ \pi) \wedge \dd (I_i \circ \pi) \\
-   & =\sum_{i=1}^n \dd \theta_i \wedge \dd J_i + \pi^* \dd \gamma = \sum_{i=1}^n \dd \theta_i \wedge A_i + B = \omega.
-\end{split}
-\]
-
-Por tanto, hemos encontrado unas coordenadas simplécticas $(J,\phi)$, con las $J_i$ constantes en cada toro invariante y con las $\phi_i$ coordenadas angulares en estos toros.
-\end{proof}
-
-\begin{obs}
-  \em
-  Volviendo al caso del oscilador armónico $n$-dimensional, notamos que $\omega=\dd \alpha$, con $\alpha=\sum_{i=1}^n J_i \dd \phi_i$, entonces $J_i=\frac{1}{2\pi}\int_{\gamma_i}\alpha$.
-\end{obs}
-
-\begin{corol}
-  Todo sistema integrable en el sentido de Liouville es integrable por cuadraturas.
-\end{corol}
-
-\begin{proof}
-  Dado un punto $x \in M$, basta tomar unas variables de acción-ángulo (las $(J,\phi)$ del teorema). Entonces, como ya hemos visto, las soluciones de las ecuaciones de Hamilton en estas coordenadas quedan escritas en la forma
-  \begin{align*}
-    J_i(t) & = J_i (0) \\
-    \phi_i(t) & = \phi_i(0) + \omega_i(F(0))t,
-  \end{align*}
-  para $i=1,\dots,n$, donde las frecuencias $\omega_i$ se obtuvieron en términos de funciones conocidas. Así, el sistema queda integrado por cuadraturas.
-\end{proof}
-
-
 

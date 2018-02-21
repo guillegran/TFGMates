@@ -1,7 +1,7 @@
 \select@language {spanish}
 \contentsline {section}{\tocsection {}{}{Introducci\IeC {\'o}n}}{2}{section*.2}
 \contentsline {section}{\tocsection {}{1}{Motivaci\IeC {\'o}n f\IeC {\'\i }sica. De Newton a Hamilton}}{3}{section.1}
-\contentsline {section}{\tocsection {}{2}{Derivada de Lie}}{9}{section.2}
+\contentsline {section}{\tocsection {}{2}{Derivada de Lie y f\IeC {\'o}rmulas de Cartan}}{9}{section.2}
 \contentsline {section}{\tocsection {}{3}{Campos y formas dependientes del tiempo}}{13}{section.3}
 \contentsline {section}{\tocsection {}{4}{Espacios vectoriales simpl\IeC {\'e}cticos}}{15}{section.4}
 \contentsline {paragraph}{\tocparagraph {}{}{\bf Clasificaci\IeC {\'o}n de formas bilineales antisim\IeC {\'e}tricas}}{15}{section*.3}
@@ -17,5 +17,6 @@
 \contentsline {section}{\tocsection {}{9}{Simetr\IeC {\'\i }as y leyes de conservaci\IeC {\'o}n}}{26}{section.9}
 \contentsline {section}{\tocsection {}{10}{Teorema de Arnold-Liouville}}{29}{section.10}
 \contentsline {section}{\tocsection {}{11}{Variables de acci\IeC {\'o}n-\IeC {\'a}ngulo}}{35}{section.11}
-\contentsline {section}{\tocsection {}{12}{Un poco m\IeC {\'a}s de movimiento condicionalmente peri\IeC {\'o}dico}}{45}{section.12}
-\contentsline {section}{\tocsection {}{}{Referencias}}{47}{section*.9}
+\contentsline {section}{\tocsection {}{12}{lo dem\IeC {\'a}s}}{37}{section.12}
+\contentsline {section}{\tocsection {}{13}{Un poco m\IeC {\'a}s de movimiento condicionalmente peri\IeC {\'o}dico}}{41}{section.13}
+\contentsline {section}{\tocsection {}{}{Referencias}}{44}{section*.9}
