@@ -314,18 +314,21 @@ Localmente, si tomamos una carta de Darboux $(q,p)$ en un punto $x\in M$, podemo
     \pois{p_i}{q_j}=\delta_{ij}.
   \end{equation*}
 
+  Recíprocamente, si $(U,(q,p))$ es una carta en un punto $x\in M$ tal que, para cada $i,j=1,\dots,n$, $\pois{q_i}{q_j}=\pois{p_i}{p_j}=0$ y $\pois{q_i}{p_j}=\delta_{ij}$, entonces es una carta de Darboux. En efecto, como todos los corchetes de Poisson entre las coordenadas son constantes, entonces $\left[ X^{q_i},X^{q_j} \right]=\left[ X^{p_i},X^{p_j} \right]=\left[ X^{q_i},X^{p_j} \right]=0$, de modo que los campos $X_{p_1},\dots,X_{p_n},X_{q_1},\dots,X_{q_n}$ son coordenados. Esto es, reduciendo el entorno si es preciso, existen unas coordenadas $(\xx,\yy)$ tales que $X^{p_i}=\deriv{\xx_i}$ y $X^{q_i}=\deriv{\yy_i}$. Ahora, $$\omega\left(\deriv{\xx_i},\deriv{\xx_j}\right)=\omega\left( X^{p_i},X^{p_j} \right)=\left\{ p_i,p_j \right\}=0,$$ $$\omega\left( \deriv{\yy_i},\deriv{\yy_j} \right)=\omega\left( X^{q_i},X^{q_j} \right)=\left\{ q_i,q_j \right\}=0$$ y $$\omega\left( \deriv{\yy_i},\deriv{\xx_j} \right)=\omega\left( X^{q_i},X^{p_j} \right)=\left\{ q_i,p_j \right\}=\delta_{ij}.$$ 
+  De modo que la carta $(U,(\xx,\yy))$ es de Darboux. Ahora, $$\dd q_i=i_{X^{q_i}}\omega=i_{\deriv{\yy_i}}\omega=\dd \xx_i$$ y $$\dd p_i=i_{X^{p_i}}\omega=i_{\deriv{\xx_i}}\omega=\dd \yy_i,$$ luego $\xx_i=q_i$ e $\yy_i=p_i$ (salvo tal vez una constante). Por tanto, la carta $(U,(q,p))$ es de Darboux.
+
   Veamos ahora las propiedades del corchete de Poisson.
   \begin{prop}
     La aplicación $\pois{ }{ }:\mathcal{C}^{\infty}(M)\times\mathcal{C}^{\infty}(M) \rightarrow \mathcal{C}^{\infty}(M)$ que a cada par de funciones le asigna su corchete de Poisson cumple las siguientes propiedades:
 \begin{enumerate}
   \item[$1.$] Es bilineal,
   \item[$2.$] es antisimétrica,
-  \item[$3.$]  cumple la identidad de Jacobi:
+  \item[$3.$]  cumple la identidad de Jacobi
  \begin{equation*}
    \pois{\pois{A}{B}}{C}+ \pois{\pois{B}{C}}{A} + \pois{\pois{C}{A}}{B}=0
  \end{equation*}
  y
- \item[$4.$] cumple la regla de Leibniz:
+ \item[$4.$] cumple la regla de Leibniz
    \begin{equation*}
      \pois{A}{BC}=\pois{A}{B}C+B\pois{A}{C},
    \end{equation*}

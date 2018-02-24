@@ -10,13 +10,18 @@
 \contentsline {section}{\tocsection {}{5}{Variedades simpl\IeC {\'e}cticas y simplectomorfismos}}{17}{section.5}
 \contentsline {section}{\tocsection {}{6}{Campos simpl\IeC {\'e}cticos y campos hamiltonianos}}{20}{section.6}
 \contentsline {section}{\tocsection {}{7}{Corchete de Poisson}}{21}{section.7}
-\contentsline {section}{\tocsection {}{8}{Mec\IeC {\'a}nica en variedades simpl\IeC {\'e}cticas}}{23}{section.8}
-\contentsline {paragraph}{\tocparagraph {}{}{\textbf {Estados}}}{23}{section*.6}
-\contentsline {paragraph}{\tocparagraph {}{}{\textbf {Observables}}}{23}{section*.7}
-\contentsline {paragraph}{\tocparagraph {}{}{\textbf {Evoluci\IeC {\'o}n temporal}}}{23}{section*.8}
+\contentsline {section}{\tocsection {}{8}{Mec\IeC {\'a}nica en variedades simpl\IeC {\'e}cticas}}{24}{section.8}
+\contentsline {paragraph}{\tocparagraph {}{}{\textbf {Estados}}}{24}{section*.6}
+\contentsline {paragraph}{\tocparagraph {}{}{\textbf {Observables}}}{24}{section*.7}
+\contentsline {paragraph}{\tocparagraph {}{}{\textbf {Evoluci\IeC {\'o}n temporal}}}{24}{section*.8}
 \contentsline {section}{\tocsection {}{9}{Simetr\IeC {\'\i }as y leyes de conservaci\IeC {\'o}n}}{26}{section.9}
-\contentsline {section}{\tocsection {}{10}{Teorema de Arnold-Liouville}}{29}{section.10}
-\contentsline {section}{\tocsection {}{11}{Variables de acci\IeC {\'o}n-\IeC {\'a}ngulo}}{35}{section.11}
-\contentsline {section}{\tocsection {}{12}{lo dem\IeC {\'a}s}}{37}{section.12}
-\contentsline {section}{\tocsection {}{13}{Un poco m\IeC {\'a}s de movimiento condicionalmente peri\IeC {\'o}dico}}{41}{section.13}
-\contentsline {section}{\tocsection {}{}{Referencias}}{44}{section*.9}
+\contentsline {section}{\tocsection {}{10}{Teorema de Arnold-Liouville}}{30}{section.10}
+\contentsline {section}{\tocsection {}{11}{Variables de acci\IeC {\'o}n-\IeC {\'a}ngulo}}{36}{section.11}
+\contentsline {section}{\tocsection {}{12}{Osciladores arm\IeC {\'o}nicos}}{38}{section.12}
+\contentsline {paragraph}{\tocparagraph {}{}{\bf Oscilador arm\IeC {\'o}nico con un grado de libertad}}{38}{section*.9}
+\contentsline {paragraph}{\tocparagraph {}{}{\bf Oscilador arm\IeC {\'o}nico con $n$ grados de libertad}}{40}{section*.10}
+\contentsline {section}{\tocsection {}{13}{Movimiento condicionalmente peri\IeC {\'o}dico}}{42}{section.13}
+\contentsline {section}{\tocsection {}{14}{Sistemas con un grado de libertad}}{45}{section.14}
+\contentsline {paragraph}{\tocparagraph {}{}{\bf El p\IeC {\'e}ndulo simple}}{45}{section*.11}
+\contentsline {paragraph}{\tocparagraph {}{}{\bf Puntos cr\IeC {\'\i }ticos de los sistemas con un grado de libertad}}{46}{section*.12}
+\contentsline {section}{\tocsection {}{}{Referencias}}{47}{section*.13}

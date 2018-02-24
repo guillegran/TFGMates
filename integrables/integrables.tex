@@ -3,13 +3,11 @@ A la hora de estudiar sistemas dinámicos, una cuestión interesante a plantears
 
 En 1885, Joseph Liouville encontró una condición necesaria para que las ecuaciones de Hamilton de ciertos sistemas hamiltonianos fueran (localmente) integrables por cuadraturas. Décadas más tarde, con la introducción del formalismo geométrico y topológico al estudio de los sistemas dinámicos se descubrirían muchas más cosas interesantes sobre los sistemas que cumplían la condición que Liouville propuso. Destaca especialmente en todo este estudio la teoría de los toros invariantes desarrollada por Vladimir Arnold en 1963. Nace así la teoría de los \emph{sistemas integrables}, cuyos resultados más básicos constituyen el \emph{teorema de Arnold-Liouville}.
 
-
-
 \begin{defn}
   \em
   Sea $(M,H)$ un sistema hamiltoniano con $\dim(M)=2n$. Decimos que $(M,H)$ es \emph{integrable (en el sentido de Liouville)} si existen $F_1(=H),\dots,F_n\in \mathcal{C}^{\infty}(M)$ tales que
 \begin{enumerate}
-  \item son \emph{funcionalmente independientes}, es decir, $\dd F_{1,x}\wedge \dots \wedge \dd F_{n,x}\neq 0$ para casi todo punto\footnote{Aquí con \emph{para casi todo punto} queremos decir que estos puntos forman un conjunto denso.}, 
+  \item son \emph{funcionalmente independientes}, es decir, $\dd F_{1,x}\wedge \dots \wedge \dd F_{n,x}\neq 0$ para casi todo punto\footnote{Como aquí en principio no estamos considerando ninguna medida, con \emph{para casi todo punto} queremos decir en un conjunto \emph{residual} o \emph{comagro}, esto es, que su complementario sea \emph{magro}. Un conjunto se dice \emph{magro} o \emph{de primera categoría de Baire} si es unión numerable de conjuntos diseminados, esto es, de conjuntos cuya adherencia tiene interior vacío. Por ejemplo, el conjunto de los números racionales $\mathbb{Q}\subset\RR$ no es diseminado pero sí es magro en $\RR$. }, 
   \item están \emph{en involución}, esto es, $\pois{F_i}{F_j}=0$ para cada $i,j=1,\dots,n$, y
   \item  los campos $X^{F_i}$ son completos para cada $i=1,\dots,n$. 
 \end{enumerate}
@@ -18,6 +16,11 @@ Nótese que, como $F_1=H$, en particular, todas las funciones $F_1,\dots,F_n$ so
 Si escribimos $F:M\rightarrow \RR^n$ con $F(x)=(F_1(x),\dots,F_n(x))$. Los puntos $x\in M$ en los que $\mathrm{rango} (\dd F_x) =n$ se dicen \emph{puntos regulares} del sistema. Los puntos que no son regulares se dicen \emph{puntos críticos}. Si $x\in M$ es un punto crítico, $F(x)$ se dice un \emph{valor crítico}. Si $\Sigma$ es el conjunto de los puntos críticos, $F(\Sigma)\in \RR^n$ se llama \emph{diagrama de bifurcación} del sistema.
  Nótese que, por el teorema de Sard, el diagrama de bifurcación tiene medida nula.
 \end{defn}
+
+\begin{obs}
+  \em
+  De la definición y de la conservación de la energía directamente se deduce que todo sistema con un grado de libertad (y cuyo hamiltoniano sea regular en casi todo punto) es integrable en el sentido de Liouville. Asimismo, un sistema con dos grados de libertad que tenga una cantidad conservada a parte de la energía también será integrable en el sentido de Liouville, ya que las cantidades conservadas dan 0 al evaluar el corchete de Poisson de ellas con el hamiltoniano.
+\end{obs}
 
 \begin{thm}[Arnold-Liouville]\label{arnold}
 Sea $(M,H)$ un sistema integrable en el sentido de Liouville con $F_1,\dots,F_n$ las funciones en involución.
@@ -192,11 +195,36 @@ Ahora, como el flujo del sistema $\varphi^H$ es igual a $g_1$, el siguiente diag
      w(t)=v(a)t.
    \end{cases}
  \end{equation*}
- Si tomamos ahora un entorno $U$ de $x$ simplemente conexo podemos ver que localmente las funciones $(F,w)$ cumplen las relaciones de conmutación canónicas,
- \begin{equation*}
-   \pois{F_j}{w_k}=\sum_{i=1}^n \parcial{F_j}{F_i} \parcial{w_k}{w_i} - \parcial{F_j}{w_i} \parcial{w_k}{F_i} = \sum_{i=1}^n \delta_{ji}\delta_{ki}-0 = \delta_{jk}.
- \end{equation*}
- Además, por hipótesis $\pois{F_i}{F_j}=0$ y $\pois{w_i}{w_j}=0$. Por tanto, localmente $\omega(X^{F_j},X^{w_k})=\delta_{jk}$ y $\omega(X^{F_i},X^{F_j})=\omega(X^{w_i},X^{w_j})=0$. Esto nos permite hallar una carta de Darboux en $x$ siguiendo estos campos, en la que las ecuaciones de Hamilton quedan integradas por cuadraturas.
+
+ Finalmente, queda probar que el sistema es integrable por cuadraturas.Para ello, llamamos $b_i$ a la columna $i$-ésima de la matriz asociada a $B$ y consideramos $B^{-1}$ la aplicación lineal inversa de $B$. Podemos tomar ahora las coordenadas $\lambda:M_a\rightarrow \RR^n$ que hacen el siguiente diagrama conmutativo
+ \begin{center}
+   \begin{tikzcd}
+     \RR^n \arrow{dd}{B^{-1}} \arrow{ddrr}[rotate=-30]{\varpi}&& \RR^n \arrow{ll}{B} \arrow{dd}{g}     \\ 
+     \\
+     \RR^n && M_a. \arrow{ll}{\lambda}
+   \end{tikzcd}
+ \end{center}
+
+De modo que si consideramos las coordenadas $\lambda$ en cada conjunto de nivel $M_b$ que interseque a un entorno de $x$,
+  $\lambda(\varphi^{F_i}_{t}(x))=B^{-1}(b_it)=e_it$,
+luego $\lambda_j(\varphi^{F_i}_{t}(x))=\delta_{ij}t$. Ahora, $\left\{ F_i,F_j \right\}=0$ por hipótesis, $\left\{ \lambda_i,\lambda_j \right\}=0$ por construcción y 
+\begin{equation*}
+  \left\{ F_i,\lambda_j \right\}=\left.\frac{d}{dt}\right|_{t=0}\lambda_j(\varphi^{F_i}_t(x))=\delta_{ij}.
+\end{equation*}
+Por tanto, podemos tomar un entorno $U\subset M$ de $x$ en el que las coordenadas $(F,\lambda)$ dan una carta de Darboux. En esta carta, las ecuaciones de Hamilton adquieren la forma
+\begin{equation*}
+  \begin{cases}
+    \dot{F}(t)=0 \\
+    \dot{\lambda}(t)=1,
+  \end{cases}
+\end{equation*}
+que trivialmente se integran en la forma
+\begin{equation*}
+  \begin{cases}
+    F(t)=F(0) \\
+    \lambda(t)=\lambda(0)+t.
+  \end{cases}
+\end{equation*}
 Esto concluye la demostración del teorema.
  \end{proof}
 
@@ -206,17 +234,21 @@ Esto concluye la demostración del teorema.
  Las variables de acción-ángulo fueron introducidas originalmente por Delaunay en 1860 para estudiar el movimiento de la Luna y más tarde, a principios del siglo XX, usadas por los físicos para estudiar el átomo de Bohr, siendo Schwarzschild el que acuñara esa terminología en 1916. La demostración del teorema de las variables de acción-ángulo se atribuye a Mineur en 1936. 
 
  \begin{thm}
-   En el caso en que $M_a$ sea compacta, existe un entorno $U\subset M$ de cada $M_a$ difeomorfo a $\RR^n \times \TT^n$ (se dice \emph{entorno tubular}) y un sistema de coordenadas de Darboux $(J,\phi)=(J_1,\dots,J_n,\phi_1,\dots,\phi_n)$ (llamadas \emph{variables de acción-ángulo}\footnote{Las $\phi_i$ suelen llamarse variables de ángulo ya que son precisamente coordenadas angulares en el toro $M_a$. Las $J_i$ se llaman variables de acción debido a sus dimensiones físicas, en efecto, como las $\phi_i$ son adimensionales, las $J_i$ tienen que tener dimensiones de posición por momento, que son precisamente las dimensiones de la integral de acción \eqref{accion}.}) en $U$ tales que las $\phi_i$ son coordenadas en $M_a$ y las $J_i$ son constantes en cada $M_a$. 
+   En el caso en que $M_a$ sea compacta, existe un entorno $U\subset M$ de cada $M_a$ difeomorfo a $\RR^n \times \TT^n$ (se dice \emph{entorno tubular}) y un sistema de coordenadas de Darboux $(J,\phi)=(J_1,\dots,J_n,\phi_1,\dots,\phi_n)$ (llamadas \emph{variables de acción-ángulo}\footnote{Las $\phi_i$ suelen llamarse variables de ángulo ya que son precisamente coordenadas angulares en el toro $M_a$. Las $J_i$ se llaman variables de acción debido a sus dimensiones físicas, en efecto, como las $\phi_i$ son adimensionales, las $J_i$ tienen que tener dimensiones de posición por momento, que son precisamente las dimensiones de la integral de acción \eqref{accion}.}) en $U$ tales que las $\phi_i$ son coordenadas angulares en $M_a$ y las $J_i$ son constantes en cada $M_a$. 
 \end{thm}
 
-%\begin{obs}
-%  \em
-%  Aquí estamos suponiendo que $x$ no está en el borde de $M$, en tal caso procederíamos análogamente para obtener un entorno difeomorfo a $\HH^n \times \TT^n$.
-%\end{obs}
-
-
 \begin{proof}
-  Sea $\pi:U\simeq \RR^n \times \TT^n \rightarrow \RR^n$ la proyección canónica, entonces $\pi^{-1}(x)$ es un toro invariante para cada $x \in D=\pi(U)$. En cada uno de estos toros, sean $X_i=X^{F_i}$ y $(F,\theta)$ las coordenadas obtenidas en el lema anterior,
+  En primer lugar, hay que obtener el entorno tubular $U$. Para ello, veamos que hay un entorno $V$ de $M_a$ tal que, para todo $y\in V$, la componente conexa $M_{F(y)}$ del conjunto de nivel que contiene a $y$ es compacta. De hecho, como $F_*$ tiene rango máximo y $M_a$ es compacta, podemos tomar $V$ tal que $M_a\subset V \subset \bar{V} \subset W$, con contenidos estrictos y donde $W$ es un entorno abierto de $M_a$ con adherencia compacta en el que $F_*$ sigue teniendo rango máximo. Por tanto, si $M_{F(y)}$ está contenido totalmente en $V$, al ser cerrado tiene que ser compacto. En caso contrario, si $M_{F(y)}$ corta a $V$ pero no está contenido, por ser conexo debe cortar a la frontera $\mathrm{Fr}(V)$. Ahora, si hubiera una sucesión de puntos $\left\{ y_k \right\}_{k\in \NN}$ tendiendo a un punto de $M_a$ tal que cada $M_{F(y_k)}$ no es compacta, entonces tendríamos una sucesión de puntos $\left\{ z_k \right\}_{k\in \NN}$ en $\mathrm{Fr}(V)$ que, por ser $\mathrm{Fr}(V)$ cerrado, converge a un punto $z\in \mathrm{Fr}(V) \cap M_a$, y esto es absurdo. Por tanto, existe un entorno $V$ de $M_a$ que es una unión de toros de Liouville $M_b$. 
+
+  Tomamos ahora un conjunto $B\subset V$ y un disco $D\in \RR^n$ que contenga a $a$ tal que $\left. F\right|_{B}:B\rightarrow D$ es un difeomorfismoy en cada $M_b\subset V$ escojo el punto $x_b\in M_b\cap B$. Sea ahora la aplicación 
+  \begin{align*}
+    \Phi :M&\longrightarrow \RR^n\times \TT^n\\ 
+      y &\longmapsto (F(y),\theta),
+    \end{align*}
+    con $\theta$ coordenadas angulares en el toro de Liouville $M_{F(y)}$ que contiene a $y$. Entonces $\Phi$ da un difeomorfismo entre $U=\bigcup_{y\in B}M_{F(y)}$, que es un entorno de $M_a$ y $\bigcup_{b\in D}M_b$. Como cada $M_b$ es un toro de Liouville y $D$ es un disco abierto de $\RR^n$, $U$ es difeomorfo a $\RR^n\times \TT^n$.
+  Nótese que aquí estamos suponiendo que $x$ no está en el borde de $M$, en tal caso procederíamos análogamente para obtener un entorno difeomorfo a $\HH^n \times \TT^n$.
+
+ Procedamos ahora a hallar las variables de acción-ángulo. Sea $\pi:U\simeq \RR^n \times \TT^n \rightarrow \RR^n$ la proyección canónica. Entonces $\pi^{-1}(x)$ es un toro invariante para cada $x \in D=\pi(U)$. En cada uno de estos toros, consideramos $X_i=X^{F_i}$ y $(F,\theta)$ las coordenadas antes obtenidas. Tenemos entonces
 \[
   \deriv{\theta_i} = \sum_{k=1}^n a_{ik}X_k,
 \]
@@ -252,18 +284,17 @@ De aquí tenemos
 \[
   0=\dd \omega= \sum_{i=1}^n \dd \theta_i \wedge \pi^* \dd \alpha_i + \pi^* \dd \beta,
 \]
-de donde concluimos que $\dd \alpha_i = 0$ y $\dd \beta =0$. En $\RR^n$ todas las formas cerradas son exactas. Por tanto, existen $I_i$ y $\gamma$ en $\RR^n$ tales que $\alpha_i = \dd I_i$, $\beta= \dd \gamma$.
+de donde concluimos que $\dd \alpha_i = 0$ y $\dd \beta =0$. En $\RR^n$ todas las formas cerradas son exactas, luego existen $I_i$ y $\gamma$ en $\RR^n$ tales que $\alpha_i = \dd I_i$, $\beta= \dd \gamma$.
 
-Finalmente, sean $J_i=(I_i \circ \pi)=\pi^* I_i$, tenemos que $\dd J_i = A_i$, luego
+Finalmente, si tomamos $J_i=(I_i \circ \pi)=\pi^* I_i$, tenemos que $\dd J_i = A_i$, luego
 \[
   \omega = \sum_{i=1}^n \dd \theta_i \wedge \dd J_i + B.
 \]
 En el sistema de coordenadas $(\theta,F)$, la matriz asociada a $\omega$ es de la forma
 \[
 \left(
-\begin{array}{c|c}
+\begin{array}{cc}
   0 & \parcial{J_i}{F_j} \\
-  \hline 
   -\parcial{J_i}{F_j} & b_{ij}
 \end{array}\right).
 \]
@@ -282,88 +313,143 @@ En estas nuevas coordenadas
 \end{split}
 \]
 
-Por tanto, hemos encontrado unas coordenadas simplécticas $(J,\phi)$, con las $J_i$ constantes en cada toro invariante y con las $\phi_i$ coordenadas angulares en estos toros.
+Por tanto, hemos encontrado unas coordenadas de Darboux $(J,\phi)$, con las $J_i$ constantes en cada toro invariante y con las $\phi_i$ coordenadas angulares en estos toros. 
 \end{proof}
 
-\section{lo demás}
-En primer lugar, vamos a considerar un ejemplo característico que aclara alguna de las ideas detrás de esta teoría.
-\begin{ejemplo}
-  \em
-  Consideramos el oscilador armónico unidimensional, con hamiltoniano
+\section{Osciladores armónicos}
+Para aclarar algunas de las ideas detrás de la teoría de sistemas integrables, vamos a considerar uno de los ejemplos más sencillos, pero más ilustrativos, el oscilador armónico.
+
+\paragraph{\bf Oscilador armónico con un grado de libertad}\mbox{}
+
+  Empezamos considerando el oscilador armónico con un grado de libertad. El espacio de fases del será el espacio simpléctico estándar $2$-dimensional, $(\RR^2,\Omega_1)$ con las coordenadas de Darboux canónicas $(q,p)$. El hamiltoniano vendrá dado por la función
   \begin{equation*}
-    H(q,p)=\frac{p^2}{2m}+\frac{1}{2}kq^2.
+    H(q,p)=\tfrac{1}{2m}p^2+\tfrac{1}{2}kq^2.
   \end{equation*}
-  Por simplicidad, supondremos que la masa y la constante del muelle valen 1, de forma que $H(q,p)=\frac{1}{2}(p^2+q^2)$. Las curvas $C_E$ de energía constante en el espacio de fases $\RR^2$ son circunferencias de centro 0 y radio $a=\sqrt{2E}$, con
+  Los parámetros $k$ y $m$ representan la \emph{constante de recuperación} del oscilador y la \emph{masa} de la partícula oscilante.
+  Las ecuaciones de Hamilton son entonces
   \begin{equation*}
-    E=\frac{1}{2}(p^2+q^2).
+    \begin{cases}
+      \dot q(t) = \parcial{H}{p}(t)=\tfrac{1}{m}p(t)\\
+    \dot p(t) = -\parcial{H}{q}(t)=-kq(t).
+  \end{cases}
   \end{equation*}
+  Estas ecuaciones se pueden integrar fácilmente, si tomamos como condición inicial $(q(0),p(0))=(a,0)$, tenemos
+  \begin{equation*}
+    \begin{cases}
+   q(t)=a\cos\omega t \\ 
+   p(t)=-m\omega a\sin\omega t,
+ \end{cases}
+  \end{equation*}
+  con $\omega=\sqrt{\frac{k}{m}}$.
+  
+  Ahora, recordemos que el hamiltoniano del sistema es una cantidad conservada, por tanto podemos considerar las variedades $M_E$ de energía constante, que, por el teorema de Arnold-Liouville serán topológicamente circunferencias invariantes bajo el flujo del sistema, ya que el único punto crítico del hamiltoniano es su mínimo $(q,p)=(0,0)$. En efecto, las curvas de energía constante vienen dadas por la ecuación
+  \begin{equation*}
+    E=\tfrac{1}{2m}p^2+\tfrac{1}{2}kq^2,
+  \end{equation*}
+  que define una elipse de semiejes $\sqrt{2mE}$ y $\sqrt{\frac{2E}{k}}$. El flujo en las curvas de energía constante toma la forma
+  \begin{equation*}
+    \begin{cases}
+      q(t)=\sqrt{\frac{2E}{k}}\cos\omega t \\ 
+      p(t)=-\sqrt{2mE}\sin\omega t.
+ \end{cases}
+  \end{equation*}
+  
   \begin{figure}[h]
     \centering
     \includegraphics[width=0.4\textwidth]{pics/oscilador}
     \label{fig:oscilador}
-    \caption{Espacio de fases del oscilador armónico junto al campo y al flujo hamiltonianos}
+    \caption{\small Espacio de fases del oscilador armónico junto al campo y a las curvas de energía constante. En este caso $k=m=1$, de modo que las curvas de energía constante son circunferencias de radio $\sqrt{2E}$.}
   \end{figure}
-  Ahora, si tomamos unas coordenadas «polares» $(E,\phi)$, donde $\phi$ es la coordenada angular en cada una de estas circunferencias, la dinámica del sistema queda mucho más simplificada: 
-  \begin{align*}
+
+  Ahora, si tomamos unas coordenadas «polares» $(E,\phi)$, donde $\phi$ es la coordenada angular en cada una de estas elipses, la dinámica del sistema queda mucho más simplificada: 
+  \begin{equation*}
+    \begin{cases}
     E(t)&=E(0) \\
-    \phi(t)&=\phi(0)+\omega(E(0))t.
-  \end{align*}
-  Sin embargo, ¿será canónica la transformación $(q,p) \rightarrow (E,\phi)$?
-  \begin{figure}[h]
-    \centering
-    \includegraphics[width=0.6\textwidth]{pics/polar}
-    \caption{Cambio de coordenadas $(q,p) \rightarrow (E,\phi)$}
-    \label{fig:polar}
-  \end{figure}
-  En este caso es claro que la transformación preserva el área $\frac{1}{2}a^2\phi$. Más generalmente, si $A$ es una región del plano, 
-  \begin{equation*}
-    \text{área}(A)= \int_A r \dd r \wedge \dd \phi = \int_A \dd\left(\frac{1}{2}r^2\right) \wedge \dd \phi.
+    \phi(t)&=\phi(0)-\omega t.
+  \end{cases}
   \end{equation*}
-  Por tanto, la transformación es canónica porque precisamente, si $A_E$ es la región encerrada por $C_E$, entonces
+  Sin embargo, ¿será canónica la transformación $(q,p) \rightarrow (E,\phi)$? Para ello, veamos cómo se comporta la forma $\Omega_1=\dd p\wedge \dd q$ con el cambio
   \begin{equation*}
-    E=\frac{1}{2}a^2=\frac{1}{2\pi}\text{área}(A_E).
+    \begin{cases}
+      q(E,\phi)=\sqrt{\frac{2E}{k}}\cos\phi\\
+      p(E,\phi)=\sqrt{2mE}\sin \phi.
+    \end{cases}
+  \end{equation*}
+  Tenemos entonces
+  \begin{equation*}
+    \begin{cases}
+      \dd q= \frac{1}{\sqrt{2kE}}\cos \phi \dd E - \sqrt{\frac{2E}{k}} \sin \phi \dd \phi \\
+      \dd p= \sqrt{\frac{m}{2E}}\sin \phi \dd E + \sqrt{2mE} \cos \phi \dd \phi,
+    \end{cases}
+  \end{equation*}
+  y 
+  \begin{equation*}
+    \Omega_1= \dd p \wedge \dd q = -\sqrt{\tfrac{m}{k}}(\cos^2 \phi + \sin^2 \phi) \dd E \wedge \dd \phi= -\tfrac{1}{\omega} \dd E \wedge \dd \phi.
+  \end{equation*}
+  Por tanto, si definimos la \emph{variable de acción}, $J=-\frac{E}{\omega}$, entonces $\Omega_1=\dd J \wedge \dd \phi$ y $(J,\phi)$ son unas coordenadas de Darboux.
+
+  Para tratar de dar sentido físico a esta variable $J$, consideremos el área $A_E$ de la región $S_E$ encerrada por la curva de energía constante $M_E$. Por la fórmula del área de la elipse
+  \begin{equation*}
+    A_E=\pi \sqrt{2mE} \sqrt{\frac{2E}{k}}=2\pi \sqrt{\frac{m}{k}} E= 2 \pi \frac{E}{\omega}= -2\pi J.
   \end{equation*}
 
-  En las coordenadas originales, esta área es
+  Observemos ahora que como $\Omega_1$ es la forma de área en $\RR^2$, 
   \begin{equation*}
-    J=\int_{A_E} \dd p \wedge \dd q = \int_{A_E}d (p\dd q) = \int_{C_E} p \dd q,
-  \end{equation*}
-  donde en el último paso hemos utilizado el teorema de Stokes. Esta $J$ normalmente se conoce como \emph{variable de acción}, debido a sus dimensiones.
+    A_E=\int_{S_E}\Omega_1 = \int_{S_E} \dd p \wedge \dd q = \int_{M_E}p\dd q,
+\end{equation*}
+donde hemos usado el teorema de Stokes y el hecho de que $\dd p \wedge \dd q= \dd(p\dd q)$. De modo que podemos redefinir la variable de acción en la forma
+\begin{equation*}
+  J=-\frac{1}{2\pi}\int_{M_E}p \dd q.
+\end{equation*}
+Este será el aspecto que tengan las variables de acción-ángulo en general para sistemas con un grado de libertad. Regresando ahora a las coordenadas originales, tenemos
+\begin{equation*}
+  \begin{cases}
+    q(J,\phi)=\sqrt{-\frac{2J\omega}{ k}}\cos \phi\\
+    p(J,\phi)=\sqrt{-2m\omega J}\sin \phi.
+  \end{cases}
+\end{equation*}
 
-  En un caso más general, podemos considerar el sistema formado por $n$ osciladores armónicos acoplados o, equivalentemente, un oscilador armónico $n$-dimensional. El hamiltoniano del sistema será (tomando $k=m=1$)
+\paragraph{\bf Oscilador armónico con $n$ grados de libertad}\mbox{}
+
+  Para estudiar un caso de dimensión superior, podemos considerar el sistema formado por $n$ osciladores armónicos no acoplados o, equivalentemente, un oscilador armónico con $n$ grados de libertad. El hamiltoniano del sistema será (tomando $k=m=1$)
   \begin{equation*}
-    H(q_1,\dots,q_n,p_1,\dots,p_n)= H_1(q_1,p_1)+ \cdots +H_n(q_n,p_n) = \frac{1}{2}(p_1^2+\cdots+p_n^2+q_1^2+\cdots+q_n^2).
+    H(q_1,\dots,q_n,p_1,\dots,p_n)= H_1(q_1,p_1)+ \cdots +H_n(q_n,p_n) = \tfrac{1}{2}\sum_{i=1}^n (p_i^2+q_i^2).
   \end{equation*}
   Este sistema es integrable en el sentido de Liouville. Basta tomar $F=(H,H_2+\cdots+H_{n},H_3+\cdots+H_{n-2},\dots,H_n)$, ya que 
   \begin{equation*}
-    \pois{H_i}{H_j} = \sum_{k=1}^n \parcial{H_i}{p_k}\parcial{H_j}{q_k} - \parcial{H_j}{p_k}\parcial{H_i}{q_k}= p_iq_j \delta_{ij} - p_jq_i \delta{ij} = p_iq_i-p_iq_i = 0,
+    \pois{H_i}{H_j} = \sum_{k=1}^n\left( \parcial{H_i}{p_k}\parcial{H_j}{q_k} - \parcial{H_j}{p_k}\parcial{H_i}{q_k}\right)=0
   \end{equation*}
-  y $\det(F_{*,x}) \neq 0$ para todo $x \in \RR^{2n}$. 
+  y las componentes de $F$ son independientes en casi todo punto de $\RR^{2n}$. 
   
-  $F^{-1}(a)$ vendrá dado por 
+  Ahora, dado $a=(a_1,\dots,a_n)\in \RR^n$, $M_a=F^{-1}(a)$ vendrá dado por 
   \begin{equation*}
     \left\lbrace
     \begin{array}{l}
-      \frac{1}{2}(p_1^2+q_1^2)=a_1-a_2 \\
-      \frac{1}{2}(p_2^2+q_2^2)=a_2-a_3 \\
+      \tfrac{1}{2}(p_1^2+q_1^2)=a_1-a_2 \\
+      \tfrac{1}{2}(p_2^2+q_2^2)=a_2-a_3 \\
 \vdots \\
-\frac{1}{2}(p_n^2+q_n^2)=a_n, 
+\tfrac{1}{2}(p_n^2+q_n^2)=a_n, 
     \end{array}
     \right.
   \end{equation*}
-  que son las ecuaciones de un toro $n$-dimensional.
+  que son las ecuaciones de un toro $n$-dimensional. Cada una de las ecuaciones $\frac{1}{2}(p_i^2+q_i^2)=a_i-a_{i+1}$ da una circunferencia $C_{a,i}$ de radio $r_i=\sqrt{2(a_i-a_{i+1}}$, de modo que $M_a=C_{a,1}\times\dots\times C_{a,n}$. Nótese que en este caso los valores críticos son precisamente aquellos $a$ con varias componentes iguales, de forma que los puntos críticos formarán toros de dimensión menor.
 
-  Entonces, sean $\gamma_1,\dots,\gamma_n$ una base de ciclos del toro \nota{Esto es muy intuitivo pero hay que escribirlo bien, en los libros pone que son los generadores del grupo de homología de $\TT^n$, cuando dé TOAL a lo mejor sé lo que es}, podemos definir las variables de acción 
+  Consideremos $\gamma_{a,i}$ lazos en cada circunferencia $C_{a,i}$, de manera que los $\gamma_{a,i}$ son generadores del grupo fundamental de $M_a$. Entonces podemos definir las variables de acción 
   \begin{equation*}
-    J_i = \frac{1}{2\pi}\int_{\gamma_i} \sum_{k=1}^n p_k \dd q_k = \frac{1}{2\pi} \int_{\gamma_i} \alpha.
+    J_i(a) = \frac{1}{2\pi}\int_{\gamma_{a,i}} \sum_{k=1}^n p_k \dd q_k.
   \end{equation*}
   La definición de estas variables no depende de la base elegida ya que, por el teorema de Stokes,
   \begin{equation*}
-    \int_{\gamma_i} \alpha - \int_{\gamma_i'} \alpha = \int_{\sigma} \omega=0,
+    \int_{\gamma_{i,a}} \sum_{k=1}^n p_k \dd q_k- \int_{\gamma_{i,a}'} \sum_{k=1}^n p_k \dd q_k = \int_{\sigma} \omega=0,
   \end{equation*}
-  donde $\sigma$ es la región encerrada por las curvas y $\omega=0$ en el toro (el cálculo de esto está hecho con precisión más adelante).
+  donde $\sigma$ es la región encerrada por las curvas, ya que $\omega|_{M_a}=0$ y en $M_a$ no hay puntos críticos.
 
-Sean las variables angulares $\phi_i$ a lo largo de cada ciclo generado por $\gamma_i$, si $(q,p) \rightarrow (J,\phi)$ es canónica, podemos tomar las variables $(J,\phi)$ en las que la dinámica toma una forma especialmente simple. Esto se debe a que $J=J(a)$, de modo que, por las ecuaciones de Hamilton, 
+  Consideremos ahora las variables angulares $\phi_i$ a lo largo de cada $C_{i,a}$. Podemos tomar entonces las nuevas coordenadas $(J,\phi)$, con
+  \begin{equation*}
+      J_i(q,p)=J_i(F(q,p))=\frac{1}{2\pi}\int_{\gamma_{F(q,p),i}} \sum_{k=1}^n p_k \dd q_k 
+  \end{equation*}
+  y $\phi(q,p)$ las variables angulares en el toro $M_{F(q,p)}$.
+  Si la carta $(J,\phi)$ es de Darboux, las ecuaciones de Hamilton pueden integrarse por cuadraturas. Esto se debe a que $J=J(a)$, de modo que, por las ecuaciones de Hamilton,
 \begin{equation*}
   \parcial{H}{\phi_i}=-\dot{J_i}=0.
 \end{equation*}
@@ -372,19 +458,211 @@ Por tanto, $H=H(J_1(a),\dots,J_n(a))$ y
   \dot{\phi_i}=\parcial{H}{J_i} = \omega_j(a),
 \end{equation*}
 con $\omega_j$ constante en $M_a$. Las ecuaciones de Hamilton quedan entonces integradas en la forma
-\begin{align*}
+\begin{equation*}
+  \begin{cases}
   J(t)= & J(a) \\
   \phi(t) = & \phi(0) + \omega(a) t.
-\end{align*}
+\end{cases}
+\end{equation*}
 
-No hemos demostrado que el cambio de coordenadas sea un simplectomorfismo, lo que puede hacerse usando el método de Hamilton-Jacobi, que aquí no vamos a exponer. Sin embargo, no nos hará falta, ya que nosotros daremos otra prueba, demostrando un teorema general para construir variables de acción-ángulo en variedades simplécticas.
-\end{ejemplo}
 
-Vamos a estudiar también algunos ejemplos de sistemas con funciones en involución, que en ciertos supuestos serán integrables en el sentido de Liouville.
-  
-\begin{ejemplo}[Péndulo simple]
+\section{Movimiento condicionalmente periódico}\label{sec:promedios}
+Una vez tenemos a nuestra disposición el teorema de Arnold-Liouville, sabemos que el flujo en los toros invariantes de los sistemas integrables en el sentido de Liouville será muy sencillo. En esta sección vamos a estudiar el flujo en estos toros y obtendremos un teorema muy importante sobre este tipo de sistemas.
+
+  En primer lugar, consideremos un $2$-toro invariante con la dinámica del teorema (por ejemplo, el asociado a los niveles de energía de un oscilador armónico bidimensional). Sea $(\theta_1,\theta_2)$ un punto en el toro y su trayectoria bajo el flujo hamiltoniano $\gamma(t)=\varphi_t(\theta_1,\theta_2)=(\theta_1+\omega_1t,\theta_2+\omega_2t)$. Si $\omega_1/\omega_2=m/n$ es racional, entonces 
+  \begin{equation*}
+    \gamma\left(\frac{2n\pi}{\omega_2}\right) = (\theta_1+2m\pi,\theta_2+2n\pi)=(\theta_1,\theta_2).
+  \end{equation*}
+  Es decir, a cierto tiempo la trayectoria «se cierra». Estas órbitas se dicen \emph{periódicas}. 
+ 
+  Sin embargo, si $\omega_2/\omega_1$ es irracional, dado un ángulo $\alpha$ y sea $T$ tal que $\alpha=\theta_1+\omega T$, entonces, sea $T_n=T+2n\pi/\omega_1$, $\alpha=\theta_1+\omega_1(T_n)$ para cada $n\in \NN$. Ahora, la aplicación
+  \begin{equation*}
+    \begin{array}{rcl}
+    g:\SF^1 & \longrightarrow &\SF^1 \\
+  \phi & \longmapsto & \phi + 2\pi\frac{\omega_2}{\omega_1},
+  \end{array}
+\end{equation*}
+es una rotación de ángulo un múltiplo irracional de $2\pi$ en la circunferencia del toro de ángulo $\alpha$. Entonces, como ya vimos por el teorema de recurrencia de Poincaré, $\{g^n(\phi)|n\in \NN\}$ es denso en $\SF^1$. Como esto es válido para todo $\alpha$ y se cumple 
+\begin{equation*}
+  \gamma(T_n)=(\alpha,g^n(\theta_2)+\omega_2 T),
+\end{equation*}
+tenemos que $\{\gamma(t)|t \in \RR \}$ es denso en el toro. Este tipo de órbitas se llaman \emph{cuasiperiódicas}. Una forma sencilla de visualizar esto es mediante las \emph{figuras de Lissajous} 
+\begin{equation*}
+  L_{\omega}=\{(\cos t, \cos \omega t) | t \in \RR\},
+\end{equation*}
+ver figura \ref{fig:lissajous}.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.6\textwidth]{pics/lissajous}
+  \caption{\small Figuras de Lissajous para $\omega=3,$ $3.1,$ $3.14,$  y $3.1416$, $t \in (0,128\pi)$ con pasos de $0.01$.}
+  \label{fig:lissajous}
+\end{figure}
+
+Vamos a generalizar ahora estas ideas al caso $n$-dimensional.
+
+\begin{defn}[Movimiento condicionalmente periódico en $\TT^n$]
   \em
-  Consideramos un péndulo cuya «cuerda» es una barra rígida de masa despreciable y longitud 1. El espacio de fases del péndulo es el fibrado cotangente de $\SF^1$, que no es otra cosa que un cilindro. Tomando como coordenada generalizada el ángulo $\phi$ de desviación del péndulo respecto de la vertical, el hamiltoniano viene dado por 
+  Sean $\TT^n$ el toro n-dimensional y $\phi=(\phi_1,\dots,\phi_n)$ coordenadas angulares. Se entiende por un \emph{movimiento condicionalmente periódico} en el toro el flujo uniparamétrico dado por 
+  \begin{equation*}
+    \phi(t)=\phi(0)+\omega t
+  \end{equation*}
+  con $\omega=(\omega_1,\dots,\omega_n)$ \emph{frecuencias} constantes en el toro. Las frecuencias $\omega$ se dicen \emph{independientes} si, sea $k \in \ZZ^n$, entonces $\esc{k}{\omega}=0$ si y sólo si $k=0$.
+\end{defn}
+\begin{defn}[Promedios espacial y temporal]
+  \em
+  Sea $f:\TT^n \rightarrow \RR$ una función integrable Riemann,
+  \begin{enumerate}
+    \item El \emph{promedio espacial} de $f$ en $\TT^n$ es el número
+      \begin{equation*}
+	\bar{f}=\frac{1}{(2\pi)^n}\int_0^{2\pi} \cdots \int_0^{2\pi} f(\phi) d\phi_1,\dots,d\phi_n.
+      \end{equation*}
+    \item El \emph{promedio temporal} de $f$ en $\TT^n$ es la función
+      \begin{equation*}
+	f^*(\phi_0)=\lim_{T\rightarrow \infty} \int_0^{T}f(\phi_0+\omega t) dt,
+      \end{equation*}
+      definida en los puntos $\phi_0$ en los que exista el límite.
+  \end{enumerate}
+\end{defn}
+
+\begin{thm}[Teorema de los promedios]
+  Si $f:\TT^n \rightarrow \RR$ es una función integrable Riemann y las frecuencias $\omega$ son independientes, el promedio temporal está bien definido en todo el toro $\TT^n$ y coincide en todo punto con el promedio espacial.
+\end{thm}
+\begin{proof}
+    En primer lugar, consideramos funciones de la forma $e^{i\esc{k}{\phi}}$, $k\in \ZZ^n$. Si $k=0$, entonces $\bar{f}=f=f^*=1$. Si $k\neq0$, $\bar{f}$ es una integral a periodos en funciones trigonométricas, luego es igual a 0. Por otra parte
+     \begin{equation*}
+       \int_0^T e^{i\esc{k}{\phi_0 + \omega t}} dt= e^{i\esc{k}{\phi_0}}\int_0^T e^{i\esc{k}{\omega}t}dt=e^{i\esc{k}{\phi_0}}\frac{e^{i\esc{k}{\omega}T}-1}{i \esc{k}{\omega}}.
+     \end{equation*}
+     Por tanto, el promedio temporal será
+     \begin{equation*}
+       \lim_{T\rightarrow \infty}\frac{e^{i\esc{k}{\phi_0}}}{i \esc{k}{\omega}}\frac{e^{i\esc{k}{\omega}T}-1}{T}=0.
+     \end{equation*}
+     
+    Como los promedios dependen linealmente de $f$, también coincidirán para los polinomios trigonométricos
+     \begin{equation*}
+       f=\sum_{|k|<N}f_ke^{i\esc{k}{\omega}}.
+     \end{equation*}
+
+    Dado $\varepsilon >0$, si $f$ es continua y real por el teorema de Weierstrass podemos aproximarla por un polinomio trigonométrico $P$ que cumpla $|f-P|<\frac{1}{2}\varepsilon$. Sean $P_1=P-\frac{1}{2}\varepsilon$, $P_2=P+\frac{1}{2}\varepsilon$ entonces
+     \begin{equation*}
+       \bar{P_2}-\bar{P_1}=\frac{1}{(2\pi)^n}\int_{\TT^n} (P_2 - P_1) d\phi = \frac{1}{(2\pi)^n}\varepsilon (2\pi)^n= \varepsilon.
+     \end{equation*}
+
+    Dado $\varepsilon >0$, si $f$ es real e integrable Riemann, entonces existen dos funciones continuas $f_1,f_2$ tales que $f_1<f<f_2$ y $\int_{\TT^n}\frac{1}{(2\pi)^n}(f_2-f_1)d\phi<\frac{1}{3}\varepsilon$. Tomando ahora $P_1,P_2$ polinomios trigonométricos tales que $P_1<f_1<f_2<P_2$ y $\int_{\TT^n}\frac{1}{(2\pi)^n}(P_i-f_i)d\phi < \frac{1}{3}\varepsilon$, para $i=1,2$, entonces
+     \begin{equation*}
+       \bar{P_2}-\bar{P_1}=\frac{1}{(2\pi)^n}\int_{\TT^n} (P_2 - P_1) d\phi = \frac{1}{(2\pi)^n}\varepsilon (2\pi)^n= \varepsilon.
+     \end{equation*}
+
+    Por último, sea $\varepsilon>0$, entonces existen dos polinomios trigonométricos $P_1,P_2$ tales que $P_1<f<P_2$ y $\bar{P_2}-\bar{P_1}<\varepsilon$. Ahora, como $f<P_2$,
+     \begin{equation*}
+       \frac{1}{T}\int_0^T f(\phi(t))dt < \frac{1}{T}\int_0^T P_2(\phi(t))dt,
+     \end{equation*}
+     luego
+     \begin{equation*}
+       \left| \frac{1}{T}\int_0^T f(\phi(t))dt- \bar{f} \right| <\left| \frac{1}{T}\int_0^T P_2(\phi(t))dt- \bar{f} \right| < \left| \frac{1}{T}\int_0^T P_2(\phi(t))dt- \bar{P_2}\right| + |\bar{P_2}-\bar{f}|.
+     \end{equation*}
+     Pero, como $P_1<f<P_2$, por la monotonía de la integral $\bar{P_1}<f<\bar{P_2}$, luego $|\bar{P_2}-\bar{f}|<|\bar{P_2}-\bar{P_1}|<\varepsilon$. Además, como $P_2$ es un polinomio trigonométrico existe un $T_0$ tal que, si $T>T_0$
+     \begin{equation*}
+       \left| \frac{1}{T}\int_0^T P_2(\phi(t))dt- \bar{P_2}\right| < \varepsilon .
+     \end{equation*}
+     Finalmente, obtenemos lo que queríamos probar
+     \begin{equation*}
+       \left| \frac{1}{T}\int_0^T f(\phi(t))dt- \bar{f} \right| <\left| \frac{1}{T}\int_0^T P_2(\phi(t))dt- \bar{P_2}\right| + |\bar{P_2}-\bar{f}|<\varepsilon + \varepsilon = 2\varepsilon,
+     \end{equation*}
+     luego $f^*(\phi_0)=\lim_{t\rightarrow \infty}\frac{1}{T}\int_0^T f(\phi(t)) dt = \bar{f}$.
+\end{proof}
+\begin{corol}
+  Si las frecuencias son independientes, entonces, para todo $\phi_0 \in \TT^n$, \[\{\phi(t)=\phi_0+\omega t|t\in \RR\}\] es denso en el toro $\TT^n$.
+\end{corol}
+\begin{proof}
+  En caso contrario, podemos tomar un abierto $D$ del toro que no tiene ningún punto de la trayectoria $\phi(t)$. Construimos la función 
+  \begin{equation*}
+    f(\phi)=\left\lbrace
+    \begin{array}{ll}
+      0 & \text{si } \phi \not\in D \\
+      \frac{(2\pi)^n}{\int_D d\phi} & \text{si } \phi \in D.
+    \end{array}
+    \right.
+  \end{equation*}
+  Claramente, $\bar{f}=1$, pero $f^*(\phi_0)=0$, lo que contradice el teorema de los promedios.
+\end{proof}
+\begin{corol}
+  Sea $D\subset \TT^n$ un conjunto medible Jordan. Sea $A_D=\{t\in \RR | \phi(t) \in D\}$ (que también es medible Jordan) y sea $\tau_D(T)=\int_0^T\chi_{A_D}(t)dt$. Entonces
+  \begin{equation*}
+    \lim_{T\rightarrow \infty}\frac{\tau_D(T)}{T}= \frac{\mathrm{Vol}(D)}{(2\pi)^n}.
+  \end{equation*}
+\end{corol}
+\begin{proof}
+  Aplicamos el teorema a $\chi_D$, entonces $\int_0^T \chi_D(\phi(t))dt=\int_0^T \chi_{A_D}(t)dt=\tau_D(t)$ y $\bar{\chi}_D=(2\pi)^{-n}\mathrm{Vol}(D)$. Finalmente, por el teorema de los promedios
+  \begin{equation*}
+    \bar{\chi}_D=\frac{\mathrm{Vol}(D)}{(2\pi)^n}=\lim_{T\rightarrow \infty}\frac{1}{T}\int_0^T \chi_D(\phi(t))dt=\lim_{T\rightarrow \infty}\frac{\tau_D(T)}{T}.
+  \end{equation*}
+\end{proof}
+
+
+%\begin{ejemplo}[Potencial central]
+%  \em
+%  Consideramos una partícula que se mueve en $\RR^3$ sometida a un potencial central, esto es, una función $V$ que sólo depende de $r=||x||$. El espacio de fases es $\RR^6$ y el hamiltoniano (tomando $m=1$) viene dado por
+%  \begin{equation*}
+%    H(x,p)=\frac{p^2}{2}+V(r).   
+%  \end{equation*}
+%  Sea ahora el momento angular
+%  \begin{equation*}
+%    L=x \times p,
+%  \end{equation*}
+%  cada una de sus componentes es $L_i=\epsilon_{ijk}(x_jp_k-x_kp_j)$, donde $\epsilon_{ijk}$ es la paridad de $(i,j,k)$ como permutación de $(1,2,3)$. Podemos calcular ahora 
+%  \begin{equation*}
+%    \pois{H}{L_i}= \sum_{k=1}^3 \parcial{H}{p_k} \parcial{L_i}{x_k} - \parcial{H}{x_k} \parcial{L_i}{p_k}= -\sum_{k=1}^3 \epsilon_{ijk}\left( p_kp_j + \frac{x_kx_j}{r}V'(r) \right)=0.
+%  \end{equation*}
+%  Por tanto, $L$ es una cantidad conservada. Al ser $L$ un vector, realmente son cantidades conservadas su norma y su dirección y sentido, lo que implica que se conservan $L^2=\esc{L}{L}$ y $L_3$. Además $\pois{L^2}{L_3}=0$, lo que nos da tres funciones en involución en el sistema.
+%  Sin embargo, la integrabilidad en sentido de Liouville no está garantizada por los resultados que hemos probado, ya que en general las órbitas pueden ser no acotadas y las funciones no ser independientes. 
+%\end{ejemplo}
+%\begin{ejemplo}[Trompo simétrico]
+%  \em
+%  Consideremos un trompo simétrico (la clásica peonza de juguete) que gira con su punta fija en un punto. Su espacio de configuración viene dado por las posibles rotaciones de sus ejes principales de inercia ($X',Y',Z'$) respecto a los tres ejes del sistema de laboratorio (la vertical y dos ejes arbitrarios en el suelo, $X,Y,Z$). De modo que el espacio de fases del trompo simétrico es $T^*\mathrm{SO}(3)$. Sean $I_1,I_2,I_3$ los momentos de inercia del trompo, que el trompo sea \emph{simétrico} quiere decir que $I_1=I_2$ y que el centro de masas cae sobre el eje $Z'$. En este caso, tras unos cálculos se obtiene que el hamiltoniano del sistema es
+%  \begin{equation*}
+%    H(\theta,\phi,\psi,p_{\theta},p_{\phi},p_{\psi})=\frac{p_{\theta}^2}{2I_1}+\frac{(p_{\phi}-p_{\psi}\cos\theta)^2}{2I_1\sin^2\theta}+\frac{p_{\psi}^2}{2I_3}+Mgl\cos \theta,
+%  \end{equation*}
+%  donde $g$ es la aceleración de la gravedad, $M$ es la masa de la peonza, $l$ es la distancia de la punta al centro de masas, $(\theta,\phi,\psi)$ son los ángulos de Euler de la rotación de los ejes principales de inercia respecto a los del laboratorio y $(p_{\theta},p_{\phi},p_{\psi})$ son sus momentos canónicos conjugados. 
+%  Las frecuencias de giro de cada uno de los ángulos de Euler $\theta$, $\phi$ y $\psi$ se llaman frecuencias de \emph{nutación}, \emph{precesión} y \emph{rotación}, respectivamente.
+%%  \begin{figure}[h]
+%%    \label{fig:euler}
+%%    \centering
+%%    \begin{minipage}[b]{0.4\textwidth}
+%%    \includegraphics[width=\textwidth]{pics/euler}
+%%    \caption{Construcción de los ángulos de Euler. Fuente: \cite{euler}.}
+%%  \end{minipage}
+%%  \hfill
+%%  \begin{minipage}[b]{0.4\textwidth}
+%%    \includegraphics[width=\textwidth]{pics/eulertop}
+%%    \caption{Trompo simétrico. Fuente: \cite{eulertop}.}
+%%  \end{minipage}
+%%  \end{figure}
+%
+%  Inmediatamente tenemos
+%  \begin{align*}
+%    \dot{p_{\phi}} = & \parcial{H}{\phi} = 0 \\
+%    \dot{p_{\psi}} = & \parcial{H}{\psi} = 0,
+%  \end{align*}
+%  luego $p_{\phi}$ y $p_{\psi}$ son cantidades conservadas y por tanto su corchete de Poisson con $H$ se anula. Además, 
+%  \begin{equation*}
+%    \pois{p_{\phi}}{p_{\psi}} = 0.
+%  \end{equation*}
+%  Por tanto, $H$, $p_{\phi}$ y $p_{\psi}$ son funciones en involución en $(T^*\mathrm{SO}(3),H)$.
+%
+%  Ahora, si estas funciones son constantes, como los ángulos (y sus relaciones trigonométricas) siempre están acotados también lo estará $p_{\theta}$ por la relación $E=H$ y la variedad $F^{-1}(a)$ estará acotada. Como $F^{-1}(a)$ es cerrada, es compacta y el trompo simétrico es «casi» un sistema integrable en el sentido de Liouville. Este «casi» viene porque, al igual que en el caso del péndulo habrá que exceptuar algún caso en el cual las funciones no son independientes.
+%\end{ejemplo}
+%
+%\begin{ejemplo}
+%  \em
+%  Por citar un ejemplo no trivial, aunque no lo demostremos, el problema de hallar las geodésicas en un elipsoide puede verse como un sistema hamiltoniano integrable en el sentido de Liouville. La demostración se basa en la teoría de cuádricas confocales y coordenadas elípticas, demostrando unos teoremas de Jacobi y Chasles. Puede leerse en el apéndice 15 de \cite{arnold}.
+%\end{ejemplo}
+
+\section{Sistemas con un grado de libertad}
+En esta sección damos algunas generalidades sobre los sistemas hamiltonianos con un grado de libertad que, como ya hemos visto, son todos integrables en el sentido de Liouville. Uno de los ejemplos más característicos es el péndulo simple, que estudiamos a continuación.
+  
+\paragraph{\bf El péndulo simple}\mbox{}
+  
+  Consideramos un péndulo de masa $m=1$ cuya «cuerda» es una barra rígida de masa despreciable y longitud $1$. El espacio de configuración del péndulo es entonces la circunferencia unidad $\SF^1$ y su espacio de fases será el fibrado tangente de $\SF^1$, que no es otra cosa que un cilindro. Tomando como coordenada generalizada el ángulo $\phi$ de desviación del péndulo respecto de la vertical, el hamiltoniano viene dado por 
   \begin{equation*}
     H(\phi,p)=\frac{1}{2}p^2 - g\cos\phi,
   \end{equation*}
@@ -393,69 +671,98 @@ Vamos a estudiar también algunos ejemplos de sistemas con funciones en involuci
     \centering
     \includegraphics[width=0.4\textwidth]{pics/pendulo}
     \label{fig:pendulo}
-    \caption{Espacio de fases del péndulo junto al campo y al flujo hamiltonianos.}
+    \caption{\small Espacio de fases del péndulo junto al campo hamiltoniano y las curvas de nivel. Nótese que el lado derecho ($\phi=\pi$) está identificado con el lado izquierdo ($\phi=-\pi$), ya que se trata de un cilindro.}
   \end{figure}
-  Como podemos ver en la figura \ref{fig:pendulo}  las trayectorias son cerradas, luego cada curva de energía constante es compacta. $\dd H$ será distinta de 0 en todo punto exceptuando los casos $(\phi=0,p=0)$ y $(\phi=\pi,p=0)$, que corresponden a puntos de equilibrio (el primero, estable, el segundo, inestable) donde la trayectoria es sólo un punto. La curva que aparece punteada en la figura \ref{fig:pendulo}, de ecuación
+  Como podemos ver en la figura \ref{fig:pendulo}  las trayectorias son cerradas, luego cada curva de energía constante es compacta. Para estudiar los puntos críticos, nótese que $\dd H$ es distinta de 0 en todo punto exceptuando los casos $(\phi=0,p=0)$ y $(\phi=\pi,p=0)$, que corresponden a puntos de equilibrio (el primero, estable, el segundo, inestable) donde la trayectoria es sólo un punto. La curva que aparece punteada en la figura, de ecuación
   \begin{equation*}
     g=H(\phi,p)=\frac{1}{2}p^2 - g \cos\phi ,
   \end{equation*}
-  corresponde al punto de equilibrio y a dos trayectorias que tienden asintóticamente al punto de equilibrio inestable. Estas trayectorias son matemáticamente factibles aunque su realización práctica parezca una tarea imposible y en ellas no aplica la teoría de Arnold-Liouville, puesto que la curva punteada no es una variedad, al contener un punto con $\dd H=0$. Estas trayectorias se conocen como \emph{singularidades} del sistema. Las curvas que quedan dentro de la curva punteada corresponden a movimientos de oscilación en torno al punto de equilibrio estable, mientras que las que quedan fuera corresponden a movimientos de rotación del péndulo alrededor de su centro. 
-\end{ejemplo}
-\begin{ejemplo}[Potencial central]
-  \em
-  Consideramos una partícula que se mueve en $\RR^3$ sometida a un potencial central, esto es, una función $V$ que sólo depende de $r=||x||$. El espacio de fases es $\RR^6$ y el hamiltoniano (tomando $m=1$) viene dado por
-  \begin{equation*}
-    H(x,p)=\frac{p^2}{2}+V(r).   
-  \end{equation*}
-  Sea ahora el momento angular
-  \begin{equation*}
-    L=x \times p,
-  \end{equation*}
-  cada una de sus componentes es $L_i=\epsilon_{ijk}(x_jp_k-x_kp_j)$, donde $\epsilon_{ijk}$ es la paridad de $(i,j,k)$ como permutación de $(1,2,3)$. Podemos calcular ahora 
-  \begin{equation*}
-    \pois{H}{L_i}= \sum_{k=1}^3 \parcial{H}{p_k} \parcial{L_i}{x_k} - \parcial{H}{x_k} \parcial{L_i}{p_k}= -\sum_{k=1}^3 \epsilon_{ijk}\left( p_kp_j + \frac{x_kx_j}{r}V'(r) \right)=0.
-  \end{equation*}
-  Por tanto, $L$ es una cantidad conservada. Al ser $L$ un vector, realmente son cantidades conservadas su norma y su dirección y sentido, lo que implica que se conservan $L^2=\esc{L}{L}$ y $L_3$. Además $\pois{L^2}{L_3}=0$, lo que nos da tres funciones en involución en el sistema.
-  Sin embargo, la integrabilidad en sentido de Liouville no está garantizada por los resultados que hemos probado, ya que en general las órbitas pueden ser no acotadas y las funciones no ser independientes. 
-\end{ejemplo}
-\begin{ejemplo}[Trompo simétrico]
-  \em
-  Consideremos un trompo simétrico (la clásica peonza de juguete) que gira con su punta fija en un punto. Su espacio de configuración viene dado por las posibles rotaciones de sus ejes principales de inercia ($X',Y',Z'$) respecto a los tres ejes del sistema de laboratorio (la vertical y dos ejes arbitrarios en el suelo, $X,Y,Z$). De modo que el espacio de fases del trompo simétrico es $T^*\mathrm{SO}(3)$. Sean $I_1,I_2,I_3$ los momentos de inercia del trompo, que el trompo sea \emph{simétrico} quiere decir que $I_1=I_2$ y que el centro de masas cae sobre el eje $Z'$. En este caso, tras unos cálculos se obtiene que el hamiltoniano del sistema es
-  \begin{equation*}
-    H(\theta,\phi,\psi,p_{\theta},p_{\phi},p_{\psi})=\frac{p_{\theta}^2}{2I_1}+\frac{(p_{\phi}-p_{\psi}\cos\theta)^2}{2I_1\sin^2\theta}+\frac{p_{\psi}^2}{2I_3}+Mgl\cos \theta,
-  \end{equation*}
-  donde $g$ es la aceleración de la gravedad, $M$ es la masa de la peonza, $l$ es la distancia de la punta al centro de masas, $(\theta,\phi,\psi)$ son los ángulos de Euler de la rotación de los ejes principales de inercia respecto a los del laboratorio y $(p_{\theta},p_{\phi},p_{\psi})$ son sus momentos canónicos conjugados. 
-  Las frecuencias de giro de cada uno de los ángulos de Euler $\theta$, $\phi$ y $\psi$ se llaman frecuencias de \emph{nutación}, \emph{precesión} y \emph{rotación}, respectivamente.
-%  \begin{figure}[h]
-%    \label{fig:euler}
-%    \centering
-%    \begin{minipage}[b]{0.4\textwidth}
-%    \includegraphics[width=\textwidth]{pics/euler}
-%    \caption{Construcción de los ángulos de Euler. Fuente: \cite{euler}.}
-%  \end{minipage}
-%  \hfill
-%  \begin{minipage}[b]{0.4\textwidth}
-%    \includegraphics[width=\textwidth]{pics/eulertop}
-%    \caption{Trompo simétrico. Fuente: \cite{eulertop}.}
-%  \end{minipage}
-%  \end{figure}
+   corresponde al punto de equilibrio y a dos trayectorias que tienden asintóticamente al punto de equilibrio inestable. Este conjunto no es un toro de Liouville ya que contiene al punto crítico $(\pi,0)$. Estas trayectorias son matemáticamente factibles aunque su realización práctica parezca una tarea imposible. Las curvas que quedan dentro de la curva punteada corresponden a movimientos de oscilación en torno al punto de equilibrio estable, mientras que las que quedan fuera corresponden a movimientos de rotación del péndulo alrededor de su centro. 
 
-  Inmediatamente tenemos
-  \begin{align*}
-    \dot{p_{\phi}} = & \parcial{H}{\phi} = 0 \\
-    \dot{p_{\psi}} = & \parcial{H}{\psi} = 0,
-  \end{align*}
-  luego $p_{\phi}$ y $p_{\psi}$ son cantidades conservadas y por tanto su corchete de Poisson con $H$ se anula. Además, 
-  \begin{equation*}
-    \pois{p_{\phi}}{p_{\psi}} = 0.
-  \end{equation*}
-  Por tanto, $H$, $p_{\phi}$ y $p_{\psi}$ son funciones en involución en $(T^*\mathrm{SO}(3),H)$.
+   \paragraph{\bf Puntos críticos de los sistemas con un grado de libertad}\mbox{}
 
-  Ahora, si estas funciones son constantes, como los ángulos (y sus relaciones trigonométricas) siempre están acotados también lo estará $p_{\theta}$ por la relación $E=H$ y la variedad $F^{-1}(a)$ estará acotada. Como $F^{-1}(a)$ es cerrada, es compacta y el trompo simétrico es «casi» un sistema integrable en el sentido de Liouville. Este «casi» viene porque, al igual que en el caso del péndulo habrá que exceptuar algún caso en el cual las funciones no son independientes.
-\end{ejemplo}
+   Los dos tipos de punto crítico que presenta el péndulo simple se conocen como \emph{centros}, para el $(0,0)$ y \emph{sillas}, para el $(\pi,0)$. Podemos probar que, de hecho esos son los únicos tipos de punto crítico que puede presentar un sistema hamiltoniano en $\RR^2$. En efecto, supongamos que $(0,0)$ es un punto de equilibrio de un sistema hamiltoniano. Podemos escribir las ecuaciones de Hamilton en la forma
+   \begin{equation*}
+     \left(
+     \begin{array}{c}
+       \dot q \\
+       \dot p
+     \end{array}
+     \right)=
+\left(
+     \begin{array}{cc}
+       0 & -1\\
+       1 & 0
+     \end{array}
+     \right)
+\left(
+     \begin{array}{c}
+       \parcial{H}{q} \\
+       \parcial{H}{p},
+     \end{array}
+     \right)
+   \end{equation*}
+   de modo que su versión linealizada en torno al $(0,0)$ será
+   \begin{equation*}
+     \left(
+     \begin{array}{c}
+       \dot q \\
+       \dot p
+     \end{array}
+     \right)=
+\left(
+     \begin{array}{cc}
+       0 & -1\\
+       1 & 0
+     \end{array}
+     \right)
+     \left.
+\left(
+     \begin{array}{cc}
+       \frac{\partial^2 H}{\partial q^2} & \frac{\partial^2 H}{\partial p \partial q} \\
+       \frac{\partial^2 H}{\partial q \partial p} & \frac{\partial^2 H}{\partial p \partial p} 
+     \end{array}
+     \right)
+     \right|_{(q,p)=(0,0)}
+\left(
+     \begin{array}{c}
+       q \\
+       p
+     \end{array}
+     \right)
+     =J_1 B
+\left(
+     \begin{array}{c}
+       q \\
+       p
+     \end{array}
+     \right)
+     =A
+\left(
+     \begin{array}{c}
+       q \\
+       p
+     \end{array}
+     \right).
+   \end{equation*}
+   De la simetría de la matriz de segundas derivadas $B$ y de las propiedades de la matriz $J_1$, tenemos que $A$ ha de cumplir la condición
+   \begin{equation*}
+     A^{t}J_1+J_1 A=0.
+   \end{equation*}
+   Las matrices que cumplen esta condición forman el álgebra de Lie $\mathfrak{sp}(2)$ del grupo simpléctico $\mathrm{Sp}(2)$.
 
-\begin{ejemplo}
-  \em
-  Por citar un ejemplo no trivial, aunque no lo demostremos, el problema de hallar las geodésicas en un elipsoide puede verse como un sistema hamiltoniano integrable en el sentido de Liouville. La demostración se basa en la teoría de cuádricas confocales y coordenadas elípticas, demostrando unos teoremas de Jacobi y Chasles. Puede leerse en el apéndice 15 de \cite{arnold}.
-\end{ejemplo}
+   Ahora, se tiene la siguiente proposición.
+   \begin{prop}
+     Si $\alpha$ es un autovalor de una matriz $A\in \mathfrak{sp}(2)$ con multiplicidad algebraica $k$, entonces $-\alpha$ es también un autovalor de $A$ con la misma multiplicidad. Si $\alpha=0$ entonces su multiplicidad es par.
+   \end{prop}
+   \begin{proof}
+     Los autovalores son los ceros del polinomio característico $P(\alpha)=\det(\alpha I-A)$. Por tanto, basta probar que $\det(\alpha I-A)=\det(\alpha I + A)$. Esto se ve de la siguiente manera,
+     \begin{align*}
+       P(\alpha)&=\det(\alpha I-A)=\det(-\alpha J_1^2-J_1B)=\det J_1\det(-\alpha J_1 - B)\\
+       &=\det(-\alpha J_1-B)^t=\det (\alpha J_1 - B)=\det(\alpha I - J_1^{-1}B)\\
+       &=\det(\alpha I + J_1 B)=\det(\alpha I +A).
+     \end{align*}
+   \end{proof}
+   Por tanto, los autovalores de $A$ son imaginarios, opuestos o ambos cero, luego el punto crítico $(0,0)$ solo puede ser un centro (en el caso de autovalores imaginarios) o un punto de silla (en el caso de autovalores reales opuestos). Como consecuencia de esto tenemos que el sistema hamiltoniano no puede tener puntos \emph{asintóticamente estables}, lo que tal vez era de esperar a la vista de la conservación de la energía y del teorema de Liouville: los puntos asintóticamente estables funcionarían como «fuentes» o «sumideros» del área de Liouville.
+
 

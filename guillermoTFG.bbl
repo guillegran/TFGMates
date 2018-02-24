@@ -5,30 +5,32 @@ V.~I. Arnold.
 \newblock {\em Mathematical Methods of Classical Mechanics}.
 \newblock Springer-Verlag, 1989.
 
-\bibitem{euler}
-Wikimedia Commons.
-\newblock Euler angles.
-\newblock \url{https://commons.wikimedia.org/wiki/File:Euler.png}, 2007.
-\newblock Online; visto el 18 de julio de 2017.
+\bibitem{audin}
+Mich\`ele Audin.
+\newblock {\em Torus actions on symplectic manifolds}.
+\newblock Birkh{\"a}user, 2012.
 
-\bibitem{eulertop}
-Wikimedia Commons.
-\newblock Heavy symmetric top in terms of {E}uler angles.
-\newblock
-  \url{https://commons.wikimedia.org/wiki/File:Heavy_symmetric_top_euler_angles.svg},
-  2015.
-\newblock Online; visto el 18 de julio de 2017.
+\bibitem{bolsinov2004integrable}
+A.~V. Bolsinov and A.T. Fomenko.
+\newblock {\em Integrable Hamiltonian systems: geometry, topology,
+  classification}.
+\newblock CRC Press, 2004.
+
+\bibitem{dasilva}
+A.~C. Da~Silva and F.~Takens.
+\newblock {\em Lectures on symplectic geometry}.
+\newblock Springer, 2001.
 
 \bibitem{algebra}
 J.F. Fernando, J.M. Gamboa, and J.M. Ruiz.
 \newblock {\em {\'A}lgebra lineal (vol. 2)}.
-\newblock Editorial Sanz y Torres, 2010.
+\newblock Sanz y Torres, 2010.
 
 \bibitem{variedades}
 J.M. Gamboa and J.M. Ruiz.
 \newblock {\em Introducci{\'o}n al estudio de las {V}ariedades
   {D}iferenciables}.
-\newblock Editorial Sanz y Torres, 2016.
+\newblock Sanz y Torres, 2016.
 
 \bibitem{goldstein}
 H.~Goldstein, C.P. Poole, and J.L. Safko.
@@ -37,8 +39,8 @@ H.~Goldstein, C.P. Poole, and J.L. Safko.
 
 \bibitem{guillemin}
 Victor Guillemin.
-\newblock Lecture notes on {T}heory of {D}ifferential {F}orms. {C}hapter 5:
-  {C}ohomology via forms.
+\newblock ``{L}ecture notes on {T}heory of {D}ifferential {F}orms. {C}hapter 5:
+  {C}ohomology via forms".
 \newblock \url{http://math.mit.edu/classes/18.952/spring2012/chapter5.pdf},
   2012.
 \newblock Online; visto el 22 de julio de 2017.
@@ -46,12 +48,40 @@ Victor Guillemin.
 \bibitem{landau}
 L.D. Landau and E.M. Lifshitz.
 \newblock {\em Curso de física teórica (vol. 1): Mecánica}.
-\newblock Editorial Reverté, 1985.
+\newblock Reverté, 1985.
 
 \bibitem{lee}
 John~M. Lee.
 \newblock {\em Introduction to {S}mooth {M}anifolds}.
-\newblock 2003.
+\newblock Springer, 2003.
+
+\bibitem{vicente}
+V.~Mu{\~n}oz and J.J. Madrigal.
+\newblock {\em Topolog{\'i}a algebraica}.
+\newblock Sanz y Torres, 2015.
+
+\bibitem{oxtoby2013measure}
+John~C. Oxtoby.
+\newblock {\em Measure and {C}ategory}.
+\newblock Springer Science \& Business Media, 2013.
+
+\bibitem{scheck}
+Florian Scheck.
+\newblock {\em Mechanics: from Newton's laws to deterministic chaos}.
+\newblock Springer Science \& Business Media, 2010.
+
+\bibitem{segal}
+Graeme Segal.
+\newblock ``{L}ecture notes on symplectic manifolds and quantization".
+\newblock
+  \url{http://web.math.ucsb.edu/~drm/conferences/ITP99/segal/segal2_n.pdf},
+  1999.
+\newblock Online; visto el 24 de febrero de 2018.
+
+\bibitem{souriau}
+J.-M. Souriau.
+\newblock {\em Structure des syst\`emes dynamiques}.
+\newblock Dunod, 1969.
 
 \bibitem{spivak}
 Michael Spivak.
