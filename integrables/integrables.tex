@@ -5,7 +5,7 @@ En 1885, Joseph Liouville encontró una condición necesaria para que las ecuaci
 
 \begin{defn}
   \em
-  Sea $(M,H)$ un sistema hamiltoniano con $\dim(M)=2n$. Decimos que $(M,H)$ es \emph{integrable (en el sentido de Liouville)} si existen $F_1(=H),\dots,F_n\in \mathcal{C}^{\infty}(M)$ tales que
+  Sea $(M,H)$ un sistema hamiltoniano con $\dim(M)=2n$. Decimos que $(M,H)$ es \emph{integrable (en el sentido de Liouville)} si existen $F_1(=H),\dots,F_n\in \mathscr{C}^{\infty}(M)$ tales que
 \begin{enumerate}
   \item son \emph{funcionalmente independientes}, es decir, $\dd F_{1,x}\wedge \dots \wedge \dd F_{n,x}\neq 0$ para casi todo punto\footnote{Como aquí en principio no estamos considerando ninguna medida, con \emph{para casi todo punto} queremos decir en un conjunto \emph{residual} o \emph{comagro}, esto es, que su complementario sea \emph{magro}. Un conjunto se dice \emph{magro} o \emph{de primera categoría de Baire} si es unión numerable de conjuntos diseminados, esto es, de conjuntos cuya adherencia tiene interior vacío. Por ejemplo, el conjunto de los números racionales $\mathbb{Q}\subset\RR$ no es diseminado pero sí es magro en $\RR$. }, 
   \item están \emph{en involución}, esto es, $\pois{F_i}{F_j}=0$ para cada $i,j=1,\dots,n$, y
@@ -25,7 +25,7 @@ Si escribimos $F:M\rightarrow \RR^n$ con $F(x)=(F_1(x),\dots,F_n(x))$. Los punto
 \begin{thm}[Arnold-Liouville]\label{arnold}
 Sea $(M,H)$ un sistema integrable en el sentido de Liouville con $F_1,\dots,F_n$ las funciones en involución.
 
-   Sea $x\in M$ un punto regular del sistema y sea $a=F(x)$. Entonces la componente conexa $M_a$ del conjunto de nivel $F^{-1}(a)$ que contiene a $x$ es una variedad diferenciable invariante bajo el flujo del sistema y $\left. \omega \right|_{M_a}=0$.
+   Sea $x\in M$ un punto regular del sistema y sea $a=F(x)$. Sea $M_a$ la componente conexa del conjunto de nivel $F^{-1}(a)$ que contiene a $x$. Supongamos además que todo punto de $M_a$ es regular. Entonces $M_a$ es una variedad diferenciable invariante bajo el flujo del sistema y $\left. \omega \right|_{M_a}=0$.
   
  Además $M_a$ es difeomorfa a $\TT^k\times \RR^{n-k}$, para cierto $0 \leq k \leq n$. En particular, si $M_a$ es compacta, $M_a$ es difeomorfa al toro $n$-dimensional $\TT^n$. En este caso, se dice que $M_a$ es un \emph{toro de Liouville}. 
  
@@ -34,7 +34,7 @@ Sea $(M,H)$ un sistema integrable en el sentido de Liouville con $F_1,\dots,F_n$
 \end{thm}
 
  \begin{proof}
-  En primer lugar, como $x$ es regular, $F$ tiene rango máximo en cada punto de $M_a$ y, por el teorema de la función implícita, $M_a$ es una subvariedad regular de $M$ de dimensión $2n-n=n$. 
+  En primer lugar, como $F$ tiene rango máximo en cada punto de $M_a$, por el teorema de la función implícita $M_a$ es una subvariedad regular de $M$ de dimensión $2n-n=n$. 
   Como $M$ es una variedad simpléctica, para cada $i=1,\dots,n$, podemos definir el campo $X_i=X^{F_i}$. Al ser las $\dd F_i$ linealmente independientes los campos $X_i$ son linealmente independientes. Además, por el teorema de Noether, como para cada $i,j= 1,\dots,n$ $\pois{F_i}{F_j}=0$ (luego es constante), entonces $\lie{X_i}{X_j}=0$. Por esto mismo, la derivada de la función $F_i$ en la dirección de $X_j$ es 0, luego los campos $X_j$ son tangentes a $M_a$.
 
   De aquí sacamos varias conclusiones:
@@ -73,7 +73,7 @@ luego, sea $t=t_1+\cdots+t_n$, $x=g_t (x_0)$. Por tanto, $g$ es sobreyectiva.
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.5\textwidth]{pics/entornos.eps}
-  \caption{Idea de la demostración de que $g$ es sobreyectiva.}
+  \caption{\small Idea de la demostración de que $g$ es sobreyectiva.}
   \label{fig:entornos}
 \end{figure}
 
@@ -110,7 +110,7 @@ Es decir, $H$ es un subgrupo de $(\RR^n,+)$. Además, $H$ no depende de la elecc
   \begin{figure}[h]
     \centering
     \includegraphics[width=0.2\textwidth]{pics/discreto}
-    \caption{Idea de que $H$ es discreto.}
+    \caption{\small Idea de que $H$ es discreto.}
     \label{fig:discreto}
   \end{figure}
 
@@ -137,7 +137,7 @@ Es decir, $H$ es un subgrupo de $(\RR^n,+)$. Además, $H$ no depende de la elecc
   \begin{figure}[h]
     \centering
     \includegraphics{pics/grupo}
-    \caption{Idea de la demostración del lema.}
+    \caption{\small Idea de la demostración del lema.}
     \label{fig:grupo}
   \end{figure}
 
@@ -598,65 +598,6 @@ Vamos a generalizar ahora estas ideas al caso $n$-dimensional.
   \end{equation*}
 \end{proof}
 
-
-%\begin{ejemplo}[Potencial central]
-%  \em
-%  Consideramos una partícula que se mueve en $\RR^3$ sometida a un potencial central, esto es, una función $V$ que sólo depende de $r=||x||$. El espacio de fases es $\RR^6$ y el hamiltoniano (tomando $m=1$) viene dado por
-%  \begin{equation*}
-%    H(x,p)=\frac{p^2}{2}+V(r).   
-%  \end{equation*}
-%  Sea ahora el momento angular
-%  \begin{equation*}
-%    L=x \times p,
-%  \end{equation*}
-%  cada una de sus componentes es $L_i=\epsilon_{ijk}(x_jp_k-x_kp_j)$, donde $\epsilon_{ijk}$ es la paridad de $(i,j,k)$ como permutación de $(1,2,3)$. Podemos calcular ahora 
-%  \begin{equation*}
-%    \pois{H}{L_i}= \sum_{k=1}^3 \parcial{H}{p_k} \parcial{L_i}{x_k} - \parcial{H}{x_k} \parcial{L_i}{p_k}= -\sum_{k=1}^3 \epsilon_{ijk}\left( p_kp_j + \frac{x_kx_j}{r}V'(r) \right)=0.
-%  \end{equation*}
-%  Por tanto, $L$ es una cantidad conservada. Al ser $L$ un vector, realmente son cantidades conservadas su norma y su dirección y sentido, lo que implica que se conservan $L^2=\esc{L}{L}$ y $L_3$. Además $\pois{L^2}{L_3}=0$, lo que nos da tres funciones en involución en el sistema.
-%  Sin embargo, la integrabilidad en sentido de Liouville no está garantizada por los resultados que hemos probado, ya que en general las órbitas pueden ser no acotadas y las funciones no ser independientes. 
-%\end{ejemplo}
-%\begin{ejemplo}[Trompo simétrico]
-%  \em
-%  Consideremos un trompo simétrico (la clásica peonza de juguete) que gira con su punta fija en un punto. Su espacio de configuración viene dado por las posibles rotaciones de sus ejes principales de inercia ($X',Y',Z'$) respecto a los tres ejes del sistema de laboratorio (la vertical y dos ejes arbitrarios en el suelo, $X,Y,Z$). De modo que el espacio de fases del trompo simétrico es $T^*\mathrm{SO}(3)$. Sean $I_1,I_2,I_3$ los momentos de inercia del trompo, que el trompo sea \emph{simétrico} quiere decir que $I_1=I_2$ y que el centro de masas cae sobre el eje $Z'$. En este caso, tras unos cálculos se obtiene que el hamiltoniano del sistema es
-%  \begin{equation*}
-%    H(\theta,\phi,\psi,p_{\theta},p_{\phi},p_{\psi})=\frac{p_{\theta}^2}{2I_1}+\frac{(p_{\phi}-p_{\psi}\cos\theta)^2}{2I_1\sin^2\theta}+\frac{p_{\psi}^2}{2I_3}+Mgl\cos \theta,
-%  \end{equation*}
-%  donde $g$ es la aceleración de la gravedad, $M$ es la masa de la peonza, $l$ es la distancia de la punta al centro de masas, $(\theta,\phi,\psi)$ son los ángulos de Euler de la rotación de los ejes principales de inercia respecto a los del laboratorio y $(p_{\theta},p_{\phi},p_{\psi})$ son sus momentos canónicos conjugados. 
-%  Las frecuencias de giro de cada uno de los ángulos de Euler $\theta$, $\phi$ y $\psi$ se llaman frecuencias de \emph{nutación}, \emph{precesión} y \emph{rotación}, respectivamente.
-%%  \begin{figure}[h]
-%%    \label{fig:euler}
-%%    \centering
-%%    \begin{minipage}[b]{0.4\textwidth}
-%%    \includegraphics[width=\textwidth]{pics/euler}
-%%    \caption{Construcción de los ángulos de Euler. Fuente: \cite{euler}.}
-%%  \end{minipage}
-%%  \hfill
-%%  \begin{minipage}[b]{0.4\textwidth}
-%%    \includegraphics[width=\textwidth]{pics/eulertop}
-%%    \caption{Trompo simétrico. Fuente: \cite{eulertop}.}
-%%  \end{minipage}
-%%  \end{figure}
-%
-%  Inmediatamente tenemos
-%  \begin{align*}
-%    \dot{p_{\phi}} = & \parcial{H}{\phi} = 0 \\
-%    \dot{p_{\psi}} = & \parcial{H}{\psi} = 0,
-%  \end{align*}
-%  luego $p_{\phi}$ y $p_{\psi}$ son cantidades conservadas y por tanto su corchete de Poisson con $H$ se anula. Además, 
-%  \begin{equation*}
-%    \pois{p_{\phi}}{p_{\psi}} = 0.
-%  \end{equation*}
-%  Por tanto, $H$, $p_{\phi}$ y $p_{\psi}$ son funciones en involución en $(T^*\mathrm{SO}(3),H)$.
-%
-%  Ahora, si estas funciones son constantes, como los ángulos (y sus relaciones trigonométricas) siempre están acotados también lo estará $p_{\theta}$ por la relación $E=H$ y la variedad $F^{-1}(a)$ estará acotada. Como $F^{-1}(a)$ es cerrada, es compacta y el trompo simétrico es «casi» un sistema integrable en el sentido de Liouville. Este «casi» viene porque, al igual que en el caso del péndulo habrá que exceptuar algún caso en el cual las funciones no son independientes.
-%\end{ejemplo}
-%
-%\begin{ejemplo}
-%  \em
-%  Por citar un ejemplo no trivial, aunque no lo demostremos, el problema de hallar las geodésicas en un elipsoide puede verse como un sistema hamiltoniano integrable en el sentido de Liouville. La demostración se basa en la teoría de cuádricas confocales y coordenadas elípticas, demostrando unos teoremas de Jacobi y Chasles. Puede leerse en el apéndice 15 de \cite{arnold}.
-%\end{ejemplo}
-
 \section{Sistemas con un grado de libertad}
 En esta sección damos algunas generalidades sobre los sistemas hamiltonianos con un grado de libertad que, como ya hemos visto, son todos integrables en el sentido de Liouville. Uno de los ejemplos más característicos es el péndulo simple, que estudiamos a continuación.
   
@@ -765,4 +706,68 @@ En esta sección damos algunas generalidades sobre los sistemas hamiltonianos co
    \end{proof}
    Por tanto, los autovalores de $A$ son imaginarios, opuestos o ambos cero, luego el punto crítico $(0,0)$ solo puede ser un centro (en el caso de autovalores imaginarios) o un punto de silla (en el caso de autovalores reales opuestos). Como consecuencia de esto tenemos que el sistema hamiltoniano no puede tener puntos \emph{asintóticamente estables}, lo que tal vez era de esperar a la vista de la conservación de la energía y del teorema de Liouville: los puntos asintóticamente estables funcionarían como «fuentes» o «sumideros» del área de Liouville.
 
+
+
+   \section{Más sistemas integrables}
+   Cuando estudiamos sistemas con varios grados de libertad, la integrabilidad requiere de la existencia de cantidades conservadas adicionales. Como ya vimos en el apartado de simetrías y leyes de conservación, una forma útil de encontrar cantidades conservadas es observar las simetrías del sistema, siguiendo el mecanismo de Noether. En esta sección veremos dos ejemplos donde podemos ver directamente esta relación entre las simetrías y la integrabilidad del sistema.
+
+   \paragraph{\bf El péndulo esférico}\mbox{}
+
+   Un péndulo esférico consiste en una partícula (aquí supondremos de masa $m=1$) enganchada por una barra rígida de masa despreciable y de longitud 1 a un punto del espacio y bajo la acción de la gravedad. Es decir, es como un péndulo simple, solo que no está restringido a oscilar en un solo plano, sino que puede moverse libremente, ver figura \ref{fig:espendulo}.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.3\textwidth]{pics/espendulo.png}
+  \caption{\small Péndulo esférico}
+  \label{fig:espendulo}
+\end{figure}
+
+Podemos considerar el sistema inmerso en $\RR^3$, de modo que el espacio de fases en principio será el espacio simpléctico estándar $6$-dimensional $(\RR^6,\Omega_3)$. Ahora, la ligadura del péndulo restringe el movimiento espacial a una esfera de radio 1, y las velocidades serán siempre tangentes a esta esfera. De este modo, el espacio de fases será
+\begin{equation*}
+  M=\left\{ (q,p)\in \RR^6 : ||q||=1, \esc{q}{p}=0 \right\},
+\end{equation*}
+que claramente es difeomorfo al fibrado tangente de la esfera, $T\SF^2$. La forma simpléctica en $M$ será simplemente la restricción de $\Omega_3$ a $M$. El hamiltoniano será la restricción a $M$ de la función 
+\begin{align*}
+  H :\RR^6&\longrightarrow \RR\\ 
+  (q,p) &\longmapsto \tfrac{1}{2m}||p||^2+mgq_3, 
+  \end{align*}
+  donde $q_3$ es la componente vertical del vector $q=(q_1,q_2,q_3)$.
+
+  Observemos ahora que el sistema es invariante bajo las rotaciones en torno a la vertical. En efecto, si $R\in\mathrm{SO}(3)$ es una rotación en torno a la vertical, como la tercera componente no varía respecto de las rotaciones en torno a la vertical y las rotaciones preservan la norma,
+  \begin{equation*}
+    H(R(q),R(p))=\tfrac{1}{2m}||R(p)||^2+mgq_3=\tfrac{1}{2m}||p||^2+mgq_3=H(q,p).
+  \end{equation*}
+  Por tanto, la tercera componente del momento angular $L_3=q_1p_2-q_2p_1$ es una cantidad conservada del sistema $(M,H)$. Como $\dim(M)=4$ y hemos encontrado una cantidad conservada del sistema a parte del propio hamiltoniano, no es difícil comprobar que $H$ y $L_3$ son independientes para casi todo punto, luego el sistema $(M,H)$ será integrable en el sentido de Liouville.
+
+  \paragraph{\bf El potencial central}\mbox{}
+
+  Consideremos el caso genérico de una partícula moviéndose en el espacio sujeta a una fuerza central, es decir, dirigida siempre hacia el origen y cuyo valor dependa solo de la distancia de la partícula a este. Un ejemplo típico sería el de una partícula moviéndose en un potencial kepleriano ($V(r)=-k/r$) (por ejemplo, la Tierra alrededor del Sol) o en un potencial coulombiano (por ejemplo, un electrón que ``gira'' en torno a un núcleo atómico, despreciando toda clase de efectos cuánticos, si es que eso fuera posible). El espacio de fases del sistema es el espacio simpléctico estándar $6$-dimensional $(\RR^6,\Omega_3)$ y el hamiltoniano viene dado por la función
+  \begin{equation*}
+    H(q,p)=\tfrac{1}{2m}||p||^2+V(||q||).
+  \end{equation*}
+  Claramente, el sistema es invariante bajo rotaciones ya que, si $R\in \mathrm{SO}(3)$ es una rotación, entonces, como las rotaciones preservan la norma
+  \begin{equation*}
+    H(R(q),R(p))=\tfrac{1}{2m}||R(p)||^2+V(||R(q)||)=\tfrac{1}{2m}||p||^2+V(||q||)=H(q,p).
+  \end{equation*}
+  Como consecuencia, se conserva el momento angular $L=q\times p$. En particular, se conservarán $L^2=\esc{L}{L}$ y $L_3=q_1p_2-q_2p_1$. Ahora, si calculamos el corchete de Poisson
+  \begin{equation*}
+    \pois{L^2}{L_3}=\sum_{i=1}^3\pois{L_i^2}{L_3}=\sum_{i=1}^32L_i\pois{L_i}{L_3},
+  \end{equation*}
+  por la regla de Leibniz. Ahora, como $\pois{L_3}{L_3}=0$, tenemos 
+  \begin{equation*}
+    \pois{L^2}{L_3}=2L_1\pois{L_1}{L_3}+2L_2\pois{L_2}{L_3}.
+  \end{equation*}
+  Basta entonces hallar 
+  \begin{equation*}
+    \pois{L_1}{L_3}=\pois{q_2p_3-q_3p_2}{q_1p_2-q_2p_1},
+  \end{equation*}
+  que, usando la linealidad del corchete de Poisson y la identidad de Jacobi y teniendo en cuenta que $\pois{q_i}{q_j}=\pois{p_i}{p_j}=0$ podemos desarrollar hasta llegar a
+  \begin{equation*}
+    \pois{L_1}{L_3}=-p_3q_1\pois{q_2,p_2}-q_3p_1\pois{p_2}{q_2}=+p_3q_1-q_3p_1=-L_2.
+  \end{equation*}
+Un cálculo análogo muestra que $\pois{L_2}{L_3}=L_1$, de modo que
+\begin{equation*}
+  \pois{L^2}{L_3}=-2L_1L_2+2L_2L_1=0.
+\end{equation*}
+
+Por tanto, $H$, $L^2$ y $L_3$ son $3$ funciones en involución y además es posible comprobar que son independientes en casi todo punto de $\RR^6$, de modo que el sistema $(M,H)$ es integrable en el sentido de Liouville.
 

@@ -22,7 +22,7 @@ Un \emph{espacio vectorial simpléctico} es un par ordenado $(V,\omega)$, donde 
       \]
       donde $I_n$ es la matriz identidad $n \times n$.
     \item Si $(V,\omega)$ es un espacio vectorial simpléctico de dimensión finita, entonces $\dim(V)=2n$ para cierto $n \in \NN$.
-    \item Sea $(V,\omega)$ un espacio vectorial simpléctico. Se dice que $\mathcal{B}\subset V$ es una \emph{base simpléctica} de $V$ si la matriz asociada a $\omega$ en $\mathcal{B}$ es
+    \item Sea $(V,\omega)$ un espacio vectorial simpléctico. Se dice que $\mathscr{B}\subset V$ es una \emph{base simpléctica} de $V$ si la matriz asociada a $\omega$ en $\mathscr{B}$ es
 \[
   J_n :=
 \left(
@@ -80,7 +80,59 @@ De la propia definición de variedad simpléctica podemos ya deducir unas cuanta
 
 \begin{ejemplo}
   \em
-  Podemos dar un ejemplo de variedad simpléctica si consideramos la esfera $\SF^2$ y su 2-forma diferencial $\omega$ nunca nula que sabemos que tiene por ser orientable. 
+  Podemos dar un ejemplo de variedad simpléctica si consideramos la esfera $\SF^2$ y su 2-forma diferencial $\omega$ nunca nula que sabemos que tiene por ser orientable. Si consideramos $\SF^2$ sumergida en $\RR^3$ como la esfera de radio 1, la expresión concreta de esta forma es
+  \begin{equation*}
+    \omega=x\dd y \wedge \dd z - y \dd x \wedge \dd z + z \dd x \wedge \dd y.
+  \end{equation*}
+  En efecto, como en la esfera unidad
+  \begin{equation*}
+    x\dd x + y \dd y + z \dd z = 0
+  \end{equation*}
+  entonces
+  \begin{align*}
+    x\omega &= x^2 \dd y \wedge \dd z +x \dd x (-y \dd z + z \dd y)\\
+    & = x^2 \dd y \wedge \dd z + (-y \dd y + z \dd z) \wedge (-y \dd z +z \dd y) \\
+    & = (x^2+y^2+z^2)\dd y \wedge \dd z, 
+  \end{align*}
+  y, por un cálculo análogo
+  \begin{equation*}
+    y \omega = -(x^2+y^2+z^2) \dd x \wedge \dd z
+  \end{equation*}
+  y
+  \begin{equation*}
+    z \omega = (x^2+y^2+z^2) \dd x \wedge \dd y.
+  \end{equation*}
+  Como el miembro de la derecha de cada una de estas expresiones sólo se anula en el plano tangente a la esfera en los puntos en los que se anula el correspondiente $x$, $y$ o $z$ de la izquierda, tenemos que la forma $\omega$ es nunca nula en la esfera. 
+
+  Cabe hallar ahora también cómo se expresará esta forma en coordenadas esféricas
+  \begin{equation*}
+    \begin{cases}
+      x=\cos \phi \sin \theta \\
+      y= \sin \phi \cos \theta \\
+      z=\cos \theta.
+    \end{cases}
+  \end{equation*}
+  Tenemos entonces
+  \begin{equation*}
+    \begin{cases}
+    \dd x = -\sin \phi \sin \theta \dd \phi + \cos \phi \cos \theta \dd \theta \\
+    \dd y = \cos \phi \sin \theta \dd \phi + \sin \phi \cos \theta \dd \theta \\
+    \dd z= -\sin \theta \dd \theta,
+  \end{cases}
+  \end{equation*}
+  y
+  \begin{equation*}
+    \begin{cases}
+      \dd x \wedge \dd y = -\sin \theta \cos \theta \dd \phi \wedge \dd \theta \\
+      \dd x \wedge \dd z = \sin \phi \sin ^2 \theta \dd \phi \wedge \dd \theta \\
+      \dd y \wedge \dd z = -\cos \phi \sin ^2 \theta \dd \phi \wedge \dd \theta.
+    \end{cases}
+  \end{equation*}
+  Finalmente
+  \begin{equation*}
+    \omega = -(\cos^2 \phi \sin ^3 \theta + \sin^2\phi \sin ^3 \theta +\sin \theta \cos^2 \theta) \dd \phi \wedge \dd \theta = -\sin \theta \dd \phi \wedge \dd \theta,
+  \end{equation*}
+  que es la forma de área típica en coordenadas esféricas.
 \end{ejemplo}
 
 Vamos a obtener ahora algunas condiciones que tienen que cumplir las variedades simplécticas que se deducen directamente de la definición.
@@ -123,7 +175,8 @@ Como consecuencia del resultado anterior, las esferas de dimensión superior a $
   luego $\omega$ es exacta en $\SF^n$ y 
 $    H^2(\SF^n)= \{0\}$.
 \end{proof}
-  \begin{center}  $\ast\ast\ast$ \end{center}
+
+\paragraph{\bf Teorema de Darboux}\mbox{}
 
 Prosiguiendo el estudio de las variedades simplécticas más allá de la propia definición, nos encontramos con un resultado muy fuerte, central en toda la geometría simpléctica: las formas simplécticas son localmente constantes. Esto establece una diferenciación clara con la geometría riemanniana, donde existen invariantes locales, como la curvatura, de modo que pedirle a una forma riemanianna que sea localmente constante es casi tanto como pedirle a la variedad que sea plana. Sin embargo, en geometría simpléctica no hay invariantes locales. 
 
@@ -167,7 +220,9 @@ Una carta $(U,(q,p))$ de este tipo se llama \emph{carta de Darboux}.
    \end{center}
    De modo que en $U$ podemos escribir $\omega=\xx^*\Omega_n=\sum_{i=1}^n \dd p_i \wedge \dd q_i$.
 \end{proof}
-  \begin{center}  $\ast\ast\ast$ \end{center}
+
+\paragraph{\bf Simplectomorfismos}\mbox{}
+
 Para terminar la sección, vamos a estudiar lo que podríamos tomar como morfismos en una categoría de las variedades simplécticas: aplicaciones diferenciables que preserven la forma $\omega$.
 \begin{defn}
   \em
@@ -224,7 +279,7 @@ ya que $\omega$ es cerrada. Por tanto, si $X$ es un campo tangente a una varieda
 
 \begin{defn}
   \em
-  Sea $(M,\omega)$ una variedad simpléctica. Un campo $X\in \mathfrak{X}(M)$ se dice \emph{simpléctico}, si $L_X\omega=0$ o, equivalentemente, si $i_X\omega$ es una 1-forma cerrada. El conjunto de los campos simplécticos de $(M,\omega)$ se denota por $\mathrm{Vect}_{\omega}(M)$.
+  Sea $(M,\omega)$ una variedad simpléctica. Un campo $X\in \mathfrak{X}(M)$ se dice \emph{simpléctico}, si $L_X\omega=0$ o, equivalentemente, si $i_X\omega$ es una 1-forma cerrada. El conjunto de los campos simplécticos de $(M,\omega)$ se denota por $\mathfrak{X}_{\omega}(M)$.
 
   En el caso en que $X$ sea un campo simpléctico y además $i_X\omega$ sea exacta, existe una función $F:M\rightarrow \RR$ con $i_X\omega=\dd F$. Denotamos entonces $X=X^F$ y decimos que $X^F$ es un \emph{campo hamiltoniano} con hamiltoniano $F$.
 \end{defn}
@@ -253,7 +308,7 @@ de modo que el campo de hamiltoniano $F$ tiene la forma
   Cabe preguntarse ahora cuándo los campos simplécticos y los campos hamiltonianos coincidirán. Esto es fácil de ver, nótese que existe una sucesión exacta de espacios vectoriales
   \begin{center}
     \begin{tikzcd}
-      \mathcal{C}^{\infty}(M)\arrow{r}{X^\bullet} & \mathrm{Vect}_{\omega}(M)  \arrow{r}{[i_{\bullet}\omega]} & H^1(M),  
+      \mathscr{C}^{\infty}(M)\arrow{r}{X^\bullet} & \mathfrak{X}_{\omega}(M)  \arrow{r}{[i_{\bullet}\omega]} & H^1(M),  
     \end{tikzcd}
   \end{center}
   donde, precisamente $\ker([i_{\bullet}\omega])=\mathrm{im}(X^{\bullet})$ es el conjunto de campos hamiltonianos.
@@ -319,7 +374,7 @@ Localmente, si tomamos una carta de Darboux $(q,p)$ en un punto $x\in M$, podemo
 
   Veamos ahora las propiedades del corchete de Poisson.
   \begin{prop}
-    La aplicación $\pois{ }{ }:\mathcal{C}^{\infty}(M)\times\mathcal{C}^{\infty}(M) \rightarrow \mathcal{C}^{\infty}(M)$ que a cada par de funciones le asigna su corchete de Poisson cumple las siguientes propiedades:
+    La aplicación $\pois{ }{ }:\mathscr{C}^{\infty}(M)\times\mathscr{C}^{\infty}(M) \rightarrow \mathscr{C}^{\infty}(M)$ que a cada par de funciones le asigna su corchete de Poisson cumple las siguientes propiedades:
 \begin{enumerate}
   \item[$1.$] Es bilineal,
   \item[$2.$] es antisimétrica,
@@ -334,7 +389,7 @@ Localmente, si tomamos una carta de Darboux $(q,p)$ en un punto $x\in M$, podemo
    \end{equation*}
    es decir, $\pois{A}{\bullet}$ es una derivación.
 \end{enumerate}
-En particular las propiedades $1$-$3$, nos dicen que $(\mathcal{C}^{\infty}(M),\pois{ }{ })$ es un \emph{álgebra de Lie}. Al añadir la propiedad $4$ decimos que es un \emph{álgebra de Poisson}. 
+En particular las propiedades $1$-$3$, nos dicen que $(\mathscr{C}^{\infty}(M),\pois{ }{ })$ es un \emph{álgebra de Lie}. Al añadir la propiedad $4$ decimos que es un \emph{álgebra de Poisson}. 
   \end{prop}
   \begin{proof}
     La demostración de $1$ y $2$ es inmediata del hecho de que $\pois{F}{G}=\omega(X^G,X^F)$.
@@ -357,7 +412,7 @@ En particular las propiedades $1$-$3$, nos dicen que $(\mathcal{C}^{\infty}(M),\
    $4$. La regla de Leibniz es inmediata porque $\pois{A}{\bullet}(x)=X^A_x$ es una derivación.
   \end{proof}
 
-  En general, si en una variedad diferenciable $M$ consideramos el conjunto de funciones $\mathcal{C}^{\infty}(M)$ y lo dotamos de la estructura de álgebra de Poisson mediante un corchete $\pois{ }{ }$, decimos que el par $(M,\pois{ }{ })$ es una \emph{variedad de Poisson}. Podemos reducir el enunciado de la proposición anterior simplemente a afirmar que \emph{toda variedad simpléctica es de Poisson}.
+  En general, si en una variedad diferenciable $M$ consideramos el conjunto de funciones $\mathscr{C}^{\infty}(M)$ y lo dotamos de la estructura de álgebra de Poisson mediante un corchete $\pois{ }{ }$, decimos que el par $(M,\pois{ }{ })$ es una \emph{variedad de Poisson}. Podemos reducir el enunciado de la proposición anterior simplemente a afirmar que \emph{toda variedad simpléctica es de Poisson}.
 
   \section{Mecánica en variedades simplécticas}
 Una vez estudiadas las estructuras básicas de las variedades simplécticas, veamos cómo éstas plantean el marco natural en el que estudiar la mecánica clásica, dando lo que se denomina el \emph{formalismo hamiltoniano}. 
@@ -366,7 +421,7 @@ En general, un sistema mecánico se compone de tres partes: un conjunto de \emph
 
 \paragraph{\textbf{Estados}} El conjunto de estados de un sistema hamiltoniano viene dado por una variedad simpléctica $(M,\omega)$, comúnmente llamada \emph{espacio de fases}.
 
-\paragraph{\textbf{Observables}} Los observables del sistema son las funciones $\mathcal{C}^{\infty}(M)$, que además forman un álgebra de Poisson, como vimos en la sección anterior.
+\paragraph{\textbf{Observables}} Los observables del sistema son las funciones $\mathscr{C}^{\infty}(M)$, que además forman un álgebra de Poisson, como vimos en la sección anterior.
 
 \paragraph{\textbf{Evolución temporal}} La ley de evolución temporal está determinada por una función $H:M\rightarrow \RR$ (característica de cada sistema), llamada \emph{hamiltoniano del sistema}. Las trayectorias del sistema seguirán las curvas integrales del campo $X^H$, luego, localmente, son solución de las ecuaciones de Hamilton:
   \begin{equation*}
@@ -389,7 +444,7 @@ O, en su forma más compacta:
   
   De manera más formal, podemos definir un \emph{sistema hamiltoniano} simplemente como un par $(M,H)$, donde $M=(M,\omega)$ es una variedad simpléctica y $H:M\rightarrow \RR$ una función.
   
-  \begin{center}  $\ast\ast\ast$ \end{center}
+  \paragraph{\bf Teorema de recurrencia de Poincaré}\mbox{}
 
   Como todos los campos hamiltonianos son simplécticos, los flujos hamiltonianos preservan la forma $\omega$ y en particular el volumen de Liouville $\omega^n$. Este resultado se conoce clásicamente como el \emph{teorema de Liouville}. A la vista de esto, los sistemas hamiltonianos tendrán una de las características más importantes de los sistemas que preservan el volumen, el \emph{teorema de recurrencia de Poincaré}\footnote{En inglés \textit{Poincaré recurrence theorem}. Nótese que aquí la palabra «recurrencia» no toma el significado habitual en matemáticas (por ejemplo en «construcción de sucesiones por recurrencia»), que se traduce del inglés \textit{recursion}. El diccionario Oxford define \textit{recursion} como \textit{``the repeated application of a recursive procedure or definition''}. Por otro lado, define \textit{recurrence} como \textit{``the fact of ocurring again''}, que podría traducirse también como «repetición» o «reaparición».}:
 \begin{prop}[Teorema de recurrencia de Poincaré]
@@ -412,7 +467,7 @@ O, en su forma más compacta:
   De aquí se sigue que, dado $x \in D$, el conjunto $\{g^k(x)|k\in \NN\}$ es denso en $D$. Más adelante veremos una aplicación de este ejemplo a mecánica hamiltoniana.
 \end{ejemplo}
 
-  \begin{center}  $\ast\ast\ast$ \end{center}
+\paragraph{\bf Transformaciones canónicas}\mbox{}
 
   Para terminar la sección, vamos a ver cómo se comportan las ecuaciones de Hamilton mediante cambios de coordenadas:
 \begin{prop}
@@ -438,7 +493,7 @@ Vamos a buscar entonces cambios de coordenadas que mantengan las ecuaciones de H
   \begin{enumerate}
     \item[$1$.] $f$ es un simplectomorfismo,
     \item[$2$.] para todo $H:M\rightarrow \RR$, $f$ es una transformación canónica del sistema $(M,H)$,
-    \item[$3$.] $f$ deja invariante el corchete de Poisson, es decir, para cualesquiera $F,G\in \mathcal{C}^{\infty}(M)$, 
+    \item[$3$.] $f$ deja invariante el corchete de Poisson, es decir, para cualesquiera $F,G\in \mathscr{C}^{\infty}(M)$, 
       \begin{equation*}
 	\pois{F}{G}\circ f^{-1}=\pois{F\circ f^{-1}}{G\circ f^{-1}}.
       \end{equation*}
