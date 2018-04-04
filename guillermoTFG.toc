@@ -4,31 +4,31 @@
 \contentsline {section}{\tocsection {}{2}{Derivada de Lie y f\IeC {\'o}rmulas de Cartan}}{9}{section.2}
 \contentsline {section}{\tocsection {}{3}{Campos y formas dependientes del tiempo}}{13}{section.3}
 \contentsline {section}{\tocsection {}{4}{Espacios vectoriales simpl\IeC {\'e}cticos}}{15}{section.4}
-\contentsline {paragraph}{\tocparagraph {}{}{\bf Clasificaci\IeC {\'o}n de formas bilineales antisim\IeC {\'e}tricas}}{15}{section*.3}
-\contentsline {paragraph}{\tocparagraph {}{}{\bf Aplicaciones simpl\IeC {\'e}cticas}}{16}{section*.4}
-\contentsline {paragraph}{\tocparagraph {}{}{\bf El grupo simpl\IeC {\'e}ctico}}{16}{section*.5}
-\contentsline {section}{\tocsection {}{5}{Variedades simpl\IeC {\'e}cticas y simplectomorfismos}}{17}{section.5}
-\contentsline {paragraph}{\tocparagraph {}{}{\bf Teorema de Darboux}}{19}{section*.6}
-\contentsline {paragraph}{\tocparagraph {}{}{\bf Simplectomorfismos}}{20}{section*.7}
-\contentsline {section}{\tocsection {}{6}{Campos simpl\IeC {\'e}cticos y campos hamiltonianos}}{21}{section.6}
+\contentsline {paragraph}{\tocparagraph {}{}{\bf Clasificaci\IeC {\'o}n de formas bilineales antisim\IeC {\'e}tricas}}{15}{section*.6}
+\contentsline {paragraph}{\tocparagraph {}{}{\bf Aplicaciones simpl\IeC {\'e}cticas}}{16}{section*.7}
+\contentsline {paragraph}{\tocparagraph {}{}{\bf El grupo simpl\IeC {\'e}ctico}}{16}{section*.8}
+\contentsline {section}{\tocsection {}{5}{Variedades simpl\IeC {\'e}cticas}}{17}{section.5}
+\contentsline {paragraph}{\tocparagraph {}{}{\bf Teorema de Darboux}}{19}{section*.9}
+\contentsline {paragraph}{\tocparagraph {}{}{\bf Simplectomorfismos}}{20}{section*.10}
+\contentsline {section}{\tocsection {}{6}{Campos simpl\IeC {\'e}cticos y campos hamiltonianos}}{20}{section.6}
 \contentsline {section}{\tocsection {}{7}{Corchete de Poisson}}{22}{section.7}
-\contentsline {section}{\tocsection {}{8}{Mec\IeC {\'a}nica en variedades simpl\IeC {\'e}cticas}}{25}{section.8}
-\contentsline {paragraph}{\tocparagraph {}{}{\textbf {Estados}}}{25}{section*.8}
-\contentsline {paragraph}{\tocparagraph {}{}{\textbf {Observables}}}{25}{section*.9}
-\contentsline {paragraph}{\tocparagraph {}{}{\textbf {Evoluci\IeC {\'o}n temporal}}}{25}{section*.10}
-\contentsline {paragraph}{\tocparagraph {}{}{\bf Teorema de recurrencia de Poincar\IeC {\'e}}}{25}{section*.11}
-\contentsline {paragraph}{\tocparagraph {}{}{\bf Transformaciones can\IeC {\'o}nicas}}{26}{section*.12}
+\contentsline {section}{\tocsection {}{8}{Mec\IeC {\'a}nica en variedades simpl\IeC {\'e}cticas}}{24}{section.8}
+\contentsline {paragraph}{\tocparagraph {}{}{\textbf {Estados}}}{24}{section*.11}
+\contentsline {paragraph}{\tocparagraph {}{}{\textbf {Observables}}}{24}{section*.12}
+\contentsline {paragraph}{\tocparagraph {}{}{\textbf {Evoluci\IeC {\'o}n temporal}}}{25}{section*.13}
+\contentsline {paragraph}{\tocparagraph {}{}{\bf Teorema de recurrencia de Poincar\IeC {\'e}}}{25}{section*.14}
+\contentsline {paragraph}{\tocparagraph {}{}{\bf Transformaciones can\IeC {\'o}nicas}}{26}{section*.15}
 \contentsline {section}{\tocsection {}{9}{Simetr\IeC {\'\i }as y leyes de conservaci\IeC {\'o}n}}{27}{section.9}
-\contentsline {section}{\tocsection {}{10}{Teorema de Arnold-Liouville}}{31}{section.10}
+\contentsline {section}{\tocsection {}{10}{Teorema de Arnold-Liouville}}{30}{section.10}
 \contentsline {section}{\tocsection {}{11}{Variables de acci\IeC {\'o}n-\IeC {\'a}ngulo}}{37}{section.11}
 \contentsline {section}{\tocsection {}{12}{Osciladores arm\IeC {\'o}nicos}}{39}{section.12}
-\contentsline {paragraph}{\tocparagraph {}{}{\bf Oscilador arm\IeC {\'o}nico con un grado de libertad}}{39}{section*.13}
-\contentsline {paragraph}{\tocparagraph {}{}{\bf Oscilador arm\IeC {\'o}nico con $n$ grados de libertad}}{41}{section*.14}
+\contentsline {paragraph}{\tocparagraph {}{}{\bf Oscilador arm\IeC {\'o}nico con un grado de libertad}}{39}{section*.16}
+\contentsline {paragraph}{\tocparagraph {}{}{\bf Oscilador arm\IeC {\'o}nico is\IeC {\'o}tropo con $n$ grados de libertad}}{41}{section*.17}
 \contentsline {section}{\tocsection {}{13}{Movimiento condicionalmente peri\IeC {\'o}dico}}{43}{section.13}
 \contentsline {section}{\tocsection {}{14}{Sistemas con un grado de libertad}}{46}{section.14}
-\contentsline {paragraph}{\tocparagraph {}{}{\bf El p\IeC {\'e}ndulo simple}}{46}{section*.15}
-\contentsline {paragraph}{\tocparagraph {}{}{\bf Puntos cr\IeC {\'\i }ticos de los sistemas con un grado de libertad}}{47}{section*.16}
+\contentsline {paragraph}{\tocparagraph {}{}{\bf El p\IeC {\'e}ndulo simple}}{46}{section*.18}
+\contentsline {paragraph}{\tocparagraph {}{}{\bf Puntos cr\IeC {\'\i }ticos de los sistemas con un grado de libertad}}{47}{section*.19}
 \contentsline {section}{\tocsection {}{15}{M\IeC {\'a}s sistemas integrables}}{48}{section.15}
-\contentsline {paragraph}{\tocparagraph {}{}{\bf El p\IeC {\'e}ndulo esf\IeC {\'e}rico}}{48}{section*.17}
-\contentsline {paragraph}{\tocparagraph {}{}{\bf El potencial central}}{49}{section*.18}
-\contentsline {section}{\tocsection {}{}{Referencias}}{50}{section*.19}
+\contentsline {paragraph}{\tocparagraph {}{}{\bf El p\IeC {\'e}ndulo esf\IeC {\'e}rico}}{48}{section*.20}
+\contentsline {paragraph}{\tocparagraph {}{}{\bf El potencial central}}{50}{section*.21}
+\contentsline {section}{\tocsection {}{}{Referencias}}{50}{section*.22}

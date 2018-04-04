@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{abraham}
+R.~Abraham and J.~E. Marsden.
+\newblock {\em Foundations of Mechanics}.
+\newblock Benjamin/Cummings, 1978.
+
 \bibitem{arnold}
 V.~I. Arnold.
 \newblock {\em Mathematical Methods of Classical Mechanics}.
@@ -10,7 +15,7 @@ Mich\`ele Audin.
 \newblock {\em Torus actions on symplectic manifolds}.
 \newblock Birkh{\"a}user, 2012.
 
-\bibitem{bolsinov2004integrable}
+\bibitem{bolsinov}
 A.~V. Bolsinov and A.T. Fomenko.
 \newblock {\em Integrable Hamiltonian systems: geometry, topology,
   classification}.
@@ -54,16 +59,6 @@ L.D. Landau and E.M. Lifshitz.
 John~M. Lee.
 \newblock {\em Introduction to {S}mooth {M}anifolds}.
 \newblock Springer, 2003.
-
-\bibitem{vicente}
-V.~Mu{\~n}oz and J.J. Madrigal.
-\newblock {\em Topolog{\'i}a algebraica}.
-\newblock Sanz y Torres, 2015.
-
-\bibitem{oxtoby2013measure}
-John~C. Oxtoby.
-\newblock {\em Measure and {C}ategory}.
-\newblock Springer Science \& Business Media, 2013.
 
 \bibitem{scheck}
 Florian Scheck.

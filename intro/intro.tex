@@ -1,8 +1,8 @@
 \section*{Introducción}
-Una \em variedad simpléctica \em es una variedad diferenciable de dimensión par en la que se define una forma diferencial $\omega$ cerrada y no degenerada. La \em geometría simpléctica \em es el estudio de las variedades simplécticas y es interesante tanto por sus problemas fundamentales como por su aplicación a la Mecánica Clásica (y por extensión al resto de la Física). La forma $\omega$ induce un isomorfismo entre campos y 1-formas, que nos permite obtener campos tangentes a partir de funciones definidas sobre la variedad. Las variedades simplécticas constituyen entonces una forma natural de visualizar los sistemas mecánicos ya que las \em ecuaciones de Hamilton \em nos permiten ver las leyes del movimiento como campos tangentes de manera intrínseca a la variedad. 
+Una \em variedad simpléctica \em es una variedad diferenciable de dimensión par en la que se define una forma diferencial $\omega$ cerrada y no degenerada. La \em geometría simpléctica \em es el estudio de las variedades simplécticas y es interesante tanto por sus problemas fundamentales como por su aplicación a la Mecánica Clásica (y por extensión al resto de la Física). La forma $\omega$ induce una correspondencia entre campos y 1-formas, que nos permite obtener campos tangentes a partir de funciones definidas sobre la variedad. Las variedades simplécticas constituyen entonces una forma natural de visualizar los sistemas mecánicos ya que las \em ecuaciones de Hamilton \em interpretan las leyes del movimiento como campos tangentes y, por tanto, intrínsecos a la variedad. 
 
-Un \em sistema mecánico integrable por cuadraturas \em  es aquel en el que las ecuaciones del movimiento pueden ser resueltas salvo el cálculo de integrales definidas (cuadraturas), de forma que el problema de estudiar el comportamiento del sistema queda (al menos numéricamente) resuelto. La \em teoría de Arnold-Liouville \em nos ofrece una forma de saber si un sistema mecánico es integrable por cuadraturas mediante el estudio de la variedad simpléctica que lleva asociado.
-Tras un desarrollo previo de algunos prerrequisitos de geometría diferencial como son la \em derivada de Lie \em y los \em campos dependientes del tiempo\em, y tras afianzar algunos conceptos del álgebra lineal de los \em espacios vectoriales simplécticos \em (espacios vectoriales en los que se define una forma cuadrática antisimétrica y no degenerada), nos concentramos en el estudio de la geometría simpléctica, para acabar probando los teoremas fundamentales que componen la teoría de Arnold-Liouville.
+Un \em sistema mecánico integrable por cuadraturas \em  es aquel en el que las ecuaciones del movimiento pueden ser resueltas salvo el cálculo de integrales (cuadraturas) de funciones conocidas, de forma que el problema de estudiar el comportamiento del sistema queda (al menos numéricamente) resuelto. El \em teorema de Arnold-Liouville \em nos ofrece una forma de saber si un sistema mecánico es integrable por cuadraturas mediante el estudio de la variedad simpléctica que lleva asociado.
+Tras un desarrollo previo de algunos prerrequisitos de geometría diferencial como son la \em derivada de Lie \em y los \em campos dependientes del tiempo\em, y tras afianzar algunos conceptos del álgebra lineal de los \em espacios vectoriales simplécticos \em (espacios vectoriales en los que se define una forma cuadrática antisimétrica y no degenerada), nos concentramos en el estudio de la geometría simpléctica, para acabar probando los resultados fundamentales que componen la teoría de los sistemas integrables.
 
 
 
@@ -19,15 +19,11 @@ El formalismo newtoniano ofrece una forma muy simple de entender los sistemas me
 Otro ejemplo lo podemos ver si consideramos el movimiento de una peonza. En este caso, aunque la peonza esté compuesta de cuatrillones de partículas, es posible describir su posición sólo con tres ángulos (el de giro respecto a su eje y los dos de orientación de su eje), o equivalentemente, con la rotación de sus ejes propios respecto a los de una referencia inmóvil exterior (un \emph{sistema de laboratorio}), es decir, con un elemento de $\mathrm{SO}(3)$. 
 
 De forma más general, podemos considerar sistemas newtonianos sometidos a \emph{ligaduras} entre las partículas que lo conforman. Las posibilidades de movimiento quedan entonces restringidas a un subconjunto de $\RR^{3n}$. En el caso de que estas ligaduras sean «lo suficientemente buenas» (\emph{holónomas} es el término clásicamente usado en mecánica), es posible entenderlas como unas funciones $f_1,\dots,f_r: \RR^{3n} \rightarrow \RR$, independientes en todo $x \in \RR^{3n}$ ($d_xf_1 \wedge \cdots \wedge d_xf_r \neq 0$), tales que
-\begin{equation*}
-  \left\lbrace
-  \begin{array}{rl}
+\begin{align*}[left=\empheqlbrace]
     f_1(x)&=0 \\
-    &\vdots \\
+    &\vdotswithin{=} \\
     f_r(x)&=0.
-  \end{array}
-  \right.
-\end{equation*}
+\end{align*}
 Por el teorema de la función implícita, las ligaduras definen una subvariedad regular $M \subset \RR^{3n}$ de dimensión $m=3n-r$. En Física, a esta $M$ se le suele llamar \emph{espacio de configuración} del sistema y a $m$ su número de \emph{grados de libertad}. Así, llegamos al formalismo lagrangiano. 
 
 Un \emph{sistema lagrangiano} viene dado por una variedad diferenciable $M$ de dimensión $m$. Si $(U,q)$ es una carta en $M$, las coordenadas $q=(q_1,\dots,q_m): U \rightarrow \RR^m$ suelen llamarse en Física \emph{coordenadas generalizadas} del sistema. Dados $x \in M$ y $v \in T_x M$, las coordenadas de $v$ suelen denotarse $\dot{q}=(\dot{q}_1,\dots,\dot{q}_m)$ y suelen llamarse \emph{velocidades generalizadas} del sistema. Esto significa en realidad que, en la carta $(U,q)$, $v=\sum_{i=1}^{m}\dot{q_i}\deriv{q_i}$. Como no hay $t$ respecto de la que derivar, es sólo una notación, pero es consistente. Si $v=\dot{x}(t)$ tenemos
@@ -142,13 +138,13 @@ La dinámica del sistema lagrangiano viene dada por lo que se conoce como el \em
   \begin{equation*}
     \sum_{i=1}^m \left( \parcial{H}{p_i}-\dot{q}_i \right)g_{ij}=0.
   \end{equation*}
-  Como la matriz $(g_{ij})_{i,j}$ es regular,
+  Como la matriz de los $g_{ij}$ es regular,
   \begin{equation*}
     \parcial{H}{p_i}=\dot{q}_i.
   \end{equation*}
   Si derivamos respecto de $q_j$ tenemos
   \begin{equation*}
-    \parcial{H}{q_j}+\sum_{i=1}^m \parcial{H}{p_i}\parcial{p_i}{q_j}= \sum_{i=1}^m \parcial{p_i}{q_j} \dot{q_i} - \parcial{L}{\dot{q}_j}.
+    \parcial{H}{q_j}+\sum_{i=1}^m \parcial{H}{p_i}\parcial{p_i}{q_j}= \sum_{i=1}^m \parcial{p_i}{q_j} \dot{q_i} - \parcial{L}{q_j}.
   \end{equation*}
   Finalmente, usando la relación recién obtenida,
   \begin{equation*}
@@ -163,8 +159,8 @@ La dinámica del sistema lagrangiano viene dada por lo que se conoce como el \em
   Obtenemos entonces un sistema de EDOs de orden 1 equivalentes a la ecuación de Euler-Lagrange
   \begin{align}
     \begin{cases}
-    \dot{q_i}(t)&=\parcial{H}{p_i}(t) \\
-      \dot{p_i}(t)&=-\parcial{H}{q_i}(t),
+    \dot{q_i}(t)=\parcial{H}{p_i}(t) \\
+      \dot{p_i}(t)=-\parcial{H}{q_i}(t),
     \end{cases}
     \label{hamilton}
   \end{align}

@@ -4,7 +4,7 @@ Antes de comenzar con el estudio de la geometría simpléctica, conviene recorda
 
 Empecemos recordando la definición del corchete de Lie de campos, su estudio detallado puede encontrarse en \cite{variedades}.
 
-\begin{defn}[Corchete de Lie]
+\begin{defn}
   \em
   Sea $M$ una variedad diferenciable y $\mathfrak{X}(M)$ el conjunto de los campos diferenciables en $M$, se define el \emph{corchete de Lie} como la aplicación
   \begin{equation*}
@@ -32,7 +32,7 @@ Por último, recordamos otro resultado muy importante que usaremos posteriorment
 \end{prop} 
 
 Ya estamos en disposición de dar una definición más general de la derivada de Lie:
-\begin{defn}[Derivada de Lie]
+\begin{defn}
   \em
   Sean $M$ una variedad diferenciable, $X$ un campo en $M$, y $\varphi$ su flujo. Se define la \emph{derivada de Lie respecto de X} como la aplicación  \begin{equation*}
     \begin{array}{rcl}
@@ -55,8 +55,8 @@ Vamos a obtener ahora un par de propiedades de la derivada de Lie.
   Vamos a probarlo sólo para el caso en el que $\omega$ es una 2-forma para simplificar su lectura. El cálculo general es completamente análogo.
   En primer lugar,
   \begin{align*}
-    \lim_{t\rightarrow 0}\frac{1}{t}[(\varphi_t^* \omega)(X_1,X_2) - \omega (X_1,X_2)] =\lim_{t\rightarrow 0}\left[\frac{1}{t}[(\varphi_t^* \omega)(X_1,X_2) - \varphi_t^*(\omega(X_1,X_2))]\right] \\
-    + \lim_{t\rightarrow 0}\left[\frac{1}{t}[\varphi_t^*(\omega(X_1,X_2))-\omega(X_1,X_2)]\right].
+    \lim_{t\rightarrow 0}\frac{1}{t}[(\varphi_t^* \omega)(X_1,X_2) - \omega (X_1,X_2)] =&\lim_{t\rightarrow 0}\left[\frac{1}{t}[(\varphi_t^* \omega)(X_1,X_2) - \varphi_t^*(\omega(X_1,X_2))]\right] \\
+    &+ \lim_{t\rightarrow 0}\left[\frac{1}{t}[\varphi_t^*(\omega(X_1,X_2))-\omega(X_1,X_2)]\right].
   \end{align*}
 
   El segundo término de esta expresión es exactamente
@@ -67,7 +67,7 @@ Vamos a obtener ahora un par de propiedades de la derivada de Lie.
   \begin{align*}
      & \left.\lim_{t\rightarrow 0}\left[\frac{1}{t}[(\varphi_t^* \omega)(X_1,X_2) - \varphi_t^*(\omega(X_1,X_2))]\right]\right|_{x}  \\
      & = \lim_{t \rightarrow 0}\frac{1}{t}[\omega_{\varphi_t(x)}(d_x \varphi_t(X_{1,x}),d_x \varphi_t(X_{2,x})) -\omega_{\varphi_t(x)}(X_{1,\varphi_t(x)},X_{2,\varphi_t(x)})] \\
-     & = \lim_{t\rightarrow 0} \omega_{\varphi_t(x)}\left[\frac{1}{t}(d_x \varphi_t(X_{1,x})-X_{1,\varphi_t(x)}),d_x\varphi_t(X_{2,x})\right] + \lim_{t\rightarrow 0} \omega_{\varphi_t(x)}\left[ X_{1,\varphi_t (x)}, \frac{1}{t}(d_x \varphi_t (X_{2,x})-X_{2,\varphi_t(x)}) \right] \\
+     & = \lim_{t\rightarrow 0} \omega_{\varphi_t(x)}\left[\frac{1}{t}(d_x \varphi_t(X_{1,x})-X_{1,\varphi_t(x)}),d_x\varphi_t(X_{2,x})\right] \\\ &+ \lim_{t\rightarrow 0} \omega_{\varphi_t(x)}\left[ X_{1,\varphi_t (x)}, \frac{1}{t}(d_x \varphi_t (X_{2,x})-X_{2,\varphi_t(x)}) \right] \\
      & = -\omega_x(\lie{X}{X_1}_x,X_{2,x})-\omega_x(X_{1,x},\lie{X}{X_2}_x).
   \end{align*}
   Comprobemos que, en efecto
@@ -124,9 +124,9 @@ Obtenemos entonces
 \end{proof}
 
 Antes de seguir, vamos a introducir una nueva operación para formas:
-\begin{defn}[Producto interior]
+\begin{defn}
   \em
-  Sea $M$ una variedad diferenciable y $X$ un campo en $M$, se define el \emph{producto interior} $i_X:\Gamma^{r+1}(M)\rightarrow \Gamma^r(M)$ por 
+  Sea $M$ una variedad diferenciable y $X$ un campo en $M$, se define el \emph{producto interior} o \emph{contracción} $i_X:\Gamma^{r+1}(M)\rightarrow \Gamma^r(M)$ por 
   \begin{equation*}
     i_X \omega(X_1,\dots,X_r)=\omega(X,X_1,\dots,X_r),
   \end{equation*}
@@ -137,30 +137,34 @@ Podemos probar ya una serie de fórmulas, debidas a Élie Cartan\footnote{En la 
 \begin{thm}[Fórmulas de Cartan]
   Sea $X$ un campo en una variedad $M$, y consideramos la derivada de Lie $L_X$, el producto interior $i_X$, y la diferencial exterior $\dd$. Entonces se cumplen las siguientes fórmulas:
   \begin{enumerate}
-    \item $i_{\lie{X}{Y}}=L_X i_Y - i_Y L_X$, para todo $Y \in \mathfrak{X}(M)$,
-    \item $L_X= \dd \circ i_X + i_X \circ \dd $ y
-    \item $L_X\circ \dd = \dd \circ L_X$.
+    \item[$1$.] $i_{\lie{X}{Y}}=L_X i_Y - i_Y L_X$, para todo $Y \in \mathfrak{X}(M)$,
+    \item[$2$.] $L_X= \dd \circ i_X + i_X \circ \dd $ y
+    \item[$3$.] $L_X\circ \dd = \dd \circ L_X$.
   \end{enumerate}
 \end{thm}
 \begin{proof}\leavevmode
-  \begin{enumerate}
-    \item Sean $X_1,\dots,X_r \in \mathfrak{X}(M)$, entonces
+
+    $1$. Si $X_1,\dots,X_r \in \mathfrak{X}(M)$, entonces
+      \begin{equation*}
+	L_X[(i_Y \omega) (X_1,\dots,X_r)] = X \omega(Y,X_1,\dots,X_r)-\sum_{i=1}^r \omega(Y,X_1,\dots,\lie{X}{X_i},\dots,X_r), 
+      \end{equation*}
       \begin{align*}
-	L_X[(i_Y \omega) (X_1,\dots,X_r)] =& X \omega(Y,X_1,\dots,X_r)-\sum_{i=1}^r \omega(Y,X_1,\dots,\lie{X}{X_i},\dots,X_r), \\
-	i_Y[(L_X \omega) (X_1,\dots,X_r)] =&  X \omega(Y,X_1,\dots,X_r) -\sum_{i=1}^r \omega(Y,X_1,\dots,\lie{X}{X_i},\dots,X_r) \\
+	i_Y[(L_X \omega) (X_1,\dots,X_r)] =&  X \omega(Y,X_1,\dots,X_r) \\ 
+	& -\sum_{i=1}^r \omega(Y,X_1,\dots,\lie{X}{X_i},\dots,X_r) \\
 	&- \omega(\lie{X}{Y},X_1,\dots,X_r).
       \end{align*}
       Por tanto
       \begin{align*}
 	i_{\lie{X}{Y}}\omega (X_1,\dots,X_r) &=\omega(\lie{X}{Y},X_1,\dots,X_r) \\
-	&= L_X[(i_Y \omega) (X_1,\dots,X_r)]-i_Y[(L_X \omega) (X_1,\dots,X_r)].
+	&= L_X[(i_Y \omega) (X_1,\dots,X_r)] \\
+	&-i_Y[(L_X \omega) (X_1,\dots,X_r)].
       \end{align*}
-    \item Usando la relación entre el corchete de Lie y la diferencial exterior que obtuvimos antes, tenemos
+
+    $2$. Usando la relación entre el corchete de Lie y la diferencial exterior que obtuvimos antes, tenemos
       \begin{align*}
 	(\dd (i_X \alpha)) (X_1,\dots,X_r) =& \sum_{i}(-1)^{i-1}X_i \alpha(X,X_1,\dots,\hat{X_i},\dots,X_r) \\
 	& + \sum_{i<j} (-1)^{i+j} \alpha (X,\lie{X_i}{X_j},X_1,\dots,\hat{X_i},\dots,\hat{X_j},\dots,X_r),
       \end{align*}
-      y
       \begin{align*}
 	(i_X (\dd \alpha)) (X_1,\dots,X_r) =& \sum_{i}(-1)^{i}X_i \alpha(X,X_1,\dots,\hat{X_i},\dots,X_r) \\
 	& + \sum_{i<j} (-1)^{i+j+1} \alpha (X,\lie{X_i}{X_j},X_1,\dots,\hat{X_i},\dots,\hat{X_j},\dots,X_r) \\
@@ -172,18 +176,18 @@ Podemos probar ya una serie de fórmulas, debidas a Élie Cartan\footnote{En la 
 	& + \sum_j (-1)^{j} (-1)^{j-1} \alpha (X_1,\dots,\lie{X}{X_j},\dots,X_r) \\
 	= & X\alpha(X_1,\dots,X_r) - \sum_j \alpha (X_1,\dots,\lie{X}{X_j},\dots,X_r). 
       \end{align*}
-    \item Utilizando (2) y que $\dd \circ \dd=0$, obtenemos
+    $3$. Utilizando ($2$) y que $\dd \circ \dd=0$, obtenemos
       \begin{align*}
 	L_X \circ \dd &= (i_X \circ \dd) \circ \dd + (\dd \circ i_X) \circ \dd = \dd \circ i_X \circ \dd, \\
 	\dd \circ L_X &= \dd \circ (i_X \circ \dd) + \dd \circ (\dd \circ i_X) = \dd \circ i_X \circ \dd,
       \end{align*}
       luego $L_X \circ \dd= \dd \circ L_X$.
-  \end{enumerate}
 \end{proof}
 
 \section{Campos y formas dependientes del tiempo} \label{sec:tiempo}
+Hasta ahora hemos tratado con campos tangentes a una variedad diferenciable, que de forma natural nos dan ecuaciones diferenciales \emph{autónomas} sobre esta variedad. Sin embargo, en algún uso posterior, especialmente en la demostración del teorema de Darboux (teorema \ref{tdarboux}), vamos a necesitar tratar ecuaciones \emph{no} autónomas, es decir, ecuaciones diferenciales que dependan de un parámetro extra, generalmente el tiempo. Para ello, es necesario introducir los campos y las formas dependientes del tiempo.
 
-  \begin{defn}[Campos y formas dependientes del tiempo] \leavevmode
+  \begin{defn} \leavevmode
     \em 
     Sea $ J\subset \RR $ un intervalo abierto y $ M $ una variedad diferenciable:
     \begin{enumerate}
@@ -206,38 +210,39 @@ Podemos probar ya una serie de fórmulas, debidas a Élie Cartan\footnote{En la 
       \left. \frac{d}{dt}\right|_{t=t_0} \alpha_t = \lim_{h\rightarrow 0}\frac{\alpha_{t_0+h}-\alpha_{t_0}}{h}.
     \end{equation*}
 
-  El siguiente teorema nos permite integrar campos dependientes del tiempo:
+    El siguiente teorema nos permite integrar campos dependientes del tiempo. Por brevedad de exposición omitimos la demostración, que puede encontrarse en \cite{lee}.
   \begin{thm}
     Sea $X:J\times M \rightarrow TM$ un campo dependiente del tiempo. Existen un abierto $V\subset J\times J\times M$ y una función $\varphi:V\rightarrow M$ tal que para cada $s\in J$ y para cada $x\in M$, el conjunto $V^{(s,x)}=\left\{ t\in J | (t,s,x) \in V \right\}$ es un intervalo abierto que contiene a $s$ y la curva $\gamma:V^{(s,x)}\rightarrow M$ definida por $\gamma(t)=\varphi(t,s,x)$ es la única solución maximal al problema de valor inicial
     \begin{align*}
       \begin{cases}
-      \gamma'(t)&=X_{t,\gamma(t)}, \\
-      \gamma(s)&=x.
+      \gamma'(t)=X_{(t,\gamma(t))}, \\
+      \gamma(s)=x.
     \end{cases}
     \end{align*}
   \end{thm}
     Equivalentemente, podemos ver el problema de valor inicial en la siguiente forma:
     \begin{align*}
       \begin{cases}
-      \parcial{\varphi}{t}(t,s,x)&=X_{t,\varphi(t,s,x)}, \\
-      \varphi(s,s,x)&=x.
+      \parcial{\varphi}{t}(t,s,x)=X_{(t,\varphi(t,s,x))}, \\
+      \varphi(s,s,x)=x.
     \end{cases}
     \end{align*}
-    Esta $\varphi$ recibe el nombre de \emph{flujo dependiente del tiempo}. Nótese que cada $\varphi(t,s,\bullet)$ es una aplicación diferenciable de un abierto de $M$ en $M$, pero no tiene por qué ser un difeomorfismo, es decir, en general el flujo no es completo.
+    Esta $\varphi$ recibe el nombre de \emph{flujo dependiente del tiempo}. Nótese que cada $\varphi(t,s,\bullet)$ es una aplicación diferenciable de un abierto de $M$ en $M$ que denotaremos $\varphi_{t,s}$, pero que no tiene por qué ser un difeomorfismo, es decir, en general el flujo no es completo. Aunque aquí no lo detallemos, es sencillo probar que este flujo tiene una \emph{ley de aditividad}:
+    \begin{equation*}
+      \varphi_{t_2,t_1}\circ \varphi_{t_1,t_0}(x)=\varphi_{t_2,t_0}(x).
+    \end{equation*}
 
   Ahora podemos generalizar la derivada de Lie de formas para campos dependientes del tiempo:
   \begin{equation*}
     L_{X_{t}}\alpha=\lim_{h\rightarrow 0}\frac{\varphi^*_{t+h,t} \alpha - \alpha}{h},
   \end{equation*}
   para $x\in M$.
-  
-  Finalmente, tenemos una fórmula que nos relaciona la derivada temporal con la derivada de Lie de formas.
+  Esto nos da una fórmula que nos relaciona la derivada temporal con la derivada de Lie de formas.
   \begin{prop}
     Sea $ X:J\times M \rightarrow TM $ un campo dependiente del tiempo y $ \varphi:V\rightarrow M $ el flujo dependiente del tiempo asociado. Si $\alpha_t$ es una $r$-forma dependiente del tiempo, entonces para cualquier $(t_1,t_0,x)\in V$ 
    \begin{equation*}
-     \left.\frac{d}{dt}\right\lvert _{t=t_1}\left(\varphi^*_{t,t_0} \alpha_t\right)_x = \left(\varphi^*_{t_1,t_0} \left( L_{X_{t_1}}\alpha_{t_1} + \left.\frac{d}{dt}\right\lvert_{t=t_1}\alpha_t\right) \right)_x,
+     \left.\frac{d}{dt}\right\lvert _{t=t_1}\left(\varphi^*_{t,t_0} \alpha_t\right)_x = \left[\varphi^*_{t_1,t_0} \left( L_{X_{t_1}}\alpha_{t_1} + \left.\frac{d}{dt}\right\lvert_{t=t_1}\alpha_t\right) \right]_x.
    \end{equation*}
-   donde $\varphi_{t,s}=\varphi(t,s,\bullet)$. 
 \end{prop}
    Podemos ver esta fórmula en una notación más compacta:
 
@@ -261,7 +266,7 @@ Podemos probar ya una serie de fórmulas, debidas a Élie Cartan\footnote{En la 
     \end{equation*}
     Ahora, por la regla de la cadena
     \begin{equation*}
-      \left. \frac{d}{dt}\right|_{t=t_1}F(t,t)=\parcial{F}{u}(t_1,t_1)+\parcial{F}{v}(t_1,t_1)=\left(\varphi^*_{t_1,t_0}(L_{X_{t_1}}\alpha_{t_1})\right)_x+\left. \frac{d}{dt}\right|_{t=t_1}(\varphi^*_{t_1,t_0}\alpha_t)_x.
+      \left. \frac{d}{dt}\right|_{t=t_1}F(t,t)=\parcial{F}{u}(t_1,t_1)+\parcial{F}{v}(t_1,t_1)=\left[\varphi^*_{t_1,t_0}(L_{X_{t_1}}\alpha_{t_1})\right]_x+\left. \frac{d}{dt}\right|_{t=t_1}(\varphi^*_{t_1,t_0}\alpha_t)_x.
     \end{equation*}
     «Sacando factor común» a $\varphi^*_{t_1,t_0}$, obtenemos lo que queríamos probar.
   \end{proof}

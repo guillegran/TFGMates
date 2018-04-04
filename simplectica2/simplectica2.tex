@@ -1,6 +1,6 @@
 \section{Espacios vectoriales simplécticos}\label{sec:vectoriales}
 En esta sección repasamos algunos conceptos de álgebra lineal necesarios para estudiar geometría simpléctica. Introduciremos la noción de \emph{espacio vectorial simpléctico} y veremos algunas de sus propiedades. Muchos de los resultados aquí expuestos pueden leerse más desarrollados en \cite{algebra}.
-\begin{defn}[Espacio vectorial simpléctico]
+\begin{defn}
   \em
 Un \emph{espacio vectorial simpléctico} es un par ordenado $(V,\omega)$, donde $V$ es un espacio vectorial sobre $\RR$ y 
 	\[
@@ -21,8 +21,7 @@ Un \emph{espacio vectorial simpléctico} es un par ordenado $(V,\omega)$, donde 
 	\end{array}\right),
       \]
       donde $I_n$ es la matriz identidad $n \times n$.
-    \item Si $(V,\omega)$ es un espacio vectorial simpléctico de dimensión finita, entonces $\dim(V)=2n$ para cierto $n \in \NN$.
-    \item Sea $(V,\omega)$ un espacio vectorial simpléctico. Se dice que $\mathscr{B}\subset V$ es una \emph{base simpléctica} de $V$ si la matriz asociada a $\omega$ en $\mathscr{B}$ es
+    \item Si $(V,\omega)$ es un espacio vectorial simpléctico de dimensión finita, entonces $\dim(V)=2n$ para cierto $n \in \NN$. En tal caso, se dice que $\mathscr{B}\subset V$ es una \emph{base simpléctica} de $V$ si la matriz asociada a $\omega$ en $\mathscr{B}$ es
 \[
   J_n :=
 \left(
@@ -39,7 +38,7 @@ Un \emph{espacio vectorial simpléctico} es un par ordenado $(V,\omega)$, donde 
 \end{enumerate}
 \paragraph{\bf Aplicaciones simplécticas}\mbox{}
 
-  Sean $(V,\omega)$ y $(V',\omega')$ espacios vectoriales simplécticos, decimos que una aplicación lineal $f:V \rightarrow V'$ es \emph{simpléctica} si
+  Sean $(V,\omega)$ y $(V',\omega')$ espacios vectoriales simplécticos. Decimos que una aplicación lineal $f:V \rightarrow V'$ es \emph{simpléctica} si
   \[
     \omega'(f(v),f(w)) = \omega(v,w)
   \]
@@ -63,24 +62,24 @@ En el caso en que $V$ y $V'$ tienen la misma dimensión, entonces $f$ es un isom
   Toda aplicación lineal simpléctica tiene determinante $1$.
 \end{prop}
 \begin{proof}
-  Sea $\Omega_n$ la forma simpléctica canónica, $\Lambda=\Omega_n \wedge \overset{(n)}{\cdots} \wedge \Omega_n$ es una forma de grado máximo, luego, por el teorema del determinante, $f^*(\Lambda)=\det(f) \Lambda$. Ahora, como $f$ es simpléctica, 
+  Si $\Omega_n$ es la forma simpléctica canónica, entonces $\Lambda=\Omega_n \wedge \overset{(n)}{\cdots} \wedge \Omega_n$ es una forma de grado máximo, luego, por el teorema del determinante, $f^*(\Lambda)=\det(f) \Lambda$. Ahora, como $f$ es simpléctica, 
   \begin{equation*}
     f^*(\Lambda) = (\Omega_n \circ f) \wedge \overset{(n)}{\cdots} \wedge (\Omega_n \circ f)=\Omega_n \wedge \overset{(n)}{\cdots} \wedge \Omega_n = \Lambda.
   \end{equation*}
   Por tanto, $\det(f)=1$.
 \end{proof}
-\section{Variedades simplécticas y simplectomorfismos}\label{sec:variedades}
+\section{Variedades simplécticas}\label{sec:variedades}
 Una vez repasados los conceptos básicos de la geometría lineal simpléctica, estamos preparados para entender lo que son las \emph{variedades simplécticas} y estudiar las propiedades que exhiben.
 \begin{defn}
   \em
   Una \emph{variedad simpléctica} es un par ordenado $(M,\omega)$ donde $M$ es una variedad diferenciable de dimensión $2n$ y $\omega \in \Gamma^2(M)$ es cerrada y no degenerada (para todo $x \in M$, $\omega_x$ es no degenerada). 
 \end{defn}
 
-De la propia definición de variedad simpléctica podemos ya deducir unas cuantas restricciones para lo que puede y lo que no puede ser una variedad simpléctica. En primer lugar, claramente todas tienen que tener dimensión par, ya que lo hemos impuesto por definición, aunque venía motivado del hecho de que solo en dimensión par podemos tener matrices antisimétricas no degeneradas. Veamos entonces un primer ejemplo de variedad simpléctica, a parte del ya estudiado espacio simpléctico estándar al que trivialmente se le puede dotar de la estructura de variedad simpléctica.
+De la propia definición de variedad simpléctica podemos ya deducir unas cuantas restricciones para lo que puede y lo que no puede ser una variedad simpléctica. En primer lugar, claramente todas tienen que tener dimensión par, ya que lo hemos impuesto por definición, aunque venía motivado del hecho de que solo en dimensión par podemos tener matrices antisimétricas no degeneradas. Veamos entonces un primer ejemplo de variedad simpléctica, a parte del ya estudiado espacio simpléctico estándar, al que trivialmente se le puede dotar de la estructura de variedad simpléctica.
 
 \begin{ejemplo}
   \em
-  Podemos dar un ejemplo de variedad simpléctica si consideramos la esfera $\SF^2$ y su 2-forma diferencial $\omega$ nunca nula que sabemos que tiene por ser orientable. Si consideramos $\SF^2$ sumergida en $\RR^3$ como la esfera de radio 1, la expresión concreta de esta forma es
+  Podemos dar un ejemplo de variedad simpléctica si consideramos la esfera $\SF^2$ y su 2-forma diferencial $\omega$ nunca nula que sabemos que tiene por ser orientable. Si vemos $\SF^2$ sumergida en $\RR^3$ como la esfera de radio 1, la expresión concreta de esta forma es
   \begin{equation*}
     \omega=x\dd y \wedge \dd z - y \dd x \wedge \dd z + z \dd x \wedge \dd y.
   \end{equation*}
@@ -120,7 +119,6 @@ De la propia definición de variedad simpléctica podemos ya deducir unas cuanta
     \dd z= -\sin \theta \dd \theta,
   \end{cases}
   \end{equation*}
-  y
   \begin{equation*}
     \begin{cases}
       \dd x \wedge \dd y = -\sin \theta \cos \theta \dd \phi \wedge \dd \theta \\
@@ -143,7 +141,6 @@ Vamos a obtener ahora algunas condiciones que tienen que cumplir las variedades 
 \begin{proof}
   Como $\omega$ es no degenerada, $\omega^n=\omega \wedge \overset{(n)}{\cdots} \wedge \omega$ es una forma de grado máximo nunca nula, luego la variedad es orientable.
 \end{proof}
-
 A esta $\omega^n$ se le suele llamar \emph{volumen de Liouville} de $M$ ya que, aunque aquí no lo desarrollemos, está relacionada con el elemento de volumen en $M$ si definieramos en ésta una estructura riemanniana.
 
 \begin{prop}
@@ -156,7 +153,6 @@ A esta $\omega^n$ se le suele llamar \emph{volumen de Liouville} de $M$ ya que, 
   \end{equation*}
   Pero $M$ es compacta y $\omega^n$ es una forma diferencial de grado máximo, luego $\int_M \omega^n$ no puede ser igual a $0$. Por tanto, $\omega$ es cerrada y no es exacta, luego $[\omega]\neq 0$ y $H^2(M) \neq \{0\}$.
 \end{proof}
-
 Como consecuencia del resultado anterior, las esferas de dimensión superior a $2$ no admiten una estructura simpléctica. En efecto, tenemos el siguiente teorema:
 
 \begin{thm}
@@ -164,11 +160,11 @@ Como consecuencia del resultado anterior, las esferas de dimensión superior a $
 \end{thm}
 
 \begin{proof}
-  Sean $\omega$ una 2-forma en $\SF^n$, $n>2$, $x\in \SF^n$ y $U$ un disco entorno de $x$. Entonces existe una 1-forma $\alpha$ definida en $U$ tal que $\omega=\dd \alpha$ en $U$. Sea $\theta$ una función meseta que valga 1 en un entorno $V\subset U$ de $x$ relativamente compacto de $U$ y $0$ fuera de $U$, la forma 
+  Si $\omega$ es una 2-forma en $\SF^n$, $n>2$, $x\in \SF^n$ y $U$ es un disco entorno de $x$, entonces existe una 1-forma $\alpha$ definida en $U$ tal que $\omega=\dd \alpha$ en $U$. Sea ahora $\theta$ una función meseta que valga 1 en un entorno $V\subset U$ de $x$ relativamente compacto de $U$ y $0$ fuera de $U$. La forma 
   \begin{equation*}
     \omega_1=\omega - \dd(\theta \alpha)
   \end{equation*}
-  es cerrada con soporte compacto en $\SF^n \backslash \{x\}$, que es difeomorfa, por proyección estereográfica $\varphi$, a $\RR^n$. Por tanto, existe una 1-forma $\beta$ de $\RR^n$ tal que $\dd \beta = \varphi^* \omega_1$. Con todo esto, tenemos
+  es cerrada con soporte compacto en $\SF^n \backslash \{x\}$, que es difeomorfa, por proyección estereográfica $\varphi$, a $\RR^n$. Por tanto, existe una 1-forma $\beta$ de $\RR^n$, con soporte compacto, tal que $\dd \beta = \varphi^* \omega_1$. Con todo esto, tenemos
   \begin{equation*}
     \omega=\dd\left(\theta \alpha + \left( \varphi^{-1} \right)^* \beta \right) ,
   \end{equation*}
@@ -178,10 +174,10 @@ $    H^2(\SF^n)= \{0\}$.
 
 \paragraph{\bf Teorema de Darboux}\mbox{}
 
-Prosiguiendo el estudio de las variedades simplécticas más allá de la propia definición, nos encontramos con un resultado muy fuerte, central en toda la geometría simpléctica: las formas simplécticas son localmente constantes. Esto establece una diferenciación clara con la geometría riemanniana, donde existen invariantes locales, como la curvatura, de modo que pedirle a una forma riemanianna que sea localmente constante es casi tanto como pedirle a la variedad que sea plana. Sin embargo, en geometría simpléctica no hay invariantes locales. 
+Prosiguiendo el estudio de las variedades simplécticas más allá de la propia definición nos encontramos con un resultado muy fuerte, central en toda la geometría simpléctica: las formas simplécticas son localmente constantes. Esto establece una diferenciación clara con la geometría riemanniana, donde existen invariantes locales, como la curvatura, de modo que pedirle a una forma riemanianna que sea localmente constante es casi tanto como pedirle a la variedad que sea plana. Sin embargo, en geometría simpléctica la situación es distinta ya que no hay invariantes locales. 
 
-\begin{thm}[Darboux]
- Sean $M$ una variedad diferenciable y $\omega$ una 2-forma cerrada y no degenerada en $M$. Entonces, para todo $x\in M$ existe una carta $(U,\varphi)$ en $x$ tal que $\varphi^* \omega$ tiene coeficientes constantes.
+\begin{thm}[Darboux]\label{tdarboux}
+ Sean $M$ una variedad diferenciable y $\omega$ una $2$-forma cerrada y no degenerada en $M$. Entonces, para todo $x\in M$ existe una carta $(U,\varphi)$ en $x$ tal que $\varphi^* \omega$ tiene coeficientes constantes.
 \end{thm}
 
 \begin{proof}
@@ -189,8 +185,7 @@ Prosiguiendo el estudio de las variedades simplécticas más allá de la propia 
   \begin{equation*}
     \omega_t=t\omega_1 + (1-t) \omega = \omega + t(\omega_1-\omega),
   \end{equation*}
-  para cada $t\in \RR$. Como $\omega_{t,x}=\omega_x$, para todo $t \in \RR$, $\omega_t$ es no degenerada en $x$. Por tanto, sea $J$ intervalo abierto acotado tal que $[0,1]\in J$, existe un entorno $U \subset M$ de $x$ en el que $\omega_t$ es no degenerada para cada $t\in \bar{J}$.
-
+  para cada $t\in \RR$. Como $\omega_{t,x}=\omega_x$, para todo $t \in \RR$, $\omega_t$ es no degenerada en $x$. Por tanto, si $J$ es un intervalo abierto acotado tal que $[0,1]\in J$, existe un entorno $U \subset M$ de $x$ en el que $\omega_t$ es no degenerada para cada $t\in \bar{J}$.
   Ahora, como $\omega_1-\omega$ es cerrada, podemos tomar $U$ tal que sea difeomorfo a $\RR^{2n}$, luego existirá una 1-forma $\alpha$ en $U$ tal que $\omega_1-\omega=\dd \alpha$. Además, como $\alpha$ está definida salvo una constante, podemos asumir $\alpha_x=0$.
 
   Para $t \in J$, sea $X_t$ el campo dependiente del tiempo tal que $i_{X^t}\omega_t= - \alpha$ y con $X_{t,x}=0$. Ahora, si $\varphi:V\rightarrow U$ es el flujo dependiente del tiempo asociado a $X$, entonces $\varphi(t,0,x)=x$ para todo $t\in J$, luego $J\times \left\{ 0 \right\}\times \left\{ x \right\} \subset V$. Como $V$ es abierto en $J\times J\times M$ y $[0,1]$ es compacto, existe un entorno $U_0$ de $x$  tal que $[0,1]\times \left\{ 0 \right\}\times U_0 \subset V$. 
@@ -211,14 +206,14 @@ Prosiguiendo el estudio de las variedades simplécticas más allá de la propia 
 Una carta $(U,(q,p))$ de este tipo se llama \emph{carta de Darboux}.
 \end{corol}
 \begin{proof}
-  Basta tomar la carta $(U,\varphi)$, dada por el teorema de Darboux, para la cual la forma $\varphi^*\omega$ es constante. Si tomamos ahora la aplicación lineal $A:\RR^{2n}\rightarrow \RR^{2n}$, que diagonaliza $\varphi^*\omega$ a la forma $\Omega_n$, basta tomar la carta $\xx=(q,p)$ para la cual el siguiente diagrama conmuta
+  Basta tomar la carta $(U,\varphi)$, dada por el teorema de Darboux, para la cual la forma $\varphi^*\omega$ es constante. Tomamos ahora la aplicación lineal $A:\RR^{2n}\rightarrow \RR^{2n}$, que diagonaliza $\varphi^*\omega$ a la forma $\Omega_n$, y las coordenadas $\xx=(q,p)$ para las cuales el siguiente diagrama conmuta
   \begin{center}
     \begin{tikzcd}
-      U \arrow{r}{\varphi}\arrow{rd}[anchor=north,rotate=-30]{\xx} & \RR^{2n}\arrow{d}[anchor=west]{\psi} \\ 
+      U \arrow{r}{\varphi}\arrow{rd}[anchor=north,rotate=-30]{\xx} & \RR^{2n}\arrow{d}[anchor=west]{A} \\ 
        &\RR^{2n}.
      \end{tikzcd}
    \end{center}
-   De modo que en $U$ podemos escribir $\omega=\xx^*\Omega_n=\sum_{i=1}^n \dd p_i \wedge \dd q_i$.
+   Entonces en la carta $(U,\xx)$ podemos escribir $\omega=\xx^*\Omega_n=\sum_{i=1}^n \dd p_i \wedge \dd q_i$.
 \end{proof}
 
 \paragraph{\bf Simplectomorfismos}\mbox{}
@@ -236,7 +231,7 @@ Una propiedad básica de los simplectomorfismos es que preservan las cartas de D
   Sean $(M,\omega)$ y $(M',\omega')$ variedades simplécticas y $f:M \rightarrow M'$ una aplicación diferenciable. Entonces $f$ es un simplectomorfismo si y sólo si, para cada $x \in M$, si $(U,(q,p))$ es una carta de Darboux en $x$, entonces $(f(U),(q\circ f, p \circ f))$ es una carta de Darboux en $f(x)$.
 \end{prop}
 \begin{proof}\leavevmode
-Basta ver que
+Basta darse cuenta de que
 \begin{equation*}
   \sum_{i=1}^n \dd (p_i \circ f) \wedge \dd (q_i \circ f) = \sum_{i=1}^n f^* (\dd p_i \wedge \dd q_i) = f^* \left( \sum_{i=1}^n \dd p_i \wedge \dd q_i \right) = f^* \omega
 \end{equation*}
@@ -257,7 +252,7 @@ Sea $(M,\omega)$ una variedad simpléctica. Análogamente a lo visto en la fórm
       \xi & \longmapsto & \omega(\xi,\bullet),
       \end{array} 
   \end{equation*}
-es un isomorfismo lineal entre campos y 1-formas. Resulta que a cada campo $X$ le podemos asignar la forma $i_X \omega$. Veremos en seguida como esta propiedad, junto con la fórmula de Cartan nos va a permitir obtener resultados muy interesantes.
+es un isomorfismo lineal entre campos y 1-formas. Resulta que a cada campo $X$ le podemos asignar la forma $i_X \omega$. Veremos enseguida como esta propiedad, junto con la fórmula de Cartan nos va a permitir obtener resultados muy interesantes.
 
 En primer lugar, observemos que si $f_t$ es una familia uniparamétrica de simplectomorfismos y $X$ es su generador infinitesimal, entonces
 \begin{equation*}
@@ -311,13 +306,13 @@ de modo que el campo de hamiltoniano $F$ tiene la forma
       \mathscr{C}^{\infty}(M)\arrow{r}{X^\bullet} & \mathfrak{X}_{\omega}(M)  \arrow{r}{[i_{\bullet}\omega]} & H^1(M),  
     \end{tikzcd}
   \end{center}
-  donde, precisamente $\ker([i_{\bullet}\omega])=\mathrm{im}(X^{\bullet})$ es el conjunto de campos hamiltonianos.
+  donde precisamente $\ker([i_{\bullet}\omega])=\mathrm{im}(X^{\bullet})$ es el conjunto de campos hamiltonianos.
   Si $H^1(M)=0$ (en particular, si $M$ es simplemente conexo), entonces todo campo simpléctico es hamiltoniano. Como consecuencia, todo campo simpléctico es localmente hamiltoniano. Es decir, si $X$ es un campo simpléctico, en todo punto $x\in M$ podemos tomar un entorno $U$ simplemente conexo en el que hay una función $F:U\rightarrow M$ tal que $i_X\omega=\dd F$ en $U$.
 
 \section{Corchete de Poisson}\label{sec:poisson}
 Podemos seguir sacándole jugo a los campos hamiltonianos y definir una nueva estructura en las variedades simplécticas. En esta sección veremos que toda variedad simpléctica es una \emph{variedad de Poisson}.
 
-\begin{defn}[Corchete de Poisson]
+\begin{defn}
   \em
   Sea $(M,\omega)$ una variedad simpléctica y $F,G: M \rightarrow \RR$. Se define el \emph{corchete de Poisson de $F$ y $G$} como la función
 \begin{equation*}
@@ -334,7 +329,7 @@ para cada $x \in M$.
 \end{prop}
 \begin{proof}\leavevmode
   \begin{enumerate}
-    \item La primera igualdad es inmediata y la segunda es por la definición de $X^G$.
+    \item $\pois{F}{G}=X^F(G)=\dd G(X^F) = i_{X^G}(X^F)=\omega(X^G,X^F)$.
     \item Por las fórmulas de Cartan:
       \begin{align*}
 	i_{\lie{X^F}{X^G}} \omega & =  L_{X^F}(i_{X^G}\omega) - i_{X^G}(L_{X^F} \omega) \\ 
@@ -348,7 +343,7 @@ para cada $x \in M$.
 Localmente, si tomamos una carta de Darboux $(q,p)$ en un punto $x\in M$, podemos escribir
   \begin{align*}
     \pois{F}{G} & = \dd G (X^F) = \left( \sum_{i=1}^n \parcial{G}{q_i} \dd q_i + \parcial{G}{p_i} \dd p_i \right) \left( \sum_{i=1}^n \parcial{F}{p_i} \deriv{q_i} - \parcial{F}{q_i} \deriv{p_i}\right) \\ 
-    & =\sum_{i=1}^n \parcial{F}{p_i} \parcial{G}{q_i} - \parcial{F}{q_i} \parcial{G}{p_i}.
+    & =\sum_{i=1}^n\left( \parcial{F}{p_i} \parcial{G}{q_i} - \parcial{F}{q_i} \parcial{G}{p_i}\right).
   \end{align*}
   Ésta es la forma del corchete de Poisson que se suele ver en mecánica clásica. Observamos también las relaciones
   \begin{equation*}
@@ -389,10 +384,10 @@ Localmente, si tomamos una carta de Darboux $(q,p)$ en un punto $x\in M$, podemo
    \end{equation*}
    es decir, $\pois{A}{\bullet}$ es una derivación.
 \end{enumerate}
-En particular las propiedades $1$-$3$, nos dicen que $(\mathscr{C}^{\infty}(M),\pois{ }{ })$ es un \emph{álgebra de Lie}. Al añadir la propiedad $4$ decimos que es un \emph{álgebra de Poisson}. 
+En particular, las propiedades $1$-$3$ nos dicen que $(\mathscr{C}^{\infty}(M),\pois{ }{ })$ es un \emph{álgebra de Lie}. Al añadir la propiedad $4$ decimos que es un \emph{álgebra de Poisson}. 
   \end{prop}
   \begin{proof}
-    La demostración de $1$ y $2$ es inmediata del hecho de que $\pois{F}{G}=\omega(X^G,X^F)$.
+    La demostración de $1$ y $2$ es inmediata del hecho de que $\pois{F}{G}=\omega(X^G,X^F)$ y de la linealidad de $X^{\bullet}$.
 
     $3$. Tenemos 
    \begin{align*}
@@ -417,27 +412,27 @@ En particular las propiedades $1$-$3$, nos dicen que $(\mathscr{C}^{\infty}(M),\
   \section{Mecánica en variedades simplécticas}
 Una vez estudiadas las estructuras básicas de las variedades simplécticas, veamos cómo éstas plantean el marco natural en el que estudiar la mecánica clásica, dando lo que se denomina el \emph{formalismo hamiltoniano}. 
 
-En general, un sistema mecánico se compone de tres partes: un conjunto de \emph{estados} o configuraciones, cuyos elementos contienen toda la información sobre el estado del sistema en cierto instante, un conjunto de \emph{observables}, cantidades medibles del sistema, que nos proporcionan información sobre éste, y una \emph{ley de evolución temporal}, que nos dice cómo se comportará el sistema a tiempos futuros. En el caso de la mecánica hamiltoniana, estas partes se pueden dar en el contexto de la geometría simpléctica, a saber, un \emph{sistema mecánico hamiltoniano} se compone de:
+En general, un sistema mecánico se compone de tres partes: un conjunto de \emph{estados} o configuraciones, cuyos elementos contienen toda la información posible sobre el sistema en cierto instante, un conjunto de \emph{observables}, cantidades medibles del sistema, que «extraen» la información sobre éste, y una \emph{ley de evolución temporal}, que nos dice cómo se comportará el sistema a tiempos futuros. En el caso de la mecánica hamiltoniana, estas partes se pueden dar en el contexto de la geometría simpléctica, a saber, un \emph{sistema mecánico hamiltoniano} se compone de:
 
 \paragraph{\textbf{Estados}} El conjunto de estados de un sistema hamiltoniano viene dado por una variedad simpléctica $(M,\omega)$, comúnmente llamada \emph{espacio de fases}.
 
 \paragraph{\textbf{Observables}} Los observables del sistema son las funciones $\mathscr{C}^{\infty}(M)$, que además forman un álgebra de Poisson, como vimos en la sección anterior.
 
-\paragraph{\textbf{Evolución temporal}} La ley de evolución temporal está determinada por una función $H:M\rightarrow \RR$ (característica de cada sistema), llamada \emph{hamiltoniano del sistema}. Las trayectorias del sistema seguirán las curvas integrales del campo $X^H$, luego, localmente, son solución de las ecuaciones de Hamilton:
+\paragraph{\textbf{Evolución temporal}} La ley de evolución temporal está determinada por una función $H:M\rightarrow \RR$ (característica de cada sistema), llamada \emph{hamiltoniano del sistema}. Las trayectorias del sistema seguirán las curvas integrales del campo $X^H$, luego, localmente, son solución de las ecuaciones de Hamilton
   \begin{equation*}
   \begin{cases}
      \dot{q_i}(t) = \parcial{H}{p_i}(t) \\
      \dot{p_i}(t) = -\parcial{H}{q_i} (t).
   \end{cases}
 \end{equation*}
-O, en su forma más compacta:
+O, en su forma más compacta
   \begin{equation*}
     \begin{cases}
       \dot{q_i}(t)= \pois{H}{q_i(t)} \\
       \dot{p_i}(t)= \pois{H}{p_i(t)}.
   \end{cases}
   \end{equation*}
-  El flujo $\varphi^H$ generado por $X^H$ se llama \emph{flujo hamiltoniano} del sistema y contiene toda la información sobre su comportamiento. El hamiltoniano $H$ también determina la evolución temporal de los observables, según la \emph{ecuación de Liouville}:
+  El flujo $\varphi^H$ generado por $X^H$ se llama \emph{flujo hamiltoniano} del sistema y contiene toda la información sobre su comportamiento. El hamiltoniano $H$ también determina la evolución temporal de los observables, según la \emph{ecuación de Liouville}
   \begin{equation*}
     \left.\frac{d}{dt}\right|_{t=0}F(\varphi_t^H(x))=\pois{H}{F}(x).
   \end{equation*}
@@ -447,8 +442,8 @@ O, en su forma más compacta:
   \paragraph{\bf Teorema de recurrencia de Poincaré}\mbox{}
 
   Como todos los campos hamiltonianos son simplécticos, los flujos hamiltonianos preservan la forma $\omega$ y en particular el volumen de Liouville $\omega^n$. Este resultado se conoce clásicamente como el \emph{teorema de Liouville}. A la vista de esto, los sistemas hamiltonianos tendrán una de las características más importantes de los sistemas que preservan el volumen, el \emph{teorema de recurrencia de Poincaré}\footnote{En inglés \textit{Poincaré recurrence theorem}. Nótese que aquí la palabra «recurrencia» no toma el significado habitual en matemáticas (por ejemplo en «construcción de sucesiones por recurrencia»), que se traduce del inglés \textit{recursion}. El diccionario Oxford define \textit{recursion} como \textit{``the repeated application of a recursive procedure or definition''}. Por otro lado, define \textit{recurrence} como \textit{``the fact of ocurring again''}, que podría traducirse también como «repetición» o «reaparición».}:
-\begin{prop}[Teorema de recurrencia de Poincaré]
- Sea $D\subset \RR^n$ acotado y sea $g:D\rightarrow D$ que preserva el volumen. Entonces, para cualquier $U\subset D$ abierto, hay un punto $x\in D$ y un $n\in \NN$, $n>0$, tal que $g^n(x) \in U$.
+  \begin{prop}[Teorema de recurrencia de Poincaré]\label{tpoincare}
+ Sea $D\subset \RR^n$ de volumen finito y sea $g:D\rightarrow D$ que preserva el volumen. Entonces, para cualquier $U\subset D$ abierto, hay un punto $x\in D$ y un $n\in \NN$, $n>0$, tal que $g^n(x) \in U$.
 \end{prop}
 \begin{proof}
   Consideramos la familia
@@ -479,10 +474,10 @@ O, en su forma más compacta:
 \begin{proof}
   Basta hacer los cálculos,
   \begin{equation*}
-    f^*i_{X^H}\omega=f^*\dd H=\dd H \circ f_* = \dd (H\circ f)=i_{X^{H\circ f}}\omega.
+    f^*i_{X^H}\omega=f^*\dd H=\dd H \circ f_* = \dd (H\circ f)=i_{X^{H\circ f}}\omega'.
   \end{equation*}
 \end{proof}
-Vamos a buscar entonces cambios de coordenadas que mantengan las ecuaciones de Hamilton invariantes, es decir, que al escribir las ecuaciones en las nuevas coordenadas obtenga precisamente las ecuaciones de Hamilton del mismo hamiltoniano, expresado en las nuevas coordenadas.
+Vamos a buscar entonces cambios de coordenadas que mantengan las ecuaciones de Hamilton invariantes, es decir, que al escribir las ecuaciones en las nuevas coordenadas se obtengan precisamente las ecuaciones de Hamilton del mismo hamiltoniano, expresado en las nuevas coordenadas.
 \begin{defn}
   \em
   Sean $(M,H)$ un sistema hamiltoniano y $f:M\rightarrow M$ una aplicación diferenciable. Decimos que $f$ es una \emph{transformación canónica} si deja las ecuaciones de Hamilton invariantes, es decir, si $f^*X^H=X^{H\circ f^{-1}}$.
@@ -535,14 +530,15 @@ Vamos a buscar entonces cambios de coordenadas que mantengan las ecuaciones de H
   Luego $(f^{-1})^* \omega = \omega$. Es decir, $f^{-1}$ (y por tanto $f$) es un simplectomorfismo.
 
   $3\Longleftrightarrow 2$. Tenemos,
-  \begin{equation*}
-    \pois{F}{G} \circ f^{-1} = X^{F}(G) \circ f^{-1} = f_* X^F (G \circ f^{-1})
-  \end{equation*}
+  \begin{align*}
+    \pois{F}{G} \circ f^{-1}(x) &= X^{F}G \circ f^{-1}(x) = X^F_{f^{-1}(x)}(G)=X^{F}_{f^{-1}(x)}(G\circ f^{-1}\circ f) \\
+  &=d_{f^{-1}(x)}f[X^F_{f^{-1}(x)}(G\circ f^{-1})]= (f_* X^F)_x (G \circ f^{-1}),
+  \end{align*}
   \begin{equation*}
     \pois{F\circ f^{-1}}{G \circ f^{-1}} = X^{F\circ f^{-1}}(G \circ f^{-1}).
   \end{equation*}
 
-  Por tanto, $\pois{F}{G} \circ f^{-1}=\pois{F\circ f^{-1}}{G \circ f^{-1}}$ si y sólo si $X^{F \circ f^{-1}}= f_* X^{F}$, para cada $F: M \rightarrow \RR$.
+  Por tanto, $\pois{F}{G} \circ f^{-1}=\pois{F\circ f^{-1}}{G \circ f^{-1}}$ para cualesquiera $F,G$ si y sólo si $X^{F \circ f^{-1}}= f_* X^{F}$, para todo $F$.
 \end{proof}
 
 \section{Simetrías y leyes de conservación}
@@ -609,7 +605,8 @@ Otra forma de ver este mismo teorema es la siguiente:
 
 Para entender bien qué queremos decir por las «simetrías» del sistema consideremos la siguiente definición:
 \begin{defn}
-  Sea $(M,H)$ un sistema hamiltoniano y $G$ un grupo. Una $G$-simetría del sistema $(M,H)$ es una acción
+  \em
+  Sea $(M,H)$ un sistema hamiltoniano y $G$ un grupo. Una \emph{$G$-simetría} del sistema $(M,H)$ es una acción
   \begin{align*}
     \varphi :G&\longrightarrow \mathrm{Diff}(M)\\ 
       g &\longmapsto \varphi_g, 
