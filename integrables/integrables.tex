@@ -65,12 +65,12 @@ t & \longmapsto & g_t (x_0).
 \end{array}
 \]
 
-Como los campos son linealmente independientes, $d_t g$ es un isomorfismo lineal para todo $t$ y, por el teorema de la función inversa, $g$ es un difeomorfismo local. Ahora, dado $x\in M$, tomamos una curva $\gamma$ que una $x$ y $x_0$. Por ser $g$ un difeomorfismo local, podemos tomar una sucesión finita de entornos $U_1,\dots,U_r$ que recubran $\gamma$ tales que $x_0 \in U_1$ y $x \in U_r$ y tales que existan unos puntos $x_1,\dots,x_r$ pertenecientes a $U_1,\dots,U_r$, respectivamente, con $x_r=x$, de forma que $g_t(x_i)$ dé un difeomorfismo entre $\RR^n$ y cada uno de los $U_i$. Tomemos ahora unos puntos $y_1,\dots,y_{r-1}$ pertenecientes a $U_1\cap U_2,\dots,U_{r-1}\cap U_r$, respectivamente. Entonces, para cada $i=1,\dots,r-1$, $y_i=g_{s_i}(x_i)=g_{t_i}(x_{i+1})$, para ciertos $s_i, t_i \in \RR^n$, luego $x_{i+1}=g_{s_i-t_i}(x_i)$. Por tanto, 
-$$x=x_{r}=g_{s_{r-1}-t_{r-1}}(x_{r-1})=g_{s_{r-1}-t_{r-1}+s_{r-2}-t_{r-2}+\cdots+s_0-t_0}(x_0).$$ De modo que $g$ es sobreyectiva.
+Como los campos son linealmente independientes, $d_t g$ es un isomorfismo lineal para todo $t$ y, por el teorema de la función inversa, $g$ es un difeomorfismo local. Ahora, dado $x\in M$, tomamos una curva $\gamma$ que una $x$ y $x_0$. Por ser $g$ un difeomorfismo local, para todo $y\in \gamma$ existe un entorno $U$ de $y$ tal que $g_t(y)$ da un difeomorfismo entre $U$ y $\RR^n$. Podemos tomar entonces una sucesión finita de entornos $U_0,\dots,U_r$ que recubran $\gamma$ tales que $x_0 \in U_0$ y $x \in U_r$ y tales que existan unos puntos $x_1,\dots,x_r$ pertenecientes a $U_1,\dots,U_r$, respectivamente, con $x_r=x$, de forma que $g_t(x_i)$ dé un difeomorfismo entre $\RR^n$ y cada uno de los $U_i$. Tomemos ahora unos puntos $y_1,\dots,y_{r}$ pertenecientes a $U_0\cap U_1,\dots,U_{r-1}\cap U_r$, respectivamente. Entonces, para cada $i=1,\dots,r$, $y_i=g_{s_i}(x_{i-1})=g_{t_i}(x_{i})$, para ciertos $s_i, t_i \in \RR^n$, luego $x_{i}=g_{s_i-t_i}(x_{i-1})$. Por tanto, 
+$$x=x_{r}=g_{s_{r}-t_{r}}(x_{r-1})=g_{s_{r}-t_{r}+s_{r-1}-t_{r-1}+\cdots+s_1-t_1}(x_0).$$ De modo que $g$ es sobreyectiva.
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.5\textwidth]{pics/entornos.eps}
+  \includegraphics[width=0.5\textwidth]{pics/entornos2.eps}
   \caption{\small Idea de la demostración de que $g$ es sobreyectiva.}
   \label{fig:entornos}
 \end{figure}
@@ -169,11 +169,11 @@ Terminamos ahora la demostración del Lema \ref{lemtoro}.
 
 Aplicando directamente el Lema \ref{lemtoro} a $M_a$ tenemos que es difeomorfa a $\TT^k\times \RR^{n-k}$ para cierto $k=0,\dots,n$. En particular, si $M_a$ es compacta, entonces $k=n$ y $M_a\cong \TT^n$. Hemos probado entonces la parte $2$ del teorema.
 
-Si consideramos ahora el isomorfismo lineal $B$ (que depende del punto $a$) dado por el diagrama anterior y llamamos $v(a)$ a la primera columna de la matriz asociada a $B$, entonces $B(t,0,\dots,0)=v(a)t$. Podemos dar entonces unas coordenadas $w:M\rightarrow \RR^n$, donde $w$ hace el siguiente diagrama conmutativo
+Si consideramos ahora el isomorfismo lineal $B$ (que depende del punto $a$) dado por el diagrama anterior y llamamos $v(a)$ a la primera columna de la matriz asociada a $B$, entonces $B(t,0,\dots,0)=v(a)t$. Podemos dar entonces unas coordenadas $w:M_a\rightarrow \RR^n$, donde $w$ hace el siguiente diagrama conmutativo
 \begin{center}
   \begin{tikzcd}
     \RR^k\times \RR^{n-k} \arrow{rd}[anchor=north,rotate=-30]{\varpi} \arrow{r}{\mathrm{id}} & \RR^n    \\ 
-    & M. \arrow{u}{w}
+    & M_a. \arrow{u}{w}
   \end{tikzcd}
 \end{center}
 
@@ -181,7 +181,7 @@ Ahora, como el flujo del sistema $\varphi^H$ es igual a $g_1$, el siguiente diag
 \begin{center}
   \begin{tikzcd}
     \RR^n    & \RR \arrow{l}[anchor=south]{v(a) \bullet} \arrow{d}[anchor=west]{\varphi_{\bullet}^H(x)} \\ 
-    &M. \arrow{ul}[rotate=-30]{w} 
+    &M_a. \arrow{ul}[rotate=-30]{w} 
    \end{tikzcd}
  \end{center}
  Por tanto, $w(t)=w(\varphi_t(x))=v(a) t$, luego $\dot w(t)=v(a)$. Como el flujo hamiltoniano deja $M_a$ invariante, queda descrito por las ecuaciones
@@ -234,7 +234,7 @@ Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
 \end{thm}
 
 \begin{proof}
-  En primer lugar, hay que obtener el entorno tubular $U$. Para ello, veamos que hay un entorno $V$ de $M_a$ tal que, para todo $y\in V$, la componente conexa $M_{F(y)}$ del conjunto de nivel que contiene a $y$ es compacta. De hecho, como $F_*$ tiene rango máximo y $M_a$ es compacta, podemos tomar $V$ tal que $M_a\subset V \subset \bar{V} \subset W$, con contenidos estrictos y donde $W$ es un entorno abierto de $M_a$ con adherencia compacta en el que $F_*$ sigue teniendo rango máximo. Por tanto, si $M_{F(y)}$ está contenido totalmente en $V$, al ser cerrado tiene que ser compacto. En caso contrario, si $M_{F(y)}$ corta a $V$ pero no está contenido, por ser conexo debe cortar a la frontera $\mathrm{Fr}(V)$. Ahora, si hubiera una sucesión de puntos $\left\{ y_k \right\}_{k\in \NN}$ tendiendo a un punto de $M_a$ tal que cada $M_{F(y_k)}$ no es compacta, entonces tendríamos una sucesión de puntos $\left\{ z_k \right\}_{k\in \NN}$ en $\mathrm{Fr}(V)$ que, por ser $\mathrm{Fr}(V)$ cerrado, converge a un punto $z\in \mathrm{Fr}(V) \cap M_a$, y esto es absurdo. Por tanto, existe un entorno $V$ de $M_a$ que es una unión de toros de Liouville $M_b$. 
+  En primer lugar, hay que obtener el entorno tubular $U$. Para ello, veamos que hay un entorno $V$ de $M_a$ tal que, para todo $y\in V$, la componente conexa $M_{F(y)}$ del conjunto de nivel que contiene a $y$ es compacta. De hecho, como $F_*$ tiene rango máximo y $M_a$ es compacta, podemos tomar $V$ tal que $M_a\subset V \subset \bar{V} \subset W$, con contenidos estrictos y donde $W$ es un entorno abierto de $M_a$ con adherencia compacta en el que $F_*$ sigue teniendo rango máximo. Por tanto, si $M_{F(y)}$ está contenido totalmente en $V$, al ser cerrado tiene que ser compacto. En caso contrario, si $M_{F(y)}$ corta a $V$ pero no está contenido, por ser conexo debe cortar a la frontera $\mathrm{Fr}(V)$. Ahora, si hubiera una sucesión de puntos $\left( y_k \right)_{k\in \NN}$ tendiendo a un punto de $M_a$ tal que cada $M_{F(y_k)}$ no es compacta, entonces tendríamos una sucesión de puntos $\left( z_k \right)_{k\in \NN}$ en $\mathrm{Fr}(V)$ que, por ser $\mathrm{Fr}(V)$ cerrado, converge a un punto $z\in \mathrm{Fr}(V) \cap M_a$, y esto es absurdo. Por tanto, existe un entorno $V$ de $M_a$ que es una unión de toros de Liouville $M_b$. 
 
   Tomamos ahora un conjunto $B\subset V$ y un disco $D\in \RR^n$ que contenga a $a$ tal que $\left. F\right|_{B}:B\rightarrow D$ es un difeomorfismo y en cada $M_b\subset V$ escojo el punto $x_b\in M_b\cap B$. Sea ahora la aplicación 
   \begin{align*}
@@ -697,7 +697,7 @@ En esta sección damos algunas generalidades sobre los sistemas hamiltonianos co
    Un péndulo esférico consiste en una partícula (aquí supondremos de masa $m=1$) enganchada por una barra rígida de masa despreciable y de longitud 1 a un punto del espacio y bajo la acción de la gravedad. Es decir, es como un péndulo simple, solo que no está restringido a oscilar en un solo plano, sino que puede moverse libremente, ver figura \ref{fig:espendulo}.
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.5\textwidth]{pics/espendulo.png}
+  \includegraphics[width=0.5\textwidth]{pics/espendulo.eps}
   \caption{\small Péndulo esférico}
   \label{fig:espendulo}
 \end{figure}
