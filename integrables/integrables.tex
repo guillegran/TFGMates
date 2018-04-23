@@ -1,19 +1,19 @@
 \section{Teorema de Arnold-Liouville}\label{sec:arnoldliouville}
-A la hora de estudiar sistemas dinámicos, una cuestión interesante a plantearse, con consecuencias prácticas y también de carácter fundamental, es si las ecuaciones del sistema podrán ser «integradas», es decir, si podrán ser resueltas mediante integrales («cuadraturas») de funciones conocidas. Decimos entonces que una ecuación diferencial es \emph{integrable por cuadraturas} si es posible escribir su solución general en términos de sumas, productos, composiciones e integrales de funciones conocidas. 
+A la hora de estudiar sistemas dinámicos, una cuestión interesante a plantearse, con consecuencias prácticas y también de carácter fundamental, es si las ecuaciones del sistema podrán ser «integradas», es decir, si podrán ser resueltas mediante integrales («cua\-dra\-tu\-ras») de funciones conocidas. Decimos entonces que una ecuación diferencial es \emph{integrable por cuadraturas} si es posible escribir su solución general en términos de sumas, productos, composiciones e integrales de funciones conocidas. 
 
 En 1885, Joseph Liouville encontró una condición necesaria para que las ecuaciones de Hamilton de ciertos sistemas hamiltonianos fueran (localmente) integrables por cuadraturas. Décadas más tarde, con la introducción del formalismo geométrico y topológico al estudio de los sistemas dinámicos se descubrirían muchas más cosas interesantes sobre los sistemas que cumplían la condición que Liouville propuso. Destaca especialmente en todo este estudio la teoría de los toros invariantes desarrollada por Vladimir Arnold en 1963. Nace así la teoría de los \emph{sistemas integrables}, cuyos resultados más básicos constituyen el \emph{teorema de Arnold-Liouville}.
 
 \begin{defn}
   \em
-  Sea $(M,H)$ un sistema hamiltoniano con $\dim(M)=2n$. Decimos que $(M,H)$ es \emph{integrable (en el sentido de Liouville)} si existen $F_1(=H),\dots,F_n\in \mathscr{C}^{\infty}(M)$ tales que
+  Sea $(M,H)$ un sistema hamiltoniano con $\dim(M)=2n$. Decimos que $(M,H)$ es \emph{integrable (en el sentido de Liouville)} si existen $F_1(=H),\dots,F_n\in \mathscr{C}^{\infty}(M)$ que
 \begin{enumerate}
   \item son \emph{funcionalmente independientes}, es decir, $\dd F_{1,x}\wedge \dots \wedge \dd F_{n,x}\neq 0$ para casi todo punto\footnote{Como aquí en principio no estamos considerando ninguna medida, con \emph{para casi todo punto} queremos decir en un conjunto \emph{residual} o \emph{comagro}, esto es, que su complementario sea \emph{magro}. Un conjunto se dice \emph{magro} o \emph{de primera categoría de Baire} si es unión numerable de conjuntos diseminados, esto es, de conjuntos cuya adherencia tiene interior vacío. Por ejemplo, el conjunto de los números racionales $\mathbb{Q}\subset\RR$ no es diseminado pero sí es magro en $\RR$. } $x\in M$, 
   \item están \emph{en involución}, esto es, $\pois{F_i}{F_j}=0$ para cada $i,j=1,\dots,n$, y
   \item  los campos $X^{F_i}$ son completos para cada $i=1,\dots,n$. 
 \end{enumerate}
-Nótese que, como $F_1=H$, en particular, todas las funciones $F_1,\dots,F_n$ son integrales primeras del sistema.
+En particular, como $F_1=H$, todas las funciones $F_1,\dots,F_n$ son integrales primeras del sistema.
 
-Si escribimos $F:M\rightarrow \RR^n$ con $F(x)=(F_1(x),\dots,F_n(x))$. Los puntos $x\in M$ en los que $\mathrm{rango} (\dd F_x) =n$ se dicen \emph{puntos regulares} del sistema. Los puntos que no son regulares se dicen \emph{puntos críticos}. Si $x\in M$ es un punto crítico, $F(x)$ se dice un \emph{valor crítico}. Si $\Sigma$ es el conjunto de los puntos críticos, $F(\Sigma)\in \RR^n$ se llama \emph{diagrama de bifurcación} del sistema.
+Si escribimos $F:M\rightarrow \RR^n$ con $F(x)=(F_1(x),\dots,F_n(x))$. Los puntos $x\in M$ en los que $\mathrm{rango} (\dd F_x) =n$ se llaman \emph{puntos regulares} del sistema. Los puntos que no son regulares se llaman \emph{puntos críticos}. Si $x\in M$ es un punto crítico, $F(x)$ se llama \emph{valor crítico}. Si $\Sigma$ es el conjunto de los puntos críticos, el conjunto de los valores críticos $F(\Sigma)\in \RR^n$ se llama \emph{diagrama de bifurcación} del sistema.
  Nótese que, por el teorema de Sard, el diagrama de bifurcación tiene medida nula.
 \end{defn}
 
@@ -42,7 +42,7 @@ $3$. Podemos tomar unas coordenadas $w=(w_1,\dots w_n)$ en $M_a$ de manera que e
     \item $M_a$ es invariante con respecto a cada uno de los $n$ flujos hamiltonianos generados por cada función $F_i$ (luego, en particular lo será respecto del generado por $F_1$).
     \item Como, para cada $x \in M_a$, los campos $X_1|_x,\dots, X_n|_x$ forman una base de $T_x M_a$, sean $X_x, Y_x \in T_x M_a$, entonces $X_x = \sum_{i=1}^n b_i X_i|_x$, $Y_x=\sum_{i=1}^n c_i X_i|_x$. Ahora,
       \[
-	\omega(X_x,Y_x)= \sum_{i,j=1}^n b_i c_j \omega(X_i|_x,X_j|_x) = \sum_{i,j=1}^n b_i c_j \{F_j,F_i\} = 0.
+	\omega(X_x,Y_x)= \sum_{i,j=1}^n b_i c_j \omega(X_i|_x,X_j|_x) = \sum_{i,j=1}^n b_i c_j \{F_i,F_j\} = 0.
       \]
       Por tanto, $\omega$ se anula en $T_x M_a$. 
     \item $M_a$ es una variedad diferenciable de dimensión $n$ con $n$ campos conmutativos dos a dos y linealmente independientes en todo punto de $M_a$. 
@@ -252,17 +252,17 @@ donde las $a_{ik}$ son funciones constantes en cada toro.
 
 Como $\omega$ se anula en el toro, no tiene términos en $\dd \theta_i \wedge \dd \theta_j$. Los términos en $\dd \theta_i \wedge \dd F_j$ serán
 \[
-  \omega\left(\deriv{\theta_i},\deriv{F_j}\right)=\sum_{k=1}^n a_{ik}\cdot \omega\left(X_k,\deriv{F_j}\right)=\sum_{k=1}^n a_{ik} \cdot \dd F_k \left(\deriv{F_j}\right) = \sum_{k=1}^n a_{ik} \delta_{ij}= a_{ij}. 
+  \omega\left(\deriv{\theta_i},\deriv{F_j}\right)=\sum_{k=1}^n a_{ik}\cdot \omega\left(X_k,\deriv{F_j}\right)=-\sum_{k=1}^n a_{ik} \cdot \dd F_k \left(\deriv{F_j}\right) = -\sum_{k=1}^n a_{ik} \delta_{ij}= -a_{ij}. 
 \]
 Por tanto, $\omega$ es de la forma
 \[
-  \omega = \sum_{i,j=1}^n a_{ij} \dd \theta_i \wedge \dd F_j + \sum_{i,j=1}^n b_{ij} \dd F_i \wedge \dd F_j,
+  \omega = \sum_{i,j=1}^n -a_{ij} \dd \theta_i \wedge \dd F_j + \sum_{i,j=1}^n b_{ij} \dd F_i \wedge \dd F_j,
 \]
 con $b_{ij}$ unas ciertas funciones. Además, como $\omega$ es cerrada, el término correspondiente a $\dd \theta_k \wedge \dd F_i \wedge \dd F_j$ debe anularse. Este término es exactamente
 \[
-  \parcial{a_{ki}}{F_j}-\parcial{a_{kj}}{F_i}+\parcial{b_{ij}}{\theta_k}.
+  \parcial{a_{kj}}{F_i}-\parcial{a_{ki}}{F_j}+\parcial{b_{ij}}{\theta_k}.
 \]
-El término $\parcial{a_{ki}}{F_j}-\parcial{a_{kj}}{F_i}$ no depende de las variables angulares, luego las $\parcial{b_{ij}}{\theta_k}$ son constantes al variar los ángulos $\theta_k$. Como las variables $\theta_k$ son angulares, las $b_{ij}$ deben ser periódicas, luego
+El término $\parcial{a_{kj}}{F_i}-\parcial{a_{ki}}{F_j}$ no depende de las variables angulares, luego las $\parcial{b_{ij}}{\theta_k}$ son constantes al variar los ángulos $\theta_k$. Como las variables $\theta_k$ son angulares, las $b_{ij}$ deben ser periódicas, luego
 \[
   \parcial{b_{ij}}{\theta_k}=0
 \]

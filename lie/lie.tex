@@ -15,17 +15,17 @@ Empecemos recordando la definición del corchete de Lie de campos, su estudio de
   \end{equation*}
   donde la composición se entiende si vemos los campos como aplicaciones $\mathscr{C}^{\infty}(M) \rightarrow \mathscr{C}^{\infty}(M)$.
 \end{defn}
-Recordamos también que podemos ver el corchete de Lie de otra forma equivalente. Sea $M$ una variedad diferenciable, $a \in M$, $Y \in \mathfrak{X}(M)$, $\varphi$ un flujo en $M$ y $X$ su generador infinitesimal. Entonces
-\begin{equation*}
-  \lie{X}{Y}_a= \lim_{t\rightarrow 0}\frac{\varphi_{-t,*}(Y_{\varphi_t(a)})-Y_a}{t}.
-\end{equation*}
-En vista de esta fórmula, se define la \emph{derivada de Lie de Y respecto de X} como $L_XY=\lie{X}{Y}$. 
 \begin{figure}[h]
   \centering
   \includegraphics{pics/lie}
   \caption{\small Visión geométrica de la derivada de Lie}
   \label{fig:lie}
 \end{figure}
+Recordamos también que podemos ver el corchete de Lie de otra forma equivalente. Sea $M$ una variedad diferenciable, $a \in M$, $Y \in \mathfrak{X}(M)$, $\varphi$ un flujo en $M$ y $X$ su generador infinitesimal. Entonces
+\begin{equation*}
+  \lie{X}{Y}_a= \lim_{t\rightarrow 0}\frac{\varphi_{-t,*}(Y_{\varphi_t(a)})-Y_a}{t}.
+\end{equation*}
+En vista de esta fórmula, se define la \emph{derivada de Lie de Y respecto de X} como $L_XY=\lie{X}{Y}$. 
 Por último, recordamos otro resultado muy importante que usaremos posteriormente:
 \begin{prop}
   Sea $M$ una variedad diferenciable, sean $\varphi$, $\psi$ flujos en $M$ y sean $X$, $Y$ sus generadores infinitesimales, respectivamente. Entonces los flujos conmutan si y sólo si lo hacen sus generadores infinitesimales (es decir, $\varphi_t \circ \psi_s = \psi_s \circ \varphi_t$ si y sólo si $\lie{X}{Y}=0$).
@@ -138,7 +138,7 @@ Podemos probar ya una serie de fórmulas, debidas a Élie Cartan\footnote{En la 
   Sea $X$ un campo en una variedad $M$, y consideramos la derivada de Lie $L_X$, el producto interior $i_X$, y la diferencial exterior $\dd$. Entonces se cumplen las siguientes fórmulas:
   \begin{enumerate}
     \item[$1$.] $i_{\lie{X}{Y}}=L_X i_Y - i_Y L_X$, para todo $Y \in \mathfrak{X}(M)$,
-    \item[$2$.] $L_X= \dd \circ i_X + i_X \circ \dd $ y
+    \item[$2$.] $L_X= \dd \circ i_X + i_X \circ \dd $,
     \item[$3$.] $L_X\circ \dd = \dd \circ L_X$.
   \end{enumerate}
 \end{thm}
@@ -191,8 +191,10 @@ Hasta ahora hemos tratado con campos tangentes a una variedad diferenciable, que
     \em 
     Sea $ J\subset \RR $ un intervalo abierto y $ M $ una variedad diferenciable:
     \begin{enumerate}
-      \item Un \emph{campo tangente (diferenciable) dependiente del tiempo} de $M$ es una aplicación \[\begin{array}{rcl}X:M\times J & \longrightarrow & TM \\ (x,t) & \longmapsto & (x,X_{t,x}) \end{array} \] que es diferenciable como aplicación entre variedades. 
-      \item Una \emph{forma diferencial (diferenciable) de grado $r$ dependiente del tiempo} de $M$ es una aplicación \[\begin{array}{rcl} \alpha: M \times J & \longrightarrow & \varLambda^r(M) \\ (x,t) &  \longmapsto & (x,\alpha_{t,x}) \end{array}\] tal que la función \[\begin{array}{rcl} \alpha(X_1,\dots,X_r):M\times J & \longrightarrow & \RR \\ (x,t) & \longmapsto & \alpha_{t,x}(X_{1,x}^t,\dots,X_{r,x}^t)\end{array}\] es diferenciable para cualesquiera $r$ campos $X_1,\dots,X_r \in \mathfrak{X}(M)$.
+      \item Un \emph{campo tangente (diferenciable) dependiente del tiempo} de $M$ es una aplicación \[\begin{array}{rcl}X:J\times M & \longrightarrow & TM \\ (t,x) & \longmapsto & (x,X_{t,x}) \end{array} \] que es diferenciable como aplicación entre variedades. 
+      \item Una \emph{forma diferencial (diferenciable) de grado $r$ dependiente del tiempo} de $M$ es una aplicación
+	\[\begin{array}{rcl} \alpha: J \times M & \longrightarrow & \varLambda^r(M) \\ (t,x) &  \longmapsto & (x,\alpha_{t,x}) \end{array}\] tal que la función \[\begin{array}{rcl} \alpha(X_1,\dots,X_r):J\times M & \longrightarrow & \RR \\ (t,x) & \longmapsto & \alpha_{t,x}(X_{1,x}^t,\dots,X_{r,x}^t)\end{array}\]
+	es diferenciable para cualesquiera $r$ campos $X_1,\dots,X_r \in \mathfrak{X}(M)$.
     \end{enumerate}
   \end{defn}
 
@@ -200,10 +202,10 @@ Hasta ahora hemos tratado con campos tangentes a una variedad diferenciable, que
     \em
     Un campo y una forma dependientes del tiempo se expresan en una carta $(U,\xx)$ en la forma
     \begin{align*}
-      X_{t,x} &= \sum X_i(x,t) \left.\deriv{\xx_i}\right|_x \\
-      \alpha_{t,x} &= \sum \alpha_i(x,t) \dd \xx_i |_x.
+      X_{t,x} &= \sum X_i(t,x) \left.\deriv{\xx_i}\right|_x \\
+      \alpha_{t,x} &= \sum \alpha_i(t,x) \dd \xx_i |_x.
     \end{align*}
-    La diferenciabilidad de $X$ y $\alpha$ es equivalente a la de sus componentes $X_i$, $\alpha_i$ como funciones $U\times J \rightarrow \RR$.
+    La diferenciabilidad de $X$ y $\alpha$ es equivalente a la de sus componentes $X_i$, $\alpha_i$ como funciones $J\times U \rightarrow \RR$.
   \end{obs}
   Tiene sentido decir ahora qué entendemos por derivar una forma respecto al tiempo. Sea $\alpha_t$ una $r$-forma dependiente del tiempo, la \emph{derivada temporal} de $\alpha_t$ es
     \begin{equation*}
@@ -227,7 +229,7 @@ Hasta ahora hemos tratado con campos tangentes a una variedad diferenciable, que
       \varphi(s,s,x)=x.
     \end{cases}
     \end{align*}
-    Esta $\varphi$ recibe el nombre de \emph{flujo dependiente del tiempo}. Nótese que cada $\varphi(t,s,\bullet)$ es una aplicación diferenciable de un abierto de $M$ en $M$ que denotaremos $\varphi_{t,s}$, pero que no tiene por qué ser un difeomorfismo, es decir, en general el flujo no es completo. Aunque aquí no lo detallemos, es sencillo probar que este flujo tiene una \emph{ley de aditividad}:
+    Esta $\varphi$ recibe el nombre de \emph{flujo dependiente del tiempo}. Nótese que cada $\varphi(t,s,\bullet)$ es una aplicación diferenciable de un abierto de $M$ en $M$ que denotaremos $\varphi_{t,s}$. Aunque aquí no lo detallemos, es sencillo probar que este flujo sigue una \emph{ley de aditividad}: si $(t_1,t_0,x)\in V$ y $(t_2,t_1,\varphi_{t_1,t_0}(x))\in V$, entonces $(t_2,t_0,x)\in V$ y
     \begin{equation*}
       \varphi_{t_2,t_1}\circ \varphi_{t_1,t_0}(x)=\varphi_{t_2,t_0}(x).
     \end{equation*}
@@ -238,7 +240,7 @@ Hasta ahora hemos tratado con campos tangentes a una variedad diferenciable, que
   \end{equation*}
   para $x\in M$.
   Esto nos da una fórmula que nos relaciona la derivada temporal con la derivada de Lie de formas.
-  \begin{prop}
+  \begin{prop}\label{derivadadeptiempo}
     Sea $ X:J\times M \rightarrow TM $ un campo dependiente del tiempo y $ \varphi:V\rightarrow M $ el flujo dependiente del tiempo asociado. Si $\alpha_t$ es una $r$-forma dependiente del tiempo, entonces para cualquier $(t_1,t_0,x)\in V$ 
    \begin{equation*}
      \left.\frac{d}{dt}\right\lvert _{t=t_1}\left(\varphi^*_{t,t_0} \alpha_t\right)_x = \left[\varphi^*_{t_1,t_0} \left( L_{X_{t_1}}\alpha_{t_1} + \left.\frac{d}{dt}\right\lvert_{t=t_1}\alpha_t\right) \right]_x.

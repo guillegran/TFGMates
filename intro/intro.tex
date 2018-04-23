@@ -1,5 +1,5 @@
 \section*{Introducción}
-Una \em variedad simpléctica \em es una variedad diferenciable de dimensión par en la que se define una forma diferencial $\omega$ cerrada y no degenerada. La \em geometría simpléctica \em es el estudio de las variedades simplécticas y es interesante tanto por sus problemas fundamentales como por su aplicación a la Mecánica Clásica (y por extensión al resto de la Física). La forma $\omega$ induce una correspondencia entre campos y 1-formas, que nos permite obtener campos tangentes a partir de funciones definidas sobre la variedad. Las variedades simplécticas constituyen entonces una forma natural de visualizar los sistemas mecánicos ya que las \em ecuaciones de Hamilton \em interpretan las leyes del movimiento como campos tangentes y, por tanto, intrínsecos a la variedad. 
+Una \em variedad simpléctica \em es una variedad diferenciable de dimensión par en la que se define una $2$-forma diferencial $\omega$ cerrada y no degenerada. La \em geometría simpléctica \em es el estudio de las variedades simplécticas y es interesante tanto por sus problemas fundamentales como por su aplicación a la Mecánica Clásica (y por extensión al resto de la Física). La forma $\omega$ induce una correspondencia entre campos y 1-formas, que nos permite obtener campos tangentes a partir de funciones definidas sobre la variedad. Las variedades simplécticas constituyen entonces una forma natural de visualizar los sistemas mecánicos ya que las \em ecuaciones de Hamilton \em interpretan las leyes del movimiento como campos tangentes y, por tanto, intrínsecos a la variedad. 
 
 Un \em sistema mecánico integrable por cuadraturas \em  es aquel en el que las ecuaciones del movimiento pueden ser resueltas salvo el cálculo de integrales (cuadraturas) de funciones conocidas, de forma que el problema de estudiar el comportamiento del sistema queda (al menos numéricamente) resuelto. El \em teorema de Arnold-Liouville \em nos ofrece una forma de saber si un sistema mecánico es integrable por cuadraturas mediante el estudio de la variedad simpléctica que lleva asociado.
 Tras un desarrollo previo de algunos prerrequisitos de geometría diferencial como son la \em derivada de Lie \em y los \em campos dependientes del tiempo\em, y tras afianzar algunos conceptos del álgebra lineal de los \em espacios vectoriales simplécticos \em (espacios vectoriales en los que se define una forma cuadrática antisimétrica y no degenerada), nos concentramos en el estudio de la geometría simpléctica, para acabar probando los resultados fundamentales que componen la teoría de los sistemas integrables.
@@ -18,9 +18,9 @@ donde $n$ es el número de partículas, $x:\RR \rightarrow \RR^{3n}$ es la traye
 El formalismo newtoniano ofrece una forma muy simple de entender los sistemas mecánicos pero tiene la complicación de que es necesario medir y calcular las tres componentes de la posición y de la velocidad de cada partícula que conforma el sistema. Por verlo con un ejemplo, si queremos describir el movimiento de un barco en un viaje transatlántico deberíamos tomar una referencia cartesiana (tal vez el centro de la Tierra y tres ejes perpendiculares) y describir su posición y velocidad en $\RR^3$ en términos de esta referencia, cuando lo que parece más sencillo es simplemente entender el barco como una partícula moviéndose en la superficie de $\SF^2$ y dar su posición y velocidad en términos de su latitud y longitud.
 Otro ejemplo lo podemos ver si consideramos el movimiento de una peonza. En este caso, aunque la peonza esté compuesta de cuatrillones de partículas, es posible describir su posición sólo con tres ángulos (el de giro respecto a su eje y los dos de orientación de su eje), o equivalentemente, con la rotación de sus ejes propios respecto a los de una referencia inmóvil exterior (un \emph{sistema de laboratorio}), es decir, con un elemento de $\mathrm{SO}(3)$. 
 
-De forma más general, podemos considerar sistemas newtonianos sometidos a \emph{ligaduras} entre las partículas que lo conforman. Las posibilidades de movimiento quedan entonces restringidas a un subconjunto de $\RR^{3n}$. En el caso de que estas ligaduras sean «lo suficientemente buenas» (\emph{holónomas} es el término clásicamente usado en mecánica), es posible entenderlas como unas funciones $f_1,\dots,f_r: \RR^{3n} \rightarrow \RR$, independientes en todo $x \in \RR^{3n}$ ($d_xf_1 \wedge \cdots \wedge d_xf_r \neq 0$), tales que
+De forma más general, podemos considerar sistemas newtonianos sometidos a \emph{ligaduras} entre las partículas que lo conforman. Las posibilidades de movimiento quedan entonces restringidas a un subconjunto de $\RR^{3n}$. En el caso de que estas ligaduras sean «lo suficientemente buenas» (\emph{holónomas} es el término clásicamente usado en mecánica), es posible entenderlas como unas funciones $f_1,\dots,f_r: \RR^{3n} \rightarrow \RR$, independientes en todo $x \in \RR^{3n}$ ($d_xf_1 \wedge \cdots \wedge d_xf_r \neq 0$), que definen el subconjunto de $\RR^{3n}$
 \begin{align*}[left=\empheqlbrace]
-    f_1(x)&=0 \\
+    f_1(x)&=0, \\
     &\vdotswithin{=} \\
     f_r(x)&=0.
 \end{align*}
@@ -63,7 +63,7 @@ La dinámica del sistema lagrangiano viene dada por lo que se conoce como el \em
     T: \RR^{3n} & \longrightarrow \RR \\
     v & \longmapsto \thalf \esc{v}{v}.
   \end{align*}
-  Decimos que el sistema es \emph{conservativo} o, equivalentemente que $F$ es una \emph{fuerza conservativa} si ésta sólo depende de la posición y además es un campo gradiente, es decir, si existe una función $V:\RR^{3n}\rightarrow \RR$ que cumpla $F(x)=-\nabla V(x)$. Esta $V$ toma el nombre de \emph{energía potencial}.
+  Decimos que el sistema es \emph{conservativo} o, equivalentemente que $F$ es una \emph{fuerza conservativa}, si ésta sólo depende de la posición y además es un campo gradiente, es decir, si existe una función $V:\RR^{3n}\rightarrow \RR$ que cumpla $F(x)=-\nabla V(x)$. Esta $V$ toma el nombre de \emph{energía potencial}.
   En un sistema newtoniano conservativo podemos ver la ecuación de Newton en la forma
   \begin{equation*}
     \frac{d}{dt} \left( \left. \parcial{T}{v_i} \right|_{\dot{x}(t)} \right) = \left.-\parcial{V}{x_i}\right|_{x(t)}, \ \ i=1,\dots,3n.
@@ -115,7 +115,7 @@ La dinámica del sistema lagrangiano viene dada por lo que se conoce como el \em
   \end{equation*}
   es decir, $p_i(q,\dot{q})=\sum_{i=1}^m g_{ij}(q) \dot{q_j}$, donde $g_{ij}(q)$ son las componentes de la matriz asociada a $g_x$ en la base $\left\lbrace \deriv{q_i} \right\rbrace$. Por tanto
   \begin{equation*}
-    \parcial{}{\dot{q}_i}p(q,\dot{q})=g_{ji}(q).
+    \parcial{p_i}{\dot{q}_j}(q,\dot{q})=g_{ij}(q).
   \end{equation*}
   Así, $(q,p)$ son unas nuevas coordenadas en $TM$. Ahora, si recordamos que 
   \begin{equation*}
@@ -126,11 +126,11 @@ La dinámica del sistema lagrangiano viene dada por lo que se conoce como el \em
     \parcial{L}{\dot{q}_i}=\sum_{j=1}^m g_{ij}(q)\dot{q}_j=p_i(q,\dot{q}).
   \end{equation*}
 
-  Consideramos ahora una función $H:TM\rightarrow \RR$, que en las coordenadas $(q,\dot{q})$ es 
+  Consideramos ahora una función $H:TM\rightarrow \RR$,
   \begin{equation*}
-    H(q,\dot{q})=\sum_{i=1}^m p_i \dot{q_i} - L(q,\dot{q}),
+    H=\sum_{i=1}^m p_i \dot{q_i} - L(q,\dot{q}),
   \end{equation*}
-  con las $p$ dadas en función de las $\dot{q}$ mediante la relación $p_i(q,\dot{q})=\sum_{i=1}^m g_{ij}(q) \dot{q_j}$. Derivando a ambos lados de la expresión respecto de $\dot{q}_j$ obtenemos
+  con las $p$ relacionadas con las $\dot{q}$ mediante $p_i(q,\dot{q})=\sum_{i=1}^m g_{ij}(q) \dot{q_j}$. Derivando a ambos lados de la expresión respecto de $\dot{q}_j$ obtenemos
   \begin{equation*}
     \sum_{i=1}^m \parcial{H}{p_i}\parcial{p_i}{\dot{q}_j}=\sum_{i=1}^m \parcial{p_i}{\dot{q}_j}\dot{q}_i + p_j - \parcial{L}{\dot{q}_j}
   \end{equation*}
@@ -193,20 +193,25 @@ Usando esta forma se puede construir un isomorfismo lineal, dado $\zeta \in TM$,
   \label{isomorfismo}
   \begin{array}{rcl}
      T_{\zeta}(TM) & \longrightarrow & (T_{\zeta}(TM))^* \\
-    \xi & \longmapsto & \omega(\xi, \bullet).
+    \xi & \longmapsto & \omega(\bullet,\xi)=-\omega(\xi, \bullet).
   \end{array}
 \end{equation}
-Ahora, si $X^H$ es el campo asociado a $\dd H$ por este isomorfismo, es decir, tal que $\dd H=\omega(X^H,\bullet)$, es fácil comprobar que en coordenadas locales se expresará tal y como queríamos:
+Ahora, si $X^H$ es el campo asociado a $\dd H$ por este isomorfismo, es decir, tal que $\dd H=\omega(\bullet,X^H)$, es fácil comprobar que en coordenadas locales se expresa tal y como queríamos:
 \begin{equation*}
   X^H = \sum_{i=1}^m \left( \parcial{H}{p_i} \deriv{q_i} - \parcial{H}{q_i} \deriv{p_i} \right).
 \end{equation*}
-En efecto, si $X^H=\sum_{i=1}^m \left( a_i \deriv{q_i} + b_i \deriv{p_i} \right)$,
+En efecto, si $X^H=\sum_{i=1}^m \left( a_i \deriv{q_i} + b_i \deriv{p_i} \right)$ entonces
 \begin{align*}
-  a_i&=\omega\left(X^H,\deriv{p_i}\right)=\dd H\left( \deriv{p_i} \right)=\parcial{H}{p_i} \\
-  -b_i&=\omega\left(X^H,\deriv{q_i}\right)=\dd H\left( \deriv{q_i} \right)=\parcial{H}{q_i},
+  \omega\left(\deriv{p_i},X^H\right)&=\sum_k\dd p_k\wedge \dd q_k\left( \deriv{p_i},\sum_j a_j\deriv{q_j}+b_j\deriv{p_j} \right)=\sum_{j,k} a_j \dd p_k \wedge \dd q_k \left( \deriv{p_i},\deriv{q_j} \right)=a_i\\
+  \omega\left(\deriv{q_i},X^H\right)&=\sum_k\dd p_k\wedge \dd q_k\left( \deriv{q_i},\sum_j a_j\deriv{q_j}+b_j\deriv{p_j} \right)=\sum_{j,k} b_j \dd p_k \wedge \dd q_k \left( \deriv{q_i},\deriv{p_j} \right)=-b_i,
+\end{align*}
+de modo que
+\begin{align*}
+  a_i&=\omega\left(\deriv{p_i},X^H\right)=\dd H\left( \deriv{p_i} \right)=\parcial{H}{p_i} \\
+  b_i&=-\omega\left(\deriv{q_i},X^H\right)=-\dd H\left( \deriv{q_i} \right)=-\parcial{H}{q_i},
 \end{align*}
 ya que $\dd H = \sum_{i=1}^m\parcial{H}{q_i}\dd q_i + \parcial{H}{p_i}\dd p_i$.
 
-Obsérvese que el único elemento realmente crucial en la construcción de este campo ha sido la 2-forma $\omega$. Una forma de esas características induce sobre $TM$ la estructura de \emph{variedad simpléctica}. El estudio de las variedades simplécticas y sus propiedades es la \emph{geometría simpléctica}. A partir de la sección \ref{sec:vectoriales}, introduciremos el formalismo de la geometría simpléctica, lo que nos permitirá enunciar la \emph{formulación canónica} de la mecánica clásica y resolver alguno de sus problemas.
+Obsérvese que el elemento realmente crucial en la construcción de este campo ha sido la 2-forma $\omega$. Una forma de esas características induce sobre $TM$ la estructura de \emph{variedad simpléctica}. El estudio de las variedades simplécticas y sus propiedades es la \emph{geometría simpléctica}. A partir de la sección \ref{sec:vectoriales}, introduciremos el formalismo de la geometría simpléctica, lo que nos permitirá enunciar la \emph{formulación canónica} de la mecánica clásica y resolver alguno de sus problemas.
 
 
