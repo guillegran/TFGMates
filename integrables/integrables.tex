@@ -3,91 +3,78 @@ A la hora de estudiar sistemas dinámicos, una cuestión interesante a plantears
 
 En 1885, Joseph Liouville encontró una condición necesaria para que las ecuaciones de Hamilton de ciertos sistemas hamiltonianos fueran (localmente) integrables por cuadraturas. Décadas más tarde, con la introducción del formalismo geométrico y topológico al estudio de los sistemas dinámicos se descubrirían muchas más cosas interesantes sobre los sistemas que cumplían la condición que Liouville propuso. Destaca especialmente en todo este estudio la teoría de los toros invariantes desarrollada por Vladimir Arnold en 1963. Nace así la teoría de los \emph{sistemas integrables}, cuyos resultados más básicos constituyen el \emph{teorema de Arnold-Liouville}.
 
-\begin{defn}
+\begin{defn}\label{integrable}
   \em
-  Sea $(M,H)$ un sistema hamiltoniano con $\dim(M)=2n$. Decimos que $(M,H)$ es \emph{integrable (en el sentido de Liouville)} si existen $F_1(=H),\dots,F_n\in \mathscr{C}^{\infty}(M)$ que
+  Sea $(M,H)$ un sistema hamiltoniano con $\dim(M)=2n$. Decimos que $(M,H)$ es \emph{integrable (en el sentido de Liouville)} si existen $F_1,\dots,F_n\in \mathscr{C}^{\infty}(M)$ que
 \begin{enumerate}
   \item son \emph{funcionalmente independientes}, es decir, $\dd F_{1,x}\wedge \dots \wedge \dd F_{n,x}\neq 0$ para casi todo punto\footnote{Como aquí en principio no estamos considerando ninguna medida, con \emph{para casi todo punto} queremos decir en un conjunto \emph{residual} o \emph{comagro}, esto es, que su complementario sea \emph{magro}. Un conjunto se dice \emph{magro} o \emph{de primera categoría de Baire} si es unión numerable de conjuntos diseminados, esto es, de conjuntos cuya adherencia tiene interior vacío. Por ejemplo, el conjunto de los números racionales $\mathbb{Q}\subset\RR$ no es diseminado pero sí es magro en $\RR$. } $x\in M$, 
   \item están \emph{en involución}, esto es, $\pois{F_i}{F_j}=0$ para cada $i,j=1,\dots,n$, y
   \item  los campos $X^{F_i}$ son completos para cada $i=1,\dots,n$. 
 \end{enumerate}
-En particular, como $F_1=H$, todas las funciones $F_1,\dots,F_n$ son integrales primeras del sistema.
+En particular, si $F_1=H$, todas las funciones $F_1,\dots,F_n$ son integrales primeras del sistema.
 
-Si escribimos $F:M\rightarrow \RR^n$ con $F(x)=(F_1(x),\dots,F_n(x))$. Los puntos $x\in M$ en los que $\mathrm{rango} (\dd F_x) =n$ se llaman \emph{puntos regulares} del sistema. Los puntos que no son regulares se llaman \emph{puntos críticos}. Si $x\in M$ es un punto crítico, $F(x)$ se llama \emph{valor crítico}. Si $\Sigma$ es el conjunto de los puntos críticos, el conjunto de los valores críticos $F(\Sigma)\in \RR^n$ se llama \emph{diagrama de bifurcación} del sistema.
- Nótese que, por el teorema de Sard, el diagrama de bifurcación tiene medida nula.
+Si escribimos $F:M\rightarrow \RR^n$ con $F(x)=(F_1(x),\dots,F_n(x))$. Los puntos $x\in M$ en los que $\mathrm{rango} (\dd F_x) =n$ se llaman \emph{puntos regulares} del sistema. Los puntos que no son regulares se llaman \emph{puntos críticos}. Si $x\in M$ es un punto crítico, $F(x)$ se llama \emph{valor crítico}. Por tanto, llamamos \emph{valores regulares} a los valores que no son críticos, es decir, a aquellos $a\in \RR^n$ tales que si $a=F(x)$, entonces $x$ es un punto regular. Si $\Sigma$ es el conjunto de los puntos críticos, el conjunto de los valores críticos $F(\Sigma)\in \RR^n$ se llama \emph{diagrama de bifurcación} del sistema.
+Nótese que, por el teorema de Sard\footnote{El teorema de Sard afirma que si $\Sigma$ denota el conjunto de puntos críticos de una función $f\in \mathscr{C}^k(\RR^n,\RR^m)$, con $k\geq \text{máx}\left\{ n-m+1,1 \right\}$ entonces su imagen $f(\Sigma)$ tiene medida nula.}, el diagrama de bifurcación tiene medida nula.
 \end{defn}
 
 \begin{obs}
   \em
-  De la definición y de la conservación de la energía directamente se deduce que todo sistema con un grado de libertad (y cuyo hamiltoniano sea regular en casi todo punto) es integrable en el sentido de Liouville. Asimismo, un sistema con dos grados de libertad que tenga una cantidad conservada independiente de la energía también será integrable en el sentido de Liouville, ya que las cantidades conservadas dan 0 al evaluar el corchete de Poisson de ellas con el hamiltoniano.
+  De la definición y de la conservación de la energía directamente se deduce que todo sistema con un grado de libertad (y cuyo hamiltoniano sea regular en casi todo punto) es integrable en el sentido de Liouville. Asimismo, un sistema con dos grados de libertad que tenga una cantidad conservada independiente de la energía también será integrable en el sentido de Liouville, ya que las cantidades conservadas dan 0 al evaluar el corchete de Poisson de cada una de ellas con el hamiltoniano.
 \end{obs}
 
 \begin{thm}[Arnold-Liouville]\label{arnold}
-Sea $(M,H)$ un sistema integrable en el sentido de Liouville con $F_1,\dots,F_n$ las funciones en involución. Sea $x\in M$ un punto regular del sistema y sea $a=F(x)$. Sea $M_a$ la componente conexa del conjunto de nivel $F^{-1}(a)$ que contiene a $x$. Supongamos además que todo punto de $M_a$ es regular. Entonces:
+  Sea $(M,H)$ un sistema integrable en el sentido de Liouville con $F_1(=H),\dots,F_n$ las integrales primeras en involución. Sea $a$ un valor regular y el conjunto de nivel $F^{-1}(a)$. Sea $x\in F^{-1}(a)$ y $M_a$ la componente conexa de $F^{-1}(a)$ que contiene a $x$.  Entonces:
 
 $1$. $M_a$ es una variedad diferenciable invariante bajo el flujo del sistema y $\left. \omega \right|_{M_a}=0$.
   
 $2$. $M_a$ es difeomorfa a $\TT^k\times \RR^{n-k}$ para cierto $0 \leq k \leq n$. En particular, si $M_a$ es compacta, $M_a$ es difeomorfa al toro $n$-dimensional $\TT^n$. En este caso, se dice que $M_a$ es un \emph{toro de Liouville}. 
  
-$3$. Podemos tomar unas coordenadas $w=(w_1,\dots w_n)$ en $M_a$ de manera que existen unas velocidades constantes $v(a)=(v_1(a),\dots,v_n(a))$ tales que $\dot w (t)=v$. Como consecuencia, las ecuaciones de Hamilton del sistema son localmente integrables por cuadraturas en un entorno de $x$.
-
+$3$. Podemos tomar unas coordenadas $w=(w_1,\dots, w_n)$ en $M_a$ de manera que existen unas velocidades constantes $v(a)=(v_1(a),\dots,v_n(a))$ tales que $\dot w (t)=v(a)$. 
 \end{thm}
 
  \begin{proof}
   En primer lugar, como $F$ tiene rango máximo en cada punto de $M_a$, por el teorema de la función implícita $M_a$ es una subvariedad regular de $M$ de dimensión $2n-n=n$. 
-  Como $M$ es una variedad simpléctica, para cada $i=1,\dots,n$, podemos definir el campo $X_i=X^{F_i}$. Al ser las $\dd F_i$ linealmente independientes los campos $X_i$ son linealmente independientes. Además, por el teorema de Noether, como para cada $i,j= 1,\dots,n$ $\pois{F_i}{F_j}=0$ (luego es constante), entonces $\lie{X_i}{X_j}=0$. Por esto mismo, la derivada de la función $F_i$ en la dirección de $X_j$ es 0, luego los campos $X_j$ son tangentes a $M_a$.
+  Como $M$ es una variedad simpléctica, para cada $i=1,\dots,n$, podemos definir el campo $X_i=X^{F_i}$. Al ser las $\dd F_i$ linealmente independientes los campos $X_i$ son linealmente independientes. Además, por \ref{proppoisson}, como para cada $i,j= 1,\dots,n$ $\pois{F_i}{F_j}=0$, tenemos que $\lie{X_i}{X_j}=0$ y que $\omega(X_i,X_j)=0$. Por esto mismo, la derivada de la función $F_i$ en la dirección de $X_j$ es 0, luego los campos $X_j$ son tangentes a $M_a$.
 
   De aquí sacamos varias conclusiones:
   \begin{enumerate}
     \item $M_a$ es invariante con respecto a cada uno de los $n$ flujos hamiltonianos generados por cada función $F_i$ (luego, en particular lo será respecto del generado por $F_1$).
-    \item Como, para cada $x \in M_a$, los campos $X_1|_x,\dots, X_n|_x$ forman una base de $T_x M_a$, sean $X_x, Y_x \in T_x M_a$, entonces $X_x = \sum_{i=1}^n b_i X_i|_x$, $Y_x=\sum_{i=1}^n c_i X_i|_x$. Ahora,
-      \[
-	\omega(X_x,Y_x)= \sum_{i,j=1}^n b_i c_j \omega(X_i|_x,X_j|_x) = \sum_{i,j=1}^n b_i c_j \{F_i,F_j\} = 0.
-      \]
-      Por tanto, $\omega$ se anula en $T_x M_a$. 
+    \item Como, para cada $x \in M_a$, los vectores $X_1|_x,\dots, X_n|_x$ forman una base de $T_x M_a$, $\omega$ se anula en $T_x M_a$. 
     \item $M_a$ es una variedad diferenciable de dimensión $n$ con $n$ campos conmutativos dos a dos y linealmente independientes en todo punto de $M_a$. 
   \end{enumerate}
 
   Esto prueba la parte $1$ del teorema. Para continuar, necesitamos probar un lema previo.
 
   \begin{lema}\label{lemtoro}
-    Sea $M$ una variedad diferenciable de dimensión $n$ conexa tal que existen campos $X_1,\dots,X_n$ en $M$ completos y linealmente independientes y tales que, para todo $i,j=1,\dots,n$, $i\neq j$, $[X_i,X_j]=0$. Entonces $M$ es difeomorfa a $\TT^k\times \RR^{n-k}$. 
+    Sea $N$ una variedad diferenciable de dimensión $n$ conexa tal que existen campos $X_1,\dots,X_n$ en $N$ completos y linealmente independientes y tales que, para $i\neq j$, $[X_i,X_j]=0$. Entonces $N$ es difeomorfa a $\TT^k\times \RR^{n-k}$. 
 \end{lema}
-\begin{proof}(del Lema \ref{lemtoro}).
-  Para cada $i=1,\dots,n$, sea $g_i$ el flujo completo generado por $X_i$. Como para todo $i\neq j$ $[X_i,X_j]=0 $ entonces $g_i$ conmuta con $g_j$, es decir, $g_ig_j (x)=g_jg_i (x)$, para todo $x \in M$. 
+\begin{proof}
+  Para cada $i=1,\dots,n$, sea $g_i$ el flujo completo generado por $X_i$. Como para todo $i\neq j$, $[X_i,X_j]=0 $, entonces $g_i$ conmuta con $g_j$, es decir, $g_{i,t}g_{j,s} (x)=g_{j,s}g_{i,t} (x)$, para todo $x \in N$. 
 
-  Así, podemos definir una acción de $\RR^n$ en $M$ que a cada $t=(t_1,\dots,t_n)\in \RR^n$ le asigna $g_t:M\rightarrow M,$ con $g_t=g_{1,t_1}\cdots g_{n,t_n}$.
-Por conmutar los flujos, $g_{t+s}=g_t g_s$. Ahora, fijo $x_0 \in M$, definimos 
+  Así, podemos definir una acción de $\RR^n$ en $N$ que a cada $t=(t_1,\dots,t_n)\in \RR^n$ le asigna $g_t:N\rightarrow N,$ con $g_t=g_{1,t_1}\cdots g_{n,t_n}$.
+Por conmutar los flujos, $g_{t+s}=g_t g_s$. Ahora, fijo $x_0 \in N$, definimos 
 \[
   \begin{array}{rcl}
-g:\RR^n & \longrightarrow & M \\
+g:\RR^n & \longrightarrow & N \\
 t & \longmapsto & g_t (x_0).
 \end{array}
 \]
 
-Como los campos son linealmente independientes, $d_t g$ es un isomorfismo lineal para todo $t$ y, por el teorema de la función inversa, $g$ es un difeomorfismo local. Ahora, dado $x\in M$, tomamos una curva $\gamma$ que una $x$ y $x_0$. Por ser $g$ un difeomorfismo local, para todo $y\in \gamma$ existe un entorno $U$ de $y$ tal que $g_t(y)$ da un difeomorfismo entre $U$ y $\RR^n$. Podemos tomar entonces una sucesión finita de entornos $U_0,\dots,U_r$ que recubran $\gamma$ tales que $x_0 \in U_0$ y $x \in U_r$ y tales que existan unos puntos $x_1,\dots,x_r$ pertenecientes a $U_1,\dots,U_r$, respectivamente, con $x_r=x$, de forma que $g_t(x_i)$ dé un difeomorfismo entre $\RR^n$ y cada uno de los $U_i$. Tomemos ahora unos puntos $y_1,\dots,y_{r}$ pertenecientes a $U_0\cap U_1,\dots,U_{r-1}\cap U_r$, respectivamente. Entonces, para cada $i=1,\dots,r$, $y_i=g_{s_i}(x_{i-1})=g_{t_i}(x_{i})$, para ciertos $s_i, t_i \in \RR^n$, luego $x_{i}=g_{s_i-t_i}(x_{i-1})$. Por tanto, 
+Como los campos son linealmente independientes, $d_t g$ es un isomorfismo lineal para todo $t$ y, por el teorema de la función inversa, $g$ es un difeomorfismo local. Ahora, dado $x\in N$, tomamos una curva $\gamma$ en $N$ que una $x$ y $x_0$. Por ser $g$ un difeomorfismo local, para todo $y\in \gamma$ existe un entorno $U$ de $y$ tal que $g_t(y)$ da un difeomorfismo entre $U$ y un entorno $W\in \RR^n$ centrado en $0$. Por ser $\gamma$ compacta, podemos tomar entonces una sucesión finita de entornos $U_0,\dots,U_r$ que recubran $\gamma$ tales que $x_0 \in U_0$ y $x \in U_r$ y tales que existan unos puntos $x_1,\dots,x_r$ pertenecientes a $U_1,\dots,U_r$, respectivamente, con $x_r=x$, de forma que $g_t(x_i)$ dé un difeomorfismo entre un entorno $W_i\subset \RR^n$ centrado en $0$ y $U_i$. Tomemos ahora unos puntos $y_1,\dots,y_{r}$ pertenecientes a $U_0\cap U_1,\dots,U_{r-1}\cap U_r$, respectivamente. Entonces, para cada $i=1,\dots,r$, $y_i=g_{s_i}(x_{i-1})=g_{t_i}(x_{i})$, para ciertos $s_i, t_i \in \RR^n$, luego $x_{i}=g_{s_i-t_i}(x_{i-1})$. Por tanto, 
 $$x=x_{r}=g_{s_{r}-t_{r}}(x_{r-1})=g_{s_{r}-t_{r}+s_{r-1}-t_{r-1}+\cdots+s_1-t_1}(x_0).$$ De modo que $g$ es sobreyectiva.
 
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
-  \includegraphics[width=0.5\textwidth]{pics/entornos2.eps}
+  \includegraphics[width=0.8\textwidth]{pics/entornos.eps}
   \caption{\small Idea de la demostración de que $g$ es sobreyectiva.}
   \label{fig:entornos}
 \end{figure}
 
-Tenemos entonces que $g:\RR^n\rightarrow M$ es un difeomorfismo local sobreyectivo, luego es una identificación diferenciable, de modo que si llamamos 
+Tenemos entonces que $g:\RR^n\rightarrow N$ es un difeomorfismo local sobreyectivo, luego es una identificación diferenciable. Denotamos 
 \[  
-  H:=\{t \in \RR^n \mid g_t(x_0)=x_0\},
+  \Gamma:=\{t \in \RR^n \mid g_t(x_0)=x_0\},
 \]
-entonces, por la propiedad universal del cociente, el siguiente diagrama
-\begin{center}
-  \begin{tikzcd}
-    \RR^n \arrow{r}{g}\arrow{d}{} & M    \\ 
-    \RR^n/H, \arrow{ru}{}
-  \end{tikzcd}
-\end{center}
-da un difeomorfismo entre $M$ y $\RR^n/H$. Si $H$ consiste solo del punto $0$, entonces $M\cong \RR^n$ y habríamos terminado. Supongamos que $H\neq\left\{ 0 \right\}$.
- Entonces, dados $t, s \in H$, 
+que es un subgrupo de $(\RR^n,+)$ ya que, dados $t, s \in \Gamma$, 
 \[
   g_{s+t}(x_0)=g_sg_t(x_0)=g_s(x_0)=x_0
 \]
@@ -95,16 +82,24 @@ y
 \[
   g_{-t}(x_0)=g_{-t}g_t(x_0)=x_0.
 \] 
-Es decir, $H$ es un subgrupo de $(\RR^n,+)$. Además, $H$ no depende de la elección de $x_0$, en efecto, si $x=g_s (x_0)$ y $t\in H$, entonces 
+ Además, $\Gamma$ no depende de la elección de $x_0$, en efecto, si $x=g_s (x_0)$ y $t\in \Gamma$, entonces 
 \[
   g_t (x) = g_{t+s}(x_0)=g_sg_t(x_0)=g_s(x_0)=x. 
  \] 
+Ahora, por la propiedad universal del cociente, si $\pi:\RR\rightarrow \RR^n/\Gamma$ denota la proyección natural, el siguiente diagrama
+\begin{center}
+  \begin{tikzcd}
+    \RR^n \arrow{r}{g}\arrow{d}[anchor=west]{\pi} & N    \\ 
+    \RR^n/\Gamma, \arrow{ru}[anchor=north,rotate=30]{\tilde{g}}
+  \end{tikzcd}
+\end{center}
+da un difeomorfismo $\tilde{g}:N\rightarrow \RR^n/\Gamma$. Si $\Gamma=\{0\}$, entonces $g:N\rightarrow \RR^n$ es un difeomorfismo y habríamos terminado. Supongamos que $\Gamma \neq\left\{ 0 \right\}$.
 
- Como $g$ es un difeomorfismo local, existe un entorno $V\subset \RR^n$ de 0 tal que $H\cap V= \{0\}$. Es más, sean $t\in H$, $s\in V\backslash \{0\}$ y $x\in M$, 
+ Como $g$ es un difeomorfismo local, existe un entorno $V\subset \RR^n$ de 0 tal que $\Gamma\cap V= \{0\}$. Es más, si $t\in \Gamma$, $s\in V\backslash \{0\}$ y $x\in N$, 
   \[
     g_{t+s}(x)=g_sg_t(x)=g_s(x)\neq x.
   \]
-  Luego $H$ es un conjunto discreto. Nótese también que $H$ es cerrado en $\RR^n$.
+  Luego $\Gamma$ es un conjunto discreto. Nótese también que $\Gamma$ es cerrado en $\RR^n$.
   \begin{figure}[h]
     \centering
     \includegraphics[width=0.25\textwidth]{pics/discreto}
@@ -114,203 +109,242 @@ Es decir, $H$ es un subgrupo de $(\RR^n,+)$. Además, $H$ no depende de la elecc
 
   Antes de continuar, es necesario probar el siguiente lema:
   \begin{lema}\label{discreto}
-    Todo subgrupo no trivial, cerrado y discreto $H$ de $\RR^n$ es isomorfo a $\ZZ^k$ para algún $k\in\{1,\dots,n\}$. Es decir, existen $e_1,\dots,e_k \in H$ linealmente independientes tales que 
+    Todo subgrupo no trivial, cerrado y discreto $\Gamma$ de $\RR^n$ es isomorfo a $\ZZ^k$ para algún $k\in\{1,\dots,n\}$. Es decir, existen $e_1,\dots,e_k \in \Gamma$ linealmente independientes tales que 
     \[
-      H=\{n_1e_1+\cdots+n_ke_k \mid (n_1,\dots,n_k) \in \ZZ^k \}.
+      \Gamma=\{n_1e_1+\cdots+n_ke_k \mid (n_1,\dots,n_k) \in \ZZ^k \}.
     \]
   \end{lema}
-  \begin{proof}(del Lema \ref{discreto}). 
-  Sea $e_0 \in H$, $e_0 \neq 0$. Como $H$ es discreto, $H \cap D(0,\norm{e_0})$ (donde $D(a,r)$ denota el disco cerrado de centro $a$ y radio $r$) es finito. De estos puntos consideramos aquellos que están en $L(e_0)$ \footnote{Aquí $L(x)$ denota la envoltura lineal de $x$.} y de estos escogemos el más cercano, que llamaremos $e_1$. 
+  \begin{proof}
+  Sea $e_0 \in \Gamma$, $e_0 \neq 0$. Como $\Gamma$ es discreto, $\Gamma \cap D(0,\norm{e_0})$ (donde $D(a,r)$ denota el disco cerrado de centro $a$ y radio $r$) es finito. De estos puntos consideramos aquellos que están en $L(e_0)$ \footnote{Aquí $L(x)$ denota la envoltura lineal de $x$.} y de estos escogemos el más cercano, que llamaremos $e_1$. 
   
-  Si existieran algún $e \in H$ y algún $m \in \ZZ$ tal que $e \in (me_1,(m+1)e_1)$, entonces $e-me_1 \in H \cap L(e_0)$ estaría más cerca de 0 que $e_1$. Por tanto, 
+  Si existieran algún $e \in \Gamma$ y algún $m \in \ZZ$ tal que $e \in (me_1,(m+1)e_1)$, entonces $e-me_1 \in \Gamma \cap L(e_0)$ estaría más cerca de 0 que $e_1$. Por tanto, 
   \[
-    H\cap L(e_0) = e_1\ZZ.
+   \Gamma\cap L(e_0) = e_1\ZZ.
   \]
 
-  Si no hay puntos de $H$ fuera de $L(e_1)$ hemos terminado, $H$ es isomorfo a $\ZZ$. En caso contrario, dado $e \in H \backslash L(e_1)$, proyectamos ortogonalmente $e$ sobre $L(e_1)$. Esta proyección cae exactamente sobre un intervalo $\Delta=[me_1,(m+1)e_1)$ para cierto $m \in \ZZ$. Sea $C$ el cilindro cerrado de eje $\Delta$ y de radio igual a la distancia entre $\Delta$ y $e$. $C\cap H$ es finito. De estos puntos, sea $e_2$ el más cercano a $\Delta$ que no esté en $\Delta$. Entonces, para cualquier otro $f \in H$, la distancia entre $f$ y $L(e_1)$ es mayor que la distancia entre $e_2$ y $L(e_1)$. 
+  Si no hay puntos de $\Gamma$ fuera de $L(e_1)$ hemos terminado, $\Gamma$ es isomorfo a $\ZZ$. En caso contrario, dado $e \in \Gamma \backslash L(e_1)$, proyectamos ortogonalmente $e$ sobre $L(e_1)$. Esta proyección cae exactamente sobre un intervalo $\Delta=[me_1,(m+1)e_1)$ para cierto $m \in \ZZ$. Sea $C$ el cilindro cerrado de eje $\Delta$ y de radio igual a la distancia entre $\Delta$ y $e$. $C\cap \Gamma$ es finito, y de sus puntos, sea $e_2$ el más cercano a $\Delta$ que no esté en $\Delta$. Entonces, para cualquier otro $f \in \Gamma$, la distancia entre $f$ y $L(e_1)$ es mayor que la distancia entre $e_2$ y $L(e_1)$. 
     
     En efecto, si existe $l \in \ZZ$ tal que la proyección ortogonal de $f$ cae sobre $[le_1,(l+1)e_1)$, entonces $f'=f-le_1+me_1 \in C$ y la distancia entre $f'$ y $L(e_1)$ es menor que la distancia entre $e_2$ y $L(e_1)$, lo que nos lleva a una contradicción.
 
   \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{pics/grupo}
+    \includegraphics[width=0.8\textwidth]{pics/grupo.pdf}
     \caption{\small Idea de la demostración del lema.}
     \label{fig:grupo}
   \end{figure}
 
-      Ahora, $\{n_1e_1+n_2e_2 \mid (n_1,n_2) \in \ZZ^2 \}$ forma una red discreta en $L(e_1,e_2)$. Además, si existiera un $e\in H$ que no perteneciese a la red, sean $m_1=[\esc{e}{e_1}]$, $m_2=[\esc{e}{e_2}]$. Entonces, $e-m_1e_1-m_2e_2$ estaría más cerca de $L(e_1)$ que $e_2$. Por tanto, esta red es exactamente $L(e_1,e_2) \cap H$.
+  Ahora, $\{n_1e_1+n_2e_2 \mid (n_1,n_2) \in \ZZ^2 \}$ forma una red discreta en $L(e_1,e_2)$. Además, si existiera un $e\in L(e_1,e_2)\cap \Gamma$ que no perteneciese a la red, podríamos tomar $m_1=[\esc{e}{e_1}]$, $m_2=[\esc{e}{e_2}]$ (donde $[\bullet]$ denota la parte entera). Entonces, $e-m_1e_1-m_2e_2$ estaría más cerca de $L(e_1)$ que $e_2$. Por tanto, esta red es exactamente $L(e_1,e_2) \cap \Gamma$.
 
-      Procedemos ahora por inducción, supongamos que existen $e_1,\dots,e_k$ linealmente independientes tales que $\{n_1e_1+\cdots+n_ke_k \mid (n_1,\dots,n_k) \in \ZZ^k \} = L(e_1,\dots,e_k) \cap H$ y que existe $e\in H$ tal que $e \not\in L(e_1,\dots,e_k)$. Análogamente, la proyección ortogonal de $e$ sobre $L(e_1,\dots,e_k)$ cae sobre un hipercubo $\Delta=[m_1e_1,(m_1+1)e_1) \times \cdots \times [m_ke_k,(m_k+1)e_k)$. Si $C$ denota el conjunto de los puntos cuyas proyecciones ortogonales caen en $\Delta$ y son más o igualmente cercanos a $\Delta$ que $e$, entonces $C \cap H$ es finito. Sea $e_{k+1}$ el más cercano a $\Delta$ de estos puntos, que no esté en $\Delta$. Para cualquier otro $f \in H$, la distancia entre $f$ y $L(e_1,\dots,e_k)$ es mayor que entre $e_2$ y $L(e_1,\dots,e_k)$, por un razonamiento completamente análogo al caso bidimensional. 
+      Procedemos ahora por inducción, supongamos que existen $e_1,\dots,e_k$ linealmente independientes tales que $\{n_1e_1+\cdots+n_ke_k \mid (n_1,\dots,n_k) \in \ZZ^k \} = L(e_1,\dots,e_k) \cap \Gamma$ y que existe $e\in \Gamma$ tal que $e \not\in L(e_1,\dots,e_k)$. Análogamente, la proyección ortogonal de $e$ sobre $L(e_1,\dots,e_k)$ cae sobre un hipercubo $\Delta=[m_1e_1,(m_1+1)e_1) \times \cdots \times [m_ke_k,(m_k+1)e_k)$. Si $C$ denota el conjunto de los puntos cuyas proyecciones ortogonales caen en $\Delta$ y son más o igualmente cercanos a $\Delta$ que $e$, entonces $C \cap \Gamma$ es finito. Sea $e_{k+1}$ el más cercano a $\Delta$ de estos puntos, que no esté en $\Delta$. Para cualquier otro $f \in \Gamma$, la distancia entre $f$ y $L(e_1,\dots,e_k)$ es mayor que entre $e_2$ y $L(e_1,\dots,e_k)$, por un razonamiento completamente análogo al caso bidimensional. 
 
-	Por tanto, $\{n_1e_1+\dots+n_{k+1}e_{k+1} \mid (n_1,\dots,n_{k+1}) \in \ZZ^{k+1}\}$ forma una red discreta en $L(e_1,\dots,e_{k+1})$ y, de forma análoga al caso anterior, esta red agota los puntos de $H\cap L(e_1,\dots,e_{k+1})$.
-	Finalmente, sea $k$ el mínimo número natural tal que no existe $e \in H \backslash L(e_1,\dots,e_k)$. Entonces $H$ es isomorfo a $\ZZ^k$.
+	Por tanto, $\{n_1e_1+\dots+n_{k+1}e_{k+1} \mid (n_1,\dots,n_{k+1}) \in \ZZ^{k+1}\}$ forma una red discreta en $L(e_1,\dots,e_{k+1})$ y, de forma análoga al caso anterior, esta red agota los puntos de $\Gamma\cap L(e_1,\dots,e_{k+1})$.
+	Finalmente, sea $k$ el mínimo número natural tal que no existe $e \in \Gamma \backslash L(e_1,\dots,e_k)$. Evidentemente, sabemos que este $k$ existe porque $\RR^n$ es un espacio vectorial de dimensión finita. Entonces $\Gamma$ es isomorfo a $\ZZ^k$.
 \end{proof}
 
 Terminamos ahora la demostración del Lema \ref{lemtoro}.
  
-  Sea $k$ el número de generadores de $H$ y sea la proyección natural
+  Sea $k$ el número de generadores de $\Gamma$ y sea la proyección natural
   \[
     \begin{array}{rcl}
       \varpi: \RR^n = \RR^k \times \RR^{n-k} & \longrightarrow & \TT^k \times \RR^{n-k} \\
-      (x,y) & \longmapsto & (\exp(x), y).
+      (x,y) & \longmapsto & (\exp(2\pi x), y),
     \end{array}
   \]
-  En particular, $\varpi$ da un homomorfismo de grupos cuyo núcleo es un subgrupo discreto de $\RR^n$ generado por $u_1,\dots,u_k \in \RR^n$. 
-  Sean $e_1,\dots,e_k$ los generadores de $H$ y sea $B:\RR^n \rightarrow \RR^n$ un isomorfismo lineal tal que cada $u_i$ va a parar a $e_i$. Entonces, la aplicación $\tilde{B}$ que hace el siguiente diagrama conmutativo es un difeomorfismo,
+  donde la función
+  \begin{align*}
+    \exp :\RR^k&\longrightarrow \TT^k \cong \SF^1 \times \cdots \times \SF^1\\ 
+    (x_1,\dots,x_k) &\longmapsto (e^{i2\pi x_1},\dots,e^{i 2\pi x_k}), 
+    \end{align*}
+    denota el recubridor universal de $\TT^k$.
+  El núcleo de este homomorfismo de grupos $\varpi$ es precisamente el subgrupo $\ZZ^k\subset \RR^n$ generado por los $k$ primeros vectores de la base canónica.. 
+  Sean $e_1,\dots,e_k$ los generadores de $\Gamma$ y sea $\zeta:\RR^n \rightarrow \RR^n$ un isomorfismo lineal que mande el $i$-ésimo vector de la base canónica a $e_i$. Entonces, la aplicación $\tilde{\zeta}$ que hace el siguiente diagrama conmutativo es un difeomorfismo,
   \begin{center}
     \begin{tikzcd}
-  \RR^n    \arrow{r}{B}\arrow{dd}[anchor=east]{\varpi} & \RR^n\arrow{dd}[anchor=west]{g} \\ 
+      \RR^n    \arrow{r}{\zeta}\arrow{dd}[anchor=east]{\varpi} & \RR^n\arrow{dd}[anchor=west]{\pi}\arrow{ddr}[rotate=-30]{g} \\ 
   & \\
-  \TT^k \times \RR^{n-k}\arrow{r}[anchor=south]{\tilde{B}} & \RR^n/H \cong M.
+  \TT^k \times \RR^{n-k}\arrow{r}[anchor=south]{\tilde{\zeta}} & \RR^n/\Gamma \arrow{r}{\tilde{g}}& N
      \end{tikzcd}
    \end{center}
-  
 \end{proof}
 
-Aplicando directamente el Lema \ref{lemtoro} a $M_a$ tenemos que es difeomorfa a $\TT^k\times \RR^{n-k}$ para cierto $k=0,\dots,n$. En particular, si $M_a$ es compacta, entonces $k=n$ y $M_a\cong \TT^n$. Hemos probado entonces la parte $2$ del teorema.
+Volvemos ahora a la demostración del teorema de Arnold-Liouville. Aplicamos directamente el lema \ref{lemtoro} con $N=M_a$ (considerando los campos $X_i=X^{F_i}$ ya definidos y construyendo $g$ como en la demostración del lema) y tenemos que $M_a$ es difeomorfa a $\TT^k\times \RR^{n-k}$ para cierto $k=0,\dots,n$. En particular, si $M_a$ es compacta, entonces $k=n$ y $M_a\cong \TT^n$. Hemos probado entonces la parte $2$ del teorema. Además, el difeomorfismo $\tilde{\zeta}:\TT^k\times \RR^{n-k} \rightarrow M_a$ está bien descrito por el diagrama anterior.
 
-Si consideramos ahora el isomorfismo lineal $B$ (que depende del punto $a$) dado por el diagrama anterior y llamamos $v(a)$ a la primera columna de la matriz asociada a $B$, entonces $B(t,0,\dots,0)=v(a)t$. Podemos dar entonces unas coordenadas $w:M_a\rightarrow \RR^n$, donde $w$ hace el siguiente diagrama conmutativo
-\begin{center}
-  \begin{tikzcd}
-    \RR^k\times \RR^{n-k} \arrow{rd}[anchor=north,rotate=-30]{\varpi} \arrow{r}{\mathrm{id}} & \RR^n    \\ 
-    & M_a. \arrow{u}{w}
-  \end{tikzcd}
-\end{center}
-
-Ahora, como el flujo del sistema $\varphi^H$ es igual a $g_1$, el siguiente diagrama conmuta
-\begin{center}
-  \begin{tikzcd}
-    \RR^n    & \RR \arrow{l}[anchor=south]{v(a) \bullet} \arrow{d}[anchor=west]{\varphi_{\bullet}^H(x)} \\ 
-    &M_a. \arrow{ul}[rotate=-30]{w} 
-   \end{tikzcd}
- \end{center}
- Por tanto, $w(t)=w(\varphi_t(x))=v(a) t$, luego $\dot w(t)=v(a)$. Como el flujo hamiltoniano deja $M_a$ invariante, queda descrito por las ecuaciones
+   Podemos considerar entonces la parametrización $\psi:\RR^n\rightarrow M_a$ dada por el diagrama
+  \begin{center}
+    \begin{tikzcd}
+      \RR^n    \arrow[bend left=90]{rrdd}{\psi} \arrow{r}{\zeta}\arrow{dd}[anchor=east]{\varpi} & \RR^n\arrow{dd}[anchor=west]{\pi}\arrow{ddr}[rotate=-30]{g} \\ 
+  & \\
+  \TT^k \times \RR^{n-k}\arrow{r}[anchor=south]{\tilde{\zeta}} & \RR^n/\Gamma \arrow{r}{\tilde{g}}& M_a,
+     \end{tikzcd}
+   \end{center}
+   Sea el vector $v(a)\in \RR^n$ tal que $\zeta(v(a))=(1,0,\dots,0)$. Tomemos ahora un flujo rectilíneo
+   \begin{align*}
+      \RR&\longrightarrow \RR^n\\ 
+       t &\longmapsto  v(a)t,
+     \end{align*}
+   y veamos su comportamiento en el diagrama 
+   \begin{center}
+     \begin{tikzcd}
+       t\arrow{rr}\in \RR &&v(a)t \in \RR^n      \arrow{rr}{\zeta}\arrow{rrdd}[anchor=north,rotate=-30]{\psi} && (t,0,\dots,0) \in \RR^n\arrow{dd}[anchor=west]{g} \\ 
+ &&       && \\
+&&	&&g_{1,t}(x)=\varphi_t^H(x)\in M_a.
+      \end{tikzcd}
+    \end{center}
+    Tenemos entonces que $\varphi_t^H(x)=\psi(v(a)t)$, de modo que podemos tomar una carta $(U,w)$ con $U\subset M_a$ abierto relativo tal que el siguiente diagrama conmute
+    \begin{center}
+      \begin{tikzcd}
+	& & \RR^n \arrow{d}{\psi} \\
+	\RR \arrow{r}{\varphi_{\bullet}^H(x)}& U \arrow[hook]{r}{ }\arrow{ru}{w} & M_a.
+       \end{tikzcd}
+     \end{center}
+     Por tanto, $w(t)=w(\varphi_t^H(x))=v(a)t$, luego $\dot w(t)=v(a)$. Como el flujo hamiltoniano deja $M_a$ invariante, queda descrito por las ecuaciones
  \begin{equation*}
    \begin{cases}
      F(t)=a \\
      w(t)=v(a)t.
    \end{cases}
  \end{equation*}
-
- Finalmente, queda probar que el sistema es integrable por cuadraturas. Para ello, llamamos $b_i$ a la columna $i$-ésima de la matriz asociada a $B$ y consideramos $B^{-1}$ la aplicación lineal inversa de $B$. Podemos tomar ahora las coordenadas $\lambda:M_a\rightarrow \RR^n$ que hacen el siguiente diagrama conmutativo
- \begin{center}
-   \begin{tikzcd}
-     \RR^n \arrow{dd}{B^{-1}} \arrow{ddrr}[rotate=-30]{\varpi}&& \RR^n \arrow{ll}{B} \arrow{dd}{g}     \\ 
-     \\
-     \RR^n && M_a. \arrow{ll}{\lambda}
-   \end{tikzcd}
- \end{center}
-
-De modo que si consideramos las coordenadas $\lambda$ en cada conjunto de nivel $M_b$ que interseque a un entorno de $x$,
-$\lambda(\varphi^{F_i}_{t}(x))=\lambda(g_{i,t}(x))=B^{-1}(b_it)=e_it$,
-luego $\lambda_j(\varphi^{F_i}_{t}(x))=\delta_{ij}t$. Ahora, $\left\{ F_i,F_j \right\}=0$ por hipótesis, $\left\{ \lambda_i,\lambda_j \right\}=0$ por construcción y 
-\begin{equation*}
-  \left\{ F_i,\lambda_j \right\}=\left.\frac{d}{dt}\right|_{t=0}\lambda_j(\varphi^{F_i}_t(x))=\delta_{ij}.
-\end{equation*}
-Por tanto, podemos tomar un entorno $U\subset M$ de $x$ en el que las coordenadas $(F,\lambda)$ dan una carta de Darboux. En esta carta, las ecuaciones de Hamilton adquieren la forma
-\begin{equation*}
-  \begin{cases}
-    \dot{F}(t)=0 \\
-    \dot{\lambda}(t)=1,
-  \end{cases}
-\end{equation*}
-que trivialmente se integran en la forma
-\begin{equation*}
-  \begin{cases}
-    F(t)=F(0) \\
-    \lambda(t)=\lambda(0)+t.
-  \end{cases}
-\end{equation*}
 Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
  \end{proof}
 
+ \begin{obs}
+   \em
+   Para finalizar la sección vamos a hacer un pequeño comentario sobre la completitud de los campos. Recordemos de la definición \ref{integrable} que una de las cosas que exigíamos a un sistema para que fuera integrable en el sentido de Liouville es que los campos $X^{F_i}$ fueran completos. Sin embargo, en la demostración del teorema de Arnold-Liouville hemos usado algo ligeramente más débil: sólo necesitamos que los campos sean completos en el conjunto de nivel $M_a$. En particular, si nos encontramos ante un toro de Liouville, es decir, si $M_a$ es compacta, entonces todos los campos son completos en $M_a$.
+   
+   Una garantía segura de la compacidad de los conjuntos de nivel es que $M$ fuera compacta. Sin embargo en la mayoría de los casos con sentido físico esto no se cumple, pues $M$ suele ser un fibrado tangente, que claramente no es compacto. Por otra parte, el resultado expuesto en \cite{puta} asegura que un campo hamiltoniano $X^G$ es completo en toda la variedad si $G$ es propia, esto es, si la imagen inversa de un compacto por $G$ es un conjunto compacto y si $G$ está acotada inferiormente. De nuevo, esto no aporta gran cosa, pues si las $F_i$ son propias, entonces $F^{-1}(a)$ es compacto y otra vez estaríamos exigiendo que todos los conjuntos de nivel fueran toros de Liouville, aunque esta vez al menos no requerimos que $M$ sea compacta.
+ \end{obs}
+
  \section{Variables de acción-ángulo}
- Cabe preguntarse ahora si será posible obtener unas coordenadas que integren el sistema por cuadraturas \emph{globalmente}. En el caso en que $M_a$ sea compacta y, por tanto, un toro de Liouville, vamos a ver que es posible encontrar un entorno de este toro y unas coordenadas (variables de acción-ángulo) en este entorno que nos permitan integrar el sistema por cuadraturas.
+ Vamos a ver el resultado que, junto con el teorema de Arnold-Liouville (y de hecho, en gran parte de la literatura incluido dentro de éste) constituye el núcleo de la teoría de sistemas integrables. En el caso en que $M_a$ sea compacta y, por tanto, un toro de Liouville, vamos a ver que es posible encontrar un entorno de este toro y unas coordenadas (variables de acción-ángulo) en este entorno que nos permitan integrar el sistema por cuadraturas.
  
- Las variables de acción-ángulo fueron introducidas originalmente por Delaunay en 1860 para estudiar el movimiento de la Luna y más tarde, a principios del siglo XX, usadas por los físicos para estudiar el átomo de Bohr, siendo Schwarzschild el que acuñara esa terminología en 1916. La demostración del teorema de las variables de acción-ángulo se atribuye a Mineur en 1936. 
+ Las variables de acción-ángulo fueron introducidas originalmente por Delaunay en 1860 para estudiar el movimiento de la Luna y más tarde, a principios del siglo XX, usadas por los físicos para estudiar el átomo de Bohr. Sería Schwarzschild quien acuñara esa terminología en 1916. La demostración del teorema de las variables de acción-ángulo se atribuye a Mineur en 1936. 
 
  \begin{thm}[Variables de acción-ángulo]
-   En el caso en que $M_a$ sea compacta, existe un entorno $U\subset M$ de cada $M_a$ difeomorfo a $\RR^n \times \TT^n$ (se dice \emph{entorno tubular}) y un sistema de coordenadas de Darboux $(J,\phi)=(J_1,\dots,J_n,\phi_1,\dots,\phi_n)$ (llamadas \emph{variables de acción-ángulo}\footnote{Las $\phi_i$ suelen llamarse variables de ángulo ya que son precisamente coordenadas angulares en el toro $M_a$. Las $J_i$ se llaman variables de acción debido a sus dimensiones físicas, en efecto, como las $\phi_i$ son adimensionales, las $J_i$ tienen que tener dimensiones de posición por momento, que son precisamente las dimensiones de la integral de acción \eqref{accion}.}) en $U$ tales que las $\phi_i$ son coordenadas angulares en $M_a$ y las $J_i$ son constantes en cada $M_a$. 
-\end{thm}
+   Seguimos en las hipótesis del teorema \ref{arnold}. En el caso en que $M_a$ sea compacta, existe un entorno $U\subset M$ de $M_a$ difeomorfo a $\RR^n \times \TT^n$ (un \emph{entorno tubular}\footnote{Nótese que aquí estamos suponiendo que $M_a$ no está en el borde de $M$, en cuyo caso procederíamos análogamente para obtener un entorno difeomorfo a $\HH^n \times \TT^n$.})
+) y un sistema de coordenadas de Darboux $(F,\phi)$ (llamadas \emph{variables de acción-ángulo}) en $U$ tales que las $\phi_i$ son coordenadas angulares en $M_a$ y las $F_i$ son constantes en cada $M_a$. 
+  \end{thm}
+
+  \begin{obs}
+    \em
+    La consecuencia inmediata de este teorema es que en los entornos tubulares las ecuaciones de Hamilton quedan resueltas por cuadraturas. En efecto, al ser $(F,\phi)$ coordenadas de Darboux, podemos escribir las ecuaciones de Hamilton en la forma
+    \begin{equation*}
+      \begin{cases}
+	\dot{F_i}=-\parcial{H}{\phi_i}, \\
+	\dot{\phi_i}=\parcial{H}{F_i}. 
+      \end{cases}
+    \end{equation*}
+    Ahora, como las $F_i$ son constantes en los toros, se tiene $\dot{F_i}=0$, de modo que $\parcial{H}{\phi_i}$ es constante en cada toro, luego el hamiltoniano no depende de las coordenadas $\phi$. Por tanto, las frecuencias $\nu_i=\dot{\phi_i}=\parcial{H}{F_i}$ son constantes en cada toro. Así, las ecuaciones quedan integradas en la forma
+    \begin{equation*}
+      \begin{cases}
+	F_i(t)=F_i(0), \\
+	\phi_i(t)=\phi_i(0)+\nu_i t. 
+      \end{cases}
+    \end{equation*}
+  \end{obs}
 
 \begin{proof}
-  En primer lugar, hay que obtener el entorno tubular $U$. Para ello, veamos que hay un entorno $V$ de $M_a$ tal que, para todo $y\in V$, la componente conexa $M_{F(y)}$ del conjunto de nivel que contiene a $y$ es compacta. De hecho, como $F_*$ tiene rango máximo y $M_a$ es compacta, podemos tomar $V$ tal que $M_a\subset V \subset \bar{V} \subset W$, con contenidos estrictos y donde $W$ es un entorno abierto de $M_a$ con adherencia compacta en el que $F_*$ sigue teniendo rango máximo. Por tanto, si $M_{F(y)}$ está contenido totalmente en $V$, al ser cerrado tiene que ser compacto. En caso contrario, si $M_{F(y)}$ corta a $V$ pero no está contenido, por ser conexo debe cortar a la frontera $\mathrm{Fr}(V)$. Ahora, si hubiera una sucesión de puntos $\left( y_k \right)_{k\in \NN}$ tendiendo a un punto de $M_a$ tal que cada $M_{F(y_k)}$ no es compacta, entonces tendríamos una sucesión de puntos $\left( z_k \right)_{k\in \NN}$ en $\mathrm{Fr}(V)$ que, por ser $\mathrm{Fr}(V)$ cerrado, converge a un punto $z\in \mathrm{Fr}(V) \cap M_a$, y esto es absurdo. Por tanto, existe un entorno $V$ de $M_a$ que es una unión de toros de Liouville $M_b$. 
-
-  Tomamos ahora un conjunto $B\subset V$ y un disco $D\in \RR^n$ que contenga a $a$ tal que $\left. F\right|_{B}:B\rightarrow D$ es un difeomorfismo y en cada $M_b\subset V$ escojo el punto $x_b\in M_b\cap B$. Sea ahora la aplicación 
+  En primer lugar, hay que obtener el entorno tubular $U$. Como $M_a$ es un conjunto compacto de puntos regulares existe un entorno $W$ de $M_a$ con todos sus puntos regulares de manera que $M_a\subset W \subset \overline{W}$ y tal que $F|_W$ sea abierta. Por tanto, $V=F(W)\subset \RR^n$ es un entorno abierto de $a$. Ahora, para cada $b\in V$, existe al menos una componente conexa $M_b$ de $F^{-1}(b)$ que interseca a $W$ en algún punto. Si $M_b$ está contenida en $W$ entonces es compacta y por tanto es un toro de Liouville. En caso contrario, existe un punto $x_b\in M_{b}\cap (\overline{W}\setminus W)$.
+  
+  Supongamos entonces que existe una sucesión $(b_k)$ de valores en $V$ tal que $b_k\rightarrow a$ con $M_{b_k}\cap(\overline{W}\setminus W) \neq \varnothing$. Entonces existe una sucesión convergente $(x_{b_k})$ con cada $x_{b_k}\in M_{b_k}\cap \overline{W}\setminus W$. Ahora, si llamamos $x_0=\lim_k x_{b_k}$ entonces $x_0\in \overline{W}\setminus W$ y por continuidad $F(x_0)=\lim_k F(x_{b_k})=\lim_k b_k =a$, de modo que $x_0 \in M_a\subset W$ y llegamos a una contradicción. Por tanto existe una bola $B\subset \RR^n$ centrada en $a$ tal que hay algún toro de Liouville $M_b\subset W \subset W$ para cada $b\in B$. 
+  
+  Podemos considerar entonces el abierto 
+  \begin{equation*}
+    U=F^{-1}(B)=\bigcup_{b\in B}M_b,
+  \end{equation*}
+  que es una unión disjunta de toros de Liouville. Ahora, análogamente a la demostración del teorema de Arnold-Liouville, para cada $b\in B$, fijamos $x\in M_b$ y consideramos la aplicación
   \begin{align*}
-    \Phi :M&\longrightarrow \RR^n\times \TT^n\\ 
-      y &\longmapsto (F(y),\theta),
+    \varphi^F :\RR^n&\longrightarrow M_b\\ 
+    (t_1,\dots,t_n) &\longmapsto \varphi_{t_1}^{F_1}\cdots \varphi_{t_n}^{F_n}(x), 
     \end{align*}
-    con $\theta$ coordenadas angulares en el toro de Liouville $M_{F(y)}$ que contiene a $y$. Entonces $\Phi$ da un difeomorfismo entre $U=\bigcup_{y\in B}M_{F(y)}$, que es un entorno de $M_a$ y $\bigcup_{b\in D}M_b$. Como cada $M_b$ es un toro de Liouville y $D$ es un disco abierto de $\RR^n$, $U$ es difeomorfo a $\RR^n\times \TT^n$.
-  Nótese que aquí estamos suponiendo que $x$ no está en el borde de $M$, en cuyo caso procederíamos análogamente para obtener un entorno difeomorfo a $\HH^n \times \TT^n$.
+    que está bien definida por conmutar los flujos, y el difeomorfismo $\theta:M_b\rightarrow \TT^n$ inducido dado por el diagrama
+    \begin{center}
+      \begin{tikzcd}
+\RR^n	\arrow{r}{\varphi^F}\arrow{d}{ } & M_b\arrow{ld}[anchor=north,rotate=30]{\theta_b} \\ 
+	 \TT^n.&
+       \end{tikzcd}
+     \end{center}
+     Tenemos entonces que la aplicación
+     \begin{align*}
+       \Phi :U&\longrightarrow B\times \TT^n\\ 
+       x &\longmapsto (F(x),\theta_{F(x)}(x)), 
+       \end{align*}
+       es un difeomorfismo. De modo que, como $B$ es una bola, el entorno $U$ es un entorno tubular.
 
- Procedamos ahora a hallar las variables de acción-ángulo. Sea $\pi:U\simeq \RR^n \times \TT^n \rightarrow \RR^n$ la proyección canónica. Entonces $\pi^{-1}(x)$ es un toro invariante para cada $x \in D=\pi(U)$. En cada uno de estos toros, consideramos $X_i=X^{F_i}$ y $(F,\theta)$ las coordenadas antes obtenidas. Tenemos entonces
+ Procedamos ahora a hallar las variables de acción-ángulo. Sea $\pi:U\cong B\times \TT^n\rightarrow B$ la proyección canónica. Entonces $\pi^{-1}(x)$ es un toro invariante para cada $x \in B$. En cada uno de estos toros, consideramos $X_i=X^{F_i}$ y $(F,\theta)$ las coordenadas antes obtenidas. Si tomamos un punto $\theta=(\theta_1,\dots,\theta_n)\in \RR^n$ entonces, para cada $x\in M$, podemos usar la conmutatividad de los flujos para escribir
 \[
-  \deriv{\theta_i} = \sum_{k=1}^n a_{ik}X_k,
+  \left. \deriv{\theta_i}\right|_{\varphi^F_t(x)} = \deriv{\theta_i} \varphi^{F_i}_{\theta_i}(y),
 \]
-donde las $a_{ik}$ son funciones constantes en cada toro.
+con $y=\varphi^{F_1}_{\theta_1}\cdots\varphi^{F_{i-1}}_{\theta_{i-1}}\varphi^{F_{i+1}}_{\theta_{i+1}}\cdots\varphi^{F_{n}}_{\theta_{n}}(x)$. Ahora, como $\varphi^{F_i}$ es el flujo de $X_i$,
+\begin{equation*}
+  \left. \deriv{\theta_i}\right|_{\varphi^F_t(x)} = \deriv{\theta_i} \varphi^{F_i}_{\theta_i}(y)=X_{i, \varphi^{F_i}_{\theta_i}(y)}=X_{i,\varphi^F_{\theta}(x)}.
+\end{equation*}
+De modo que $\deriv{\theta_i}=X_i$.
 
-Como $\omega$ se anula en el toro, no tiene términos en $\dd \theta_i \wedge \dd \theta_j$. Los términos en $\dd \theta_i \wedge \dd F_j$ serán
+Como $\omega$ se anula en el toro, no tiene términos en $\dd \theta_i \wedge \dd \theta_j$ y los términos en $\dd F_i \wedge \dd \theta_j$ serán
 \[
-  \omega\left(\deriv{\theta_i},\deriv{F_j}\right)=\sum_{k=1}^n a_{ik}\cdot \omega\left(X_k,\deriv{F_j}\right)=-\sum_{k=1}^n a_{ik} \cdot \dd F_k \left(\deriv{F_j}\right) = -\sum_{k=1}^n a_{ik} \delta_{ij}= -a_{ij}. 
+  \omega\left(\deriv{F_i},\deriv{\theta_j}\right)=\omega\left(\deriv{F_j},X_i\right)=\dd F_i\left(\deriv{F_j}\right)=\delta_{ij}.
 \]
 Por tanto, $\omega$ es de la forma
 \[
-  \omega = \sum_{i,j=1}^n -a_{ij} \dd \theta_i \wedge \dd F_j + \sum_{i,j=1}^n b_{ij} \dd F_i \wedge \dd F_j,
+  \omega = \sum_{i}^n  \dd F_i \wedge \dd \theta_i + \sum_{k,l=1}^n a_{kl} \dd F_k \wedge \dd F_l,
 \]
-con $b_{ij}$ unas ciertas funciones. Además, como $\omega$ es cerrada, el término correspondiente a $\dd \theta_k \wedge \dd F_i \wedge \dd F_j$ debe anularse. Este término es exactamente
-\[
-  \parcial{a_{kj}}{F_i}-\parcial{a_{ki}}{F_j}+\parcial{b_{ij}}{\theta_k}.
-\]
-El término $\parcial{a_{kj}}{F_i}-\parcial{a_{ki}}{F_j}$ no depende de las variables angulares, luego las $\parcial{b_{ij}}{\theta_k}$ son constantes al variar los ángulos $\theta_k$. Como las variables $\theta_k$ son angulares, las $b_{ij}$ deben ser periódicas, luego
-\[
-  \parcial{b_{ij}}{\theta_k}=0
-\]
-y las $b_{ij}$ son constantes en cada toro invariante.
+con $a_{kl}$ unas ciertas funciones. Además, como $\omega$ es cerrada, al diferenciar, cada término correspondiente a $\dd \theta_j \wedge \dd F_k \wedge \dd F_l$ debe anularse. Este término es exactamente
+  $\parcial{a_{kl}}{\theta_j}$,
+de modo que las $a_{kl}$ son constantes en cada toro invariante.
 
-Si ahora definimos $A_i=\sum_{j=1}^n a_{ij}\dd F_j$, $B=\sum_{i,j=1}^n b_{ij}\dd F_i \wedge \dd F_j$,
+Si ahora definimos $\alpha=\sum_{i,j=1}^n a_{ij}\dd F_i \wedge \dd F_j$,
 \[
-  \omega=\sum_{i=1}^n \dd \theta_i \wedge A_i + B.
+  \omega=\sum_{i=1}^n \dd F_i \wedge \dd \theta_i + \alpha.
 \]
-Como las $a_{ij}$ y las $b_{ij}$ son constantes en cada toro invariante podemos ver las $A_i$ y $B$ como formas en $\RR^n$, es decir, existen 1-formas $\alpha_i$ y una 2-forma $\beta$ en $\RR^n$ tales que
-\[
-  A_i= \pi^* \alpha_i \hspace{1cm} B=\pi^* \beta.
-\]
+Como las $a_{ij}$ son constantes en cada toro invariante podemos ver $\alpha$ como  una forma en $\RR^n$, es decir, existe una 2-forma $\beta$ en $\RR^n$ tal que
+  $\alpha=\pi^* \beta$.
 De aquí tenemos
 \[
-  0=\dd \omega= \sum_{i=1}^n \dd \theta_i \wedge \pi^* \dd \alpha_i + \pi^* \dd \beta,
+  0=\dd \omega= \sum_{i=1}^n \dd(\dd F_i \wedge \dd \theta_i) + \dd \alpha= \dd \alpha = \pi^* \dd \beta,
 \]
-de donde concluimos que $\dd \alpha_i = 0$ y $\dd \beta =0$. En $\RR^n$ todas las formas cerradas son exactas, luego existen $I_i$ y $\gamma$ en $\RR^n$ tales que $\alpha_i = \dd I_i$, $\beta= \dd \gamma$.
-
-Finalmente, si tomamos $J_i=(I_i \circ \pi)=\pi^* I_i$, tenemos que $\dd J_i = A_i$, luego
+de donde concluimos que $\dd \beta =0$. En $\RR^n$ todas las formas cerradas son exactas, luego existe $\gamma$ en $\RR^n$ tal que $\beta= \dd \gamma$.
+Ahora, si escribimos $\gamma= \sum_{i=1}^n f_i \dd F_i$, para algunas funciones $f_i:\RR^n \rightarrow \RR$, entonces podemos tomar unas nuevas coordenadas 
 \[
-  \omega = \sum_{i=1}^n \dd \theta_i \wedge \dd J_i + B.
-\]
-En el sistema de coordenadas $(\theta,F)$, la matriz asociada a $\omega$ es de la forma
-\[
-\left(
-\begin{array}{cc}
-  0 & \parcial{J_i}{F_j} \\
-  -\parcial{J_i}{F_j} & b_{ij}
-\end{array}\right).
-\]
-Como $\omega$ es regular, el determinante de esta matriz es distinto de cero, luego $\det\left(\parcial{J_i}{F_j}\right)\neq 0$. Por tanto, $(\theta,J)$ es un sistema de coordenadas.
-
-Ahora, si escribimos $\gamma= \sum_{i=1}^n g_i \dd I_i$, para algunas funciones $g_i:\RR^n \rightarrow \RR$, entonces podemos tomar unas nuevas coordenadas 
-\[
-  \phi_i= \theta_i + (g_i \circ \pi).
+  \phi_i= \theta_i + f_i \circ \pi.
 \]
 En estas nuevas coordenadas
 \[
 \begin{split}
-  \sum_{i=1}^n \dd \phi_i \wedge \dd J_i & = \sum_{i=1}^n \dd \theta_i \wedge \dd J_i + \sum_{i=1}^n \dd(g_i \circ \pi) \wedge J_i \\
-   & =\sum_{i=1}^n \dd \theta_i \wedge \dd J_i + \sum_{i=1}^n \dd(g_i \circ \pi) \wedge \dd (I_i \circ \pi) \\
-   & =\sum_{i=1}^n \dd \theta_i \wedge \dd J_i + \pi^* \dd \gamma = \sum_{i=1}^n \dd \theta_i \wedge A_i + B = \omega.
+  \sum_{i=1}^n \dd F_i \wedge \dd \phi_i & = \sum_{i=1}^n \dd F_i \wedge \dd \theta_i + \sum_{i=1}^n \dd F_i \wedge \dd(f_i \circ \pi)  \\
+   & =\sum_{i=1}^n \dd F_i \wedge \dd \theta_i + \pi^* \dd \gamma = \sum_{i=1}^n \dd F_i \wedge \dd \theta_i + \alpha = \omega.
 \end{split}
 \]
 
-Por tanto, hemos encontrado unas coordenadas de Darboux $(J,\phi)$, con las $J_i$ constantes en cada toro invariante y con las $\phi_i$ coordenadas angulares en estos toros. 
+Por tanto, hemos encontrado unas coordenadas de Darboux $(F,\phi)$, con las $F_i$ constantes en cada toro invariante y con las $\phi_i$ coordenadas angulares en estos toros. 
 \end{proof}
+
+\begin{obs}
+  \em
+  En la práctica, las variables de acción-ángulo no suelen obtenerse como en la demostración del teorema. Normalmente se suele trabajar en el fibrado tangente $M=TN$ de cierta variedad riemanniana $N$ de dimensión $n$ en la que se define un sistema lagrangiano natural, igual que hicimos en la sección \ref{sec:fisica}. En este caso, si $(J,\phi)$ son unas variables de acción-ángulo en $M$, se puede escribir
+\begin{equation*}
+  \omega=\sum_{i=1}^n \dd J_i \wedge \dd \phi_i = \dd \alpha,
+\end{equation*}
+con $\alpha=\sum_{i=1}^n J_i \dd \phi_i$. Si ahora tomamos los ciclos $\gamma_i$ en los que están definidas las variables $\phi_i$, entonces, como las $J$ no dependen de las $\phi$
+\begin{equation*}
+  \int_{\gamma_i} \alpha = \sum_{j=1}^n J_j \int_{\gamma_i}\dd \phi_i = \sum_{j=1}^n J_j 2\pi \delta_{ij}= 2\pi J_i.
+\end{equation*}
+Además, por la independencia de las $\phi$, cada uno de los caminos $\gamma_i$ ha de corresponder a un generador distinto del grupo fundamental del toro de Liouville que estemos tratando.
+Así, el procedimiento a seguir para construir variables de acción-ángulo es el siguiente:
+\begin{enumerate}
+  \item Se toman unas coordenadas de Darboux $(q,p)$ en las que ya se conozca la forma del sistema.
+  \item Se hallan los toros de Liouville y se escogen unos ciclos $\gamma_1,\dots,\gamma_n$ que generen el grupo fundamental del toro de Liouville $M_a$ en el que queramos trabajar.
+  \item Se obtienen las variables de acción siguiendo la fórmula
+    \begin{equation*}
+      J_i(a)=\int_{\gamma_i} \sum_{i=1}^n p_i \dd q_i.
+    \end{equation*}
+  \item Se escribe el hamiltoniano en función de las variables de acción $H=H(J(a))$ y se obtienen las frecuencias 
+    \begin{equation*}
+      \nu_i(a)= \dot{\varphi_i}(t)=\parcial{H}{J}(J(a)).
+    \end{equation*}
+\end{enumerate}
+\end{obs}
+
+En los ejemplos que veremos a continuación estudiaremos algún caso donde podemos realizar el cálculo explícito de las variables de acción-ángulo y la integración del sistema por cuadraturas.
 
 \section{Osciladores armónicos}
 Para aclarar algunas de las ideas detrás de la teoría de sistemas integrables, vamos a considerar uno de los ejemplos más sencillos pero más ilustrativos, el oscilador armónico.
@@ -319,34 +353,33 @@ Para aclarar algunas de las ideas detrás de la teoría de sistemas integrables,
 
   Empezamos considerando el oscilador armónico con un grado de libertad. El espacio de fases del sistema será el espacio simpléctico estándar $2$-dimensional, $(\RR^2,\Omega_1)$ con las coordenadas de Darboux canónicas $(q,p)$. El hamiltoniano vendrá dado por la función
   \begin{equation*}
-    H(q,p)=\tfrac{1}{2m}p^2+\tfrac{1}{2}kq^2.
+    H(q,p)=\tfrac{1}{2}p^2+\tfrac{1}{2}\omega^2 q^2.
   \end{equation*}
-  Los parámetros $k$ y $m$ representan la \emph{constante de recuperación} del oscilador y la \emph{masa} de la partícula oscilante.
+  Con $\omega$ una constante que representa la frecuencia de oscilación.
   Las ecuaciones de Hamilton son entonces
   \begin{equation*}
     \begin{cases}
-      \dot q(t) = \parcial{H}{p}(t)=\tfrac{1}{m}p(t)\\
-    \dot p(t) = -\parcial{H}{q}(t)=-kq(t).
+      \dot q(t) = \parcial{H}{p}(t)=p(t)\\
+    \dot p(t) = -\parcial{H}{q}(t)=-\omega^2q(t).
   \end{cases}
   \end{equation*}
   Estas ecuaciones se pueden integrar fácilmente, si tomamos como condición inicial $(q(0),p(0))=(a,0)$, tenemos
   \begin{equation*}
     \begin{cases}
    q(t)=a\cos\omega t \\ 
-   p(t)=-m\omega a\sin\omega t,
+   p(t)=-\omega a\sin\omega t.
  \end{cases}
   \end{equation*}
-  con $\omega=\sqrt{\frac{k}{m}}$.
   
   Ahora, recordemos que el hamiltoniano del sistema es una cantidad conservada, por tanto podemos considerar las variedades $M_E$ de energía constante, que, por el teorema de Arnold-Liouville serán topológicamente circunferencias invariantes bajo el flujo del sistema, ya que el único punto crítico del hamiltoniano es su mínimo $(q,p)=(0,0)$. En efecto, las curvas de energía constante vienen dadas por la ecuación
   \begin{equation*}
-    E=\tfrac{1}{2m}p^2+\tfrac{1}{2}kq^2,
+    E=\tfrac{1}{2}p^2+\tfrac{1}{2}\omega^2q^2,
   \end{equation*}
-  que define una elipse de semiejes $\sqrt{2mE}$ y $\sqrt{\frac{2E}{k}}$. El flujo en las curvas de energía constante toma la forma
+  que define una elipse de semiejes $\sqrt{2E}$ y $\frac{\sqrt{2E}}{\omega}$. El flujo en las curvas de energía constante toma la forma
   \begin{equation*}
     \begin{cases}
-      q(t)=\sqrt{\frac{2E}{k}}\cos\omega t \\ 
-      p(t)=-\sqrt{2mE}\sin\omega t.
+      q(t)=\frac{\sqrt{2E}}{\omega}\cos\omega t \\ 
+      p(t)=-\sqrt{2E}\sin\omega t.
  \end{cases}
   \end{equation*}
   
@@ -360,27 +393,27 @@ Para aclarar algunas de las ideas detrás de la teoría de sistemas integrables,
   Ahora, si tomamos unas coordenadas «polares» $(E,\phi)$, donde $\phi$ es la coordenada angular en cada una de estas elipses, la dinámica del sistema queda mucho más simplificada: 
   \begin{equation*}
     \begin{cases}
-    E(t)&=E(0) \\
-    \phi(t)&=\phi(0)-\omega t.
+    E(t)=E(0) \\
+    \phi(t)=\phi(0)-\omega t.
   \end{cases}
   \end{equation*}
   Sin embargo, ¿será canónica la transformación $(q,p) \rightarrow (E,\phi)$? Para ello, veamos cómo se comporta la forma $\Omega_1=\dd p\wedge \dd q$ con el cambio
   \begin{equation*}
     \begin{cases}
-      q(E,\phi)=\sqrt{\frac{2E}{k}}\cos\phi\\
-      p(E,\phi)=\sqrt{2mE}\sin \phi.
+      q(E,\phi)=\frac{\sqrt{2E}}{\omega}\cos\phi\\
+      p(E,\phi)=\sqrt{2E}\sin \phi.
     \end{cases}
   \end{equation*}
   Tenemos entonces
   \begin{equation*}
     \begin{cases}
-      \dd q= \frac{1}{\sqrt{2kE}}\cos \phi \dd E - \sqrt{\frac{2E}{k}} \sin \phi \dd \phi \\
-      \dd p= \sqrt{\frac{m}{2E}}\sin \phi \dd E + \sqrt{2mE} \cos \phi \dd \phi,
+      \dd q= \frac{1}{\omega \sqrt{2E}}\cos \phi \dd E - \frac{\sqrt{2E}}{\omega} \sin \phi \dd \phi \\
+      \dd p= \sqrt{\frac{1}{2E}}\sin \phi \dd E + \sqrt{2E} \cos \phi \dd \phi,
     \end{cases}
   \end{equation*}
   y 
   \begin{equation*}
-    \Omega_1= \dd p \wedge \dd q = -\sqrt{\tfrac{m}{k}}(\cos^2 \phi + \sin^2 \phi) \dd E \wedge \dd \phi= -\tfrac{1}{\omega} \dd E \wedge \dd \phi.
+    \Omega_1= \dd p \wedge \dd q = -\tfrac{1}{\omega} \dd E \wedge \dd \phi.
   \end{equation*}
   Por tanto, si definimos la \emph{variable de acción}, $J=-\frac{E}{\omega}$, entonces $\Omega_1=\dd J \wedge \dd \phi$ y $(J,\phi)$ son unas coordenadas de Darboux.
 
@@ -400,18 +433,18 @@ donde hemos usado el teorema de Stokes y el hecho de que $\dd p \wedge \dd q= \d
 Este será el aspecto que tengan las variables de acción-ángulo en general para sistemas con un grado de libertad. Regresando ahora a las coordenadas originales, tenemos
 \begin{equation*}
   \begin{cases}
-    q(J,\phi)=\sqrt{-\frac{2J\omega}{ k}}\cos \phi\\
-    p(J,\phi)=\sqrt{-2m\omega J}\sin \phi.
+    q(J,\phi)=\sqrt{-\frac{2J}{ \omega}}\cos \phi\\
+    p(J,\phi)=\sqrt{-2\omega J}\sin \phi.
   \end{cases}
 \end{equation*}
 
-\paragraph{\bf Oscilador armónico isótropo con $n$ grados de libertad}\mbox{}
+\paragraph{\bf Oscilador armónico con $n$ grados de libertad}\mbox{}
 
-  Para estudiar un caso de dimensión superior, podemos considerar el sistema formado por $n$ osciladores armónicos acoplados con frecuencias iguales o, equivalentemente, un oscilador armónico isótropo con $n$ grados de libertad. El hamiltoniano del sistema será (tomando las frecuencias iguales a 1)
+  Para estudiar un caso de dimensión superior, podemos considerar el sistema formado por $n$ osciladores armónicos acoplados o, equivalentemente, un oscilador armónico con $n$ grados de libertad. El hamiltoniano del sistema será 
   \begin{equation*}
-    H(q_1,\dots,q_n,p_1,\dots,p_n)= H_1(q_1,p_1)+ \cdots +H_n(q_n,p_n) = \tfrac{1}{2}\sum_{i=1}^n (p_i^2+q_i^2).
+    H(q_1,\dots,q_n,p_1,\dots,p_n)= H_1(q_1,p_1)+ \cdots +H_n(q_n,p_n) = \tfrac{1}{2}\sum_{i=1}^n (p_i^2+\omega_i^2q_i^2).
   \end{equation*}
-  Este sistema es integrable en el sentido de Liouville. Basta tomar $F=(H,H_2+\cdots+H_{n},H_3+\cdots+H_{n-2},\dots,H_n)$, ya que 
+  Este sistema es integrable en el sentido de Liouville. Basta tomar $F=(H_1,H_2,\dots,H_n),$ ya que 
   \begin{equation*}
     \pois{H_i}{H_j} = \sum_{k=1}^n\left( \parcial{H_i}{p_k}\parcial{H_j}{q_k} - \parcial{H_j}{p_k}\parcial{H_i}{q_k}\right)=0
   \end{equation*}
@@ -419,38 +452,38 @@ Este será el aspecto que tengan las variables de acción-ángulo en general par
   
   Ahora, dado $a=(a_1,\dots,a_n)\in \RR^n$, $M_a=F^{-1}(a)$ vendrá dado por 
   \begin{align*}[left=\empheqlbrace]
-      \tfrac{1}{2}(p_1^2+q_1^2)&=a_1-a_2 \\
-      \tfrac{1}{2}(p_2^2+q_2^2)&=a_2-a_3 \\
+      p_1^2+\omega_1^2q_1^2&=2a_1 \\
+      p_2^2+\omega_2^2q_2^2&=2a_2 \\
       & \vdotswithin{=} \\
-\tfrac{1}{2}(p_n^2+q_n^2)&=a_n, 
+p_n^2+\omega_n^2q_n^2&=2a_n, 
   \end{align*}
-  que son las ecuaciones de un toro $n$-dimensional. Cada una de las ecuaciones $\frac{1}{2}(p_i^2+q_i^2)=a_i-a_{i+1}$ da, en el plano $(q_i,p_i)$, una circunferencia $C_{a,i}$ de radio $r_i=\sqrt{2(a_i-a_{i+1})}$, de modo que $M_a=C_{a,1}\times\dots\times C_{a,n}$. Nótese que en este caso los valores críticos son precisamente aquellos $a$ con varias componentes iguales, de forma que los puntos críticos formarán toros de dimensión menor.
+  que son las ecuaciones de un toro $n$-dimensional. Cada una de las ecuaciones $p_i^2+q_i^2=2a_i$ da, en el plano $(q_i,p_i)$, una elipse $C_{a,i}$ de semiejes $\sqrt{2a_i}$ y $\frac{\sqrt{2a_i}}{\omega}$, de modo que $M_a=C_{a,1}\times\dots\times C_{a,n}$. Nótese que en este caso los valores críticos son precisamente aquellos $a$ con varias componentes iguales, de forma que los puntos críticos formarán toros de dimensión menor.
 
-  Consideremos $\gamma_{a,i}$ lazos en cada circunferencia $C_{a,i}$, de manera que los $\gamma_{a,i}$ son generadores del grupo fundamental de $M_a$. Entonces podemos definir las variables de acción 
+  Consideremos $\gamma_{a,i}$ lazos en cada elipse $C_{a,i}$, de manera que los $\gamma_{a,i}$ son generadores del grupo fundamental de $M_a$. Entonces podemos definir las variables de acción 
   \begin{equation*}
-    J_i(a) = \frac{1}{2\pi}\int_{\gamma_{a,i}} \sum_{k=1}^n p_k \dd q_k.
+    J_i(a) = \frac{1}{2\pi}\int_{\gamma_{a,i}}\sum_{k=1}^n  p_k \dd q_k=\frac{1}{2\pi}\int_{\gamma_{a,i}}  p_i \dd q_i=\frac{a_i}{\omega_i}.
   \end{equation*}
 
   Consideremos ahora las variables angulares $\phi_i$ a lo largo de cada $C_{i,a}$. Podemos tomar entonces las nuevas coordenadas $(J,\phi)$, con
   \begin{equation*}
-      J_i(q,p)=J_i(F(q,p))=\frac{1}{2\pi}\int_{\gamma_{F(q,p),i}} \sum_{k=1}^n p_k \dd q_k 
+    J_i(q,p)=J_i(F(q,p))=\frac{1}{2\pi}\int_{\gamma_{F(q,p),i}} p_i \dd q_i= \frac{H_i(q,p)}{\omega_i},
   \end{equation*}
   y $\phi(q,p)$ las variables angulares en el toro $M_{F(q,p)}$.
-  Si la carta $(J,\phi)$ es de Darboux, las ecuaciones de Hamilton pueden integrarse por cuadraturas. Esto se debe a que $J=J(a)$, de modo que, por las ecuaciones de Hamilton,
+  Si la carta $(J,\phi)$ es de Darboux, las ecuaciones de Hamilton pueden integrarse por cuadraturas. Esto se debe a que $H=\sum_{i=1}^n H_i(J,\phi)=\sum_{i=1}^n \omega_i J_i$, de modo que, por las ecuaciones de Hamilton,
 \begin{equation*}
-  \parcial{H}{\phi_i}=-\dot{J_i}=0.
-\end{equation*}
-Por tanto, $H=H(J_1(a),\dots,J_n(a))$ y 
-\begin{equation*}
-  \dot{\phi_i}=\parcial{H}{J_i} = 1.
+  \begin{cases}
+  \dot{J_i}=-\parcial{H}{\phi_i}=0,\\
+  \dot{\phi_i}=\parcial{H}{J_i} = \omega_i.
+  \end{cases}
 \end{equation*}
  Las ecuaciones de Hamilton quedan entonces integradas en la forma
 \begin{equation*}
   \begin{cases}
-  J(t)=  J(a) \\
-  \phi(t) =  \phi(0) + t.
+  J(t)=  J(0) \\
+  \phi(t) =  \phi(0) + \omega_i t.
 \end{cases}
 \end{equation*}
+Este tipo de flujo en el toro se llama \emph{movimiento condicionalmente periódico}, ya que, dependiendo de los valores de las frecuencias $\omega_i$, las trayectorias serán cerradas y periódicas o serán densas en cada toro de Liouville. En la siguiente sección profundizaremos más en este tema.
 
 \section{Movimiento condicionalmente periódico}\label{sec:promedios}
 Una vez tenemos a nuestra disposición el teorema de Arnold-Liouville, sabemos que el flujo en los toros de Liouville será muy sencillo. En esta sección vamos a estudiar el flujo en estos toros y obtendremos un teorema muy importante sobre este tipo de sistemas.
@@ -461,7 +494,7 @@ Una vez tenemos a nuestra disposición el teorema de Arnold-Liouville, sabemos q
   \end{equation*}
   Es decir, a cierto tiempo la trayectoria «se cierra». Estas órbitas se dicen \emph{periódicas}. 
  
-  Sin embargo, si $\omega_2/\omega_1$ es irracional, dado un ángulo $\alpha$ y sea $T$ tal que $\alpha=\theta_1+\omega T$, entonces, sea $T_n=T+2n\pi/\omega_1$, $\alpha=\theta_1+\omega_1(T_n)$ para cada $n\in \NN$. Ahora, la aplicación
+  Sin embargo, si $\omega_2/\omega_1$ es irracional, dado un ángulo $\alpha$ y tomando $T$ tal que $\alpha=\theta_1+\omega T$, entonces podemos tomar $T_n=T+2n\pi/\omega_1$, $\alpha=\theta_1+\omega_1(T_n)$ para cada $n\in \NN$. Ahora, la aplicación
   \begin{equation*}
     \begin{array}{rcl}
     g:\SF^1 & \longrightarrow &\SF^1 \\
@@ -492,7 +525,7 @@ Vamos a generalizar ahora estas ideas al caso $n$-dimensional.
   \begin{equation*}
     \phi(t)=\phi(0)+\omega t
   \end{equation*}
-  con $\omega=(\omega_1,\dots,\omega_n)$ \emph{frecuencias} constantes en el toro. Las frecuencias $\omega$ se dicen \emph{independientes} si, sea $k \in \ZZ^n$, entonces $\esc{k}{\omega}=0$ si y sólo si $k=0$.
+  con $\omega=(\omega_1,\dots,\omega_n)$ \emph{frecuencias} constantes en el toro. Las frecuencias $\omega$ se dicen \emph{independientes} si, para cada $k \in \ZZ^n$,  $\esc{k}{\omega}=0$ si y sólo si $k=0$.
 \end{defn}
 \begin{defn}
   \em

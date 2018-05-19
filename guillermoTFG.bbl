@@ -12,7 +12,7 @@ V.~I. Arnold.
 
 \bibitem{audin}
 Mich\`ele Audin.
-\newblock {\em Torus actions on symplectic manifolds}.
+\newblock {\em Torus actions on {S}ymplectic {M}anifolds}.
 \newblock Birkh{\"a}user, 2012.
 
 \bibitem{bolsinov}
@@ -20,11 +20,6 @@ A.~V. Bolsinov and A.T. Fomenko.
 \newblock {\em Integrable Hamiltonian systems: geometry, topology,
   classification}.
 \newblock CRC Press, 2004.
-
-\bibitem{dasilva}
-A.~C. Da~Silva and F.~Takens.
-\newblock {\em Lectures on symplectic geometry}.
-\newblock Springer, 2001.
 
 \bibitem{algebra}
 J.F. Fernando, J.M. Gamboa, and J.M. Ruiz.
@@ -42,14 +37,6 @@ H.~Goldstein, C.P. Poole, and J.L. Safko.
 \newblock {\em Classical Mechanics}.
 \newblock Pearson Education India, 2011.
 
-\bibitem{guillemin}
-Victor Guillemin.
-\newblock ``{L}ecture notes on {T}heory of {D}ifferential {F}orms. {C}hapter 5:
-  {C}ohomology via forms".
-\newblock \url{http://math.mit.edu/classes/18.952/spring2012/chapter5.pdf},
-  2012.
-\newblock Online; visto el 22 de julio de 2017.
-
 \bibitem{landau}
 L.D. Landau and E.M. Lifshitz.
 \newblock {\em Curso de física teórica (vol. 1): Mecánica}.
@@ -60,23 +47,16 @@ John~M. Lee.
 \newblock {\em Introduction to {S}mooth {M}anifolds}.
 \newblock Springer, 2003.
 
+\bibitem{puta}
+Mircea Puta.
+\newblock The completeness of some {H}amiltonian vector fields on a {P}oisson
+  manifold.
+\newblock {\em An. Univ. Timisoara Ser. Mat.-Inform}, 32:93--98, 1994.
+
 \bibitem{scheck}
 Florian Scheck.
 \newblock {\em Mechanics: from Newton's laws to deterministic chaos}.
 \newblock Springer Science \& Business Media, 2010.
-
-\bibitem{segal}
-Graeme Segal.
-\newblock ``{L}ecture notes on symplectic manifolds and quantization".
-\newblock
-  \url{http://web.math.ucsb.edu/~drm/conferences/ITP99/segal/segal2_n.pdf},
-  1999.
-\newblock Online; visto el 24 de febrero de 2018.
-
-\bibitem{souriau}
-J.-M. Souriau.
-\newblock {\em Structure des syst\`emes dynamiques}.
-\newblock Dunod, 1969.
 
 \bibitem{spivak}
 Michael Spivak.
