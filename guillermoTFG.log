@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.3)  20 MAY 2018 00:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.3)  20 MAY 2018 18:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2184,11 +2184,11 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 44.
  [31]
 Package epstopdf Info: Source file: <pics/entornos.eps>
-(epstopdf)                    date: 2018-05-19 22:03:00
-(epstopdf)                    size: 139235 bytes
+(epstopdf)                    date: 2018-05-20 18:19:39
+(epstopdf)                    size: 138406 bytes
 (epstopdf)             Output file: <pics/entornos-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-19 22:03:20
-(epstopdf)                    size: 72311 bytes
+(epstopdf)                    date: 2018-05-20 18:19:56
+(epstopdf)                    size: 72258 bytes
 (epstopdf)             Command: <repstopdf --outfile=pics/entornos-eps-converte
 d-to.pdf pics/entornos.eps>
 (epstopdf)             \includegraphics on input line 68.
@@ -2949,7 +2949,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 136.
 Here is how much of TeX's memory you used:
  21440 strings out of 494850
  411397 string characters out of 6178025
- 468615 words of memory out of 5000000
+ 468617 words of memory out of 5000000
  23959 multiletter control sequences out of 15000+600000
  18182 words of font info for 76 fonts, out of 8000000 for 9000
  223 hyphenation exceptions out of 8191
@@ -2981,7 +2981,7 @@ fm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eusm1
 0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.
 pfb>
-Output written on guillermoTFG.pdf (51 pages, 1722732 bytes).
+Output written on guillermoTFG.pdf (51 pages, 1722430 bytes).
 PDF statistics:
  749 PDF objects out of 1000 (max. 8388607)
  608 compressed objects within 7 object streams

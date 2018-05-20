@@ -103,7 +103,7 @@ da un difeomorfismo $\tilde{g}:N\rightarrow \RR^n/\Gamma$. Si $\Gamma=\{0\}$, en
   \begin{figure}[h]
     \centering
     \includegraphics[width=0.25\textwidth]{pics/discreto}
-    \caption{\small Idea de que $H$ es discreto.}
+    \caption{\small Idea de que $\Gamma$ es discreto.}
     \label{fig:discreto}
   \end{figure}
 
@@ -147,7 +147,7 @@ Terminamos ahora la demostración del Lema \ref{lemtoro}.
   \[
     \begin{array}{rcl}
       \varpi: \RR^n = \RR^k \times \RR^{n-k} & \longrightarrow & \TT^k \times \RR^{n-k} \\
-      (x,y) & \longmapsto & (\exp(2\pi x), y),
+      (x,y) & \longmapsto & (\exp(x), y),
     \end{array}
   \]
   donde la función
@@ -211,7 +211,7 @@ Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
    \em
    Para finalizar la sección vamos a hacer un pequeño comentario sobre la completitud de los campos. Recordemos de la definición \ref{integrable} que una de las cosas que exigíamos a un sistema para que fuera integrable en el sentido de Liouville es que los campos $X^{F_i}$ fueran completos. Sin embargo, en la demostración del teorema de Arnold-Liouville hemos usado algo ligeramente más débil: sólo necesitamos que los campos sean completos en el conjunto de nivel $M_a$. En particular, si nos encontramos ante un toro de Liouville, es decir, si $M_a$ es compacta, entonces todos los campos son completos en $M_a$.
    
-   Una garantía segura de la compacidad de los conjuntos de nivel es que $M$ fuera compacta. Sin embargo en la mayoría de los casos con sentido físico esto no se cumple, pues $M$ suele ser un fibrado tangente, que claramente no es compacto. Por otra parte, el resultado expuesto en \cite{puta} asegura que un campo hamiltoniano $X^G$ es completo en toda la variedad si $G$ es propia, esto es, si la imagen inversa de un compacto por $G$ es un conjunto compacto y si $G$ está acotada inferiormente. De nuevo, esto no aporta gran cosa, pues si las $F_i$ son propias, entonces $F^{-1}(a)$ es compacto y otra vez estaríamos exigiendo que todos los conjuntos de nivel fueran toros de Liouville, aunque esta vez al menos no requerimos que $M$ sea compacta.
+   Una garantía segura de la completitud de los campos es que $M$ fuera compacta. Sin embargo en la mayoría de los casos con sentido físico esto no se cumple, pues $M$ suele ser un fibrado tangente, que claramente no es compacto. Por otra parte, el resultado expuesto en \cite{puta} asegura que un campo hamiltoniano $X^G$ es completo en toda la variedad si $G$ es propia, esto es, si la imagen inversa de un compacto por $G$ es un conjunto compacto y si $G$ está acotada inferiormente. De nuevo, esto no aporta gran cosa, pues si las $F_i$ son propias, entonces $F^{-1}(a)$ es compacto y otra vez estaríamos exigiendo que todos los conjuntos de nivel fueran toros de Liouville, aunque esta vez al menos no requerimos que $M$ sea compacta.
  \end{obs}
 
  \section{Variables de acción-ángulo}
@@ -221,19 +221,19 @@ Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
 
  \begin{thm}[Variables de acción-ángulo]
    Seguimos en las hipótesis del teorema \ref{arnold}. En el caso en que $M_a$ sea compacta, existe un entorno $U\subset M$ de $M_a$ difeomorfo a $\RR^n \times \TT^n$ (un \emph{entorno tubular}\footnote{Nótese que aquí estamos suponiendo que $M_a$ no está en el borde de $M$, en cuyo caso procederíamos análogamente para obtener un entorno difeomorfo a $\HH^n \times \TT^n$.})
-) y un sistema de coordenadas de Darboux $(F,\phi)$ (llamadas \emph{variables de acción-ángulo}) en $U$ tales que las $\phi_i$ son coordenadas angulares en $M_a$ y las $F_i$ son constantes en cada $M_a$. 
+) y un sistema de coordenadas de Darboux $(\phi,F)$ (llamadas \emph{variables de acción-ángulo}) en $U$ tales que las $\phi_i$ son coordenadas angulares en $M_a$ y las $F_i$ son constantes en cada $M_a$. 
   \end{thm}
 
   \begin{obs}
     \em
-    La consecuencia inmediata de este teorema es que en los entornos tubulares las ecuaciones de Hamilton quedan resueltas por cuadraturas. En efecto, al ser $(F,\phi)$ coordenadas de Darboux, podemos escribir las ecuaciones de Hamilton en la forma
+    La consecuencia inmediata de este teorema es que en los entornos tubulares las ecuaciones de Hamilton quedan resueltas por cuadraturas. En efecto, al ser $(\phi,F)$ coordenadas de Darboux, podemos escribir las ecuaciones de Hamilton en la forma
     \begin{equation*}
       \begin{cases}
-	\dot{F_i}=-\parcial{H}{\phi_i}, \\
-	\dot{\phi_i}=\parcial{H}{F_i}. 
+	\dot{F_i}=\parcial{H}{\phi_i}, \\
+	\dot{\phi_i}=-\parcial{H}{F_i}. 
       \end{cases}
     \end{equation*}
-    Ahora, como las $F_i$ son constantes en los toros, se tiene $\dot{F_i}=0$, de modo que $\parcial{H}{\phi_i}$ es constante en cada toro, luego el hamiltoniano no depende de las coordenadas $\phi$. Por tanto, las frecuencias $\nu_i=\dot{\phi_i}=\parcial{H}{F_i}$ son constantes en cada toro. Así, las ecuaciones quedan integradas en la forma
+    Ahora, como las $F_i$ son constantes en los toros, se tiene $\dot{F_i}=0$, de modo que $\parcial{H}{\phi_i}$ es constante en cada toro, luego el hamiltoniano no depende de las coordenadas $\phi$. Por tanto, las frecuencias $\nu_i=\dot{\phi_i}=-\parcial{H}{F_i}$ son constantes en cada toro. Así, las ecuaciones quedan integradas en la forma
     \begin{equation*}
       \begin{cases}
 	F_i(t)=F_i(0), \\
@@ -254,9 +254,9 @@ Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
   que es una unión disjunta de toros de Liouville. Ahora, análogamente a la demostración del teorema de Arnold-Liouville, para cada $b\in B$, fijamos $x\in M_b$ y consideramos la aplicación
   \begin{align*}
     \varphi^F :\RR^n&\longrightarrow M_b\\ 
-    (t_1,\dots,t_n) &\longmapsto \varphi_{t_1}^{F_1}\cdots \varphi_{t_n}^{F_n}(x), 
+    (\theta_1,\dots,\theta_n) &\longmapsto \varphi_{\theta_1}^{F_1}\cdots \varphi_{\theta_n}^{F_n}(x), 
     \end{align*}
-    que está bien definida por conmutar los flujos, y el difeomorfismo $\theta:M_b\rightarrow \TT^n$ inducido dado por el diagrama
+    que está bien definida por conmutar los flujos, y el difeomorfismo $\theta_b:M_b\rightarrow \TT^n$ inducido dado por el diagrama
     \begin{center}
       \begin{tikzcd}
 \RR^n	\arrow{r}{\varphi^F}\arrow{d}{ } & M_b\arrow{ld}[anchor=north,rotate=30]{\theta_b} \\ 
@@ -272,7 +272,7 @@ Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
 
  Procedamos ahora a hallar las variables de acción-ángulo. Sea $\pi:U\cong B\times \TT^n\rightarrow B$ la proyección canónica. Entonces $\pi^{-1}(x)$ es un toro invariante para cada $x \in B$. En cada uno de estos toros, consideramos $X_i=X^{F_i}$ y $(F,\theta)$ las coordenadas antes obtenidas. Si tomamos un punto $\theta=(\theta_1,\dots,\theta_n)\in \RR^n$ entonces, para cada $x\in M$, podemos usar la conmutatividad de los flujos para escribir
 \[
-  \left. \deriv{\theta_i}\right|_{\varphi^F_t(x)} = \deriv{\theta_i} \varphi^{F_i}_{\theta_i}(y),
+  \left. \deriv{\theta_i}\right|_{\varphi^F_{\theta}(x)} = \deriv{\theta_i} \varphi^{F_i}_{\theta_i}(y),
 \]
 con $y=\varphi^{F_1}_{\theta_1}\cdots\varphi^{F_{i-1}}_{\theta_{i-1}}\varphi^{F_{i+1}}_{\theta_{i+1}}\cdots\varphi^{F_{n}}_{\theta_{n}}(x)$. Ahora, como $\varphi^{F_i}$ es el flujo de $X_i$,
 \begin{equation*}
@@ -315,12 +315,12 @@ En estas nuevas coordenadas
 \end{split}
 \]
 
-Por tanto, hemos encontrado unas coordenadas de Darboux $(F,\phi)$, con las $F_i$ constantes en cada toro invariante y con las $\phi_i$ coordenadas angulares en estos toros. 
+Por tanto, hemos encontrado unas coordenadas de Darboux $(\phi,F)$, con las $F_i$ constantes en cada toro invariante y con las $\phi_i$ coordenadas angulares en estos toros. 
 \end{proof}
 
 \begin{obs}
   \em
-  En la práctica, las variables de acción-ángulo no suelen obtenerse como en la demostración del teorema. Normalmente se suele trabajar en el fibrado tangente $M=TN$ de cierta variedad riemanniana $N$ de dimensión $n$ en la que se define un sistema lagrangiano natural, igual que hicimos en la sección \ref{sec:fisica}. En este caso, si $(J,\phi)$ son unas variables de acción-ángulo en $M$, se puede escribir
+  En la práctica, las variables de acción-ángulo no suelen obtenerse como en la demostración del teorema. Normalmente se suele trabajar en el fibrado tangente $M=TN$ de cierta variedad riemanniana $N$ de dimensión $n$ en la que se define un sistema lagrangiano natural, igual que hicimos en la sección \ref{sec:fisica}. En este caso, si $(\phi,J)$ son unas variables de acción-ángulo en $M$, se puede escribir
 \begin{equation*}
   \omega=\sum_{i=1}^n \dd J_i \wedge \dd \phi_i = \dd \alpha,
 \end{equation*}
@@ -353,9 +353,9 @@ Para aclarar algunas de las ideas detrás de la teoría de sistemas integrables,
 
   Empezamos considerando el oscilador armónico con un grado de libertad. El espacio de fases del sistema será el espacio simpléctico estándar $2$-dimensional, $(\RR^2,\Omega_1)$ con las coordenadas de Darboux canónicas $(q,p)$. El hamiltoniano vendrá dado por la función
   \begin{equation*}
-    H(q,p)=\tfrac{1}{2}p^2+\tfrac{1}{2}\omega^2 q^2.
+    H(q,p)=\tfrac{1}{2}p^2+\tfrac{1}{2}\omega^2 q^2,
   \end{equation*}
-  Con $\omega$ una constante que representa la frecuencia de oscilación.
+  con $\omega$ una constante que representa la frecuencia de oscilación.
   Las ecuaciones de Hamilton son entonces
   \begin{equation*}
     \begin{cases}
@@ -415,7 +415,7 @@ Para aclarar algunas de las ideas detrás de la teoría de sistemas integrables,
   \begin{equation*}
     \Omega_1= \dd p \wedge \dd q = -\tfrac{1}{\omega} \dd E \wedge \dd \phi.
   \end{equation*}
-  Por tanto, si definimos la \emph{variable de acción}, $J=-\frac{E}{\omega}$, entonces $\Omega_1=\dd J \wedge \dd \phi$ y $(J,\phi)$ son unas coordenadas de Darboux.
+  Por tanto, si definimos la \emph{variable de acción}, $J=-\frac{E}{\omega}$, entonces $\Omega_1=\dd J \wedge \dd \phi$ y $(\phi,J)$ son unas coordenadas de Darboux.
 
   Para tratar de dar sentido físico a esta variable $J$, consideremos el área $A_E$ de la región $S_E$ encerrada por la curva de energía constante $M_E$. Por la fórmula del área de la elipse
   \begin{equation*}
@@ -433,8 +433,8 @@ donde hemos usado el teorema de Stokes y el hecho de que $\dd p \wedge \dd q= \d
 Este será el aspecto que tengan las variables de acción-ángulo en general para sistemas con un grado de libertad. Regresando ahora a las coordenadas originales, tenemos
 \begin{equation*}
   \begin{cases}
-    q(J,\phi)=\sqrt{-\frac{2J}{ \omega}}\cos \phi\\
-    p(J,\phi)=\sqrt{-2\omega J}\sin \phi.
+    q(\phi,J)=\sqrt{-\frac{2J}{ \omega}}\cos \phi\\
+    p(\phi,J)=\sqrt{-2\omega J}\sin \phi.
   \end{cases}
 \end{equation*}
 
@@ -464,23 +464,23 @@ p_n^2+\omega_n^2q_n^2&=2a_n,
     J_i(a) = \frac{1}{2\pi}\int_{\gamma_{a,i}}\sum_{k=1}^n  p_k \dd q_k=\frac{1}{2\pi}\int_{\gamma_{a,i}}  p_i \dd q_i=\frac{a_i}{\omega_i}.
   \end{equation*}
 
-  Consideremos ahora las variables angulares $\phi_i$ a lo largo de cada $C_{i,a}$. Podemos tomar entonces las nuevas coordenadas $(J,\phi)$, con
+  Consideremos ahora las variables angulares $\phi_i$ a lo largo de cada $C_{i,a}$. Podemos tomar entonces las nuevas coordenadas $(\phi,J)$, con
   \begin{equation*}
     J_i(q,p)=J_i(F(q,p))=\frac{1}{2\pi}\int_{\gamma_{F(q,p),i}} p_i \dd q_i= \frac{H_i(q,p)}{\omega_i},
   \end{equation*}
   y $\phi(q,p)$ las variables angulares en el toro $M_{F(q,p)}$.
-  Si la carta $(J,\phi)$ es de Darboux, las ecuaciones de Hamilton pueden integrarse por cuadraturas. Esto se debe a que $H=\sum_{i=1}^n H_i(J,\phi)=\sum_{i=1}^n \omega_i J_i$, de modo que, por las ecuaciones de Hamilton,
+  Si la carta $(\phi,J)$ es de Darboux, las ecuaciones de Hamilton pueden integrarse por cuadraturas. Esto se debe a que $H=\sum_{i=1}^n H_i(J,\phi)=\sum_{i=1}^n \omega_i J_i$, de modo que, por las ecuaciones de Hamilton,
 \begin{equation*}
   \begin{cases}
-  \dot{J_i}=-\parcial{H}{\phi_i}=0,\\
-  \dot{\phi_i}=\parcial{H}{J_i} = \omega_i.
+  \dot{J_i}=\parcial{H}{\phi_i}=0,\\
+  \dot{\phi_i}=-\parcial{H}{J_i} = -\omega_i.
   \end{cases}
 \end{equation*}
  Las ecuaciones de Hamilton quedan entonces integradas en la forma
 \begin{equation*}
   \begin{cases}
-  J(t)=  J(0) \\
-  \phi(t) =  \phi(0) + \omega_i t.
+  J_i(t)=  J_i(0) \\
+  \phi_i(t) =  \phi_i(0) - \omega_i t.
 \end{cases}
 \end{equation*}
 Este tipo de flujo en el toro se llama \emph{movimiento condicionalmente periódico}, ya que, dependiendo de los valores de las frecuencias $\omega_i$, las trayectorias serán cerradas y periódicas o serán densas en cada toro de Liouville. En la siguiente sección profundizaremos más en este tema.
