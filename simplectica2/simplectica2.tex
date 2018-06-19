@@ -1,3 +1,4 @@
+\chapter{Geometría simpléctica y mecánica hamiltoniana}
 \section{Espacios vectoriales simplécticos}\label{sec:vectoriales}
 En esta sección repasamos algunos conceptos de álgebra lineal necesarios para estudiar geometría simpléctica. Introduciremos la noción de \emph{espacio vectorial simpléctico} y veremos algunas de sus propiedades. Muchos de los resultados aquí expuestos pueden leerse más desarrollados en \cite{algebra}.
 \begin{defn}
@@ -448,7 +449,7 @@ O, en su forma más compacta
 \paragraph{\bf Transformaciones canónicas}\mbox{}
 
   Para terminar la sección, vamos a ver cómo se comportan las ecuaciones de Hamilton mediante cambios de coordenadas:
-\begin{prop}
+  \begin{prop}\label{cambiodif}
  Sean $M,M'$ variedades simplécticas y $H:M'\rightarrow \RR$. Si $f:M\rightarrow M'$ es una aplicación diferenciable, entonces 
  \begin{equation*}
    f^*i_{X^H}\omega'=i_{X^{H\circ f}}\omega.
@@ -484,13 +485,13 @@ Vamos a buscar entonces cambios de coordenadas que mantengan las ecuaciones de H
   \begin{equation*}
     f^*i_X \lambda = i_{(f_*)^{-1}X}f^* \lambda.
   \end{equation*}
-  Como $f$ es un simplectomorfismo, $f^*\omega=\omega$, luego, si aplicamos la proposición \ref{cambiohamilton},
+  Como $f$ es un simplectomorfismo, $f^*\omega=\omega$, luego, si aplicamos la proposición \ref{cambiodif},
   \begin{equation*}
     i_{X^{H\circ f}}\omega=f^{*}(i_{X^H}\omega)=i_{(f_*)^{-1}X^H}f^*\omega=i_{(f_*)^{-1}X^H}\omega
   \end{equation*}
   por tanto $(f_*)^{-1}X^H=X^{H\circ f}$, de modo que $X^H=f_*X^{H\circ f}$, es decir, $f$ es una transformación canónica de $(M,H)$.
 
-  $2\implies 1$. Si $f_*X^{H\circ f}=X^H$ para todo $H:M \rightarrow \RR$, entonces, de nuevo por la proposición \ref{cambiohamilton} y por la fórmula anterior,
+  $2\implies 1$. Si $f_*X^{H\circ f}=X^H$ para todo $H:M \rightarrow \RR$, entonces, de nuevo por la proposición \ref{cambiodif} y por la fórmula anterior,
   \begin{equation*}
     i_{X^H}\omega=i_{f_*X^{H\circ f}}\omega = (f^*)^{-1}(i_{X^{H\circ f}}f^*\omega)=(f^*)^{-1}f^*(i_{X^H}f^*\omega)=i_{X^H}f^*\omega.
   \end{equation*}

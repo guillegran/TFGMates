@@ -1,17 +1,20 @@
-\BOOKMARK [1][-]{section*.2}{Introducci\363n}{}% 1
-\BOOKMARK [1][-]{section.1}{1. Motivaci\363n f\355sica. De Newton a Hamilton}{}% 2
-\BOOKMARK [1][-]{section.2}{2. Derivada de Lie y f\363rmulas de Cartan}{}% 3
-\BOOKMARK [1][-]{section.3}{3. Campos y formas dependientes del tiempo}{}% 4
-\BOOKMARK [1][-]{section.4}{4. Espacios vectoriales simpl\351cticos}{}% 5
-\BOOKMARK [1][-]{section.5}{5. Variedades simpl\351cticas}{}% 6
-\BOOKMARK [1][-]{section.6}{6. Campos simpl\351cticos y campos hamiltonianos}{}% 7
-\BOOKMARK [1][-]{section.7}{7. Corchete de Poisson}{}% 8
-\BOOKMARK [1][-]{section.8}{8. Mec\341nica en variedades simpl\351cticas}{}% 9
-\BOOKMARK [1][-]{section.9}{9. Simetr\355as y leyes de conservaci\363n}{}% 10
-\BOOKMARK [1][-]{section.10}{10. Teorema de Arnold-Liouville}{}% 11
-\BOOKMARK [1][-]{section.11}{11. Variables de acci\363n-\341ngulo}{}% 12
-\BOOKMARK [1][-]{section.12}{12. Osciladores arm\363nicos}{}% 13
-\BOOKMARK [1][-]{section.13}{13. Movimiento condicionalmente peri\363dico}{}% 14
-\BOOKMARK [1][-]{section.14}{14. Sistemas con un grado de libertad}{}% 15
-\BOOKMARK [1][-]{section.15}{15. M\341s sistemas integrables}{}% 16
-\BOOKMARK [1][-]{section*.22}{Referencias}{}% 17
+\BOOKMARK [0][-]{chapter*.1}{Introducci\363n}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Motivaci\363n f\355sica. De Newton a Hamilton}{}% 2
+\BOOKMARK [0][-]{chapter.2}{Preliminares de geometr\355a diferencial}{}% 3
+\BOOKMARK [1][-]{section.2.1}{Derivada de Lie y f\363rmulas de Cartan}{chapter.2}% 4
+\BOOKMARK [1][-]{section.2.2}{Campos y formas dependientes del tiempo}{chapter.2}% 5
+\BOOKMARK [0][-]{chapter.3}{Geometr\355a simpl\351ctica y mec\341nica hamiltoniana}{}% 6
+\BOOKMARK [1][-]{section.3.1}{Espacios vectoriales simpl\351cticos}{chapter.3}% 7
+\BOOKMARK [1][-]{section.3.2}{Variedades simpl\351cticas}{chapter.3}% 8
+\BOOKMARK [1][-]{section.3.3}{Campos simpl\351cticos y campos hamiltonianos}{chapter.3}% 9
+\BOOKMARK [1][-]{section.3.4}{Corchete de Poisson}{chapter.3}% 10
+\BOOKMARK [1][-]{section.3.5}{Mec\341nica en variedades simpl\351cticas}{chapter.3}% 11
+\BOOKMARK [1][-]{section.3.6}{Simetr\355as y leyes de conservaci\363n}{chapter.3}% 12
+\BOOKMARK [0][-]{chapter.4}{Sistemas integrables}{}% 13
+\BOOKMARK [1][-]{section.4.1}{Teorema de Arnold-Liouville}{chapter.4}% 14
+\BOOKMARK [1][-]{section.4.2}{Variables de acci\363n-\341ngulo}{chapter.4}% 15
+\BOOKMARK [1][-]{section.4.3}{Osciladores arm\363nicos}{chapter.4}% 16
+\BOOKMARK [1][-]{section.4.4}{Movimiento condicionalmente peri\363dico}{chapter.4}% 17
+\BOOKMARK [1][-]{section.4.5}{Sistemas con un grado de libertad}{chapter.4}% 18
+\BOOKMARK [1][-]{section.4.6}{M\341s sistemas integrables}{chapter.4}% 19
+\BOOKMARK [0][-]{section*.21}{Bibliograf\355a}{}% 20

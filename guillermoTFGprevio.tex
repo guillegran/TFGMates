@@ -1,10 +1,8 @@
-\documentclass[11pt,a4paper,twoside]{book}
+\documentclass[12pt,a4paper,reqno]{amsart}
 
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 
-\usepackage[left=2cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
-\usepackage{blindtext}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -14,18 +12,15 @@
 \usepackage[mathscr]{eucal}
 \usepackage{cite}
 \usepackage{graphicx}
-\usepackage{fancyhdr}
 \usepackage{tikz}
 \usepackage{tikz-cd}
 \usetikzlibrary{matrix,arrows,decorations.pathmorphing,babel}
 
 \usepackage{url}
 
-\usepackage{titlefoot}
-
+%\usepackage[tocflat]{tocstyle}
 %Descomentar para usar Times New Roman:
-%\usepackage{newtxmath}
-%\usepackage{newtxtext}
+%\usepackage{mathptmx}
 
 %Descomentar para usar Palatino:
 %\usepackage[sc]{mathpazo}
@@ -34,8 +29,38 @@
 %\usepackage{libertine}
 %\usepackage[libertine]{newtxmath}
 
+%%%%Cosas de Ruiz:%%%%
 \usepackage[colorlinks=true, linktocpage=true,pagebackref=true, citecolor=red,linkcolor=blue]{hyperref}
+%\usepackage[colorlinks=true,linktocpage=true,pagebackref=true, citecolor=red,linkcolor=blue]{hyperref}
 \usepackage[shortlabels]{enumitem}
+%\setlist[1]{itemsep=-1.2pt,topsep=-2pt,parsep=2pt,leftmargin=5.9mm,labelsep=0.9mm}
+%
+%\usepackage{caption}
+%\usepackage{subfigure}
+%\usepackage{hyperref}
+%\usepackage{float}
+\setlist{topsep=-1pt}
+%
+%opening
+
+\voffset=-1.5cm
+\hoffset=-1.5cm
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{23cm}
+\setlength{\headsep}{25pt}
+\footskip=30pt
+
+\parskip=1.2ex
+
+%newlabel
+\makeatletter
+\newcommand{\hlabel}[1]{%
+   \protected@write \@auxout {}%
+        {\string \newlabel {#1}{{\theteorema}{\thepage}{}{#1}{}} }%
+   \hypertarget{#1}{}
+}
+\makeatother
+%%%%-%%%
 
 \newtheorem{thm}{Teorema}[section]
 \newtheorem{prop}[thm]{Proposición}
@@ -45,7 +70,7 @@
 \newtheorem{ejemplo}[thm]{Ejemplo}
 \newtheorem{obs}[thm]{Observación}
 
-%%% Cosas de Ruiz %%%
+%%% Más cosas de Ruiz %%%
 \newcommand{\add}{\vspace{2mm}\noindent\addtocounter{teorema}{1}} 
 
 \renewenvironment{proof}%
@@ -73,44 +98,30 @@
 \newcommand{\nota}[1]{$\clubsuit$ \textbf{#1}}
 \newcommand{\thalf}{\tfrac{1}{2}}
 
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[LE,RO]{\thepage}
-\fancyhead[CO]{\small INTRODUCCIÓN A LA GEOMETRÍA SIMPLÉCTICA Y LOS SISTEMAS INTEGRABLES}
-\fancyhead[CE]{\small GUILLERMO GALLEGO}
-\renewcommand{\headrulewidth}{0pt}
-
 \begin{document}
-%\thispagestyle{plain}
+\thispagestyle{plain}
 
-%\title[INTRODUCCIÓN A LA GEOMETRÍA SIMPLÉCTICA Y LOS SISTEMAS INTEGRABLES]{
-%{\rm\tiny Trabajo  \hspace{-1mm}de  \hspace{-1mm}Fin  \hspace{-1mm}de  \hspace{-1mm}Grado,  
-%\hspace{-1mm}Junio  \hspace{-1mm}2018}\\[8pt] 
-%INTRODUCCIÓN A LA GEOMETRÍA SIMPLÉCTICA Y LOS SISTEMAS INTEGRABLES\\[8pt]
-%{\rm\tiny Departamento \hspace{-1mm}de  \hspace{-1mm}Álgebra,  \hspace{-1mm}Geometría  \hspace{-1mm}y  \hspace{-1mm}Topología\\
-%Facultad  \hspace{-1mm}de  \hspace{-1mm}Ciencias \hspace{-1mm}Matem\'aticas,  \hspace{-1mm}UCM\\
-%{\rm\tiny Dirigido por Jes\'us M. Ruiz}
-%}}
+\title[INTRODUCCIÓN A LA GEOMETRÍA SIMPLÉCTICA Y LOS SISTEMAS INTEGRABLES]{
+{\rm\tiny Trabajo  \hspace{-1mm}de  \hspace{-1mm}Fin  \hspace{-1mm}de  \hspace{-1mm}Grado,  
+\hspace{-1mm}Junio  \hspace{-1mm}2018}\\[8pt] 
+INTRODUCCIÓN A LA GEOMETRÍA SIMPLÉCTICA Y LOS SISTEMAS INTEGRABLES\\[8pt]
+{\rm\tiny Departamento \hspace{-1mm}de  \hspace{-1mm}Álgebra,  \hspace{-1mm}Geometría  \hspace{-1mm}y  \hspace{-1mm}Topología\\
+Facultad  \hspace{-1mm}de  \hspace{-1mm}Ciencias \hspace{-1mm}Matem\'aticas,  \hspace{-1mm}UCM\\
+{\rm\tiny Dirigido por Jes\'us M. Ruiz}
+}}
 
-%\author{Guillermo Gallego}
-%\date{\textbf{ \today }}
+\author{Guillermo Gallego}
+\date{\textbf{ \today }}
 
-%\subjclass[2010]{Primary  37J05, 37J35, 53D05, 58A05, 70H05}
-
-\input{portada/portada.tex}
-
-\newpage\null\thispagestyle{empty}\newpage
+\subjclass[2010]{Primary  37J05, 37J35, 53D05, 58A05, 70H05}
 
 \input{abstract/abstract.tex}
 
-\newpage\null\thispagestyle{empty}\newpage
-
-\setcounter{tocdepth}{1}
+\maketitle
 \newpage
+\setcounter{tocdepth}{1}
 \tableofcontents
-\newpage\null\thispagestyle{empty}\newpage
 
-\addcontentsline{toc}{chapter}{Introducción}
 \input{intro/intro.tex}
 \input{lie/lie.tex}
 %\input{simplectica/simplectica.tex}
@@ -119,9 +130,6 @@
 %\input{ArnoldLiouville/arnoldliouville.tex}
 %\input{promedios/promedios.tex}
 
-\newpage\null\thispagestyle{empty}\newpage
-
-\addcontentsline{toc}{chapter}{Bibliografía}
 \nocite{*}
 \bibliographystyle{plain}
 \bibliography{biblio}

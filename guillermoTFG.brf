@@ -1,8 +1,8 @@
-\backcite {goldstein}{{4}{1}{section.1}}
-\backcite {landau}{{4}{1}{section.1}}
-\backcite {arnold}{{5}{1}{AMS.3}}
-\backcite {variedades}{{9}{2}{section.2}}
-\backcite {lee}{{14}{3}{thm.3.2}}
-\backcite {algebra}{{15}{4}{section.4}}
-\backcite {puta}{{37}{10.6}{thm.10.6}}
-\backcite {*}{{51}{15}{section*.21}}
+\backcite {goldstein}{{10}{1}{chapter.1}}
+\backcite {landau}{{10}{1}{chapter.1}}
+\backcite {arnold}{{10}{1}{AMS.3}}
+\backcite {variedades}{{15}{2.1}{section.2.1}}
+\backcite {lee}{{19}{2.2}{thm.2.2.2}}
+\backcite {algebra}{{21}{3.1}{section.3.1}}
+\backcite {puta}{{40}{4.1.6}{thm.4.1.6}}
+\backcite {*}{{55}{4.6}{section*.21}}
