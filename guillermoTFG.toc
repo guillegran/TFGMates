@@ -25,7 +25,7 @@
 \contentsline {section}{\numberline {4.1}Teorema de Arnold-Liouville}{35}{section.4.1}
 \contentsline {section}{\numberline {4.2}Variables de acci\IeC {\'o}n-\IeC {\'a}ngulo}{40}{section.4.2}
 \contentsline {section}{\numberline {4.3}Osciladores arm\IeC {\'o}nicos}{43}{section.4.3}
-\contentsline {paragraph}{\bf Oscilador arm\IeC {\'o}nico con un grado de libertad}{43}{section*.16}
+\contentsline {paragraph}{\bf Oscilador arm\IeC {\'o}nico con un grado de libertad}{44}{section*.16}
 \contentsline {paragraph}{\bf Oscilador arm\IeC {\'o}nico con $n$ grados de libertad}{45}{section*.17}
 \contentsline {section}{\numberline {4.4}Movimiento condicionalmente peri\IeC {\'o}dico}{46}{section.4.4}
 \contentsline {section}{\numberline {4.5}Sistemas con un grado de libertad}{49}{section.4.5}
@@ -33,5 +33,5 @@
 \contentsline {paragraph}{\bf Puntos cr\IeC {\'\i }ticos de los sistemas con un grado de libertad}{50}{section*.19}
 \contentsline {section}{\numberline {4.6}M\IeC {\'a}s sistemas integrables}{51}{section.4.6}
 \contentsline {paragraph}{\bf El p\IeC {\'e}ndulo esf\IeC {\'e}rico}{51}{section*.20}
-\contentsline {paragraph}{\bf El potencial central}{53}{section*.21}
+\contentsline {paragraph}{\bf El potencial central}{52}{section*.21}
 \contentsline {chapter}{Bibliograf\IeC {\'\i }a}{55}{section*.21}

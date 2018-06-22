@@ -94,7 +94,7 @@ Ahora, por la propiedad universal del cociente, si $\pi:\RR\rightarrow \RR^n/\Ga
     \RR^n/\Gamma, \arrow{ru}[anchor=north,rotate=30]{\tilde{g}}
   \end{tikzcd}
 \end{center}
-da un difeomorfismo $\tilde{g}:N\rightarrow \RR^n/\Gamma$. Si $\Gamma=\{0\}$, entonces $g:N\rightarrow \RR^n$ es un difeomorfismo y habríamos terminado. Supongamos que $\Gamma \neq\left\{ 0 \right\}$.
+da un difeomorfismo $\tilde{g}: \RR^n/\Gamma \rightarrow N$. Si $\Gamma=\{0\}$, entonces $g:\RR^n\rightarrow N$ es un difeomorfismo y habríamos terminado. Supongamos que $\Gamma \neq\left\{ 0 \right\}$.
 
  Como $g$ es un difeomorfismo local, existe un entorno $V\subset \RR^n$ de 0 tal que $\Gamma\cap V= \{0\}$. Es más, si $t\in \Gamma$, $s\in V\backslash \{0\}$ y $x\in N$, 
   \[
@@ -129,7 +129,7 @@ da un difeomorfismo $\tilde{g}:N\rightarrow \RR^n/\Gamma$. Si $\Gamma=\{0\}$, en
 
   \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{pics/grupo.pdf}
+    \includegraphics[width=0.6\textwidth]{pics/grupo.pdf}
     \caption{\small Idea de la demostración del lema.}
     \label{fig:grupo}
   \end{figure}
@@ -154,7 +154,7 @@ Terminamos ahora la demostración del Lema \ref{lemtoro}.
   donde la función
   \begin{align*}
     \exp :\RR^k&\longrightarrow \TT^k \cong \SF^1 \times \cdots \times \SF^1\\ 
-    (x_1,\dots,x_k) &\longmapsto (e^{i2\pi x_1},\dots,e^{i 2\pi x_k}), 
+    (x_1,\dots,x_k) &\longmapsto (e^{2\pi ix_1},\dots,e^{ 2\pi ix_k}), 
     \end{align*}
     denota el recubridor universal de $\TT^k$.
   El núcleo de este homomorfismo de grupos $\varpi$ es precisamente el subgrupo $\ZZ^k\subset \RR^n$ generado por los $k$ primeros vectores de la base canónica.. 
@@ -163,9 +163,10 @@ Terminamos ahora la demostración del Lema \ref{lemtoro}.
     \begin{tikzcd}
       \RR^n    \arrow{r}{\zeta}\arrow{dd}[anchor=east]{\varpi} & \RR^n\arrow{dd}[anchor=west]{\pi}\arrow{ddr}[rotate=-30]{g} \\ 
   & \\
-  \TT^k \times \RR^{n-k}\arrow{r}[anchor=south]{\tilde{\zeta}} & \RR^n/\Gamma \arrow{r}{\tilde{g}}& N
+  \TT^k \times \RR^{n-k}\arrow{r}[anchor=south]{\tilde{\zeta}} & \RR^n/\Gamma \arrow{r}{\tilde{g}}& N,
      \end{tikzcd}
    \end{center}
+   y compuesto con $\tilde{g}$ da el difeomorfismo buscado.
 \end{proof}
 
 Volvemos ahora a la demostración del teorema de Arnold-Liouville. Aplicamos directamente el lema \ref{lemtoro} con $N=M_a$ (considerando los campos $X_i=X^{F_i}$ ya definidos y construyendo $g$ como en la demostración del lema) y tenemos que $M_a$ es difeomorfa a $\TT^k\times \RR^{n-k}$ para cierto $k=0,\dots,n$. En particular, si $M_a$ es compacta, entonces $k=n$ y $M_a\cong \TT^n$. Hemos probado entonces la parte $2$ del teorema. Además, el difeomorfismo $\tilde{\zeta}:\TT^k\times \RR^{n-k} \rightarrow M_a$ está bien descrito por el diagrama anterior.
@@ -198,11 +199,11 @@ Volvemos ahora a la demostración del teorema de Arnold-Liouville. Aplicamos dir
 	\RR \arrow{r}{\varphi_{\bullet}^H(x)}& U \arrow[hook]{r}{ }\arrow{ru}{w} & M_a.
        \end{tikzcd}
      \end{center}
-     Por tanto, $w(t)=w(\varphi_t^H(x))=v(a)t$, luego $\dot w(t)=v(a)$. Como el flujo hamiltoniano deja $M_a$ invariante, queda descrito por las ecuaciones
+     Por tanto, $w(t)=w(\varphi_t^H(x))=v(a)t$, luego $\dot w(t)=v(a)$. Nótese que al ser arbitraria la elección del punto $x$ en el toro de Liouville $M_a$, la elección de las variables angulares en el toro es ambigua por una constante. Es decir, podemos elegir el valor $w_{0,a}=w(0)$. Como el flujo hamiltoniano deja $M_a$ invariante, queda descrito por las ecuaciones
  \begin{equation*}
    \begin{cases}
      F(t)=a \\
-     w(t)=v(a)t.
+     w(t)=w_{0,a}+v(a)t.
    \end{cases}
  \end{equation*}
 Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
@@ -222,7 +223,7 @@ Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
 
  \begin{thm}[Variables de acción-ángulo]
    Seguimos en las hipótesis del teorema \ref{arnold}. En el caso en que $M_a$ sea compacta, existe un entorno $U\subset M$ de $M_a$ difeomorfo a $\RR^n \times \TT^n$ (un \emph{entorno tubular}\footnote{Nótese que aquí estamos suponiendo que $M_a$ no está en el borde de $M$, en cuyo caso procederíamos análogamente para obtener un entorno difeomorfo a $\HH^n \times \TT^n$.})
-) y un sistema de coordenadas de Darboux $(\phi,F)$ (llamadas \emph{variables de acción-ángulo}) en $U$ tales que las $\phi_i$ son coordenadas angulares en $M_a$ y las $F_i$ son constantes en cada $M_a$. 
+ y un sistema de coordenadas de Darboux $(\phi,F)$ (llamadas \emph{variables de acción-ángulo}) en $U$ tales que las $\phi_i$ son coordenadas angulares en y las $F_i$ son constantes en cada toro de $U$. 
   \end{thm}
 
   \begin{obs}
@@ -246,7 +247,7 @@ Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
 \begin{proof}
   En primer lugar, hay que obtener el entorno tubular $U$. Como $M_a$ es un conjunto compacto de puntos regulares existe un entorno $W$ de $M_a$ con todos sus puntos regulares de manera que $M_a\subset W \subset \overline{W}$ y tal que $F|_W$ sea abierta. Por tanto, $V=F(W)\subset \RR^n$ es un entorno abierto de $a$. Ahora, para cada $b\in V$, existe al menos una componente conexa $M_b$ de $F^{-1}(b)$ que interseca a $W$ en algún punto. Si $M_b$ está contenida en $W$ entonces es compacta y por tanto es un toro de Liouville. En caso contrario, existe un punto $x_b\in M_{b}\cap (\overline{W}\setminus W)$.
   
-  Supongamos entonces que existe una sucesión $(b_k)$ de valores en $V$ tal que $b_k\rightarrow a$ con $M_{b_k}\cap(\overline{W}\setminus W) \neq \varnothing$. Entonces existe una sucesión convergente $(x_{b_k})$ con cada $x_{b_k}\in M_{b_k}\cap \overline{W}\setminus W$. Ahora, si llamamos $x_0=\lim_k x_{b_k}$ entonces $x_0\in \overline{W}\setminus W$ y por continuidad $F(x_0)=\lim_k F(x_{b_k})=\lim_k b_k =a$, de modo que $x_0 \in M_a\subset W$ y llegamos a una contradicción. Por tanto existe una bola $B\subset \RR^n$ centrada en $a$ tal que hay algún toro de Liouville $M_b\subset W \subset W$ para cada $b\in B$. 
+  Supongamos entonces que existe una sucesión $(b_k)$ de valores en $V$ tal que $b_k\rightarrow a$ con $M_{b_k}\cap(\overline{W}\setminus W) \neq \varnothing$. Entonces existe una sucesión convergente $(x_{b_k})$ con cada $x_{b_k}\in M_{b_k}\cap \overline{W}\setminus W$. Ahora, si llamamos $x_0=\lim_k x_{b_k}$ entonces $x_0\in \overline{W}\setminus W$ y por continuidad $F(x_0)=\lim_k F(x_{b_k})=\lim_k b_k =a$, de modo que $x_0 \in M_a\subset W$ y llegamos a una contradicción. Por tanto existe una bola $B\subset \RR^n$ centrada en $a$ tal que el toro de Liouville $M_b\subset W \subset \overline{W}$ para cada $b\in B$. 
   
   Podemos considerar entonces el abierto 
   \begin{equation*}
@@ -257,7 +258,7 @@ Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
     \varphi^F :\RR^n&\longrightarrow M_b\\ 
     (\theta_1,\dots,\theta_n) &\longmapsto \varphi_{\theta_1}^{F_1}\cdots \varphi_{\theta_n}^{F_n}(x), 
     \end{align*}
-    que está bien definida por conmutar los flujos, y el difeomorfismo $\theta_b:M_b\rightarrow \TT^n$ inducido dado por el diagrama
+    que está bien definida por conmutar los flujos, y el difeomorfismo $\theta_b:M_b\rightarrow \TT^n$ inducido por el diagrama
     \begin{center}
       \begin{tikzcd}
 \RR^n	\arrow{r}{\varphi^F}\arrow{d}{ } & M_b\arrow{ld}[anchor=north,rotate=30]{\theta_b} \\ 
@@ -303,11 +304,12 @@ De aquí tenemos
 \[
   0=\dd \omega= \sum_{i=1}^n \dd(\dd F_i \wedge \dd \theta_i) + \dd \alpha= \dd \alpha = \pi^* \dd \beta,
 \]
-de donde concluimos que $\dd \beta =0$. En $\RR^n$ todas las formas cerradas son exactas, luego existe $\gamma$ en $\RR^n$ tal que $\beta= \dd \gamma$.
+de donde concluimos que $\dd \beta =0$. Por el lema de Poincaré, en $\RR^n$ todas las formas cerradas son exactas, luego existe $\gamma$ en $\RR^n$ tal que $\beta= \dd \gamma$.
 Ahora, si escribimos $\gamma= \sum_{i=1}^n f_i \dd F_i$, para algunas funciones $f_i:\RR^n \rightarrow \RR$, entonces podemos tomar unas nuevas coordenadas 
 \[
   \phi_i= \theta_i + f_i \circ \pi.
 \]
+Nótese que para cada $b\in B$ y para cada $x\in M_b$ el valor de $f_i\circ \pi (x)=f_i(b)$ sólo depende de $b$, de modo que las nuevas variables difieren de las anteriores en un valor constante en cada toro de Liouville luego siguen siendo coordenadas angulares en cada $M_b$.
 En estas nuevas coordenadas
 \[
 \begin{split}
@@ -386,7 +388,7 @@ Para aclarar algunas de las ideas detrás de la teoría de sistemas integrables,
   
   \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{pics/oscilador}
+    \includegraphics[width=0.6\textwidth]{pics/oscilador}
     \label{fig:oscilador}
     \caption{\small Espacio de fases del oscilador armónico junto al campo y a las curvas de energía constante. En este caso $k=m=1$, de modo que las curvas de energía constante son circunferencias de radio $\sqrt{2E}$.}
   \end{figure}
@@ -513,7 +515,7 @@ tenemos que $\{\gamma(t)|t \in \RR \}$ es denso en el toro. Este tipo de órbita
 ver figura \ref{fig:lissajous}.
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.8\textwidth]{pics/lissajous}
+  \includegraphics[width=0.6\textwidth]{pics/lissajous}
   \caption{\small Figuras de Lissajous para $\omega=3,$ $3.1,$ $3.14,$  y $3.1416$, $t \in (0,128\pi)$ con pasos de $0.01$.}
   \label{fig:lissajous}
 \end{figure}
@@ -634,7 +636,7 @@ En esta sección damos algunas generalidades sobre los sistemas hamiltonianos co
    corresponde al punto de equilibrio y a dos trayectorias que tienden asintóticamente al punto de equilibrio inestable. Este conjunto no es un toro de Liouville ya que contiene al punto crítico $(\pi,0)$. Estas trayectorias son matemáticamente factibles aunque su realización práctica parezca una tarea imposible. Las curvas que quedan dentro de la curva punteada corresponden a movimientos de oscilación en torno al punto de equilibrio estable, mientras que las que quedan fuera corresponden a movimientos de rotación del péndulo alrededor de su centro. 
   \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{pics/pendulo}
+    \includegraphics[width=0.6\textwidth]{pics/pendulo}
     \caption{\small Espacio de fases del péndulo junto al campo hamiltoniano y las curvas de nivel. Nótese que el lado derecho ($\phi=\pi$) está identificado con el lado izquierdo ($\phi=-\pi$), ya que se trata de un cilindro.}
     \label{fig:pendulo}
   \end{figure}
@@ -731,7 +733,7 @@ En esta sección damos algunas generalidades sobre los sistemas hamiltonianos co
    Un péndulo esférico consiste en una partícula (aquí supondremos de masa $m=1$) enganchada por una barra rígida de masa despreciable y de longitud 1 a un punto del espacio y bajo la acción de la gravedad. Es decir, es como un péndulo simple, solo que no está restringido a oscilar en un solo plano, sino que puede moverse libremente, ver figura \ref{fig:espendulo}.
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.5\textwidth]{pics/espendulo.eps}
+  \includegraphics[width=0.38\textwidth]{pics/espendulo.eps}
   \caption{\small Péndulo esférico}
   \label{fig:espendulo}
 \end{figure}

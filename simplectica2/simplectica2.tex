@@ -368,12 +368,13 @@ Localmente, si tomamos una carta de Darboux $(q,p)$ en un punto $x\in M$, podemo
    \end{equation*}
    es decir, $\pois{A}{\bullet}$ es una derivación.
 \end{enumerate}
-En particular, las propiedades $1$-$3$ nos dicen que $(\mathscr{C}^{\infty}(M),\pois{ }{ })$ es un \emph{álgebra de Lie}. Al añadir la propiedad $4$ decimos que es un \emph{álgebra de Poisson}. 
   \end{prop}
+En particular, las propiedades $1$-$3$ nos dicen que $(\mathscr{C}^{\infty}(M),\pois{ }{ })$ es un \emph{álgebra de Lie}. Al añadir la propiedad $4$ decimos que es un \emph{álgebra de Poisson}. 
+
   \begin{proof}
     La demostración de $1$ y $2$ es inmediata del hecho de que $\pois{F}{G}=\omega(X^F,X^G)$ y de la linealidad de $X^{\bullet}$.
 
-    $3$. Tenemos 
+    Para probar $3$ tenemos 
    \begin{align*}
      \lie{X^A}{X^B} (C) & = X^A\circ X^B (C) - X^B\circ X^A (C)  = X^A(\pois{B}{C})-X^B(\pois{A}{C}) \\
      &= \pois{A}{\pois{B}{C}}-\pois{B}{\pois{A}{C}}.
@@ -388,7 +389,7 @@ En particular, las propiedades $1$-$3$ nos dicen que $(\mathscr{C}^{\infty}(M),\
    \end{equation*}
    Pasando el segundo término al otro lado obtenemos la identidad de Jacobi.
     
-   $4$. La regla de Leibniz es inmediata porque $\pois{A}{\bullet}(x)=X^A_x$ es una derivación.
+   La regla de Leibniz ($4$) es inmediata porque $\pois{A}{\bullet}(x)=X^A_x$ es una derivación.
   \end{proof}
 
   En general, si en una variedad diferenciable $M$ consideramos el conjunto de funciones $\mathscr{C}^{\infty}(M)$ y lo dotamos de la estructura de álgebra de Poisson mediante un corchete $\pois{ }{ }$, decimos que el par $(M,\pois{ }{ })$ es una \emph{variedad de Poisson}. Podemos reducir el enunciado de la proposición anterior simplemente a afirmar que \emph{toda variedad simpléctica es de Poisson}.
