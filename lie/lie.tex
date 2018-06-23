@@ -273,3 +273,104 @@ Hasta ahora hemos tratado con campos tangentes a una variedad diferenciable, que
     \end{equation*}
     «Sacando factor común» a $\varphi^*_{t_1,t_0}$, obtenemos lo que queríamos probar.
   \end{proof}
+  \section{Lema de Poincaré}
+  En esta sección vamos a probar uno de los resultados fundamentales de cohomología de de Rham, que nos será útil en varias partes a lo largo del texto. Se trata del lema de Poincaré, que afirma que en un abierto \emph{estrellado} toda forma diferencial cerrada es exacta.
+
+  Sea $M$ una variedad diferenciable de dimensión $n$ y sea $J$ el intervalo $[0,1]$. Consideremos la familia de aplicaciones
+\begin{align*}
+  j_t :M&\longrightarrow J\times M\\ 
+    x &\longmapsto (t,x). 
+  \end{align*}
+  Se define el \emph{operador de homotopía} como la aplicación
+  \begin{align*}
+    h :\varLambda^k(J\times M)&\longrightarrow \varLambda^{k-1}(M)\\ 
+    \omega &\longmapsto \int_{0}^1 i_{\frac{\partial}{\partial t}}\omega\ dt. 
+    \end{align*}
+    Explícitamente, para un punto $(t,x)\in J\times M$,
+    \begin{equation*}
+      (h\omega)_{x }(X_1,\dots,X_{k-1})=\int_{0}^1 (i_{\frac{\partial}{\partial t}}\omega)_{(t,x)}(X_1,\dots,X_{k-1}) dt=\int_{0}^1 \omega_{(t,x)}\left(\frac{\partial}{\partial t},X_1,\dots,X_{k-1}\right) dt.
+    \end{equation*}
+
+    \begin{center}
+      \begin{tikzcd}
+\vdots \arrow{d}{\mathrm{d}}&& \vdots	\arrow{d}{\mathrm{d}}\\ 
+\varLambda^{k-1}(J\times U) \arrow{d}{\mathrm{d}} && \varLambda^{k-1}(U)\arrow{d}{\mathrm{d}}\\
+\varLambda^{k}(J\times U)\arrow{rru}{h}\arrow{d}{\mathrm{d}} && \varLambda^{k}(U)\arrow{d}{\mathrm{d}}\\
+\varLambda^{k+1}(J\times U)\arrow{rru}{h}\arrow{d}{\mathrm{d}} && \varLambda^{k+1}(U)\arrow{d}{\mathrm{d}}\\
+\vdots && \vdots
+\end{tikzcd}
+    \end{center}
+
+    \begin{prop}
+      El operador de homotopía cumple la relación
+      \begin{equation*}
+	\mathrm{d} \circ h + h \circ \mathrm{d} = j_1^* - j_0^*,
+      \end{equation*}
+      con las $j_t$ definidas como antes.
+    \end{prop}
+    
+    \begin{proof}
+      Sea $\omega \in \varLambda^k(J\times M)$.
+      Directamente, usando la fórmula de Cartan,
+      \begin{align*}
+	(\mathrm{d}\circ h + h\circ\mathrm{d})(\omega_{(t,x)})&= \mathrm{d}\left( \int_0^1 (i_{\frac{\partial}{\partial t}}\omega)_{(t,x)}dt \right)+ \int_0^1 i_{\frac{\partial}{\partial t}}(\mathrm{d}\omega_{(t,x)})dt\\
+&	= \int_0^1 (\mathrm{d}\circ i_{\frac{\partial}{\partial t}} + i_{\frac{\partial}{\partial t}}\circ \mathrm{d})(\omega)_{(t,x)}dt\\
+	&= \int_0^1 (L_{\frac{\partial}{\partial t}}\omega)_{(t,x)}dt
+	= \int_0^1 \left(\frac{\partial}{\partial t} \omega\right)_{(t,x)}dt\\
+	&	= \omega_{(1,x)}-\omega_{(0,x)}=\omega_{ j_1 (x)} - \omega_{ j_0(x)} \\ & = (j_1^* \omega)_x - (j_2^* \omega)_x.
+      \end{align*}
+    \end{proof}
+
+    \begin{defn}
+      \em
+      Un subconjunto abierto $U\subset \mathbb{R}^n$ se dice \emph{estrellado} si, para cada $x\in U$ y para cada $t \in J$, $tx \in U$.
+    \end{defn}
+    Por ejemplo, son conjuntos estrellados las bolas centradas en $0$ o el propio $\mathbb{R} ^n$.
+    Podemos considerar entonces el \emph{retracto de deformación}
+    \begin{align*}
+      r :J\times U&\longrightarrow U\\ 
+        (t,x) &\longmapsto tx, 
+      \end{align*}
+      que es una aplicación diferenciable que cumple $r\circ j_0=r(0,\bullet)\equiv 0$ y $r\circ j_1 = r(1,\bullet)= \mathrm{id}_U$.
+
+      \begin{prop}[Lema de Poincaré]
+	Si $U\subset \mathbb{R}^n$ es un abierto estrellado, entonces toda forma diferencial cerrada en $U$ es exacta. En otras palabras, para todo $k\in \mathbb{N} $, $H^k(U)=0$.
+      \end{prop}
+
+      \begin{proof}
+	Sea $\omega \in \varLambda^k(U)$. Sea $r$ el retracto de deformación y $\tilde{h}$ la aplicación inducida por el diagrama
+	\begin{center}
+	  \begin{tikzcd}
+	    \varLambda^k(U)	    \arrow{r}{r^*}\arrow{rd}[anchor=north,rotate=-30]{\tilde{h}} & \varLambda^k(J\times U)\arrow{d}[anchor=west]{h} \\ 
+	     &\varLambda^{k-1}(U).
+	   \end{tikzcd}
+	 \end{center}
+	 Tenemos entonces que 
+	 \begin{align*}
+	   \tilde{h}(\mathrm{d}\omega)+\mathrm{d}(\tilde{h}\omega)&=h(r^*\mathrm{d}\omega)+\mathrm{d}(hr^*\omega)=h\circ \mathrm{d}(r^*\omega)+\mathrm{d}\circ h(r^*\omega)\\
+	   &= j_1^*(r^*\omega)-j_0^*(r^*\omega)=(r\circ j_1)^*\omega - (r\circ j_0)^* \omega\\& = \omega - 0 = \omega.
+	 \end{align*}
+	 Ahora, si $\omega$ es cerrada, entonces $\mathrm{d}(\tilde{h}\omega)=\omega$, luego $\omega$ es exacta.
+      \end{proof}
+
+      \begin{corol}
+	Para cualesquiera $n, k \in \mathbb{N} $, $H^k(\mathbb{R} ^n)=0$. Es decir, en $\mathbb{R}^n$ toda forma cerrada es exacta.
+      \end{corol}
+
+ \begin{corol}
+   Si $n\geq 3$, entonces $H^2(\mathbb{S}^n)={0}$.
+\end{corol}
+
+\begin{proof}
+  Si $\omega$ es una 2-forma en $\mathbb{S}^n$, $n\geq 3$, $x\in \mathbb{S}^n$ y $U$ es un disco entorno de $x$. Por el lema de Poincaré, existe una 1-forma $\alpha$ definida en $U$ tal que $\omega=\mathrm{d} \alpha$ en $U$. Sea $\theta$ una función meseta que valga 1 en un entorno $V\subset U$ de $x$ relativamente compacto de $U$ y $0$ fuera de $U$. La forma 
+  \begin{equation*}
+    \omega_1=\omega - \mathrm{d}(\theta \alpha)
+  \end{equation*}
+  es cerrada con soporte compacto en $\mathbb{S}^n \backslash \{x\}$, que es difeomorfa, por proyección estereográfica $\varphi$, a $\mathbb{R} ^n$. De nuevo por el lema de Poincaré, existe una 1-forma $\beta$ de $\mathbb{R} ^n$ tal que $\mathrm{d} \beta = \varphi^* \omega_1$. Con todo esto, tenemos
+  \begin{equation*}
+    \omega=\mathrm{d}\left(\theta \alpha + \left( \varphi^{-1} \right)^* \beta \right) .
+  \end{equation*}
+  Por tanto, $\omega$ es exacta en $\mathbb{S}^n$ y 
+$    H^2(\mathbb{S}^n)= \{0\}$.
+\end{proof}
+
