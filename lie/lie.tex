@@ -283,7 +283,7 @@ Hasta ahora hemos tratado con campos tangentes a una variedad diferenciable, que
   \end{align*}
   Se define el \emph{operador de homotopía} como la aplicación
   \begin{align*}
-    h :\varLambda^k(J\times M)&\longrightarrow \varLambda^{k-1}(M)\\ 
+    h :\Gamma^k(J\times M)&\longrightarrow \Gamma^{k-1}(M)\\ 
     \omega &\longmapsto \int_{0}^1 i_{\frac{\partial}{\partial t}}\omega\ dt. 
     \end{align*}
     Explícitamente, para un punto $(t,x)\in J\times M$,
@@ -294,9 +294,9 @@ Hasta ahora hemos tratado con campos tangentes a una variedad diferenciable, que
     \begin{center}
       \begin{tikzcd}
 \vdots \arrow{d}{\mathrm{d}}&& \vdots	\arrow{d}{\mathrm{d}}\\ 
-\varLambda^{k-1}(J\times U) \arrow{d}{\mathrm{d}} && \varLambda^{k-1}(U)\arrow{d}{\mathrm{d}}\\
-\varLambda^{k}(J\times U)\arrow{rru}{h}\arrow{d}{\mathrm{d}} && \varLambda^{k}(U)\arrow{d}{\mathrm{d}}\\
-\varLambda^{k+1}(J\times U)\arrow{rru}{h}\arrow{d}{\mathrm{d}} && \varLambda^{k+1}(U)\arrow{d}{\mathrm{d}}\\
+\Gamma^{k-1}(J\times U) \arrow{d}{\mathrm{d}} && \Gamma^{k-1}(U)\arrow{d}{\mathrm{d}}\\
+\Gamma^{k}(J\times U)\arrow{rru}{h}\arrow{d}{\mathrm{d}} && \Gamma^{k}(U)\arrow{d}{\mathrm{d}}\\
+\Gamma^{k+1}(J\times U)\arrow{rru}{h}\arrow{d}{\mathrm{d}} && \Gamma^{k+1}(U)\arrow{d}{\mathrm{d}}\\
 \vdots && \vdots
 \end{tikzcd}
     \end{center}
@@ -310,7 +310,7 @@ Hasta ahora hemos tratado con campos tangentes a una variedad diferenciable, que
     \end{prop}
     
     \begin{proof}
-      Sea $\omega \in \varLambda^k(J\times M)$.
+      Sea $\omega \in \Gamma^k(J\times M)$.
       Directamente, usando la fórmula de Cartan,
       \begin{align*}
 	(\mathrm{d}\circ h + h\circ\mathrm{d})(\omega_{(t,x)})&= \mathrm{d}\left( \int_0^1 (i_{\frac{\partial}{\partial t}}\omega)_{(t,x)}dt \right)+ \int_0^1 i_{\frac{\partial}{\partial t}}(\mathrm{d}\omega_{(t,x)})dt\\
@@ -338,11 +338,11 @@ Hasta ahora hemos tratado con campos tangentes a una variedad diferenciable, que
       \end{prop}
 
       \begin{proof}
-	Sea $\omega \in \varLambda^k(U)$. Sea $r$ el retracto de deformación y $\tilde{h}$ la aplicación inducida por el diagrama
+	Sea $\omega \in \Gamma^k(U)$. Sea $r$ el retracto de deformación y $\tilde{h}$ la aplicación inducida por el diagrama
 	\begin{center}
 	  \begin{tikzcd}
-	    \varLambda^k(U)	    \arrow{r}{r^*}\arrow{rd}[anchor=north,rotate=-30]{\tilde{h}} & \varLambda^k(J\times U)\arrow{d}[anchor=west]{h} \\ 
-	     &\varLambda^{k-1}(U).
+	    \Gamma^k(U)	    \arrow{r}{r^*}\arrow{rd}[anchor=north,rotate=-30]{\tilde{h}} & \Gamma^k(J\times U)\arrow{d}[anchor=west]{h} \\ 
+	     &\Gamma^{k-1}(U).
 	   \end{tikzcd}
 	 \end{center}
 	 Tenemos entonces que 

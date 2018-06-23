@@ -25,7 +25,7 @@
 \contentsline {chapter}{\numberline {4}Sistemas integrables}{37}{chapter.4}
 \contentsline {section}{\numberline {4.1}Teorema de Arnold-Liouville}{37}{section.4.1}
 \contentsline {section}{\numberline {4.2}Variables de acci\IeC {\'o}n-\IeC {\'a}ngulo}{42}{section.4.2}
-\contentsline {section}{\numberline {4.3}Osciladores arm\IeC {\'o}nicos}{45}{section.4.3}
+\contentsline {section}{\numberline {4.3}Osciladores arm\IeC {\'o}nicos}{46}{section.4.3}
 \contentsline {paragraph}{\bf Oscilador arm\IeC {\'o}nico con un grado de libertad}{46}{section*.16}
 \contentsline {paragraph}{\bf Oscilador arm\IeC {\'o}nico con $n$ grados de libertad}{47}{section*.17}
 \contentsline {section}{\numberline {4.4}Movimiento condicionalmente peri\IeC {\'o}dico}{48}{section.4.4}

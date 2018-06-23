@@ -30,7 +30,7 @@ $1$. $M_a$ es una variedad diferenciable invariante bajo el flujo del sistema y 
   
 $2$. $M_a$ es difeomorfa a $\TT^k\times \RR^{n-k}$ para cierto $0 \leq k \leq n$. En particular, si $M_a$ es compacta, $M_a$ es difeomorfa al toro $n$-dimensional $\TT^n$. En este caso, se dice que $M_a$ es un \emph{toro de Liouville}. 
  
-$3$. Podemos tomar unas coordenadas $w=(w_1,\dots, w_n)$ en $M_a$ de manera que existen unas velocidades constantes $v(a)=(v_1(a),\dots,v_n(a))$ tales que $\dot w (t)=v(a)$. 
+$3$. Podemos tomar unas coordenadas $w=(w_1,\dots, w_n)$ en $M_a$ de manera que existen unas velocidades constantes $v=(v_{1},\dots,v_{n})$ tales que $\dot w (t)=v$. 
 \end{thm}
 
  \begin{proof}
@@ -179,31 +179,31 @@ Volvemos ahora a la demostración del teorema de Arnold-Liouville. Aplicamos dir
   \TT^k \times \RR^{n-k}\arrow{r}[anchor=south]{\tilde{\zeta}} & \RR^n/\Gamma \arrow{r}{\tilde{g}}& M_a,
      \end{tikzcd}
    \end{center}
-   Sea el vector $v(a)\in \RR^n$ tal que $\zeta(v(a))=(1,0,\dots,0)$. Tomemos ahora un flujo rectilíneo
+   Sea el vector $v\in \RR^n$ tal que $\zeta(v)=(1,0,\dots,0)$. Tomemos ahora un flujo rectilíneo
    \begin{align*}
       \RR&\longrightarrow \RR^n\\ 
-       t &\longmapsto  v(a)t,
+       t &\longmapsto  vt,
      \end{align*}
    y veamos su comportamiento en el diagrama 
    \begin{center}
      \begin{tikzcd}
-       t\arrow{rr}\in \RR &&v(a)t \in \RR^n      \arrow{rr}{\zeta}\arrow{rrdd}[anchor=north,rotate=-30]{\psi} && (t,0,\dots,0) \in \RR^n\arrow{dd}[anchor=west]{g} \\ 
+       t\arrow{rr}\in \RR &&vt \in \RR^n      \arrow{rr}{\zeta}\arrow{rrdd}[anchor=north,rotate=-30]{\psi} && (t,0,\dots,0) \in \RR^n\arrow{dd}[anchor=west]{g} \\ 
  &&       && \\
 &&	&&g_{1,t}(x)=\varphi_t^H(x)\in M_a.
       \end{tikzcd}
     \end{center}
-    Tenemos entonces que $\varphi_t^H(x)=\psi(v(a)t)$, de modo que podemos tomar una carta $(U,w)$ con $U\subset M_a$ abierto relativo tal que el siguiente diagrama conmute
+    Tenemos entonces que $\varphi_t^H(x)=\psi(vt)$, de modo que podemos tomar una carta $(U,w)$ con $U\subset M_a$ abierto relativo tal que el siguiente diagrama conmute
     \begin{center}
       \begin{tikzcd}
 	& & \RR^n \arrow{d}{\psi} \\
 	\RR \arrow{r}{\varphi_{\bullet}^H(x)}& U \arrow[hook]{r}{ }\arrow{ru}{w} & M_a.
        \end{tikzcd}
      \end{center}
-     Por tanto, $w(t)=w(\varphi_t^H(x))=v(a)t$, luego $\dot w(t)=v(a)$. Nótese que al ser arbitraria la elección del punto $x$ en el toro de Liouville $M_a$, la elección de las variables angulares en el toro es ambigua por una constante. Es decir, podemos elegir el valor $w_{0,a}=w(0)$. Como el flujo hamiltoniano deja $M_a$ invariante, queda descrito por las ecuaciones
+     Por tanto, $w(t)=w(\varphi_t^H(x))=vt$, luego $\dot w(t)=v$. Nótese que al ser arbitraria la elección del punto $x$ en el toro de Liouville $M_a$, la elección de las coordenadas $w$ en el toro está determinada salvo por una constante. Es decir, podemos elegir el valor $w_{0}=w(0)$. Como el flujo hamiltoniano deja $M_a$ invariante, queda descrito por las ecuaciones
  \begin{equation*}
    \begin{cases}
      F(t)=a \\
-     w(t)=w_{0,a}+v(a)t.
+     w(t)=w_{0}+vt.
    \end{cases}
  \end{equation*}
 Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
@@ -223,7 +223,7 @@ Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
 
  \begin{thm}[Variables de acción-ángulo]
    Seguimos en las hipótesis del teorema \ref{arnold}. En el caso en que $M_a$ sea compacta, existe un entorno $U\subset M$ de $M_a$ difeomorfo a $\RR^n \times \TT^n$ (un \emph{entorno tubular}\footnote{Nótese que aquí estamos suponiendo que $M_a$ no está en el borde de $M$, en cuyo caso procederíamos análogamente para obtener un entorno difeomorfo a $\HH^n \times \TT^n$.})
- y un sistema de coordenadas de Darboux $(\phi,F)$ (llamadas \emph{variables de acción-ángulo}) en $U$ tales que las $\phi_i$ son coordenadas angulares en y las $F_i$ son constantes en cada toro de $U$. 
+ y un sistema de coordenadas de Darboux $(\phi,F)$ (llamadas \emph{variables de acción-ángulo}) en $U$ tales que, en cada toro de $U$, las $\phi_i$ son coordenadas angulares y las $F_i$ son constantes. 
   \end{thm}
 
   \begin{obs}
@@ -231,15 +231,15 @@ Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
     La consecuencia inmediata de este teorema es que en los entornos tubulares las ecuaciones de Hamilton quedan resueltas por cuadraturas. En efecto, al ser $(\phi,F)$ coordenadas de Darboux, podemos escribir las ecuaciones de Hamilton en la forma
     \begin{equation*}
       \begin{cases}
-	\dot{F_i}=\parcial{H}{\phi_i}, \\
-	\dot{\phi_i}=-\parcial{H}{F_i}. 
+	\dot{\phi_i}=\parcial{H}{F_i}, \\ 
+	\dot{F_i}=-\parcial{H}{\phi_i}.
       \end{cases}
     \end{equation*}
-    Ahora, como las $F_i$ son constantes en los toros, se tiene $\dot{F_i}=0$, de modo que $\parcial{H}{\phi_i}$ es constante en cada toro, luego el hamiltoniano no depende de las coordenadas $\phi$. Por tanto, las frecuencias $\nu_i=\dot{\phi_i}=-\parcial{H}{F_i}$ son constantes en cada toro. Así, las ecuaciones quedan integradas en la forma
+    Ahora, como las $F_i$ son constantes en los toros, se tiene $\dot{F_i}=0$, de modo que $\parcial{H}{\phi_i}=0$ luego el hamiltoniano no depende de las coordenadas $\phi$. Por tanto, las frecuencias $\nu_i=\dot{\phi_i}=\parcial{H}{F_i}$ sólo dependen de las coordenadas $F$, luego son constantes en cada toro. Así, las ecuaciones quedan integradas en la forma
     \begin{equation*}
       \begin{cases}
 	F_i(t)=F_i(0), \\
-	\phi_i(t)=\phi_i(0)+\nu_i t. 
+	\phi_i(t)=\phi_i(0)+\nu_i(F(0)) t. 
       \end{cases}
     \end{equation*}
   \end{obs}
@@ -253,19 +253,20 @@ Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
   \begin{equation*}
     U=F^{-1}(B)=\bigcup_{b\in B}M_b,
   \end{equation*}
-  que es una unión disjunta de toros de Liouville. Ahora, análogamente a la demostración del teorema de Arnold-Liouville, para cada $b\in B$, fijamos $x\in M_b$ y consideramos la aplicación
+  que es una unión de toros de Liouville. Ahora, análogamente a la demostración del teorema de Arnold-Liouville fijamos $x\in M_a$ y consideramos la aplicación
   \begin{align*}
-    \varphi^F :\RR^n&\longrightarrow M_b\\ 
+    \varphi^F :\RR^n&\longrightarrow M_a\\ 
     (\theta_1,\dots,\theta_n) &\longmapsto \varphi_{\theta_1}^{F_1}\cdots \varphi_{\theta_n}^{F_n}(x), 
     \end{align*}
-    que está bien definida por conmutar los flujos, y el difeomorfismo $\theta_b:M_b\rightarrow \TT^n$ inducido por el diagrama
+    que está bien definida por conmutar los flujos, y el difeomorfismo $\theta:M_a\rightarrow \TT^n$ inducido por el diagrama
     \begin{center}
       \begin{tikzcd}
-\RR^n	\arrow{r}{\varphi^F}\arrow{d}{ } & M_b\arrow{ld}[anchor=north,rotate=30]{\theta_b} \\ 
+\RR^n	\arrow{r}{\varphi^F}\arrow{d}{ } & M_a\arrow{ld}[anchor=north,rotate=30]{\theta} \\ 
 	 \TT^n.&
        \end{tikzcd}
      \end{center}
-     Tenemos entonces que la aplicación
+     Igual que en la demostración del teorema de Arnold-Liouville, la construcción del difeomorfismo $\theta$ depende de la elección del punto $x\in M_a$. Para escoger puntos en los toros cercanos $M_{b}\subset U$, consideremos un entorno abierto $\mathscr{D} \subset U$ de $x$ difeomorfo a $D\times \RR^n$, con $D\subset \RR^n$ un disco abierto en torno a $a$, de modo que $F(\mathscr{D})=D$. Tomamos entonces un punto $x_b \in M_{b}$ tal que $x_b\in \mathscr{D}$ y construimos análogamente un difeomorfismo $\theta_b:M_b \rightarrow \TT^n$. Nótese además que nos hemos cuidado de que la construcción de este $\theta_b$ dependa diferenciablemente del parámetro $b$.
+     Con todo esto, tenemos que la aplicación
      \begin{align*}
        \Phi :U&\longrightarrow B\times \TT^n\\ 
        x &\longmapsto (F(x),\theta_{F(x)}(x)), 
@@ -491,32 +492,32 @@ Este tipo de flujo en el toro se llama \emph{movimiento condicionalmente periód
 \section{Movimiento condicionalmente periódico}\label{sec:promedios}
 Una vez tenemos a nuestra disposición el teorema de Arnold-Liouville, sabemos que el flujo en los toros de Liouville será muy sencillo. En esta sección vamos a estudiar el flujo en estos toros y obtendremos un teorema muy importante sobre este tipo de sistemas.
 
-  En primer lugar, consideremos un $2$-toro de Liouville. Sea $(\theta_1,\theta_2)$ un punto en el toro y su trayectoria bajo el flujo hamiltoniano $\gamma(t)=\varphi_t(\theta_1,\theta_2)=(\theta_1+\omega_1t,\theta_2+\omega_2t)$. Si $\omega_1/\omega_2=m/n$ es racional, entonces 
+  En primer lugar, consideremos un $2$-toro de Liouville. Sea $(\phi_1,\phi_2)$ un punto en el toro y su trayectoria bajo el flujo hamiltoniano $\gamma(t)=\varphi_t(\phi_1,\phi_2)=(\phi_1+\nu_1t,\phi_2+\nu_2t)$. Si $\nu_1/\nu_2=m/n$ es racional, entonces 
   \begin{equation*}
-    \gamma\left(\frac{2n\pi}{\omega_2}\right) = (\theta_1+2m\pi,\theta_2+2n\pi)=(\theta_1,\theta_2).
+    \gamma\left(\frac{2n\pi}{\nu_2}\right) = (\phi_1+2m\pi,\phi_2+2n\pi)=(\phi_1,\phi_2).
   \end{equation*}
   Es decir, a cierto tiempo la trayectoria «se cierra». Estas órbitas se dicen \emph{periódicas}. 
  
-  Sin embargo, si $\omega_2/\omega_1$ es irracional, dado un ángulo $\alpha$ y tomando $T$ tal que $\alpha=\theta_1+\omega T$, entonces podemos tomar $T_n=T+2n\pi/\omega_1$, $\alpha=\theta_1+\omega_1(T_n)$ para cada $n\in \NN$. Ahora, la aplicación
+  Sin embargo, si $\nu_2/\nu_1$ es irracional, dado un ángulo $\alpha$ y tomando $T$ tal que $\alpha=\phi_1+\nu T$, entonces podemos tomar $T_n=T+2n\pi/\nu_1$, $\alpha=\phi_1+\nu_1(T_n)$ para cada $n\in \NN$. Ahora, la aplicación
   \begin{equation*}
     \begin{array}{rcl}
     g:\SF^1 & \longrightarrow &\SF^1 \\
-  \phi & \longmapsto & \phi + 2\pi\frac{\omega_2}{\omega_1},
+  \phi & \longmapsto & \phi + 2\pi\frac{\nu_2}{\nu_1},
   \end{array}
 \end{equation*}
 es una rotación de ángulo un múltiplo irracional de $2\pi$ en la circunferencia del toro de ángulo $\alpha$. Entonces, como ya vimos por el teorema de recurrencia de Poincaré (teorema \ref{tpoincare}), $\{g^n(\phi)|n\in \NN\}$ es denso en $\SF^1$. Como esto es válido para todo $\alpha$ y se cumple 
 \begin{equation*}
-  \gamma(T_n)=(\alpha,g^n(\theta_2)+\omega_2 T),
+  \gamma(T_n)=(\alpha,g^n(\phi_2)+\nu_2 T),
 \end{equation*}
 tenemos que $\{\gamma(t)|t \in \RR \}$ es denso en el toro. Este tipo de órbitas se llaman \emph{cuasiperiódicas}. Una forma sencilla de visualizar esto es mediante las \emph{figuras de Lissajous} 
 \begin{equation*}
-  L_{\omega}=\{(\cos t, \cos \omega t) | t \in \RR\},
+  L_{\nu}=\{(\cos t, \cos \nu t) | t \in \RR\},
 \end{equation*}
 ver figura \ref{fig:lissajous}.
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.6\textwidth]{pics/lissajous}
-  \caption{\small Figuras de Lissajous para $\omega=3,$ $3.1,$ $3.14,$  y $3.1416$, $t \in (0,128\pi)$ con pasos de $0.01$.}
+  \caption{\small Figuras de Lissajous para $\nu=3,$ $3.1,$ $3.14,$  y $3.1416$, $t \in (0,128\pi)$ con pasos de $0.01$.}
   \label{fig:lissajous}
 \end{figure}
 
@@ -526,9 +527,9 @@ Vamos a generalizar ahora estas ideas al caso $n$-dimensional.
   \em
   Sean $\TT^n$ el toro $n$-dimensional y $\phi=(\phi_1,\dots,\phi_n)$ coordenadas angulares. Se entiende por un \emph{movimiento condicionalmente periódico} en el toro el flujo uniparamétrico dado por 
   \begin{equation*}
-    \phi(t)=\phi(0)+\omega t
+    \phi(t)=\phi(0)+\nu t
   \end{equation*}
-  con $\omega=(\omega_1,\dots,\omega_n)$ \emph{frecuencias} constantes en el toro. Las frecuencias $\omega$ se dicen \emph{independientes} si, para cada $k \in \ZZ^n$,  $\esc{k}{\omega}=0$ si y sólo si $k=0$.
+  con $\nu=(\nu_1,\dots,\nu_n)$ \emph{frecuencias} constantes en el toro. Las frecuencias $\nu$ se dicen \emph{independientes} si, para cada $k \in \ZZ^n$,  $\esc{k}{\nu}=0$ si y sólo si $k=0$.
 \end{defn}
 \begin{defn}
   \em
@@ -540,28 +541,28 @@ Vamos a generalizar ahora estas ideas al caso $n$-dimensional.
       \end{equation*}
     \item El \emph{promedio temporal} de $f$ en $\TT^n$ es la función
       \begin{equation*}
-	f^*(\phi_0)=\lim_{T\rightarrow \infty} \int_0^{T}f(\phi_0+\omega t) dt,
+	f^*(\phi_0)=\lim_{T\rightarrow \infty} \int_0^{T}f(\phi_0+\nu t) dt,
       \end{equation*}
       definida en los puntos $\phi_0$ en los que exista el límite.
   \end{enumerate}
 \end{defn}
 
 \begin{thm}[Teorema de los promedios]
-  Si $f:\TT^n \rightarrow \RR$ es una función integrable Riemann y las frecuencias $\omega$ son independientes, el promedio temporal está bien definido en todo el toro $\TT^n$ y coincide en todo punto con el promedio espacial.
+  Si $f:\TT^n \rightarrow \RR$ es una función integrable Riemann y las frecuencias $\nu$ son independientes, el promedio temporal está bien definido en todo el toro $\TT^n$ y coincide en todo punto con el promedio espacial.
 \end{thm}
 \begin{proof}
     En primer lugar, consideramos funciones de la forma $e^{i\esc{k}{\phi}}$, $k\in \ZZ^n$. Si $k=0$, entonces $\bar{f}=f=f^*=1$. Si $k\neq0$, $\bar{f}$ es una integral a periodos en funciones trigonométricas, luego es igual a 0. Por otra parte
      \begin{equation*}
-       \int_0^T e^{i\esc{k}{\phi_0 + \omega t}} dt= e^{i\esc{k}{\phi_0}}\int_0^T e^{i\esc{k}{\omega}t}dt=e^{i\esc{k}{\phi_0}}\frac{e^{i\esc{k}{\omega}T}-1}{i \esc{k}{\omega}}.
+       \int_0^T e^{i\esc{k}{\phi_0 + \nu t}} dt= e^{i\esc{k}{\phi_0}}\int_0^T e^{i\esc{k}{\nu}t}dt=e^{i\esc{k}{\phi_0}}\frac{e^{i\esc{k}{\nu}T}-1}{i \esc{k}{\nu}}.
      \end{equation*}
      Por tanto, el promedio temporal será
      \begin{equation*}
-       \lim_{T\rightarrow \infty}\frac{e^{i\esc{k}{\phi_0}}}{i \esc{k}{\omega}}\frac{e^{i\esc{k}{\omega}T}-1}{T}=0.
+       \lim_{T\rightarrow \infty}\frac{e^{i\esc{k}{\phi_0}}}{i \esc{k}{\nu}}\frac{e^{i\esc{k}{\nu}T}-1}{T}=0.
      \end{equation*}
      
     Como los promedios dependen linealmente de $f$, también coincidirán para los polinomios trigonométricos
      \begin{equation*}
-       f=\sum_{|k|<N}f_ke^{i\esc{k}{\omega}}.
+       f=\sum_{|k|<N}f_ke^{i\esc{k}{\nu}}.
      \end{equation*}
 
     Dado $\varepsilon >0$, si $f$ es continua y real por el teorema de Weierstrass podemos aproximarla por un polinomio trigonométrico $P$ que cumpla $|f-P|<\frac{1}{2}\varepsilon$. Sean $P_1=P-\frac{1}{2}\varepsilon$, $P_2=P+\frac{1}{2}\varepsilon$ entonces
@@ -574,7 +575,7 @@ Vamos a generalizar ahora estas ideas al caso $n$-dimensional.
        \bar{P_2}-\bar{P_1}=\frac{1}{(2\pi)^n}\int_{\TT^n} (P_2 - P_1) d\phi = \frac{1}{(2\pi)^n}\varepsilon (2\pi)^n= \varepsilon.
      \end{equation*}
 
-    Por último, sea $\varepsilon>0$, entonces existen dos polinomios trigonométricos $P_1,P_2$ tales que $P_1<f<P_2$ y $\bar{P_2}-\bar{P_1}<\varepsilon$. Ahora, como $f<P_2$,
+    Por último, para cada $\varepsilon>0$ existen dos polinomios trigonométricos $P_1,P_2$ tales que $P_1<f<P_2$ y $\bar{P_2}-\bar{P_1}<\varepsilon$. Ahora, como $f<P_2$,
      \begin{equation*}
        \frac{1}{T}\int_0^T f(\phi(t))dt < \frac{1}{T}\int_0^T P_2(\phi(t))dt,
      \end{equation*}
@@ -593,7 +594,7 @@ Vamos a generalizar ahora estas ideas al caso $n$-dimensional.
      luego $f^*(\phi_0)=\lim_{t\rightarrow \infty}\frac{1}{T}\int_0^T f(\phi(t)) dt = \bar{f}$.
 \end{proof}
 \begin{corol}
-  Si las frecuencias son independientes, entonces, para todo $\phi_0 \in \TT^n$, \[\{\phi(t)=\phi_0+\omega t|t\in \RR\}\] es denso en el toro $\TT^n$.
+  Si las frecuencias son independientes, entonces, para todo $\phi_0 \in \TT^n$, \[\{\phi(t)=\phi_0+\nu t|t\in \RR\}\] es denso en el toro $\TT^n$.
 \end{corol}
 \begin{proof}
   En caso contrario, podemos tomar un abierto $D$ del toro que no tiene ningún punto de la trayectoria $\phi(t)$. Construimos la función 
