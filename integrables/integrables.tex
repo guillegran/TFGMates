@@ -87,15 +87,20 @@ y
 \[
   g_t (x) = g_{t+s}(x_0)=g_sg_t(x_0)=g_s(x_0)=x. 
  \] 
-Ahora, por la propiedad universal del cociente, si $\pi:\RR\rightarrow \RR^n/\Gamma$ denota la proyección natural, el siguiente diagrama
+Ahora, por la propiedad universal del cociente, si $\pi:\RR^n\rightarrow \RR^n/\Gamma$ denota la proyección natural, el siguiente diagrama
 \begin{center}
   \begin{tikzcd}
     \RR^n \arrow{r}{g}\arrow{d}[anchor=west]{\pi} & N    \\ 
     \RR^n/\Gamma, \arrow{ru}[anchor=north,rotate=30]{\tilde{g}}
   \end{tikzcd}
 \end{center}
-da un difeomorfismo $\tilde{g}: \RR^n/\Gamma \rightarrow N$. Si $\Gamma=\{0\}$, entonces $g:\RR^n\rightarrow N$ es un difeomorfismo y habríamos terminado. Supongamos que $\Gamma \neq\left\{ 0 \right\}$.
+da un difeomorfismo $\tilde{g}: \RR^n/\Gamma \rightarrow N$. Además, igual que antes, si $x=g_s(x_0)$, 
+\begin{align*}
+  \tilde{g}^{-1}(x)-\tilde{g}^{-1}(x_0)=\tilde{g}^{-1}(g(s))-\tilde{g}^{-1}(g(0))=\tilde{g}^{-1}(\tilde{g}(\pi(s)))-\tilde{g}^{-1}(\tilde{g}(\pi(0)))=\pi(s)-\pi(0)=\pi(s).
+\end{align*}
+De modo que $\tilde{g}^{-1}(x)-\tilde{g}^{-1}(x_0)=s+\Gamma$, que es isomorfo a $\Gamma$, de modo que el difeomorfismo $\tilde{g}$, esencialmente es independiente de la elección del punto $x_0$.
 
+Para concluir la demostración del lema, queremos probar que $\RR^n/\Gamma$ es difeomorfo a $\TT^k\times \RR^{n-k}$ para cierto $k\in \NN$. Si $\Gamma=\{0\}$, entonces $g:\RR^n\rightarrow N$ es un difeomorfismo y habríamos terminado. Supongamos que $\Gamma \neq\left\{ 0 \right\}$.
  Como $g$ es un difeomorfismo local, existe un entorno $V\subset \RR^n$ de 0 tal que $\Gamma\cap V= \{0\}$. Es más, si $t\in \Gamma$, $s\in V\backslash \{0\}$ y $x\in N$, 
   \[
     g_{t+s}(x)=g_sg_t(x)=g_s(x)\neq x.
@@ -265,13 +270,33 @@ Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
 	 \TT^n.&
        \end{tikzcd}
      \end{center}
-     Igual que en la demostración del teorema de Arnold-Liouville, la construcción del difeomorfismo $\theta$ depende de la elección del punto $x\in M_a$. Para escoger puntos en los toros cercanos $M_{b}\subset U$, consideremos un entorno abierto $\mathscr{D} \subset U$ de $x$ difeomorfo a $D\times \RR^n$, con $D\subset \RR^n$ un disco abierto en torno a $a$, de modo que $F(\mathscr{D})=D$. Tomamos entonces un punto $x_b \in M_{b}$ tal que $x_b\in \mathscr{D}$ y construimos análogamente un difeomorfismo $\theta_b:M_b \rightarrow \TT^n$. Nótese además que nos hemos cuidado de que la construcción de este $\theta_b$ dependa diferenciablemente del parámetro $b$.
-     Con todo esto, tenemos que la aplicación
+
+     Igual que en la demostración del teorema de Arnold-Liouville, la construcción del difeomorfismo $\theta$ depende de la elección del punto $x\in M_a$. Para escoger puntos en los toros cercanos $M_{b}\subset U$, consideremos un entorno abierto $\mathscr{D} \subset U$ de $x$ difeomorfo a $D\times \RR^n$, con $D\subset \RR^n$ un disco abierto en torno a $a$, de modo que $F(\mathscr{D})=D$. Tomamos entonces un punto $x_b \in M_{b}$ tal que $x_b\in \mathscr{D}$. Como $F$ es localmente una proyección tiene secciones locales diferenciables, luego localmente la elección de $x_b$ varía diferenciablemente. A partir de este $x_b$, construimos análogamente un difeomorfismo $\theta_b:M_b \rightarrow \TT^n$, que nos hemos cuidado de que varíe diferenciablemente en con el parámetro $b\in D$. Tenemos entonces que localmente, si $x\in \mathscr{D}$, $\Phi(x)=(F(x),\theta_{F(x)}(x))\in D\times \TT^n$ da un difeomorfismo en $\mathscr{D}$.
+
+     Veamos entonces que la generalización global
      \begin{align*}
        \Phi :U&\longrightarrow B\times \TT^n\\ 
        x &\longmapsto (F(x),\theta_{F(x)}(x)), 
        \end{align*}
-       es un difeomorfismo. De modo que, como $B$ es una bola, el entorno $U$ es un entorno tubular.
+       es un difeomorfismo. Una vez probemos esto, como $B$ es una bola, el entorno $U$ será un entorno tubular. Para ver que $\Phi$ es un difeomorfismo, consideremos las definiciones locales
+       \begin{align*}
+	 \Phi^i :\mathscr{D}^i&\longrightarrow D^i\times \TT^n\\ 
+	 x &\longmapsto (F(x),\theta^i_{F(x)}(x)),
+	 \end{align*}
+	 y una partición diferenciable de la unidad $\alpha_i:B\rightarrow [0,1]$ subordinada a los $D^i$. Definimos
+	 \begin{equation*}
+	   \Phi(x)=\left( F(x),\sum_i\alpha_i(F(x))\theta^i_{F(x)}(x) \right).
+	 \end{equation*}
+	 Esta suma es localmente finita, y en un entorno de $x$ se reduce a los índices $j$ tales que $F(x)\in D_j$; trabajamos en la intersección de todos ellos. Antes hemos visto que si $x\in D_i \cap D_j$ entonces 
+	 \begin{equation*}
+	   \theta^j_{F(x)}-\theta^i_{F(x)}=s_{ij}(F(x))
+	 \end{equation*}
+	 es un parámetro que sólo depende de $F(x)$. Además, esa dependencia es diferenciable mirando al primer miembro. Resulta que
+	 \begin{equation*}
+	   \sum_j \alpha_j(F(x))\theta^j_{F(x)}(x)=\sum_j \alpha_j(F(x))\theta^i_{F(x)}(x)+\sum_j \alpha_j(F(x))s_{ij}(F(x))=\theta^i_{F(x)}(x)+c_i(F(x)).
+	 \end{equation*}
+	 Estas son coordenadas angulares porque la última constante $c_i$ sólo depende de $F(x)$ y además la aplicación $\Phi$ es diferenciable. Hemos probado entonces que $\Phi$ es un difeomorfismo.
+	 
 
  Procedamos ahora a hallar las variables de acción-ángulo. Sea $\pi:U\cong B\times \TT^n\rightarrow B$ la proyección canónica. Entonces $\pi^{-1}(x)$ es un toro invariante para cada $x \in B$. En cada uno de estos toros, consideramos $X_i=X^{F_i}$ y $(F,\theta)$ las coordenadas antes obtenidas. Si tomamos un punto $\theta=(\theta_1,\dots,\theta_n)\in \RR^n$ entonces, para cada $x\in M$, podemos usar la conmutatividad de los flujos para escribir
 \[
