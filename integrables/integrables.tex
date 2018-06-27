@@ -24,7 +24,7 @@ Nótese que, por el teorema de Sard\footnote{El teorema de Sard afirma que si $\
 \end{obs}
 
 \begin{thm}[Arnold-Liouville]\label{arnold}
-  Sea $(M,H)$ un sistema integrable en el sentido de Liouville con $F_1(=H),\dots,F_n$ las integrales primeras en involución. Sea $a$ un valor regular y el conjunto de nivel $F^{-1}(a)$. Sea $x\in F^{-1}(a)$ y $M_a$ la componente conexa de $F^{-1}(a)$ que contiene a $x$.  Entonces:
+  Sea $(M,H)$ un sistema integrable en el sentido de Liouville con $F_1(=H),\dots,F_n$ las integrales primeras en involución. Sea $a$ un valor regular y el conjunto de nivel $F^{-1}(a)$. Sea $M_a$ una componente conexa de $F^{-1}(a)$.  Entonces:
 
 $1$. $M_a$ es una variedad diferenciable invariante bajo el flujo del sistema y $\left. \omega \right|_{M_a}=0$.
   
@@ -56,22 +56,22 @@ $3$. Podemos tomar unas coordenadas $w=(w_1,\dots, w_n)$ en $M_a$ de manera que 
 Por conmutar los flujos, $g_{t+s}=g_t g_s$. Ahora, fijo $x_0 \in N$, definimos 
 \[
   \begin{array}{rcl}
-g:\RR^n & \longrightarrow & N \\
+    g_{\bullet}(x_0):\RR^n & \longrightarrow & N \\
 t & \longmapsto & g_t (x_0).
 \end{array}
 \]
 
-Como los campos son linealmente independientes, $d_t g$ es un isomorfismo lineal para todo $t$ y, por el teorema de la función inversa, $g$ es un difeomorfismo local. Ahora, dado $x\in N$, tomamos una curva $\gamma$ en $N$ que una $x$ y $x_0$. Por ser $g$ un difeomorfismo local, para todo $y\in \gamma$ existe un entorno $U$ de $y$ tal que $g_t(y)$ da un difeomorfismo entre $U$ y un entorno $W\in \RR^n$ centrado en $0$. Por ser $\gamma$ compacta, podemos tomar entonces una sucesión finita de entornos $U_0,\dots,U_r$ que recubran $\gamma$ tales que $x_0 \in U_0$ y $x \in U_r$ y tales que existan unos puntos $x_1,\dots,x_r$ pertenecientes a $U_1,\dots,U_r$, respectivamente, con $x_r=x$, de forma que $g_t(x_i)$ dé un difeomorfismo entre un entorno $W_i\subset \RR^n$ centrado en $0$ y $U_i$. Tomemos ahora unos puntos $y_1,\dots,y_{r}$ pertenecientes a $U_0\cap U_1,\dots,U_{r-1}\cap U_r$, respectivamente. Entonces, para cada $i=1,\dots,r$, $y_i=g_{s_i}(x_{i-1})=g_{t_i}(x_{i})$, para ciertos $s_i, t_i \in \RR^n$, luego $x_{i}=g_{s_i-t_i}(x_{i-1})$. Por tanto, 
-$$x=x_{r}=g_{s_{r}-t_{r}}(x_{r-1})=g_{s_{r}-t_{r}+s_{r-1}-t_{r-1}+\cdots+s_1-t_1}(x_0).$$ De modo que $g$ es sobreyectiva.
+Veamos que esta $g_\bullet(x_0)$ es sobreyectiva. Como los campos son linealmente independientes, $d_t g_\bullet(y)$ es un isomorfismo lineal para todo $t\in \RR^n$ y para todo $y\in N$ y, por el teorema de la función inversa, $g_\bullet(y)$ es un difeomorfismo local. Ahora, dado $x\in N$, tomamos una curva $\gamma$ en $N$ que una $x$ y $x_0$. Para cada $y\in \gamma$, por ser $g_\bullet(y)$ un difeomorfismo local, existe un entorno $U$ de $y$ tal que $g_\bullet(y)$ da un difeomorfismo entre $U$ y un entorno $W\in \RR^n$ centrado en $0$. Por ser $\gamma$ compacta, podemos tomar entonces una sucesión finita de entornos $U_0,\dots,U_r$ que recubran $\gamma$ tales que $x_0 \in U_0$ y $x \in U_r$ y tales que existan unos puntos $x_1,\dots,x_r$ pertenecientes a $U_1,\dots,U_r$, respectivamente, con $x_r=x$, de forma que $g_\bullet(x_i)$ dé un difeomorfismo entre un entorno $W_i\subset \RR^n$ centrado en $0$ y $U_i$. Tomemos ahora unos puntos $y_1,\dots,y_{r}$ pertenecientes a $U_0\cap U_1,\dots,U_{r-1}\cap U_r$, respectivamente. Entonces, para cada $i=1,\dots,r$, $y_i=g_{s_i}(x_{i-1})=g_{t_i}(x_{i})$, para ciertos $s_i, t_i \in \RR^n$, luego $x_{i}=g_{s_i-t_i}(x_{i-1})$. Por tanto, 
+$$x=x_{r}=g_{s_{r}-t_{r}}(x_{r-1})=g_{s_{r}-t_{r}+s_{r-1}-t_{r-1}+\cdots+s_1-t_1}(x_0).$$ 
 
-\begin{figure}[h!]
+\begin{figure}[h]
   \centering
   \includegraphics[width=0.8\textwidth]{pics/entornos.eps}
   \caption{\small Idea de la demostración de que $g$ es sobreyectiva.}
   \label{fig:entornos}
 \end{figure}
 
-Tenemos entonces que $g:\RR^n\rightarrow N$ es un difeomorfismo local sobreyectivo, luego es una identificación diferenciable. Denotamos 
+Tenemos entonces que $g_\bullet (x_0):\RR^n\rightarrow N$ es un difeomorfismo local sobreyectivo, luego es una identificación diferenciable. Denotamos 
 \[  
   \Gamma:=\{t \in \RR^n \mid g_t(x_0)=x_0\},
 \]
@@ -90,23 +90,23 @@ y
 Ahora, por la propiedad universal del cociente, si $\pi:\RR^n\rightarrow \RR^n/\Gamma$ denota la proyección natural, el siguiente diagrama
 \begin{center}
   \begin{tikzcd}
-    \RR^n \arrow{r}{g}\arrow{d}[anchor=west]{\pi} & N    \\ 
-    \RR^n/\Gamma, \arrow{ru}[anchor=north,rotate=30]{\tilde{g}}
+    \RR^n \arrow{r}{g_\bullet(x_0)}\arrow{d}[anchor=west]{\pi} & N    \\ 
+    \RR^n/\Gamma, \arrow{ru}[anchor=north,rotate=30]{\tilde{g}_\bullet(x_0)}
   \end{tikzcd}
 \end{center}
-da un difeomorfismo $\tilde{g}: \RR^n/\Gamma \rightarrow N$. Además, igual que antes, si $x=g_s(x_0)$, 
+da un difeomorfismo $\tilde{g}_\bullet (x_0): \RR^n/\Gamma \rightarrow N$. Más aún, como $\Gamma$ no depende de la elección de $x_0$, si tomamos $x\in N$ distinto de $x_0$, $\tilde{g}_\bullet(x):\RR^n/\Gamma\rightarrow N$ también es un difeomorfismo. Ahora, si $x=g_s(x_0)$, 
 \begin{align*}
-  \tilde{g}^{-1}(x)-\tilde{g}^{-1}(x_0)=\tilde{g}^{-1}(g(s))-\tilde{g}^{-1}(g(0))=\tilde{g}^{-1}(\tilde{g}(\pi(s)))-\tilde{g}^{-1}(\tilde{g}(\pi(0)))=\pi(s)-\pi(0)=\pi(s).
+  \tilde{g}_\bullet(x)^{-1}(x_0)-\tilde{g}_\bullet(x_0)^{-1}(x_0)&=\tilde{g}_\bullet(x)^{-1}(g_{-s}(x))-\tilde{g}_\bullet(x_0)^{-1}(g_0(x_0)) \\ &=\tilde{g}_\bullet(x)^{-1}(\tilde{g}_{\pi(-s)}(x))-\tilde{g}_\bullet(x_0)^{-1}(\tilde{g}_{\pi(0)}(x_0))\\ &=\pi(-s)-\pi(0)=\pi(-s)-0=\pi(-s).
 \end{align*}
-De modo que $\tilde{g}^{-1}(x)-\tilde{g}^{-1}(x_0)=s+\Gamma$, que es isomorfo a $\Gamma$, de modo que el difeomorfismo $\tilde{g}$, esencialmente es independiente de la elección del punto $x_0$.
+De modo que el difeomorfismo $\tilde{g}_\bullet (x_0): \RR^n/\Gamma \rightarrow N$ es independiente salvo traslaciones de la elección del punto $x_0$.
 
-Para concluir la demostración del lema, queremos probar que $\RR^n/\Gamma$ es difeomorfo a $\TT^k\times \RR^{n-k}$ para cierto $k\in \NN$. Si $\Gamma=\{0\}$, entonces $g:\RR^n\rightarrow N$ es un difeomorfismo y habríamos terminado. Supongamos que $\Gamma \neq\left\{ 0 \right\}$.
- Como $g$ es un difeomorfismo local, existe un entorno $V\subset \RR^n$ de 0 tal que $\Gamma\cap V= \{0\}$. Es más, si $t\in \Gamma$, $s\in V\backslash \{0\}$ y $x\in N$, 
+Para concluir la demostración del lema, queremos probar que $\RR^n/\Gamma$ es difeomorfo a $\TT^k\times \RR^{n-k}$ para cierto $k\in \NN$. Si $\Gamma=\{0\}$, entonces $g_\bullet (x_0):\RR^n\rightarrow N$ es un difeomorfismo y habríamos terminado. Supongamos que $\Gamma \neq\left\{ 0 \right\}$.
+ Como $g_\bullet(x_0)$ es un difeomorfismo local, existe un entorno $V\subset \RR^n$ de 0 tal que $\Gamma\cap V= \{0\}$. Es más, si $t\in \Gamma$, $s\in V\backslash \{0\}$ y $x\in N$, 
   \[
     g_{t+s}(x)=g_sg_t(x)=g_s(x)\neq x.
   \]
   Luego $\Gamma$ es un conjunto discreto. Nótese también que $\Gamma$ es cerrado en $\RR^n$.
-  \begin{figure}[h]
+  \begin{figure}[h!]
     \centering
     \includegraphics[width=0.25\textwidth]{pics/discreto}
     \caption{\small Idea de que $\Gamma$ es discreto.}
@@ -166,22 +166,22 @@ Terminamos ahora la demostración del Lema \ref{lemtoro}.
   Sean $e_1,\dots,e_k$ los generadores de $\Gamma$ y sea $\zeta:\RR^n \rightarrow \RR^n$ un isomorfismo lineal que mande el $i$-ésimo vector de la base canónica a $e_i$. Entonces, la aplicación $\tilde{\zeta}$ que hace el siguiente diagrama conmutativo es un difeomorfismo,
   \begin{center}
     \begin{tikzcd}
-      \RR^n    \arrow{r}{\zeta}\arrow{dd}[anchor=east]{\varpi} & \RR^n\arrow{dd}[anchor=west]{\pi}\arrow{ddr}[rotate=-30]{g} \\ 
+      \RR^n    \arrow{r}{\zeta}\arrow{dd}[anchor=east]{\varpi} & \RR^n\arrow{dd}[anchor=west]{\pi}\arrow{ddr}{g_\bullet(x_0)} \\ 
   & \\
-  \TT^k \times \RR^{n-k}\arrow{r}[anchor=south]{\tilde{\zeta}} & \RR^n/\Gamma \arrow{r}{\tilde{g}}& N,
+  \TT^k \times \RR^{n-k}\arrow{r}[anchor=south]{\tilde{\zeta}} & \RR^n/\Gamma \arrow{r}{\tilde{g}_\bullet(x_0)}& N,
      \end{tikzcd}
    \end{center}
-   y compuesto con $\tilde{g}$ da el difeomorfismo buscado.
+   y compuesto con $\tilde{g}_\bullet(x_0)$ da el difeomorfismo buscado.
 \end{proof}
 
-Volvemos ahora a la demostración del teorema de Arnold-Liouville. Aplicamos directamente el lema \ref{lemtoro} con $N=M_a$ (considerando los campos $X_i=X^{F_i}$ ya definidos y construyendo $g$ como en la demostración del lema) y tenemos que $M_a$ es difeomorfa a $\TT^k\times \RR^{n-k}$ para cierto $k=0,\dots,n$. En particular, si $M_a$ es compacta, entonces $k=n$ y $M_a\cong \TT^n$. Hemos probado entonces la parte $2$ del teorema. Además, el difeomorfismo $\tilde{\zeta}:\TT^k\times \RR^{n-k} \rightarrow M_a$ está bien descrito por el diagrama anterior.
+Volvemos ahora a la demostración del teorema de Arnold-Liouville. Aplicamos directamente el lema \ref{lemtoro} con $N=M_a$ (considerando los campos $X_i=X^{F_i}$ ya definidos, escogiendo un punto $x\in M_a$ y construyendo $g_\bullet(x)$ como en la demostración del lema) y tenemos que $M_a$ es difeomorfa a $\TT^k\times \RR^{n-k}$ para cierto $k=0,\dots,n$. En particular, si $M_a$ es compacta, entonces $k=n$ y $M_a\cong \TT^n$. Hemos probado entonces la parte $2$ del teorema. Además, el difeomorfismo $\TT^k\times \RR^{n-k} \rightarrow M_a$ está bien descrito por el diagrama anterior.
 
-   Podemos considerar entonces la parametrización $\psi:\RR^n\rightarrow M_a$ dada por el diagrama
+   Podemos considerar entonces la parametrización $\psi_x:\RR^n\rightarrow M_a$ dada por el diagrama
   \begin{center}
     \begin{tikzcd}
-      \RR^n    \arrow[bend left=90]{rrdd}{\psi} \arrow{r}{\zeta}\arrow{dd}[anchor=east]{\varpi} & \RR^n\arrow{dd}[anchor=west]{\pi}\arrow{ddr}[rotate=-30]{g} \\ 
+      \RR^n    \arrow[bend left=90]{rrdd}{\psi_x} \arrow{r}{\zeta}\arrow{dd}[anchor=east]{\varpi} & \RR^n\arrow{dd}[anchor=west]{\pi}\arrow{ddr}{g_\bullet(x)} \\ 
   & \\
-  \TT^k \times \RR^{n-k}\arrow{r}[anchor=south]{\tilde{\zeta}} & \RR^n/\Gamma \arrow{r}{\tilde{g}}& M_a,
+  \TT^k \times \RR^{n-k}\arrow{r}[anchor=south]{\tilde{\zeta}} & \RR^n/\Gamma \arrow{r}{\tilde{g}_\bullet(x)}& M_a,
      \end{tikzcd}
    \end{center}
    Sea el vector $v\in \RR^n$ tal que $\zeta(v)=(1,0,\dots,0)$. Tomemos ahora un flujo rectilíneo
@@ -192,16 +192,16 @@ Volvemos ahora a la demostración del teorema de Arnold-Liouville. Aplicamos dir
    y veamos su comportamiento en el diagrama 
    \begin{center}
      \begin{tikzcd}
-       t\arrow{rr}\in \RR &&vt \in \RR^n      \arrow{rr}{\zeta}\arrow{rrdd}[anchor=north,rotate=-30]{\psi} && (t,0,\dots,0) \in \RR^n\arrow{dd}[anchor=west]{g} \\ 
+       t\arrow{rr}\in \RR &&vt \in \RR^n      \arrow{rr}{\zeta}\arrow{rrdd}[anchor=north,rotate=-30]{\psi_x} && (t,0,\dots,0) \in \RR^n\arrow{dd}[anchor=west]{g_\bullet(x)} \\ 
  &&       && \\
 &&	&&g_{1,t}(x)=\varphi_t^H(x)\in M_a.
       \end{tikzcd}
     \end{center}
-    Tenemos entonces que $\varphi_t^H(x)=\psi(vt)$, de modo que podemos tomar una carta $(U,w)$ con $U\subset M_a$ abierto relativo tal que el siguiente diagrama conmute
+    Tenemos entonces que $\varphi_t^H(x)=\psi(vt)$, de modo que podemos tomar una carta $(U,w_x)$ con $U\subset M_a$ abierto relativo, $x\in U$, tal que el siguiente diagrama conmute
     \begin{center}
       \begin{tikzcd}
-	& & \RR^n \arrow{d}{\psi} \\
-	\RR \arrow{r}{\varphi_{\bullet}^H(x)}& U \arrow[hook]{r}{ }\arrow{ru}{w} & M_a.
+	& & \RR^n \arrow{d}{\psi_x} \\
+	\RR \arrow{r}{\varphi_{\bullet}^H(x)}& U \arrow[hook]{r}{ }\arrow{ru}{w_x} & M_a.
        \end{tikzcd}
      \end{center}
      Por tanto, $w(t)=w(\varphi_t^H(x))=vt$, luego $\dot w(t)=v$. Nótese que al ser arbitraria la elección del punto $x$ en el toro de Liouville $M_a$, la elección de las coordenadas $w$ en el toro está determinada salvo por una constante. Es decir, podemos elegir el valor $w_{0}=w(0)$. Como el flujo hamiltoniano deja $M_a$ invariante, queda descrito por las ecuaciones
@@ -249,8 +249,9 @@ Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
     \end{equation*}
   \end{obs}
 
-\begin{proof}
-  En primer lugar, hay que obtener el entorno tubular $U$. Como $M_a$ es un conjunto compacto de puntos regulares existe un entorno $W$ de $M_a$ con todos sus puntos regulares de manera que $M_a\subset W \subset \overline{W}$ y tal que $F|_W$ sea abierta. Por tanto, $V=F(W)\subset \RR^n$ es un entorno abierto de $a$. Ahora, para cada $b\in V$, existe al menos una componente conexa $M_b$ de $F^{-1}(b)$ que interseca a $W$ en algún punto. Si $M_b$ está contenida en $W$ entonces es compacta y por tanto es un toro de Liouville. En caso contrario, existe un punto $x_b\in M_{b}\cap (\overline{W}\setminus W)$.
+\begin{proof}\leavevmode
+
+  1. En primer lugar, hay que obtener el entorno tubular $U$. Como $M_a$ es un conjunto compacto de puntos regulares existe un entorno $W$ de $M_a$ con todos sus puntos regulares de manera que $M_a\subset W \subset \overline{W}$ y tal que $F|_W$ sea abierta. Por tanto, $V=F(W)\subset \RR^n$ es un entorno abierto de $a$. Ahora, para cada $b\in V$, existe al menos una componente conexa $M_b$ de $F^{-1}(b)$ que interseca a $W$ en algún punto. Si $M_b$ está contenida en $W$ entonces es compacta y por tanto es un toro de Liouville. En caso contrario, existe un punto $x_b\in M_{b}\cap (\overline{W}\setminus W)$.
   
   Supongamos entonces que existe una sucesión $(b_k)$ de valores en $V$ tal que $b_k\rightarrow a$ con $M_{b_k}\cap(\overline{W}\setminus W) \neq \varnothing$. Entonces existe una sucesión convergente $(x_{b_k})$ con cada $x_{b_k}\in M_{b_k}\cap \overline{W}\setminus W$. Ahora, si llamamos $x_0=\lim_k x_{b_k}$ entonces $x_0\in \overline{W}\setminus W$ y por continuidad $F(x_0)=\lim_k F(x_{b_k})=\lim_k b_k =a$, de modo que $x_0 \in M_a\subset W$ y llegamos a una contradicción. Por tanto existe una bola $B\subset \RR^n$ centrada en $a$ tal que el toro de Liouville $M_b\subset W \subset \overline{W}$ para cada $b\in B$. 
   
@@ -260,30 +261,38 @@ Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
   \end{equation*}
   que es una unión de toros de Liouville. Ahora, análogamente a la demostración del teorema de Arnold-Liouville fijamos $x\in M_a$ y consideramos la aplicación
   \begin{align*}
-    \varphi^F :\RR^n&\longrightarrow M_a\\ 
+    \varphi^F_\bullet(x) :\RR^n&\longrightarrow M_a\\ 
     (\theta_1,\dots,\theta_n) &\longmapsto \varphi_{\theta_1}^{F_1}\cdots \varphi_{\theta_n}^{F_n}(x), 
     \end{align*}
-    que está bien definida por conmutar los flujos, y el difeomorfismo $\theta:M_a\rightarrow \TT^n$ inducido por el diagrama
+    que está bien definida por conmutar los flujos, y el difeomorfismo $\theta^x:M_a\rightarrow \TT^n$ inducido por el diagrama
     \begin{center}
       \begin{tikzcd}
-\RR^n	\arrow{r}{\varphi^F}\arrow{d}{ } & M_a\arrow{ld}[anchor=north,rotate=30]{\theta} \\ 
+\RR^n	\arrow{r}{\varphi^F_\bullet(x)}\arrow{d}{ } & M_a\arrow{ld}[anchor=north,rotate=30]{\theta^x} \\ 
 	 \TT^n.&
        \end{tikzcd}
      \end{center}
-
-     Igual que en la demostración del teorema de Arnold-Liouville, la construcción del difeomorfismo $\theta$ depende de la elección del punto $x\in M_a$. Para escoger puntos en los toros cercanos $M_{b}\subset U$, consideremos un entorno abierto $\mathscr{D} \subset U$ de $x$ difeomorfo a $D\times \RR^n$, con $D\subset \RR^n$ un disco abierto en torno a $a$, de modo que $F(\mathscr{D})=D$. Tomamos entonces un punto $x_b \in M_{b}$ tal que $x_b\in \mathscr{D}$. Como $F$ es localmente una proyección tiene secciones locales diferenciables, luego localmente la elección de $x_b$ varía diferenciablemente. A partir de este $x_b$, construimos análogamente un difeomorfismo $\theta_b:M_b \rightarrow \TT^n$, que nos hemos cuidado de que varíe diferenciablemente en con el parámetro $b\in D$. Tenemos entonces que localmente, si $x\in \mathscr{D}$, $\Phi(x)=(F(x),\theta_{F(x)}(x))\in D\times \TT^n$ da un difeomorfismo en $\mathscr{D}$.
-
-     Veamos entonces que la generalización global
+     Concretamente, siguiendo la construcción del diagrama en la demostración del teorema de Arnold-Liouville, $\theta^x=\bar{\zeta}^{-1}\circ (\tilde{g}_\bullet(x))^{-1}$. Igual que antes, la construcción de este difeomorfismo depende de la elección del punto $x\in M_a$. Concretamente, como $\bar{\zeta}$ no depende de la elección del punto, el cambio del difeomorfismo al cambiar de un punto $x_0\in M_a$ a otro $x=g_t(x_0)$ será un parámetro que solo depende de los dos puntos y del toro $M_a$,
      \begin{align*}
-       \Phi :U&\longrightarrow B\times \TT^n\\ 
-       x &\longmapsto (F(x),\theta_{F(x)}(x)), 
-       \end{align*}
-       es un difeomorfismo. Una vez probemos esto, como $B$ es una bola, el entorno $U$ será un entorno tubular. Para ver que $\Phi$ es un difeomorfismo, consideremos las definiciones locales
+       s_{x,x_0}(a)=\theta^x-\theta^{x_0}=\bar{\zeta}\circ (\tilde{g}_\bullet(x)^{-1}-\tilde{g}_\bullet(x_0)^{-1}) = \bar{\zeta} \circ (\pi(-t)).
+     \end{align*}
+     Como $F|_{U}$ tiene derivada sobreyectiva en todos los puntos, es localmente una proyección lineal, es decir, cada punto $x\in U$ tiene un entorno abierto $\mathscr{D}$ difeomorfo a un producto $D\times \TT^n$ de manera que $F|_{\mathscr{D}}$ es, salvo ese difeomorfismo, la proyección sobre la primera componente $D\times \TT^n \rightarrow D\subset B$. Esto significa que podemos elegir $x_b\in M_b$ diferenciablemente en función de $b\in D$. 
+     Tenemos así un recubrimiento abierto $U=\bigcup_i \mathscr D_i$ y para cada $i$ tenemos el difeomorfismo
        \begin{align*}
 	 \Phi^i :\mathscr{D}^i&\longrightarrow D^i\times \TT^n\\ 
 	 x &\longmapsto (F(x),\theta^i_{F(x)}(x)),
 	 \end{align*}
-	 y una partición diferenciable de la unidad $\alpha_i:B\rightarrow [0,1]$ subordinada a los $D^i$. Definimos
+	 donde la $i$ indica que el difeomorfismo $\theta^i_b=\theta^{x_i}_b$ se define usando $x^i_b\in M_b$ para $b\in D^i$. Esto último garantiza que $\theta^i_b$ depende diferenciablemente de $b$ y en consecuencia $\Phi^i$ es diferenciable. 
+	 \begin{center}
+	   \begin{tikzcd}
+	     && && \TT^n \\
+	     \\
+	     U \arrow{dd}{F|_U} && \mathscr{D}_i \arrow[hook]{ll} \arrow{ddrr}{F|_\mathscr{D}} \arrow{rr}{\Phi^i} \arrow{rruu}{\theta^i_b} && D_i \times \TT^n \arrow{uu}{\mathrm{proj}_2} \arrow{dd}{\mathrm{proj}_1}	     \\ 
+	     \\
+	     B && &&D_i \arrow[hook]{llll}
+	   \end{tikzcd}
+	 \end{center}
+	 
+	 Vamos a construir globalmente un difeomorfismo $\Phi:U\rightarrow B\times \TT^n$. Tomamos ahora  una partición diferenciable de la unidad $\alpha_i:B\rightarrow [0,1]$ subordinada a los $D^i$. Definimos
 	 \begin{equation*}
 	   \Phi(x)=\left( F(x),\sum_i\alpha_i(F(x))\theta^i_{F(x)}(x) \right).
 	 \end{equation*}
@@ -295,10 +304,10 @@ Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
 	 \begin{equation*}
 	   \sum_j \alpha_j(F(x))\theta^j_{F(x)}(x)=\sum_j \alpha_j(F(x))\theta^i_{F(x)}(x)+\sum_j \alpha_j(F(x))s_{ij}(F(x))=\theta^i_{F(x)}(x)+c_i(F(x)).
 	 \end{equation*}
-	 Estas son coordenadas angulares porque la última constante $c_i$ sólo depende de $F(x)$ y además la aplicación $\Phi$ es diferenciable. Hemos probado entonces que $\Phi$ es un difeomorfismo.
+	 Estas son coordenadas angulares porque la última constante $c_i$ sólo depende de $F(x)$ y además la aplicación $\Phi$ es diferenciable. En realidad, si $\theta^i_{F(x)}$ estaba definido por una elección de cierto punto $x^i_{F(x)}\in M_{F(x)}$, ahora lo hemos cambiado por traslación, para obtener el difeomorfismo global. Hemos probado entonces que $\Phi:U\rightarrow B\times \TT^n$ es un difeomorfismo.
 	 
 
- Procedamos ahora a hallar las variables de acción-ángulo. Sea $\pi:U\cong B\times \TT^n\rightarrow B$ la proyección canónica. Entonces $\pi^{-1}(x)$ es un toro invariante para cada $x \in B$. En cada uno de estos toros, consideramos $X_i=X^{F_i}$ y $(F,\theta)$ las coordenadas antes obtenidas. Si tomamos un punto $\theta=(\theta_1,\dots,\theta_n)\in \RR^n$ entonces, para cada $x\in M$, podemos usar la conmutatividad de los flujos para escribir
+ 2. Procedamos ahora a hallar las variables de acción-ángulo. Sea $\pi:U\cong B\times \TT^n\rightarrow B$ la proyección canónica. Entonces $\pi^{-1}(x)$ es un toro invariante para cada $x \in B$. En cada uno de estos toros, consideramos $X_i=X^{F_i}$ y $(F,\theta)$ las coordenadas antes obtenidas. Si tomamos un punto $\theta=(\theta_1,\dots,\theta_n)\in \RR^n$ entonces, para cada $x\in M$, podemos usar la conmutatividad de los flujos para escribir
 \[
   \left. \deriv{\theta_i}\right|_{\varphi^F_{\theta}(x)} = \deriv{\theta_i} \varphi^{F_i}_{\theta_i}(y),
 \]
@@ -368,7 +377,7 @@ Así, el procedimiento a seguir para construir variables de acción-ángulo es e
     \end{equation*}
   \item Se escribe el hamiltoniano en función de las variables de acción $H=H(J(a))$ y se obtienen las frecuencias 
     \begin{equation*}
-      \nu_i(a)= \dot{\varphi_i}(t)=\parcial{H}{J}(J(a)).
+      \nu_i(a)= \dot{\phi_i}(t)=\parcial{H}{J}(J(a)).
     \end{equation*}
 \end{enumerate}
 \end{obs}
@@ -469,7 +478,7 @@ Este será el aspecto que tengan las variables de acción-ángulo en general par
 
 \paragraph{\bf Oscilador armónico con $n$ grados de libertad}\mbox{}
 
-  Para estudiar un caso de dimensión superior, podemos considerar el sistema formado por $n$ osciladores armónicos acoplados o, equivalentemente, un oscilador armónico con $n$ grados de libertad. El hamiltoniano del sistema será 
+  Para estudiar un caso de dimensión superior, podemos considerar el sistema formado por $n$ osciladores armónicos o, equivalentemente, un oscilador armónico con $n$ grados de libertad. El hamiltoniano del sistema será 
   \begin{equation*}
     H(q_1,\dots,q_n,p_1,\dots,p_n)= H_1(q_1,p_1)+ \cdots +H_n(q_n,p_n) = \tfrac{1}{2}\sum_{i=1}^n (p_i^2+\omega_i^2q_i^2).
   \end{equation*}
@@ -654,7 +663,7 @@ En esta sección damos algunas generalidades sobre los sistemas hamiltonianos co
   \begin{equation*}
     H(\phi,p)=\frac{1}{2}p^2 - g\cos\phi,
   \end{equation*}
-  donde $g$ es la aceleración de la gravedad y hemos tomado el centro como origen de energía potencial.
+  donde $g$ es la aceleración gravitatoria y hemos tomado el centro como origen de energía potencial.
   Como podemos ver en la figura \ref{fig:pendulo}  las trayectorias son cerradas, luego cada curva de energía constante es compacta. Para estudiar los puntos críticos, nótese que $\dd H$ es distinta de 0 en todo punto exceptuando los casos $(\phi=0,p=0)$ y $(\phi=\pi,p=0)$, que corresponden a puntos de equilibrio (el primero, estable, el segundo, inestable) donde la trayectoria es sólo un punto. La curva que aparece punteada en la figura, de ecuación
   \begin{equation*}
     g=H(\phi,p)=\frac{1}{2}p^2 - g \cos\phi ,
@@ -737,10 +746,10 @@ En esta sección damos algunas generalidades sobre los sistemas hamiltonianos co
    \begin{equation*}
      A^{t}J_1+J_1 A=0.
    \end{equation*}
-   Las matrices que cumplen esta condición forman el álgebra de Lie $\mathfrak{sp}(2)$ del grupo simpléctico $\mathrm{Sp}(2)$.
+   Las matrices que cumplen esta condición forman el álgebra de Lie $\mathfrak{sp}(2,\RR)$ del grupo simpléctico $\mathrm{Sp}(2,\RR)$.
 
    \begin{prop}
-     Si $\alpha$ es un autovalor de una matriz $A\in \mathfrak{sp}(2)$ con multiplicidad algebraica $k$, entonces $-\alpha$ es también un autovalor de $A$ con la misma multiplicidad. Si $\alpha=0$ entonces su multiplicidad es par.
+     Si $\alpha$ es un autovalor de una matriz $A\in \mathfrak{sp}(2,\RR)$ con multiplicidad algebraica $k$, entonces $-\alpha$ es también un autovalor de $A$ con la misma multiplicidad. Si $\alpha=0$ entonces su multiplicidad es par.
    \end{prop}
    \begin{proof}
      Los autovalores son los ceros del polinomio característico $P(\alpha)=\det(\alpha I-A)$. Por tanto, basta probar que $\det(\alpha I-A)=\det(\alpha I + A)$. Esto se ve de la siguiente manera,
@@ -783,7 +792,7 @@ que claramente es difeomorfo al fibrado tangente de la esfera, $T\SF^2$. La form
 
   \paragraph{\bf El potencial central}\mbox{}
 
-  Consideremos el caso genérico de una partícula moviéndose en el espacio sujeta a una fuerza central, es decir, dirigida siempre hacia el origen y cuyo valor dependa solo de la distancia de la partícula a este. Un ejemplo típico sería el de una partícula moviéndose en un potencial kepleriano $V(r)=-k/r$ (por ejemplo, la Tierra alrededor del Sol). El espacio de fases del sistema es el espacio simpléctico estándar $6$-dimensional $(\RR^6,\Omega_3)$ y el hamiltoniano viene dado por la función
+  Consideremos el caso genérico de una partícula moviéndose en el espacio sujeta a una fuerza central, es decir, dirigida siempre hacia el origen y cuyo valor dependa solo de la distancia de la partícula a este. Un ejemplo típico sería el de una partícula moviéndose en un potencial coulombiano $V(r)=-k/r$ (por ejemplo, la Tierra alrededor del Sol). El espacio de fases del sistema es el espacio simpléctico estándar $6$-dimensional $(\RR^6,\Omega_3)$ y el hamiltoniano viene dado por la función
   \begin{equation*}
     H(q,p)=\tfrac{1}{2m}||p||^2+V(||q||).
   \end{equation*}
@@ -814,3 +823,21 @@ Un cálculo análogo muestra que $\pois{L_2}{L_3}=L_1$, de modo que
 
 Por tanto, $H$, $L^2$ y $L_3$ son $3$ funciones en involución y además es posible comprobar que son independientes en casi todo punto de $\RR^6$, de modo que el sistema $(M,H)$ es integrable en el sentido de Liouville.
 
+El hecho de que el momento angular $L$ sea perpendicular a $q$ y a $p$ y se conserve, permite restringir el movimiento en el espacio físico al plano perpendicular a $L$. Teniendo en cuenta los valores máximo y mínimo de la energía potencial $V$ se puede mostrar que el movimiento estará comprendido en una corona circular (ver figura \ref{fig:bertrand}). En general la órbita de un punto por el flujo hamiltoniano llena por completo la susodicha corona, pero el \emph{teorema de Bertrand} afirma que en dos casos especiales todos los movimientos acotados se dan en curvas ($1$-variedades) cerradas. Estos son aquellos en los que $V(r)$ es proporcional a $1/r$ (potencial coulombiano) o a $r^2$ (oscilador armónico isótropo). Cabe preguntarse entonces si esto se debe a la existencia de una integral primera adicional (una «simetría oculta»), independiente de las ya obtenidas, que restrinja el movimiento aún más, a alguna subvariedad de los toros de Liouville; los sistemas que cumplen esto se llaman \emph{superintegrables}. Efectivamente, tanto el potencial coulombiano como el oscilador armónico isótropo son superintegrables. En el caso del potencial coulombiano $V(r)=-k/r$ la cantidad conservada adicional es el \emph{vector de Laplace-Runge-Lenz}, definido por
+\begin{equation*}
+  A=p\times L - \frac{mk}{r}q.
+\end{equation*}
+En el caso del oscilador armónico isótropo $V(r)=kr^2$ existe una matriz $2\times 2$ simétrica conservada, el \emph{tensor de Fradkin}, de componentes
+\begin{equation*}
+  A_{ij}=\frac{1}{2m}(p_ip_j+kq_iq_j),
+\end{equation*}
+con $i,j=1,2$. La traza del tensor es la energía $\tfrac{1}{2m}(||p||^2+kr^2)$ y la componente de fuera de la diagonal $F=A_{12}=\frac{1}{2}(p_1p_2+kq_1q_2)$ es precisamente la cantidad conservada adicional, independiente de la energía y el momento angular.
+
+Fue precisamente la observación de una aparente excepción a esta ley, la precesión del perihelio de Mercurio, la que supuso uno de los «fallos» de la mecánica clásica a finales del siglo XIX. Si el perihelio de Mercurio precedía, llenaba toda la corona en la que su órbita está contenida, de modo que no podía estar sometida al potencial $V(r)=-k/r$, tal y como predecía la ley de gravitación universal; de estarlo, formaría un sistema superintegrable y la órbita debería ser una curva cerrada. Este enigma no sería resuelto hasta la formulación de la teoría de la Relatividad General. El caso de Mercurio ya no podía ser explicado por la gravedad newtoniana y era necesario considerar correciones relativistas para entender su movimiento.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.35\textwidth]{pics/bertrand}
+  \caption{\small Movimiento en la corona circular (Fuente:\cite{landau}).}
+  \label{fig:bertrand}
+\end{figure}

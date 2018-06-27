@@ -35,4 +35,4 @@
 \contentsline {section}{\numberline {4.6}M\IeC {\'a}s sistemas integrables}{54}{section.4.6}
 \contentsline {paragraph}{\bf El p\IeC {\'e}ndulo esf\IeC {\'e}rico}{54}{section*.20}
 \contentsline {paragraph}{\bf El potencial central}{55}{section*.21}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{57}{section*.21}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{56}{figure.4.8}
