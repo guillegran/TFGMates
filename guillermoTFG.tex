@@ -80,6 +80,18 @@
 \fancyhead[CE]{\small GUILLERMO GALLEGO}
 \renewcommand{\headrulewidth}{0pt}
 
+%\newenvironment{dedication}
+%  {\clearpage           % we want a new page
+%   \thispagestyle{empty}% no header and footer
+%   \vspace*{\stretch{1}}% some space at the top 
+%   \itshape             % the text is in italics
+%   \raggedleft          % flush to the right margin
+%  }
+%  {\par % end the paragraph
+%   \vspace{\stretch{3}} % space at bottom is three times that at the top
+%   \clearpage           % finish off the page
+%  }
+
 \begin{document}
 %\thispagestyle{plain}
 
@@ -119,12 +131,22 @@
 %\input{ArnoldLiouville/arnoldliouville.tex}
 %\input{promedios/promedios.tex}
 
-%\newpage\null\thispagestyle{empty}\newpage
-
 \addcontentsline{toc}{chapter}{Bibliografía}
 \nocite{*}
 \bibliographystyle{plain}
 \bibliography{biblio}
+
+\newpage\null\thispagestyle{empty}\newpage
+
+\chapter*{Agradecimientos}
+
+Al profesor Otto R. Campoamor por la revisión del trabajo, ayudando a aclarar toda la Física que hay detrás. 
+A Jesús M. Ruiz, mi tutor, por su atención incansable, su revisión minuciosa de todo lo que he escrito y, sobre todo, por su tremendo cariño a las matemáticas y a las cosas bien hechas.
+
+A mis padres, Isabel y Javier, sin los cuales nada de esto sería posible.
+A mi hermana, Almudena, por aguantarme estos 5 años (y los otros 18).
+A mi tía Tere y a mi abuela Florencia, por hacerme mi estancia en Madrid más cómoda y llevadera, por el cocido todos los sábados, y por haberme ayudado siempre que lo he necesitado. 
+
 \end{document}
 
 
