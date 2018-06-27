@@ -25,14 +25,15 @@
 \contentsline {chapter}{\numberline {4}Sistemas integrables}{37}{chapter.4}
 \contentsline {section}{\numberline {4.1}Teorema de Arnold-Liouville}{37}{section.4.1}
 \contentsline {section}{\numberline {4.2}Variables de acci\IeC {\'o}n-\IeC {\'a}ngulo}{43}{section.4.2}
+\contentsline {paragraph}{Construcci\IeC {\'o}n de las variables angulares}{45}{section*.16}
 \contentsline {section}{\numberline {4.3}Osciladores arm\IeC {\'o}nicos}{46}{section.4.3}
-\contentsline {paragraph}{\bf Oscilador arm\IeC {\'o}nico con un grado de libertad}{46}{section*.16}
-\contentsline {paragraph}{\bf Oscilador arm\IeC {\'o}nico con $n$ grados de libertad}{48}{section*.17}
+\contentsline {paragraph}{\bf Oscilador arm\IeC {\'o}nico con un grado de libertad}{46}{section*.17}
+\contentsline {paragraph}{\bf Oscilador arm\IeC {\'o}nico con $n$ grados de libertad}{48}{section*.18}
 \contentsline {section}{\numberline {4.4}Movimiento condicionalmente peri\IeC {\'o}dico}{49}{section.4.4}
 \contentsline {section}{\numberline {4.5}Sistemas con un grado de libertad}{52}{section.4.5}
-\contentsline {paragraph}{\bf El p\IeC {\'e}ndulo simple}{52}{section*.18}
-\contentsline {paragraph}{\bf Puntos cr\IeC {\'\i }ticos de los sistemas con un grado de libertad}{53}{section*.19}
+\contentsline {paragraph}{\bf El p\IeC {\'e}ndulo simple}{52}{section*.19}
+\contentsline {paragraph}{\bf Puntos cr\IeC {\'\i }ticos de los sistemas con un grado de libertad}{53}{section*.20}
 \contentsline {section}{\numberline {4.6}M\IeC {\'a}s sistemas integrables}{54}{section.4.6}
-\contentsline {paragraph}{\bf El p\IeC {\'e}ndulo esf\IeC {\'e}rico}{54}{section*.20}
-\contentsline {paragraph}{\bf El potencial central}{55}{section*.21}
+\contentsline {paragraph}{\bf El p\IeC {\'e}ndulo esf\IeC {\'e}rico}{54}{section*.21}
+\contentsline {paragraph}{\bf El potencial central}{55}{section*.22}
 \contentsline {chapter}{Bibliograf\IeC {\'\i }a}{56}{figure.4.8}

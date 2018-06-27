@@ -251,7 +251,9 @@ Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
 
 \begin{proof}\leavevmode
 
-  1. En primer lugar, hay que obtener el entorno tubular $U$. Como $M_a$ es un conjunto compacto de puntos regulares existe un entorno $W$ de $M_a$ con todos sus puntos regulares de manera que $M_a\subset W \subset \overline{W}$ y tal que $F|_W$ sea abierta. Por tanto, $V=F(W)\subset \RR^n$ es un entorno abierto de $a$. Ahora, para cada $b\in V$, existe al menos una componente conexa $M_b$ de $F^{-1}(b)$ que interseca a $W$ en algún punto. Si $M_b$ está contenida en $W$ entonces es compacta y por tanto es un toro de Liouville. En caso contrario, existe un punto $x_b\in M_{b}\cap (\overline{W}\setminus W)$.
+ \noindent \textbf{Construcción del entorno tubular}
+
+  En primer lugar, hay que obtener el entorno tubular $U$. Como $M_a$ es un conjunto compacto de puntos regulares existe un entorno $W$ de $M_a$ con todos sus puntos regulares de manera que $M_a\subset W \subset \overline{W}$ y tal que $F|_W$ sea abierta. Por tanto, $V=F(W)\subset \RR^n$ es un entorno abierto de $a$. Ahora, para cada $b\in V$, existe al menos una componente conexa $M_b$ de $F^{-1}(b)$ que interseca a $W$ en algún punto. Si $M_b$ está contenida en $W$ entonces es compacta y por tanto es un toro de Liouville. En caso contrario, existe un punto $x_b\in M_{b}\cap (\overline{W}\setminus W)$.
   
   Supongamos entonces que existe una sucesión $(b_k)$ de valores en $V$ tal que $b_k\rightarrow a$ con $M_{b_k}\cap(\overline{W}\setminus W) \neq \varnothing$. Entonces existe una sucesión convergente $(x_{b_k})$ con cada $x_{b_k}\in M_{b_k}\cap \overline{W}\setminus W$. Ahora, si llamamos $x_0=\lim_k x_{b_k}$ entonces $x_0\in \overline{W}\setminus W$ y por continuidad $F(x_0)=\lim_k F(x_{b_k})=\lim_k b_k =a$, de modo que $x_0 \in M_a\subset W$ y llegamos a una contradicción. Por tanto existe una bola $B\subset \RR^n$ centrada en $a$ tal que el toro de Liouville $M_b\subset W \subset \overline{W}$ para cada $b\in B$. 
   
@@ -276,7 +278,7 @@ Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
        s_{x,x_0}(a)=\theta^x-\theta^{x_0}=\bar{\zeta}\circ (\tilde{g}_\bullet(x)^{-1}-\tilde{g}_\bullet(x_0)^{-1}) = \bar{\zeta} \circ (\pi(-t)).
      \end{align*}
      Como $F|_{U}$ tiene derivada sobreyectiva en todos los puntos, es localmente una proyección lineal, es decir, cada punto $x\in U$ tiene un entorno abierto $\mathscr{D}$ difeomorfo a un producto $D\times \TT^n$ de manera que $F|_{\mathscr{D}}$ es, salvo ese difeomorfismo, la proyección sobre la primera componente $D\times \TT^n \rightarrow D\subset B$. Esto significa que podemos elegir $x_b\in M_b$ diferenciablemente en función de $b\in D$. 
-     Tenemos así un recubrimiento abierto $U=\bigcup_i \mathscr D_i$ y para cada $i$ tenemos el difeomorfismo
+     Tenemos así un recubrimiento abierto $U=\bigcup_i \mathscr D^i$ y para cada $i$ tenemos el difeomorfismo
        \begin{align*}
 	 \Phi^i :\mathscr{D}^i&\longrightarrow D^i\times \TT^n\\ 
 	 x &\longmapsto (F(x),\theta^i_{F(x)}(x)),
@@ -286,7 +288,7 @@ Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
 	   \begin{tikzcd}
 	     && && \TT^n \\
 	     \\
-	     U \arrow{dd}{F|_U} && \mathscr{D}_i \arrow[hook]{ll} \arrow{ddrr}{F|_\mathscr{D}} \arrow{rr}{\Phi^i} \arrow{rruu}{\theta^i_b} && D_i \times \TT^n \arrow{uu}{\mathrm{proj}_2} \arrow{dd}{\mathrm{proj}_1}	     \\ 
+	     U \arrow{dd}{F|_U} && \mathscr{D}_i \arrow[hook]{ll} \arrow{ddrr}{F|_\mathscr{D}} \arrow{rr}{\Phi^i} \arrow{rruu}{\theta^i_b} && D_i \times \TT^n \arrow{uu}[anchor=west]{\mathrm{proj}_2} \arrow{dd}{\mathrm{proj}_1}	     \\ 
 	     \\
 	     B && &&D_i \arrow[hook]{llll}
 	   \end{tikzcd}
@@ -296,18 +298,19 @@ Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
 	 \begin{equation*}
 	   \Phi(x)=\left( F(x),\sum_i\alpha_i(F(x))\theta^i_{F(x)}(x) \right).
 	 \end{equation*}
-	 Esta suma es localmente finita, y en un entorno de $x$ se reduce a los índices $j$ tales que $F(x)\in D_j$; trabajamos en la intersección de todos ellos. Antes hemos visto que si $x\in D_i \cap D_j$ entonces 
+	 Esta suma es localmente finita, y en un entorno de $x$ se reduce a los índices $j$ tales que $F(x)\in D_j$; trabajamos en la intersección de esos $D_j$. Antes hemos visto que si $x\in D_i \cap D_j$ entonces 
 	 \begin{equation*}
 	   \theta^j_{F(x)}-\theta^i_{F(x)}=s_{ij}(F(x))
 	 \end{equation*}
-	 es un parámetro que sólo depende de $F(x)$. Además, esa dependencia es diferenciable mirando al primer miembro. Resulta que
+	 es un parámetro que sólo depende de $F(x)$. Resulta que
 	 \begin{equation*}
 	   \sum_j \alpha_j(F(x))\theta^j_{F(x)}(x)=\sum_j \alpha_j(F(x))\theta^i_{F(x)}(x)+\sum_j \alpha_j(F(x))s_{ij}(F(x))=\theta^i_{F(x)}(x)+c_i(F(x)).
 	 \end{equation*}
 	 Estas son coordenadas angulares porque la última constante $c_i$ sólo depende de $F(x)$ y además la aplicación $\Phi$ es diferenciable. En realidad, si $\theta^i_{F(x)}$ estaba definido por una elección de cierto punto $x^i_{F(x)}\in M_{F(x)}$, ahora lo hemos cambiado por traslación, para obtener el difeomorfismo global. Hemos probado entonces que $\Phi:U\rightarrow B\times \TT^n$ es un difeomorfismo.
 	 
+  \paragraph{Construcción de las variables angulares}\leavevmode
 
- 2. Procedamos ahora a hallar las variables de acción-ángulo. Sea $\pi:U\cong B\times \TT^n\rightarrow B$ la proyección canónica. Entonces $\pi^{-1}(x)$ es un toro invariante para cada $x \in B$. En cada uno de estos toros, consideramos $X_i=X^{F_i}$ y $(F,\theta)$ las coordenadas antes obtenidas. Si tomamos un punto $\theta=(\theta_1,\dots,\theta_n)\in \RR^n$ entonces, para cada $x\in M$, podemos usar la conmutatividad de los flujos para escribir
+ Procedamos ahora a hallar las variables de acción-ángulo. Sea $\pi:U\cong B\times \TT^n\rightarrow B$ la proyección canónica. Entonces $\pi^{-1}(x)$ es un toro invariante para cada $x \in B$. En cada uno de estos toros, consideramos $X_i=X^{F_i}$ y $(F,\theta)$ las coordenadas antes obtenidas. Si tomamos un punto $\theta=(\theta_1,\dots,\theta_n)\in \RR^n$ entonces, para cada $x\in M$, podemos usar la conmutatividad de los flujos para escribir
 \[
   \left. \deriv{\theta_i}\right|_{\varphi^F_{\theta}(x)} = \deriv{\theta_i} \varphi^{F_i}_{\theta_i}(y),
 \]
@@ -643,16 +646,17 @@ Vamos a generalizar ahora estas ideas al caso $n$-dimensional.
   Claramente, $\bar{f}=1$, pero $f^*(\phi_0)=0$, lo que contradice el teorema de los promedios.
 \end{proof}
 \begin{corol}
-  Sea $D\subset \TT^n$ un conjunto medible Jordan. Sea $A_D=\{t\in \RR | \phi(t) \in D\}$ (que también es medible Jordan) y sea $\tau_D(T)=\int_0^T\chi_{A_D}(t)dt$. Entonces
+  Sea $D\subset \TT^n$ un conjunto medible Jordan. Sea $A_D=\{t\in \RR | \phi(t) \in D\}$ (que también es medible Jordan) y sea $\tau_D(T)=\int_0^T\chi_{A_D}(t)dt$, donde $\chi_A$ denota la función característica del conjunto $A$. Entonces
   \begin{equation*}
     \lim_{T\rightarrow \infty}\frac{\tau_D(T)}{T}= \frac{\mathrm{Vol}(D)}{(2\pi)^n}.
   \end{equation*}
 \end{corol}
 \begin{proof}
-  Aplicamos el teorema a $\chi_D$, entonces $\int_0^T \chi_D(\phi(t))dt=\int_0^T \chi_{A_D}(t)dt=\tau_D(t)$ y $\bar{\chi}_D=(2\pi)^{-n}\mathrm{Vol}(D)$. Finalmente, por el teorema de los promedios
+  Nótese que $\int_0^T \chi_D(\phi(t))dt=\int_0^T \chi_{A_D}(t)dt=\tau_D(t)$ y $\bar{\chi}_D=(2\pi)^{-n}\mathrm{Vol}(D)$. Aplicando el teorema de los promedios
   \begin{equation*}
-    \bar{\chi}_D=\frac{\mathrm{Vol}(D)}{(2\pi)^n}=\lim_{T\rightarrow \infty}\frac{1}{T}\int_0^T \chi_D(\phi(t))dt=\lim_{T\rightarrow \infty}\frac{\tau_D(T)}{T}.
+    \bar{\chi}_D=\lim_{T\rightarrow \infty}\frac{1}{T}\int_0^T \chi_D(\phi(t))dt=\lim_{T\rightarrow \infty}\frac{\tau_D(T)}{T}.
   \end{equation*}
+  Por tanto, $\frac{\mathrm{Vol}(D)}{(2\pi)^n}=\bar{\chi}_D=\lim_{T\rightarrow \infty}\frac{\tau_D(T)}{T}$, como queríamos probar.
 \end{proof}
 \section{Sistemas con un grado de libertad}
 En esta sección damos algunas generalidades sobre los sistemas hamiltonianos con un grado de libertad que, como ya hemos visto, son todos integrables en el sentido de Liouville. Uno de los ejemplos más característicos es el péndulo simple, que estudiamos a continuación.
