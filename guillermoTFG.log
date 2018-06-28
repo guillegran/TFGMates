@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.3)  28 JUN 2018 10:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.3)  28 JUN 2018 10:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -3523,7 +3523,7 @@ Here is how much of TeX's memory you used:
  24699 multiletter control sequences out of 15000+600000
  19979 words of font info for 82 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
- 56i,20n,84p,1358b,1019s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,20n,84p,1357b,1019s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
@@ -3553,7 +3553,7 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy9.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on guillermoTFG.pdf (59 pages, 1882218 bytes).
+Output written on guillermoTFG.pdf (59 pages, 1882219 bytes).
 PDF statistics:
  847 PDF objects out of 1000 (max. 8388607)
  690 compressed objects within 7 object streams
