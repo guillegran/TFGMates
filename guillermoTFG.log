@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.3)  27 JUN 2018 18:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.3)  28 JUN 2018 10:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1176,7 +1176,7 @@ o.pdf>
 (epstopdf)             \includegraphics on input line 12.
 Package epstopdf Info: Output file is already uptodate.
 
-<portada/Negro-transparente-eps-converted-to.pdf, id=91, 380.42125pt x 98.3675p
+<portada/Negro-transparente-eps-converted-to.pdf, id=95, 380.42125pt x 98.3675p
 t>
 File: portada/Negro-transparente-eps-converted-to.pdf Graphic file (type pdf)
  <use portada/Negro-transparente-eps-converted-to.pdf>
@@ -1198,7 +1198,7 @@ Package epstopdf Info: Source file: <pics/espendulo.eps>
 ed-to.pdf pics/espendulo.eps>
 (epstopdf)             \includegraphics on input line 30.
 Package epstopdf Info: Output file is already uptodate.
-<pics/espendulo-eps-converted-to.pdf, id=92, 249.93375pt x 293.095pt>
+<pics/espendulo-eps-converted-to.pdf, id=96, 249.93375pt x 293.095pt>
 File: pics/espendulo-eps-converted-to.pdf Graphic file (type pdf)
 
 <use pics/espendulo-eps-converted-to.pdf>
@@ -1699,7 +1699,7 @@ pdf pics/lie.eps>
 (epstopdf)             \includegraphics on input line 21.
 Package epstopdf Info: Output file is already uptodate.
 
-<pics/lie-eps-converted-to.pdf, id=230, 397.485pt x 215.80624pt>
+<pics/lie-eps-converted-to.pdf, id=235, 397.485pt x 215.80624pt>
 File: pics/lie-eps-converted-to.pdf Graphic file (type pdf)
 
 <use pics/lie-eps-converted-to.pdf>
@@ -2635,7 +2635,7 @@ Package epstopdf Info: Source file: <pics/entornos.eps>
 d-to.pdf pics/entornos.eps>
 (epstopdf)             \includegraphics on input line 69.
 Package epstopdf Info: Output file is already uptodate.
-<pics/entornos-eps-converted-to.pdf, id=449, 570.13pt x 269.005pt>
+<pics/entornos-eps-converted-to.pdf, id=454, 570.13pt x 269.005pt>
 File: pics/entornos-eps-converted-to.pdf Graphic file (type pdf)
 
 <use pics/entornos-eps-converted-to.pdf>
@@ -2687,7 +2687,7 @@ Package epstopdf Info: Source file: <pics/discreto.eps>
 d-to.pdf pics/discreto.eps>
 (epstopdf)             \includegraphics on input line 111.
 Package epstopdf Info: Output file is already uptodate.
- <pics/discreto-eps-converted-to.pdf, id=459, 145.54375pt x 145.54375pt>
+ <pics/discreto-eps-converted-to.pdf, id=464, 145.54375pt x 145.54375pt>
 File: pics/discreto-eps-converted-to.pdf Graphic file (type pdf)
 
 <use pics/discreto-eps-converted-to.pdf>
@@ -2729,7 +2729,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 119.
 [39 <./pics/entornos-eps-converted-to.pdf>]
-<pics/grupo.pdf, id=483, 283.0575pt x 146.5475pt>
+<pics/grupo.pdf, id=488, 283.0575pt x 146.5475pt>
 File: pics/grupo.pdf Graphic file (type pdf)
  <use pics/grupo.pdf>
 Package pdftex.def Info: pics/grupo.pdf used on input line 137.
@@ -2993,7 +2993,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 418.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 418.
-[46] <pics/oscilador.pdf, id=547, 431.89355pt x 422.01288pt>
+[46] <pics/oscilador.pdf, id=552, 431.89355pt x 422.01288pt>
 File: pics/oscilador.pdf Graphic file (type pdf)
 
 <use pics/oscilador.pdf>
@@ -3105,7 +3105,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 552.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 552.
-[49] <pics/lissajous.pdf, id=584, 855.56706pt x 850.63953pt>
+[49] <pics/lissajous.pdf, id=589, 855.56706pt x 850.63953pt>
 File: pics/lissajous.pdf Graphic file (type pdf)
 
 <use pics/lissajous.pdf>
@@ -3199,7 +3199,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 661.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 661.
-<pics/pendulo.pdf, id=611, 437.09048pt x 419.82031pt>
+<pics/pendulo.pdf, id=616, 437.09048pt x 419.82031pt>
 File: pics/pendulo.pdf Graphic file (type pdf)
  <use pics/pendulo.pdf>
 Package pdftex.def Info: pics/pendulo.pdf used on input line 678.
@@ -3356,7 +3356,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 830.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 830.
-[55] <pics/bertrand.png, id=659, 363.3575pt x 310.15875pt>
+[55] <pics/bertrand.png, id=664, 363.3575pt x 310.15875pt>
 File: pics/bertrand.png Graphic file (type png)
 
 <use pics/bertrand.png>
@@ -3412,51 +3412,115 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 1.
 [56 <./pics/bertrand.png>])
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 150.
+(babel)             in language  on input line 139.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 150.
+(babel)             in language  on input line 139.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 150.
+(babel)             in language  on input line 139.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 150.
+(babel)             in language  on input line 139.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 150.
+(babel)             in language  on input line 139.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 150.
+(babel)             in language  on input line 139.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 150.
+(babel)             in language  on input line 139.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 150.
+(babel)             in language  on input line 139.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 150.
+(babel)             in language  on input line 139.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 150.
+(babel)             in language  on input line 139.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 150.
+(babel)             in language  on input line 139.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 150.
+(babel)             in language  on input line 139.
  [57
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 150.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 150.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 139.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 139.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 139.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 139.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 139.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 139.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 139.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 139.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 139.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 139.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 139.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 139.
+ [58]
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 141.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 141.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 141.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 141.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 141.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 141.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 151.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 151.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 151.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 151.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 151.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 151.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 151.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 151.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 151.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 151.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 151.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 151.
+ [59
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 151.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 151.
  (./guillermoTFG.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 150.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 150.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 151.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 151.
 Package rerunfilecheck Info: File `guillermoTFG.out' has not changed.
-(rerunfilecheck)             Checksum: 5F9AF88A85EA3B428B7E42F0C902675C;1589.
+(rerunfilecheck)             Checksum: 54B1AC2442C129007EF20A5499CAD9E8;1642.
 Package rerunfilecheck Info: File `guillermoTFG.brf' has not changed.
 (rerunfilecheck)             Checksum: C707E6D5E53C459E4AEDA596A8C41274;365.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 150.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 151.
  ) 
 Here is how much of TeX's memory you used:
- 22077 strings out of 494850
- 424601 string characters out of 6178025
+ 22081 strings out of 494850
+ 424639 string characters out of 6178025
  495374 words of memory out of 5000000
- 24698 multiletter control sequences out of 15000+600000
+ 24699 multiletter control sequences out of 15000+600000
  19979 words of font info for 82 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
  56i,20n,84p,1358b,1019s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3489,10 +3553,10 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy9.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on guillermoTFG.pdf (57 pages, 1881066 bytes).
+Output written on guillermoTFG.pdf (59 pages, 1882218 bytes).
 PDF statistics:
- 830 PDF objects out of 1000 (max. 8388607)
- 675 compressed objects within 7 object streams
- 214 named destinations out of 1000 (max. 500000)
- 231 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 847 PDF objects out of 1000 (max. 8388607)
+ 690 compressed objects within 7 object streams
+ 217 named destinations out of 1000 (max. 500000)
+ 239 words of extra memory for PDF output out of 10000 (max. 10000000)
 

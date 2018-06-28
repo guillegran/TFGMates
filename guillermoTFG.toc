@@ -37,3 +37,4 @@
 \contentsline {paragraph}{\bf El p\IeC {\'e}ndulo esf\IeC {\'e}rico}{54}{section*.21}
 \contentsline {paragraph}{\bf El potencial central}{55}{section*.22}
 \contentsline {chapter}{Bibliograf\IeC {\'\i }a}{56}{figure.4.8}
+\contentsline {chapter}{Agradecimientos}{59}{chapter*.23}
