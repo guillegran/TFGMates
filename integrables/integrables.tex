@@ -263,17 +263,24 @@ Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
   \end{equation*}
   que es una unión de toros de Liouville. Ahora, análogamente a la demostración del teorema de Arnold-Liouville fijamos $x\in M_a$ y consideramos la aplicación
   \begin{align*}
-    \varphi^F_\bullet(x) :\RR^n&\longrightarrow M_a\\ 
-    (\theta_1,\dots,\theta_n) &\longmapsto \varphi_{\theta_1}^{F_1}\cdots \varphi_{\theta_n}^{F_n}(x), 
+    g_\bullet (x) :\RR^n&\longrightarrow M_a\\ 
+    (t_1,\dots,t_n) &\longmapsto \varphi_{t_1}^{F_1}\cdots \varphi_{t_n}^{F_n}(x), 
     \end{align*}
     que está bien definida por conmutar los flujos, y el difeomorfismo $\theta^x:M_a\rightarrow \TT^n$ inducido por el diagrama
-    \begin{center}
-      \begin{tikzcd}
-\RR^n	\arrow{r}{\varphi^F_\bullet(x)}\arrow{d}{ } & M_a\arrow{ld}[anchor=north,rotate=30]{\theta^x} \\ 
-	 \TT^n.&
-       \end{tikzcd}
-     \end{center}
-     Concretamente, siguiendo la construcción del diagrama en la demostración del teorema de Arnold-Liouville, $\theta^x=\bar{\zeta}^{-1}\circ (\tilde{g}_\bullet(x))^{-1}$. Igual que antes, la construcción de este difeomorfismo depende de la elección del punto $x\in M_a$. Concretamente, como $\bar{\zeta}$ no depende de la elección del punto, el cambio del difeomorfismo al cambiar de un punto $x_0\in M_a$ a otro $x=g_t(x_0)$ será un parámetro que solo depende de los dos puntos y del toro $M_a$,
+  \begin{center}
+    \begin{tikzcd}
+      \RR^n    \arrow{r}{\zeta}\arrow{dd}[anchor=east]{\varpi} & \RR^n\arrow{dd}[anchor=west]{\pi}\arrow{ddr}{g_\bullet(x_0)} \\ 
+  & \\
+  \TT^n \arrow{r}[anchor=south]{\tilde{\zeta}} & \RR^n/\Gamma \arrow{r}{\tilde{g}_\bullet(x_0)}& M_a \arrow[bend left=30]{ll}{\theta^x}.
+     \end{tikzcd}
+   \end{center}
+  %  \begin{center}
+  %    \begin{tikzcd}
+%\RR^n	\arrow{r}{\varphi^F_\bullet(x)}\arrow{d}{ } & M_a\arrow{ld}[anchor=north,rotate=30]{\theta^x} \\ 
+%	 \TT^n.&
+%       \end{tikzcd}
+%     \end{center}
+     Concretamente, $\theta^x=\bar{\zeta}^{-1}\circ (\tilde{g}_\bullet(x))^{-1}$. Igual que antes, la construcción de este difeomorfismo depende de la elección del punto $x\in M_a$. Concretamente, como $\bar{\zeta}$ no depende de la elección del punto, el cambio del difeomorfismo al cambiar de un punto $x_0\in M_a$ a otro $x=g_t(x_0)$ será un parámetro que solo depende de los dos puntos y del toro $M_a$,
      \begin{align*}
        s_{x,x_0}(a)=\theta^x-\theta^{x_0}=\bar{\zeta}\circ (\tilde{g}_\bullet(x)^{-1}-\tilde{g}_\bullet(x_0)^{-1}) = \bar{\zeta} \circ (\pi(-t)).
      \end{align*}
@@ -310,40 +317,63 @@ Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
 	 
   \paragraph{Construcción de las variables angulares}\leavevmode
 
- Procedamos ahora a hallar las variables de acción-ángulo. Sea $\pi:U\cong B\times \TT^n\rightarrow B$ la proyección canónica. Entonces $\pi^{-1}(x)$ es un toro invariante para cada $x \in B$. En cada uno de estos toros, consideramos $X_i=X^{F_i}$ y $(F,\theta)$ las coordenadas antes obtenidas. Si tomamos un punto $\theta=(\theta_1,\dots,\theta_n)\in \RR^n$ entonces, para cada $x\in M$, podemos usar la conmutatividad de los flujos para escribir
-\[
-  \left. \deriv{\theta_i}\right|_{\varphi^F_{\theta}(x)} = \deriv{\theta_i} \varphi^{F_i}_{\theta_i}(y),
-\]
-con $y=\varphi^{F_1}_{\theta_1}\cdots\varphi^{F_{i-1}}_{\theta_{i-1}}\varphi^{F_{i+1}}_{\theta_{i+1}}\cdots\varphi^{F_{n}}_{\theta_{n}}(x)$. Ahora, como $\varphi^{F_i}$ es el flujo de $X_i$,
-\begin{equation*}
-  \left. \deriv{\theta_i}\right|_{\varphi^F_t(x)} = \deriv{\theta_i} \varphi^{F_i}_{\theta_i}(y)=X_{i, \varphi^{F_i}_{\theta_i}(y)}=X_{i,\varphi^F_{\theta}(x)}.
-\end{equation*}
-De modo que $\deriv{\theta_i}=X_i$.
+ Procedamos ahora a hallar las variables de acción-ángulo. Sea $\pi:U\cong B\times \TT^n\rightarrow B$ la proyección canónica. Entonces $\pi^{-1}(x)$ es un toro invariante para cada $x \in B$. 
+ En cada uno de estos toros, consideramos $X_i=X^{F_i}$ y $(F,\theta)$ las coordenadas antes obtenidas.
+ %Si tomamos un punto $\theta=(\theta_1,\dots,\theta_n)\in \RR^n$ entonces, para cada $x\in M$, podemos usar la conmutatividad de los flujos para escribir
+%\[
+%  \left. \deriv{\theta_i}\right|_{\varphi^F_{\theta}(x)} = \deriv{\theta_i} \varphi^{F_i}_{\theta_i}(y),
+%\]
+%con $y=\varphi^{F_1}_{\theta_1}\cdots\varphi^{F_{i-1}}_{\theta_{i-1}}\varphi^{F_{i+1}}_{\theta_{i+1}}\cdots\varphi^{F_{n}}_{\theta_{n}}(x)$. Ahora, como $\varphi^{F_i}$ es el flujo de $X_i$,
+%\begin{equation*}
+%  \left. \deriv{\theta_i}\right|_{\varphi^F_t(x)} = \deriv{\theta_i} \varphi^{F_i}_{\theta_i}(y)=X_{i, \varphi^{F_i}_{\theta_i}(y)}=X_{i,\varphi^F_{\theta}(x)}.
+%\end{equation*}
+%De modo que $\deriv{\theta_i}=X_i$.
+ Por la construcción de las coordenadas $\theta$, la relación entre los campos $\frac{\partial}{\partial \theta_i}$ y los $X_k$ vendrá mediada por $\zeta$, que es un isomorfismo lineal constante en cada toro de Liouville. Por tanto
+ \begin{equation*}
+   \deriv{\theta_i}=\sum_{k=1}^n a_{ik}X_k,
+ \end{equation*}
+ donde las $a_{ik}$ son funciones constantes en cada toro de Liouville.
 
 Como $\omega$ se anula en el toro, no tiene términos en $\dd \theta_i \wedge \dd \theta_j$ y los términos en $\dd F_i \wedge \dd \theta_j$ serán
 \[
-  \omega\left(\deriv{F_i},\deriv{\theta_j}\right)=\omega\left(\deriv{F_j},X_i\right)=\dd F_i\left(\deriv{F_j}\right)=\delta_{ij}.
+  \omega\left(\deriv{F_i},\deriv{\theta_j}\right)=\sum_{k=1}^n a_{jk} \omega\left(\deriv{F_i},X_k\right)=\sum_{k=1}^n a_{jk}\dd F_k\left(\deriv{F_i}\right)=\sum_{k=1}^na_{jk} \delta_{ik}=a_{ji}.
 \]
 Por tanto, $\omega$ es de la forma
 \[
-  \omega = \sum_{i}^n  \dd F_i \wedge \dd \theta_i + \sum_{k,l=1}^n a_{kl} \dd F_k \wedge \dd F_l,
+  \omega = \sum_{i,j=1}^n a_{ji} \dd F_i \wedge \dd \theta_j + \sum_{k,l=1}^n b_{kl} \dd F_k \wedge \dd F_l,
 \]
-con $a_{kl}$ unas ciertas funciones. Además, como $\omega$ es cerrada, al diferenciar, cada término correspondiente a $\dd \theta_j \wedge \dd F_k \wedge \dd F_l$ debe anularse. Este término es exactamente
-  $\parcial{a_{kl}}{\theta_j}$,
-de modo que las $a_{kl}$ son constantes en cada toro invariante.
+con $b_{kl}$ unas ciertas funciones. Además, como $\omega$ es cerrada, al diferenciar, cada término correspondiente a $\dd \theta_k \wedge \dd F_i \wedge \dd F_j$ debe anularse. Este término es exactamente
+$$\frac{\partial a_{kj}}{\partial F_i}-\parcial{a_{ki}}{F_j}+\parcial{b_{ij}}{\theta_k}.$$
+El término $\parcial{a_{kj}}{F_i}-\parcial{a_{ki}}{F_j}$ no depende de las variables angulares, luego las $\parcial{b_{ij}}{\theta_k}$ son constantes al variar los ángulos $\theta_k$. Como las variables $\theta_k$ son angulares, las $b_{ij}$ deben ser periódicas, pero como las $\parcial{b_{ij}}{\theta_k}$ son constantes en las variables angulares, las $b_{ij}$ son constantes.
 
-Si ahora definimos $\alpha=\sum_{i,j=1}^n a_{ij}\dd F_i \wedge \dd F_j$,
+Si ahora definimos $\alpha_j=\sum_{i=1}^n a_{ji}\dd F_i$ y $\beta= \sum_{i,j=1}^n b_{kl} \dd F_k \wedge \dd F_l$, podemos escribir
 \[
-  \omega=\sum_{i=1}^n \dd F_i \wedge \dd \theta_i + \alpha.
+  \omega=\sum_{j=1}^n \alpha_j \wedge \dd \theta_j  + \beta.
 \]
-Como las $a_{ij}$ son constantes en cada toro invariante podemos ver $\alpha$ como  una forma en $\RR^n$, es decir, existe una 2-forma $\beta$ en $\RR^n$ tal que
-  $\alpha=\pi^* \beta$.
+Como las $a_{ij}$ y las $b_{ij}$ son constantes en cada toro invariante podemos ver las $\alpha_i$ y $\beta$ como formas en $B$, es decir, existe una 1-formas $\tilde{\alpha}_i$ y una 2-forma $\tilde{\beta}$ en $B$ tales que
+$\alpha_i=\pi^* \tilde{\alpha}_i$ y $\beta=\pi^* \tilde{\beta}$.
 De aquí tenemos
 \[
-  0=\dd \omega= \sum_{i=1}^n \dd(\dd F_i \wedge \dd \theta_i) + \dd \alpha= \dd \alpha = \pi^* \dd \beta,
+  0=\dd \omega= \sum_{j=1}^n \dd (\alpha_j \wedge \dd \theta_j) + \dd \beta= \sum_{j=1}^n \pi^* \dd \tilde{\alpha_j} \wedge \dd \theta_j + \pi^* \dd \tilde{\beta}
 \]
-de donde concluimos que $\dd \beta =0$. Por el lema de Poincaré, existe $\gamma$ en $\RR^n$ tal que $\beta= \dd \gamma$.
-Ahora, si escribimos $\gamma= \sum_{i=1}^n f_i \dd F_i$, para algunas funciones $f_i:\RR^n \rightarrow \RR$, entonces podemos tomar unas nuevas coordenadas 
+de donde concluimos que $\dd \tilde{\alpha}_i =0$ y $\dd \tilde{\beta} =0$. Aplicando el lema de Poincaré, existen unas funciones $I_i$ y una $1$-forma $\gamma$ en $B$ tales que $\tilde{\alpha}_i=\dd I_i$ y $\tilde{\beta}= \dd \gamma$.
+
+Definimos ahora las \emph{variables de acción} $J_i=I_i\circ \pi = \pi^* I_i$, que cumplen que $\dd J_i = \alpha_i$. Tenemos entonces
+\begin{equation*}
+  \omega = \sum_{i=1}^n \dd J_i \wedge \dd \theta_i + \pi^* \dd \gamma.
+\end{equation*}
+En el sistema de coordenadas $(F,\theta)$, la matriz asociada a $\omega$ es de la forma
+\begin{equation*}
+  \left(
+\begin{array}{cc}
+  \frac{\partial J_i}{\partial F_j} & 0 \\[5 pt]
+ b_{ij} & - \frac{\partial J_i}{\partial F_j}  
+ \end{array}
+\right).
+\end{equation*}
+Como $\omega$ es regular, el determinante de esta matriz es distinto de cero, luego $\det \left(\frac{\partial J_i}{\partial F_j}\right)\neq 0$. Por tanto, el cambio $(F,\theta) \mapsto (J,\theta)$ viene dado por un difeomorfismo y $(J,\theta)$ es un sistema de coordenadas.
+
+Ahora, si escribimos $\gamma= \sum_{i=1}^n f_i \dd I_i$, para algunas funciones $f_i:B \rightarrow \RR$, entonces podemos tomar unas nuevas coordenadas 
 \[
   \phi_i= \theta_i + f_i \circ \pi.
 \]
@@ -351,8 +381,7 @@ Nótese que para cada $b\in B$ y para cada $x\in M_b$ el valor de $f_i\circ \pi 
 En estas nuevas coordenadas
 \[
 \begin{split}
-  \sum_{i=1}^n \dd F_i \wedge \dd \phi_i & = \sum_{i=1}^n \dd F_i \wedge \dd \theta_i + \sum_{i=1}^n \dd F_i \wedge \dd(f_i \circ \pi)  \\
-   & =\sum_{i=1}^n \dd F_i \wedge \dd \theta_i + \pi^* \dd \gamma = \sum_{i=1}^n \dd F_i \wedge \dd \theta_i + \alpha = \omega.
+  \sum_{i=1}^n \dd J_i \wedge \dd \phi_i & = \sum_{i=1}^n \dd J_i \wedge \dd \theta_i + \sum_{i=1}^n \dd (I_i\circ \pi) \wedge \dd(f_i \circ \pi)   =\sum_{i=1}^n \dd J_i \wedge \dd \theta_i + \pi^* \dd \gamma = \omega.
 \end{split}
 \]
 
@@ -361,31 +390,17 @@ Por tanto, hemos encontrado unas coordenadas de Darboux $(\phi,F)$, con las $F_i
 
 \begin{obs}
   \em
-  En la práctica, las variables de acción-ángulo no suelen obtenerse como en la demostración del teorema. Normalmente se suele trabajar en el fibrado tangente $M=TN$ de cierta variedad riemanniana $N$ de dimensión $n$ en la que se define un sistema lagrangiano natural, igual que hicimos en la sección \ref{sec:fisica}. En este caso, si $(\phi,J)$ son unas variables de acción-ángulo en $M$, se puede escribir
-\begin{equation*}
-  \omega=\sum_{i=1}^n \dd J_i \wedge \dd \phi_i = \dd \alpha,
-\end{equation*}
-con $\alpha=\sum_{i=1}^n J_i \dd \phi_i$. Si ahora tomamos los ciclos $\gamma_i$ en los que están definidas las variables $\phi_i$, entonces, como las $J$ no dependen de las $\phi$
-\begin{equation*}
-  \int_{\gamma_i} \alpha = \sum_{j=1}^n J_j \int_{\gamma_i}\dd \phi_i = \sum_{j=1}^n J_j 2\pi \delta_{ij}= 2\pi J_i.
-\end{equation*}
-Además, por la independencia de las $\phi$, cada uno de los caminos $\gamma_i$ ha de corresponder a un generador distinto del grupo fundamental del toro de Liouville que estemos tratando.
-Así, el procedimiento a seguir para construir variables de acción-ángulo es el siguiente:
-\begin{enumerate}
-  \item Se toman unas coordenadas de Darboux $(q,p)$ en las que ya se conozca la forma del sistema.
-  \item Se hallan los toros de Liouville y se escogen unos ciclos $\gamma_1,\dots,\gamma_n$ que generen el grupo fundamental del toro de Liouville $M_a$ en el que queramos trabajar.
-  \item Se obtienen las variables de acción siguiendo la fórmula
-    \begin{equation*}
-      J_i(a)=\int_{\gamma_i} \sum_{i=1}^n p_i \dd q_i.
-    \end{equation*}
-  \item Se escribe el hamiltoniano en función de las variables de acción $H=H(J(a))$ y se obtienen las frecuencias 
-    \begin{equation*}
-      \nu_i(a)= \dot{\phi_i}(t)=\parcial{H}{J}(J(a)).
-    \end{equation*}
-\end{enumerate}
+  Nótese que, en particular, hemos probado que en el entorno tubular $U$ podemos escribir $\omega= \dd \lambda$, con $\lambda= \sum_{i=1}^n J_i \dd \phi_i$. Si tomamos las curvas $\gamma_i$ parametrizadas por las coordenadas $\phi_i$ (dando una sola vuelta), podemos hallar
+  \begin{equation*}
+    \int_{\gamma_i} \lambda = J_i \int_{\gamma_i} \dd \phi_i = 2\pi J_i,
+  \end{equation*}
+  de modo que
+  \begin{equation*}
+    J_i = \frac{1}{2\pi}\int_{\gamma_i} \lambda.
+  \end{equation*}
+  Esta será la forma general de las variables de acción en los ejemplos que estudiaremos a continuación. También esto sugiere una prueba alternativa para el teorema de las variables de acción-ángulo; de hecho es así como se construyen en los textos clásicos, por ejemplo en \cite{arnold}.
 \end{obs}
 
-En los ejemplos que veremos a continuación estudiaremos algún caso donde podemos realizar el cálculo explícito de las variables de acción-ángulo y la integración del sistema por cuadraturas.
 
 \section{Osciladores armónicos}
 Para aclarar algunas de las ideas detrás de la teoría de sistemas integrables, vamos a considerar uno de los ejemplos más sencillos pero más ilustrativos, el oscilador armónico.
@@ -394,33 +409,33 @@ Para aclarar algunas de las ideas detrás de la teoría de sistemas integrables,
 
   Empezamos considerando el oscilador armónico con un grado de libertad. El espacio de fases del sistema será el espacio simpléctico estándar $2$-dimensional, $(\RR^2,\Omega_1)$ con las coordenadas de Darboux canónicas $(q,p)$. El hamiltoniano vendrá dado por la función
   \begin{equation*}
-    H(q,p)=\tfrac{1}{2}p^2+\tfrac{1}{2}\omega^2 q^2,
+    H(q,p)=\tfrac{1}{2}p^2+\tfrac{1}{2}\nu^2 q^2,
   \end{equation*}
-  con $\omega$ una constante que representa la frecuencia de oscilación.
+  con $\nu$ una constante que representa la frecuencia de oscilación.
   Las ecuaciones de Hamilton son entonces
   \begin{equation*}
     \begin{cases}
       \dot q(t) = \parcial{H}{p}(t)=p(t)\\
-    \dot p(t) = -\parcial{H}{q}(t)=-\omega^2q(t).
+    \dot p(t) = -\parcial{H}{q}(t)=-\nu^2q(t).
   \end{cases}
   \end{equation*}
   Estas ecuaciones se pueden integrar fácilmente, si tomamos como condición inicial $(q(0),p(0))=(a,0)$, tenemos
   \begin{equation*}
     \begin{cases}
-   q(t)=a\cos\omega t \\ 
-   p(t)=-\omega a\sin\omega t.
+   q(t)=a\cos\nu t \\ 
+   p(t)=-\nu a\sin\nu t.
  \end{cases}
   \end{equation*}
   
   Ahora, recordemos que el hamiltoniano del sistema es una cantidad conservada, por tanto podemos considerar las variedades $M_E$ de energía constante, que, por el teorema de Arnold-Liouville serán topológicamente circunferencias invariantes bajo el flujo del sistema, ya que el único punto crítico del hamiltoniano es su mínimo $(q,p)=(0,0)$. En efecto, las curvas de energía constante vienen dadas por la ecuación
   \begin{equation*}
-    E=\tfrac{1}{2}p^2+\tfrac{1}{2}\omega^2q^2,
+    E=\tfrac{1}{2}p^2+\tfrac{1}{2}\nu^2q^2,
   \end{equation*}
-  que define una elipse de semiejes $\sqrt{2E}$ y $\frac{\sqrt{2E}}{\omega}$. El flujo en las curvas de energía constante toma la forma
+  que define una elipse de semiejes $\sqrt{2E}$ y $\frac{\sqrt{2E}}{\nu}$. El flujo en las curvas de energía constante toma la forma
   \begin{equation*}
     \begin{cases}
-      q(t)=\frac{\sqrt{2E}}{\omega}\cos\omega t \\ 
-      p(t)=-\sqrt{2E}\sin\omega t.
+      q(t)=\frac{\sqrt{2E}}{\nu}\cos\nu t \\ 
+      p(t)=-\sqrt{2E}\sin\nu t.
  \end{cases}
   \end{equation*}
   
@@ -435,32 +450,32 @@ Para aclarar algunas de las ideas detrás de la teoría de sistemas integrables,
   \begin{equation*}
     \begin{cases}
     E(t)=E(0) \\
-    \phi(t)=\phi(0)-\omega t.
+    \phi(t)=\phi(0)-\nu t.
   \end{cases}
   \end{equation*}
   Sin embargo, ¿será canónica la transformación $(q,p) \rightarrow (E,\phi)$? Para ello, veamos cómo se comporta la forma $\Omega_1=\dd p\wedge \dd q$ con el cambio
   \begin{equation*}
     \begin{cases}
-      q(E,\phi)=\frac{\sqrt{2E}}{\omega}\cos\phi\\
+      q(E,\phi)=\frac{\sqrt{2E}}{\nu}\cos\phi\\
       p(E,\phi)=\sqrt{2E}\sin \phi.
     \end{cases}
   \end{equation*}
   Tenemos entonces
   \begin{equation*}
     \begin{cases}
-      \dd q= \frac{1}{\omega \sqrt{2E}}\cos \phi \dd E - \frac{\sqrt{2E}}{\omega} \sin \phi \dd \phi \\
+      \dd q= \frac{1}{\nu \sqrt{2E}}\cos \phi \dd E - \frac{\sqrt{2E}}{\nu} \sin \phi \dd \phi \\
       \dd p= \sqrt{\frac{1}{2E}}\sin \phi \dd E + \sqrt{2E} \cos \phi \dd \phi,
     \end{cases}
   \end{equation*}
   y 
   \begin{equation*}
-    \Omega_1= \dd p \wedge \dd q = -\tfrac{1}{\omega} \dd E \wedge \dd \phi.
+    \Omega_1= \dd p \wedge \dd q = -\tfrac{1}{\nu} \dd E \wedge \dd \phi.
   \end{equation*}
-  Por tanto, si definimos la \emph{variable de acción}, $J=-\frac{E}{\omega}$, entonces $\Omega_1=\dd J \wedge \dd \phi$ y $(\phi,J)$ son unas coordenadas de Darboux.
+  Por tanto, si definimos la \emph{variable de acción}, $J=-\frac{E}{\nu}$, entonces $\Omega_1=\dd J \wedge \dd \phi$ y $(\phi,J)$ son unas coordenadas de Darboux.
 
   Para tratar de dar sentido físico a esta variable $J$, consideremos el área $A_E$ de la región $S_E$ encerrada por la curva de energía constante $M_E$. Por la fórmula del área de la elipse
   \begin{equation*}
-    A_E=\pi \sqrt{2mE} \sqrt{\frac{2E}{k}}=2\pi \sqrt{\frac{m}{k}} E= 2 \pi \frac{E}{\omega}= -2\pi J.
+    A_E=\pi \sqrt{2E} \sqrt{\frac{2E}{\nu^2}} = 2 \pi \frac{E}{\nu}= -2\pi J.
   \end{equation*}
 
   Observemos ahora que como $\Omega_1$ es la forma de área en $\RR^2$, 
@@ -474,8 +489,8 @@ donde hemos usado el teorema de Stokes y el hecho de que $\dd p \wedge \dd q= \d
 Este será el aspecto que tengan las variables de acción-ángulo en general para sistemas con un grado de libertad. Regresando ahora a las coordenadas originales, tenemos
 \begin{equation*}
   \begin{cases}
-    q(\phi,J)=\sqrt{-\frac{2J}{ \omega}}\cos \phi\\
-    p(\phi,J)=\sqrt{-2\omega J}\sin \phi.
+    q(\phi,J)=\sqrt{-\frac{2J}{ \nu}}\cos \phi\\
+    p(\phi,J)=\sqrt{-2\nu J}\sin \phi.
   \end{cases}
 \end{equation*}
 
@@ -483,7 +498,7 @@ Este será el aspecto que tengan las variables de acción-ángulo en general par
 
   Para estudiar un caso de dimensión superior, podemos considerar el sistema formado por $n$ osciladores armónicos o, equivalentemente, un oscilador armónico con $n$ grados de libertad. El hamiltoniano del sistema será 
   \begin{equation*}
-    H(q_1,\dots,q_n,p_1,\dots,p_n)= H_1(q_1,p_1)+ \cdots +H_n(q_n,p_n) = \tfrac{1}{2}\sum_{i=1}^n (p_i^2+\omega_i^2q_i^2).
+    H(q_1,\dots,q_n,p_1,\dots,p_n)= H_1(q_1,p_1)+ \cdots +H_n(q_n,p_n) = \tfrac{1}{2}\sum_{i=1}^n (p_i^2+\nu_i^2q_i^2).
   \end{equation*}
   Este sistema es integrable en el sentido de Liouville. Basta tomar $F=(H_1,H_2,\dots,H_n),$ ya que 
   \begin{equation*}
@@ -493,38 +508,38 @@ Este será el aspecto que tengan las variables de acción-ángulo en general par
   
   Ahora, dado $a=(a_1,\dots,a_n)\in \RR^n$, $M_a=F^{-1}(a)$ vendrá dado por 
   \begin{align*}[left=\empheqlbrace]
-      p_1^2+\omega_1^2q_1^2&=2a_1 \\
-      p_2^2+\omega_2^2q_2^2&=2a_2 \\
+      p_1^2+\nu_1^2q_1^2&=2a_1 \\
+      p_2^2+\nu_2^2q_2^2&=2a_2 \\
       & \vdotswithin{=} \\
-p_n^2+\omega_n^2q_n^2&=2a_n, 
+p_n^2+\nu_n^2q_n^2&=2a_n, 
   \end{align*}
-  que son las ecuaciones de un toro $n$-dimensional. Cada una de las ecuaciones $p_i^2+q_i^2=2a_i$ da, en el plano $(q_i,p_i)$, una elipse $C_{a,i}$ de semiejes $\sqrt{2a_i}$ y $\frac{\sqrt{2a_i}}{\omega}$, de modo que $M_a=C_{a,1}\times\dots\times C_{a,n}$. Nótese que en este caso los valores críticos son precisamente aquellos $a$ con varias componentes iguales, de forma que los puntos críticos formarán toros de dimensión menor.
+  que son las ecuaciones de un toro $n$-dimensional. Cada una de las ecuaciones $p_i^2+q_i^2=2a_i$ da, en el plano $(q_i,p_i)$, una elipse $C_{a,i}$ de semiejes $\sqrt{2a_i}$ y $\frac{\sqrt{2a_i}}{\nu}$, de modo que $M_a=C_{a,1}\times\dots\times C_{a,n}$. Nótese que en este caso los valores críticos son precisamente aquellos $a$ con varias componentes iguales, de forma que los puntos críticos formarán toros de dimensión menor.
 
-  Consideremos $\gamma_{a,i}$ lazos en cada elipse $C_{a,i}$, de manera que los $\gamma_{a,i}$ son generadores del grupo fundamental de $M_a$. Entonces podemos definir las variables de acción 
+  Consideremos $\gamma_{a,i}$ lazos en cada elipse $C_{a,i}$. Definimos las variables de acción 
   \begin{equation*}
-    J_i(a) = \frac{1}{2\pi}\int_{\gamma_{a,i}}\sum_{k=1}^n  p_k \dd q_k=\frac{1}{2\pi}\int_{\gamma_{a,i}}  p_i \dd q_i=\frac{a_i}{\omega_i}.
+    J_i(a) = -\frac{1}{2\pi}\int_{\gamma_{a,i}}\sum_{k=1}^n  p_k \dd q_k=-\frac{1}{2\pi}\int_{\gamma_{a,i}}  p_i \dd q_i=-\frac{a_i}{\nu_i}.
   \end{equation*}
 
   Consideremos ahora las variables angulares $\phi_i$ a lo largo de cada $C_{i,a}$. Podemos tomar entonces las nuevas coordenadas $(\phi,J)$, con
   \begin{equation*}
-    J_i(q,p)=J_i(F(q,p))=\frac{1}{2\pi}\int_{\gamma_{F(q,p),i}} p_i \dd q_i= \frac{H_i(q,p)}{\omega_i},
+    J_i(q,p)=J_i(F(q,p))=-\frac{1}{2\pi}\int_{\gamma_{F(q,p),i}} p_i \dd q_i= -\frac{H_i(q,p)}{\nu_i},
   \end{equation*}
   y $\phi(q,p)$ las variables angulares en el toro $M_{F(q,p)}$.
-  Si la carta $(\phi,J)$ es de Darboux, las ecuaciones de Hamilton pueden integrarse por cuadraturas. Esto se debe a que $H=\sum_{i=1}^n H_i(J,\phi)=\sum_{i=1}^n \omega_i J_i$, de modo que, por las ecuaciones de Hamilton,
+  Si la carta $(\phi,J)$ es de Darboux, las ecuaciones de Hamilton pueden integrarse por cuadraturas. Esto se debe a que $H=\sum_{i=1}^n H_i(J,\phi)=-\sum_{i=1}^n \nu_i J_i$, de modo que, por las ecuaciones de Hamilton,
 \begin{equation*}
   \begin{cases}
-  \dot{J_i}=\parcial{H}{\phi_i}=0,\\
-  \dot{\phi_i}=-\parcial{H}{J_i} = -\omega_i.
+  \dot{J_i}=-\parcial{H}{\phi_i}=0,\\
+  \dot{\phi_i}=\parcial{H}{J_i} =- \nu_i.
   \end{cases}
 \end{equation*}
  Las ecuaciones de Hamilton quedan entonces integradas en la forma
 \begin{equation*}
   \begin{cases}
   J_i(t)=  J_i(0) \\
-  \phi_i(t) =  \phi_i(0) - \omega_i t.
+  \phi_i(t) =  \phi_i(0) - \nu_i t.
 \end{cases}
 \end{equation*}
-Este tipo de flujo en el toro se llama \emph{movimiento condicionalmente periódico}, ya que, dependiendo de los valores de las frecuencias $\omega_i$, las trayectorias serán cerradas y periódicas o serán densas en cada toro de Liouville. En la siguiente sección profundizaremos más en este tema.
+Este tipo de flujo en el toro se llama \emph{movimiento condicionalmente periódico}, ya que, dependiendo de los valores de las frecuencias $\nu_i$, las trayectorias serán cerradas y periódicas o serán densas en cada toro de Liouville. En la siguiente sección profundizaremos en este tema.
 
 \section{Movimiento condicionalmente periódico}\label{sec:promedios}
 Una vez tenemos a nuestra disposición el teorema de Arnold-Liouville, sabemos que el flujo en los toros de Liouville será muy sencillo. En esta sección vamos a estudiar el flujo en estos toros y obtendremos un teorema muy importante sobre este tipo de sistemas.
