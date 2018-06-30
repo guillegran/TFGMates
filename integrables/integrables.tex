@@ -176,10 +176,10 @@ Terminamos ahora la demostración del Lema \ref{lemtoro}.
 
 Volvemos ahora a la demostración del teorema de Arnold-Liouville. Aplicamos directamente el lema \ref{lemtoro} con $N=M_a$ (considerando los campos $X_i=X^{F_i}$ ya definidos, escogiendo un punto $x\in M_a$ y construyendo $g_\bullet(x)$ como en la demostración del lema) y tenemos que $M_a$ es difeomorfa a $\TT^k\times \RR^{n-k}$ para cierto $k=0,\dots,n$. En particular, si $M_a$ es compacta, entonces $k=n$ y $M_a\cong \TT^n$. Hemos probado entonces la parte $2$ del teorema. Además, el difeomorfismo $\TT^k\times \RR^{n-k} \rightarrow M_a$ está bien descrito por el diagrama anterior.
 
-   Podemos considerar entonces la parametrización $\psi_x:\RR^n\rightarrow M_a$ dada por el diagrama
+   Podemos considerar entonces la parametrización $\psi:\RR^n\rightarrow M_a$ dada por el diagrama
   \begin{center}
     \begin{tikzcd}
-      \RR^n    \arrow[bend left=90]{rrdd}{\psi_x} \arrow{r}{\zeta}\arrow{dd}[anchor=east]{\varpi} & \RR^n\arrow{dd}[anchor=west]{\pi}\arrow{ddr}{g_\bullet(x)} \\ 
+      \RR^n    \arrow[bend left=90]{rrdd}{\psi} \arrow{r}{\zeta}\arrow{dd}[anchor=east]{\varpi} & \RR^n\arrow{dd}[anchor=west]{\pi}\arrow{ddr}{g_\bullet(x)} \\ 
   & \\
   \TT^k \times \RR^{n-k}\arrow{r}[anchor=south]{\tilde{\zeta}} & \RR^n/\Gamma \arrow{r}{\tilde{g}_\bullet(x)}& M_a,
      \end{tikzcd}
@@ -192,16 +192,16 @@ Volvemos ahora a la demostración del teorema de Arnold-Liouville. Aplicamos dir
    y veamos su comportamiento en el diagrama 
    \begin{center}
      \begin{tikzcd}
-       t\arrow{rr}\in \RR &&vt \in \RR^n      \arrow{rr}{\zeta}\arrow{rrdd}[anchor=north,rotate=-30]{\psi_x} && (t,0,\dots,0) \in \RR^n\arrow{dd}[anchor=west]{g_\bullet(x)} \\ 
+       t\arrow{rr}\in \RR &&vt \in \RR^n      \arrow{rr}{\zeta}\arrow{rrdd}[anchor=north,rotate=-30]{\psi} && (t,0,\dots,0) \in \RR^n\arrow{dd}[anchor=west]{g_\bullet(x)} \\ 
  &&       && \\
 &&	&&g_{1,t}(x)=\varphi_t^H(x)\in M_a.
       \end{tikzcd}
     \end{center}
-    Tenemos entonces que $\varphi_t^H(x)=\psi(vt)$, de modo que podemos tomar una carta $(U,w_x)$ con $U\subset M_a$ abierto relativo, $x\in U$, tal que el siguiente diagrama conmute
+    Tenemos entonces que $\varphi_t^H(x)=\psi(vt)$, de modo que podemos tomar una carta $(U,w)$ con $U\subset M_a$ abierto relativo, $x\in U$, tal que el siguiente diagrama conmute
     \begin{center}
       \begin{tikzcd}
-	& & \RR^n \arrow{d}{\psi_x} \\
-	\RR \arrow{r}{\varphi_{\bullet}^H(x)}& U \arrow[hook]{r}{ }\arrow{ru}{w_x} & M_a.
+	& & \RR^n \arrow{d}{\psi} \\
+	\RR \arrow{r}{\varphi_{\bullet}^H(x)}& U \arrow[hook]{r}{ }\arrow{ru}{w} & M_a.
        \end{tikzcd}
      \end{center}
      Por tanto, $w(t)=w(\varphi_t^H(x))=vt$, luego $\dot w(t)=v$. Nótese que al ser arbitraria la elección del punto $x$ en el toro de Liouville $M_a$, la elección de las coordenadas $w$ en el toro está determinada salvo por una constante. Es decir, podemos elegir el valor $w_{0}=w(0)$. Como el flujo hamiltoniano deja $M_a$ invariante, queda descrito por las ecuaciones
@@ -228,23 +228,23 @@ Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
 
  \begin{thm}[Variables de acción-ángulo]
    Seguimos en las hipótesis del teorema \ref{arnold}. En el caso en que $M_a$ sea compacta, existe un entorno $U\subset M$ de $M_a$ difeomorfo a $\RR^n \times \TT^n$ (un \emph{entorno tubular}\footnote{Nótese que aquí estamos suponiendo que $M_a$ no está en el borde de $M$, en cuyo caso procederíamos análogamente para obtener un entorno difeomorfo a $\HH^n \times \TT^n$.})
- y un sistema de coordenadas de Darboux $(\phi,F)$ (llamadas \emph{variables de acción-ángulo}) en $U$ tales que, en cada toro de $U$, las $\phi_i$ son coordenadas angulares y las $F_i$ son constantes. 
+ y un sistema de coordenadas de Darboux $(\phi,J)$ (llamadas \emph{variables de acción-ángulo}) en $U$ tales que, en cada toro de $U$, las $\phi_i$ son coordenadas angulares y las $J_i$ son constantes. 
   \end{thm}
 
   \begin{obs}
     \em
-    La consecuencia inmediata de este teorema es que en los entornos tubulares las ecuaciones de Hamilton quedan resueltas por cuadraturas. En efecto, al ser $(\phi,F)$ coordenadas de Darboux, podemos escribir las ecuaciones de Hamilton en la forma
+    La consecuencia inmediata de este teorema es que en los entornos tubulares las ecuaciones de Hamilton quedan resueltas por cuadraturas. En efecto, al ser $(\phi,J)$ coordenadas de Darboux, podemos escribir las ecuaciones de Hamilton en la forma
     \begin{equation*}
       \begin{cases}
-	\dot{\phi_i}=\parcial{H}{F_i}, \\ 
-	\dot{F_i}=-\parcial{H}{\phi_i}.
+	\dot{\phi_i}=\parcial{H}{J_i}, \\ 
+	\dot{J_i}=-\parcial{H}{\phi_i}.
       \end{cases}
     \end{equation*}
-    Ahora, como las $F_i$ son constantes en los toros, se tiene $\dot{F_i}=0$, de modo que $\parcial{H}{\phi_i}=0$ luego el hamiltoniano no depende de las coordenadas $\phi$. Por tanto, las frecuencias $\nu_i=\dot{\phi_i}=\parcial{H}{F_i}$ sólo dependen de las coordenadas $F$, luego son constantes en cada toro. Así, las ecuaciones quedan integradas en la forma
+    Ahora, como las $J_i$ son constantes en los toros, se tiene $\dot{J_i}=0$, de modo que $\parcial{H}{\phi_i}=0$ luego el hamiltoniano no depende de las coordenadas $\phi$. Por tanto, las frecuencias $\nu_i=\dot{\phi_i}=\parcial{H}{J_i}$ sólo dependen de las coordenadas $J$, luego son constantes en cada toro. Así, las ecuaciones quedan integradas en la forma
     \begin{equation*}
       \begin{cases}
-	F_i(t)=F_i(0), \\
-	\phi_i(t)=\phi_i(0)+\nu_i(F(0)) t. 
+	J_i(t)=J_i(0), \\
+	\phi_i(t)=\phi_i(0)+\nu_i(J(0)) t. 
       \end{cases}
     \end{equation*}
   \end{obs}
@@ -269,20 +269,14 @@ Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
     que está bien definida por conmutar los flujos, y el difeomorfismo $\theta^x:M_a\rightarrow \TT^n$ inducido por el diagrama
   \begin{center}
     \begin{tikzcd}
-      \RR^n    \arrow{r}{\zeta}\arrow{dd}[anchor=east]{\varpi} & \RR^n\arrow{dd}[anchor=west]{\pi}\arrow{ddr}{g_\bullet(x_0)} \\ 
+      \RR^n    \arrow{r}{\zeta}\arrow{dd}[anchor=east]{\varpi} & \RR^n\arrow{dd}[anchor=west]{\pi}\arrow{ddr}{g_\bullet(x)} \\ 
   & \\
-  \TT^n \arrow{r}[anchor=south]{\tilde{\zeta}} & \RR^n/\Gamma \arrow{r}{\tilde{g}_\bullet(x_0)}& M_a \arrow[bend left=30]{ll}{\theta^x}.
+  \TT^n \arrow{r}[anchor=south]{\tilde{\zeta}} & \RR^n/\Gamma \arrow{r}{\tilde{g}_\bullet(x)}& M_a \arrow[bend left=30]{ll}{\theta^x}.
      \end{tikzcd}
    \end{center}
-  %  \begin{center}
-  %    \begin{tikzcd}
-%\RR^n	\arrow{r}{\varphi^F_\bullet(x)}\arrow{d}{ } & M_a\arrow{ld}[anchor=north,rotate=30]{\theta^x} \\ 
-%	 \TT^n.&
-%       \end{tikzcd}
-%     \end{center}
-     Concretamente, $\theta^x=\bar{\zeta}^{-1}\circ (\tilde{g}_\bullet(x))^{-1}$. Igual que antes, la construcción de este difeomorfismo depende de la elección del punto $x\in M_a$. Concretamente, como $\bar{\zeta}$ no depende de la elección del punto, el cambio del difeomorfismo al cambiar de un punto $x_0\in M_a$ a otro $x=g_t(x_0)$ será un parámetro que solo depende de los dos puntos y del toro $M_a$,
+     Concretamente, $\theta^x=\tilde{\zeta}^{-1}\circ (\tilde{g}_\bullet(x))^{-1}$. Igual que antes, la construcción de este difeomorfismo depende de la elección del punto $x\in M_a$. Concretamente, como $\tilde{\zeta}$ no depende de la elección del punto, el cambio del difeomorfismo al cambiar de un punto $x_0\in M_a$ a otro $x=g_t(x_0)$ será un parámetro que solo depende de los dos puntos y del toro $M_a$,
      \begin{align*}
-       s_{x,x_0}(a)=\theta^x-\theta^{x_0}=\bar{\zeta}\circ (\tilde{g}_\bullet(x)^{-1}-\tilde{g}_\bullet(x_0)^{-1}) = \bar{\zeta} \circ (\pi(-t)).
+       s_{x,x_0}(a)=\theta^x-\theta^{x_0}=\tilde{\zeta}\circ (\tilde{g}_\bullet(x)^{-1}-\tilde{g}_\bullet(x_0)^{-1}) = \tilde{\zeta} \circ (\pi(-t)).
      \end{align*}
      Como $F|_{U}$ tiene derivada sobreyectiva en todos los puntos, es localmente una proyección lineal, es decir, cada punto $x\in U$ tiene un entorno abierto $\mathscr{D}$ difeomorfo a un producto $D\times \TT^n$ de manera que $F|_{\mathscr{D}}$ es, salvo ese difeomorfismo, la proyección sobre la primera componente $D\times \TT^n \rightarrow D\subset B$. Esto significa que podemos elegir $x_b\in M_b$ diferenciablemente en función de $b\in D$. 
      Tenemos así un recubrimiento abierto $U=\bigcup_i \mathscr D^i$ y para cada $i$ tenemos el difeomorfismo
@@ -317,17 +311,8 @@ Esto prueba la parte $3$ y por tanto concluye la demostración del teorema.
 	 
   \paragraph{Construcción de las variables angulares}\leavevmode
 
- Procedamos ahora a hallar las variables de acción-ángulo. Sea $\pi:U\cong B\times \TT^n\rightarrow B$ la proyección canónica. Entonces $\pi^{-1}(x)$ es un toro invariante para cada $x \in B$. 
- En cada uno de estos toros, consideramos $X_i=X^{F_i}$ y $(F,\theta)$ las coordenadas antes obtenidas.
- %Si tomamos un punto $\theta=(\theta_1,\dots,\theta_n)\in \RR^n$ entonces, para cada $x\in M$, podemos usar la conmutatividad de los flujos para escribir
-%\[
-%  \left. \deriv{\theta_i}\right|_{\varphi^F_{\theta}(x)} = \deriv{\theta_i} \varphi^{F_i}_{\theta_i}(y),
-%\]
-%con $y=\varphi^{F_1}_{\theta_1}\cdots\varphi^{F_{i-1}}_{\theta_{i-1}}\varphi^{F_{i+1}}_{\theta_{i+1}}\cdots\varphi^{F_{n}}_{\theta_{n}}(x)$. Ahora, como $\varphi^{F_i}$ es el flujo de $X_i$,
-%\begin{equation*}
-%  \left. \deriv{\theta_i}\right|_{\varphi^F_t(x)} = \deriv{\theta_i} \varphi^{F_i}_{\theta_i}(y)=X_{i, \varphi^{F_i}_{\theta_i}(y)}=X_{i,\varphi^F_{\theta}(x)}.
-%\end{equation*}
-%De modo que $\deriv{\theta_i}=X_i$.
+ Procedamos ahora a hallar las variables de acción-ángulo. Sea $\pi:U\cong \TT^n \times B \rightarrow B$ la proyección canónica. Entonces $\pi^{-1}(x)$ es un toro invariante para cada $x \in B$. 
+ En cada uno de estos toros, consideramos $X_i=X^{F_i}$ y $(\theta,F)$ las coordenadas antes obtenidas.
  Por la construcción de las coordenadas $\theta$, la relación entre los campos $\frac{\partial}{\partial \theta_i}$ y los $X_k$ vendrá mediada por $\zeta$, que es un isomorfismo lineal constante en cada toro de Liouville. Por tanto
  \begin{equation*}
    \deriv{\theta_i}=\sum_{k=1}^n a_{ik}X_k,
@@ -362,16 +347,16 @@ Definimos ahora las \emph{variables de acción} $J_i=I_i\circ \pi = \pi^* I_i$, 
 \begin{equation*}
   \omega = \sum_{i=1}^n \dd J_i \wedge \dd \theta_i + \pi^* \dd \gamma.
 \end{equation*}
-En el sistema de coordenadas $(F,\theta)$, la matriz asociada a $\omega$ es de la forma
+En el sistema de coordenadas $(\theta,F)$, la matriz asociada a $\omega$ es de la forma
 \begin{equation*}
   \left(
 \begin{array}{cc}
-  \frac{\partial J_i}{\partial F_j} & 0 \\[5 pt]
- b_{ij} & - \frac{\partial J_i}{\partial F_j}  
+  0 &\frac{\partial J_i}{\partial F_j}   \\[5 pt]
+  - \frac{\partial J_i}{\partial F_j} & b_{ij}   
  \end{array}
 \right).
 \end{equation*}
-Como $\omega$ es regular, el determinante de esta matriz es distinto de cero, luego $\det \left(\frac{\partial J_i}{\partial F_j}\right)\neq 0$. Por tanto, el cambio $(F,\theta) \mapsto (J,\theta)$ viene dado por un difeomorfismo y $(J,\theta)$ es un sistema de coordenadas.
+Como $\omega$ es regular, el determinante de esta matriz es distinto de cero, luego $\det \left(\frac{\partial J_i}{\partial F_j}\right)\neq 0$. Por tanto, el cambio $(\theta,F) \mapsto (\theta,J)$ viene dado por un difeomorfismo y $(\theta,J)$ es un sistema de coordenadas.
 
 Ahora, si escribimos $\gamma= \sum_{i=1}^n f_i \dd I_i$, para algunas funciones $f_i:B \rightarrow \RR$, entonces podemos tomar unas nuevas coordenadas 
 \[
@@ -385,7 +370,7 @@ En estas nuevas coordenadas
 \end{split}
 \]
 
-Por tanto, hemos encontrado unas coordenadas de Darboux $(\phi,F)$, con las $F_i$ constantes en cada toro invariante y con las $\phi_i$ coordenadas angulares en estos toros. 
+Por tanto, hemos encontrado unas coordenadas de Darboux $(\phi,J)$, con las $J_i$ constantes en cada toro invariante y con las $\phi_i$ coordenadas angulares en estos toros. 
 \end{proof}
 
 \begin{obs}
@@ -831,7 +816,7 @@ que claramente es difeomorfo al fibrado tangente de la esfera, $T\SF^2$. La form
   \begin{equation*}
     \pois{L_1}{L_3}=\pois{q_2p_3-q_3p_2}{q_1p_2-q_2p_1},
   \end{equation*}
-  que, usando la linealidad del corchete de Poisson y la identidad de Jacobi y teniendo en cuenta que $\pois{q_i}{q_j}=\pois{p_i}{p_j}=0$ podemos desarrollar hasta llegar a
+  que, usando la linealidad del corchete de Poisson y la regla de Leibniz y teniendo en cuenta que $\pois{q_i}{q_j}=\pois{p_i}{p_j}=0$ podemos desarrollar hasta llegar a
   \begin{equation*}
     \pois{L_1}{L_3}=-p_3q_1\pois{q_2}{p_2}-q_3p_1\pois{p_2}{q_2}=+p_3q_1-q_3p_1=-L_2.
   \end{equation*}
