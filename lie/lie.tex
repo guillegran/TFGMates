@@ -1,7 +1,7 @@
 \chapter{Preliminares de geometría diferencial}
 \section{Derivada de Lie y fórmulas de Cartan}\label{sec:lie}
 
-Antes de comenzar con el estudio de la geometría simpléctica, conviene recordar el concepto de la derivada de Lie de campos, extenderlo a formas, y obtener una serie de resultados que nos serán útiles más adelante.
+Antes de comenzar con el estudio de la geometría simpléctica, conviene recordar el concepto de la derivada de Lie de campos, extenderlo a formas y obtener una serie de resultados que nos serán útiles más adelante.
 
 Empecemos recordando la definición del corchete de Lie de campos; su estudio detallado puede encontrarse en \cite{variedades}.
 
@@ -22,7 +22,7 @@ Empecemos recordando la definición del corchete de Lie de campos; su estudio de
   \caption{\small Visión geométrica de la derivada de Lie}
   \label{fig:lie}
 \end{figure}
-Recordamos también que podemos ver el corchete de Lie de otra forma equivalente. Sea $M$ una variedad diferenciable, $a \in M$, $Y \in \mathfrak{X}(M)$, $\varphi$ un flujo en $M$ y $X$ su generador infinitesimal. Entonces
+Recordamos también que podemos ver el corchete de Lie de otra forma equivalente. Sean $M$ una variedad diferenciable, $a \in M$, $Y \in \mathfrak{X}(M)$, $\varphi$ un flujo en $M$ y $X$ su generador infinitesimal. Entonces
 \begin{equation*}
   \lie{X}{Y}_a= \lim_{t\rightarrow 0}\frac{\varphi_{-t,*}(Y_{\varphi_t(a)})-Y_a}{t}.
 \end{equation*}
@@ -127,7 +127,7 @@ Obtenemos entonces
 Antes de seguir, vamos a introducir una nueva operación para formas:
 \begin{defn}
   \em
-  Sea $M$ una variedad diferenciable y $X$ un campo en $M$, se define el \emph{producto interior} o \emph{contracción} $i_X:\Gamma^{r+1}(M)\rightarrow \Gamma^r(M)$ por 
+  Sea $M$ una variedad diferenciable y $X$ un campo en $M$. Se define el \emph{producto interior} o \emph{contracción} $i_X:\Gamma^{r+1}(M)\rightarrow \Gamma^r(M)$ por 
   \begin{equation*}
     i_X \omega(X_1,\dots,X_r)=\omega(X,X_1,\dots,X_r),
   \end{equation*}
@@ -136,7 +136,7 @@ Antes de seguir, vamos a introducir una nueva operación para formas:
 
 Podemos probar ya una serie de fórmulas, debidas a Élie Cartan\footnote{En la literatura, la segunda de estas fórmulas suele llamarse «fórmula mágica de Cartan».}, que nos serán de gran utilidad posteriormente.
 \begin{thm}[Fórmulas de Cartan]
-  Sea $X$ un campo en una variedad $M$, y consideramos la derivada de Lie $L_X$, el producto interior $i_X$, y la diferencial exterior $\dd$. Entonces se cumplen las siguientes fórmulas:
+  Sea $X$ un campo en una variedad diferenciable $M$, y consideramos la derivada de Lie $L_X$, el producto interior $i_X$, y la diferencial exterior $\dd$. Se cumplen las siguientes fórmulas:
   \begin{enumerate}
     \item[$1$.] $i_{\lie{X}{Y}}=L_X i_Y - i_Y L_X$, para todo $Y \in \mathfrak{X}(M)$,
     \item[$2$.] $L_X= \dd \circ i_X + i_X \circ \dd $,

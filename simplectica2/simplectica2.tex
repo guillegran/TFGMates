@@ -49,16 +49,16 @@ Ahora, si $w\neq 0$ y $f(v)=0$, entonces $\omega(v,w)=0$ y, como $\omega$ es no 
 
 En el caso en que $V$ y $V'$ tienen la misma dimensión, entonces $f$ es un isomorfismo que lleva una base simpléctica de $(V,\omega)$ a una base simpléctica de $(V',\omega')$. 
 
-\paragraph{\bf El grupo simpléctico}\mbox{}
+\paragraph{\bf El grupo simpléctico real}\mbox{}
 
-  Sea $(V,\omega)$ un espacio vectorial simpléctico de dimensión $2n$. El conjunto de las aplicaciones lineales simplécticas de $V$ en $V$ es un subgrupo de $\mathrm{GL}(2n)$. Este grupo se conoce como \emph{$n$-ésimo grupo simpléctico real} y se denota por $\mathrm{Sp}(n,\RR)$.
+  Sea $(V,\omega)$ un espacio vectorial simpléctico de dimensión $2n$. El conjunto de las aplicaciones lineales simplécticas de $V$ en $V$ es un subgrupo de $\mathrm{GL}(2n)$. Este grupo se conoce como \emph{$n$-ésimo grupo simpléctico real} y se denota por $\mathrm{Sp}(2n,\RR)$.
 
-  Asignando a cada $f\in \mathrm{Sp}(n,\RR)$ su matriz asociada $A$ en una base simpléctica fijada, el grupo simpléctico se puede representar por medio de las matrices $2n\times 2n$ que cumplen
+  Asignando a cada $f\in \mathrm{Sp}(2n,\RR)$ su matriz asociada $A$ en una base simpléctica fijada, el grupo simpléctico real se puede representar por medio de las matrices $2n\times 2n$ que cumplen
   \begin{equation*}
     J_n=A^tJ_n A.
   \end{equation*}
   Estas matrices se dicen \emph{matrices simplécticas}.
-  De aquí deducimos inmediatamente, por un razonamiento análogo al que haríamos para matrices ortogonales, que todas las matrices simplécticas tienen determinante $1$ o $-1$. Sin embargo, podemos probar un resultado aún más fuerte sobre el grupo simpléctico: su \emph{subgrupo especial} (es decir, el subgrupo de las aplicaciones de determinante $1$) coincide con él mismo.
+  De aquí deducimos inmediatamente, por un razonamiento análogo al que haríamos para matrices ortogonales, que todas las matrices simplécticas tienen determinante $1$ o $-1$. Sin embargo, podemos probar un resultado aún más fuerte sobre el grupo simpléctico real: su \emph{subgrupo especial} (es decir, el subgrupo de las aplicaciones de determinante $1$) coincide con él mismo.
 \begin{prop}
   Toda aplicación lineal simpléctica tiene determinante $1$.
 \end{prop}
@@ -76,7 +76,7 @@ Una vez repasados los conceptos básicos de la geometría lineal simpléctica, e
   Una \emph{variedad simpléctica} es un par $(M,\omega)$ donde $M$ es una variedad diferenciable de dimensión $2n$ y $\omega \in \Gamma^2(M)$ es una $2$-forma cerrada y no degenerada (para todo $x \in M$, $\omega_x$ es no degenerada). 
 \end{defn}
 
-De la propia definición de variedad simpléctica podemos ya deducir unas cuantas restricciones para lo que puede y lo que no puede ser una variedad simpléctica. En primer lugar, claramente todas tienen que tener dimensión par, ya que lo hemos impuesto por definición, aunque venía motivado del hecho de que solo en dimensión par podemos tener matrices antisimétricas no degeneradas. Veamos entonces un primer ejemplo de variedad simpléctica, a parte del ya estudiado espacio simpléctico estándar, al que trivialmente se le puede dotar de la estructura de variedad simpléctica.
+De la propia definición de variedad simpléctica podemos ya deducir unas cuantas restricciones para lo que puede y lo que no puede ser una variedad simpléctica. En primer lugar, claramente todas tienen que tener dimensión par, ya que lo hemos impuesto por definición, aunque venía motivado del hecho de que solo en dimensión par podemos tener matrices antisimétricas no degeneradas. Veamos entonces un primer ejemplo de variedad simpléctica, a parte del ya estudiado espacio simpléctico estándar --al que trivialmente se le puede dotar de la estructura de variedad simpléctica-- y del fibrado tangente de una variedad riemanniana, que hemos estudiado en el capítulo \ref{sec:fisica}.
 
 \begin{ejemplo}
   \em
@@ -292,7 +292,7 @@ de modo que el campo de hamiltoniano $F$ tiene la forma
     \end{tikzcd}
   \end{center}
   donde precisamente $\ker([i_{\bullet}\omega])=\mathrm{im}(X^{\bullet})$ es el conjunto de campos hamiltonianos.
-  Si $H^1(M)=0$ (en particular, si $M$ es simplemente conexo), entonces todo campo simpléctico es hamiltoniano. Como consecuencia, por el lema de Poincaré, todo campo simpléctico es localmente hamiltoniano. Es decir, si $X$ es un campo simpléctico, en todo punto $x\in M$ podemos tomar un entorno $U$ estrellado en el que hay una función $F:U\rightarrow M$ tal que $-i_X\omega=\dd F$ en $U$.
+  Si $H^1(M)=0$, entonces todo campo simpléctico es hamiltoniano. Como consecuencia, por el lema de Poincaré, todo campo simpléctico es localmente hamiltoniano. Es decir, si $X$ es un campo simpléctico, en todo punto $x\in M$ podemos tomar un entorno $U$ estrellado en el que hay una función $F:U\rightarrow M$ tal que $-i_X\omega=\dd F$ en $U$.
 
 \section{Corchete de Poisson}\label{sec:poisson}
 Podemos emplear los campos hamiltonianos para definir una nueva estructura en las variedades simplécticas, el \emph{corchete de Poisson}. En esta sección veremos que toda variedad simpléctica es una \emph{variedad de Poisson}.
@@ -447,27 +447,27 @@ O, en su forma más compacta
 
 \paragraph{\bf Transformaciones canónicas}\mbox{}
 
-  Para terminar la sección, vamos a ver cómo se comportan las ecuaciones de Hamilton mediante cambios de coordenadas:
+  Para terminar la sección, vamos a ver cómo se comportan las ecuaciones de Hamilton bajo difeomorfismos:
   \begin{prop}\label{cambiodif}
- Sean $M,M'$ variedades simplécticas y $H:M'\rightarrow \RR$. Si $f:M\rightarrow M'$ es una aplicación diferenciable, entonces 
+ Sea $M$ una variedad simpléctica y $H:M\rightarrow \RR$. Si $f:M\rightarrow M$ es un difeomorfismo, entonces 
  \begin{equation*}
-   f^*i_{X^H}\omega'=i_{X^{H\circ f}}\omega.
+   f^*i_{X^H}\omega=i_{X^{H\circ f}}\omega.
  \end{equation*}
 \end{prop}
 \begin{proof}
   Basta hacer los cálculos,
   \begin{equation*}
-    f^*i_{X^H}\omega'=f^*\dd H=\dd H \circ f_* = \dd (H\circ f)=i_{X^{H\circ f}}\omega.
+    f^*i_{X^H}\omega=f^*\dd H=\dd H \circ f_* = \dd (H\circ f)=i_{X^{H\circ f}}\omega.
   \end{equation*}
 \end{proof}
 Vamos a buscar entonces cambios de coordenadas que mantengan las ecuaciones de Hamilton invariantes, es decir, que al escribir las ecuaciones en las nuevas coordenadas se obtengan precisamente las ecuaciones de Hamilton del mismo hamiltoniano, expresado en las nuevas coordenadas.
 \begin{defn}
   \em
-  Sean $(M,H)$ un sistema hamiltoniano y $f:M\rightarrow M$ una aplicación diferenciable. Decimos que $f$ es una \emph{transformación canónica} del sistema si deja las ecuaciones de Hamilton invariantes, es decir, si $X^H=f_*X^{H\circ f}$.
+  Sean $(M,H)$ un sistema hamiltoniano y $f:M\rightarrow M$ un difeomorfismo. Decimos que $f$ es una \emph{transformación canónica} del sistema si deja las ecuaciones de Hamilton invariantes, es decir, si $X^H=f_*X^{H\circ f}$.
 \end{defn}
 
 \begin{prop}\label{cambiohamilton}
-  Sean $(M,\omega)$ una variedad simpléctica y $f:M\rightarrow M$ un difeomorfismo local. Son equivalentes:
+  Sean $(M,\omega)$ una variedad simpléctica y $f:M\rightarrow M$ un difeomorfismo. Son equivalentes:
   \begin{enumerate}
     \item[$1$.] $f$ es un simplectomorfismo,
     \item[$2$.] para todo $H:M\rightarrow \RR$, $f$ es una transformación canónica del sistema $(M,H)$,
@@ -651,5 +651,5 @@ De modo que la cantidad conservada es $F=\sum_{i=1}^n y_i p_i=\esc{y}{p}$. Como 
       \dd L_3 = \dd (q_1p_2 - q_2p_1)=-q_2 \dd p_1 + q_1 \dd p_2 + p_2 \dd q_1 - p_1 \dd q_2 = -i_X\Omega_3.
     \end{equation*}
 
-    De modo que, aplicando el teorema de Noether, la simetría del sistema bajo las rotaciones en torno al eje $OZ$ lleva asociada una conservación de la tercera componente del momento angular $L_3$. Podemos hacer un cálculo análogo para los casos de las rotaciones en torno a los ejes $OX$ y $OY$, de forma que obtendríamos la conservación de las componentes $L_1$ y $L_2$, o, de otra manera, como sabemos ya que el sistema es invariante bajo rotaciones, podemos tomar directamente el eje $OZ$ como la dirección del momento angular. Finalmente, llegaríamos a que la simetría bajo rotaciones lleva asociada la conservación del momento angular.
+    De modo que, aplicando el teorema de Noether, la simetría del sistema bajo las rotaciones en torno al eje $OZ$ lleva asociada una conservación de la tercera componente del momento angular $L_3$. Podemos hacer un cálculo análogo para los casos de las rotaciones en torno a los ejes $OX$ y $OY$, de forma que obtendríamos la conservación de las componentes $L_1$ y $L_2$. Finalmente, llegaríamos a que la simetría bajo rotaciones lleva asociada la conservación del momento angular.
 \end{ejemplo}

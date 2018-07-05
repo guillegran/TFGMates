@@ -9,7 +9,7 @@
 \contentsline {section}{\numberline {3.1}Espacios vectoriales simpl\IeC {\'e}cticos}{23}{section.3.1}
 \contentsline {paragraph}{\bf Clasificaci\IeC {\'o}n de formas bilineales antisim\IeC {\'e}tricas}{23}{section*.6}
 \contentsline {paragraph}{\bf Aplicaciones simpl\IeC {\'e}cticas}{24}{section*.7}
-\contentsline {paragraph}{\bf El grupo simpl\IeC {\'e}ctico}{24}{section*.8}
+\contentsline {paragraph}{\bf El grupo simpl\IeC {\'e}ctico real}{24}{section*.8}
 \contentsline {section}{\numberline {3.2}Variedades simpl\IeC {\'e}cticas}{24}{section.3.2}
 \contentsline {paragraph}{\bf Teorema de Darboux}{26}{section*.9}
 \contentsline {paragraph}{\bf Simplectomorfismos}{27}{section*.10}
